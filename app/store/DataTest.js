@@ -13,12 +13,13 @@ Ext.define('Thesis.Manager.store.DataTest', {
     proxy: {
         type: 'ajax',
         actionMethods: {
-            read: 'POST'
+            read: 'GET'
         },
-        // url: config.serviceUrl + '/get',
+        useDefaultXhrHeader: false,
+        cors: true,
+        url: 'http:\/\/83.212.105.139:3000',
         api: {
-            read: '/fabulous/data/get'
-
+            read: 'http:\/\/83.212.105.139:3000/api/1/test'
         },
         writer: {
             type: 'json',
