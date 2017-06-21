@@ -6,6 +6,9 @@ Ext.define('Thesis.Manager.view.main.testData',{
     extend: 'Ext.grid.Panel',
     xtype: 'testListData',
 
+    listeners: {
+        show: 'onShow'
+    },
 
     requires: [
         'Thesis.Manager.store.DataTests'
