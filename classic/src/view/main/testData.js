@@ -13,7 +13,7 @@ Ext.define('Thesis.Manager.view.main.testList',{
     title: 'dataTest',
 
     store: {
-        type: 'dataTest',
+        type: 'dataTests',
         autoLoad: true
     },
 

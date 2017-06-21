@@ -1,10 +1,10 @@
 /**
- * Created by user on 6/6/2017.
+ * Created by n.vasileiadis on 6/21/2017.
  */
-Ext.define('Thesis.Manager.store.DataTest', {
+Ext.define('Thesis.Manager.store.DataTests', {
     extend: 'Ext.data.Store',
 
-    alias: 'store.dataTest',
+    alias: 'store.dataTests',
 
     model: 'Thesis.Manager.model.DataTest',
 

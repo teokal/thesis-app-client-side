@@ -6,8 +6,8 @@ Ext.define('EW20.view.testDataModel', {
     alias: 'viewmodel.testDataModel',
 
     stores: {
-        dataTest: {
-            type: 'dataTest'
+        dataTests: {
+            type: 'dataTests'
         }
     },
 
