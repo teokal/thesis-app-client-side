@@ -2,13 +2,13 @@
  * Created by user on 6/6/2017.
  */
 
-Ext.define('Thesis.Manager.view.main.testList',{
+Ext.define('Thesis.Manager.view.main.testData',{
     extend: 'Ext.grid.Panel',
     xtype: 'testListData',
 
 
     requires: [
-        'Thesis.Manager.store.DataTest'
+        'Thesis.Manager.store.DataTests'
     ],
     title: 'dataTest',
 
