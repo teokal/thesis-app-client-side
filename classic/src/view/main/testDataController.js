@@ -9,7 +9,7 @@ Ext.define('EW20.view.testDataController', {
 
     onShow: function () {
         var viewModel = this.getViewModel();
-        var store = viewModel.getStore('locationDetails');
+        var store = viewModel.getStore('dataTests');
         store.load();
     }
 });
