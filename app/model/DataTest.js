@@ -9,6 +9,6 @@ Ext.define('Thesis.Manager.model.DataTest', {
         namespace: 'Thesis.Manager.model'
     },
     fields: [
-        'name', 'email', 'phone'
+        'id'
     ]
 });
