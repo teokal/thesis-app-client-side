@@ -9,7 +9,7 @@ Ext.define('Thesis.Manager.store.DataTests', {
     model: 'Thesis.Manager.model.DataTest',
 
     viewModel: {
-        type: 'testDataModel'
+        type: 'dataModel'
     },
 
     autoLoad: false,
@@ -32,7 +32,7 @@ Ext.define('Thesis.Manager.store.DataTests', {
         },
         reader: {
             type: 'json',
-            rootProperty: 'data'
+            rootProperty: 'response'
         }
     }
 

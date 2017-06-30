@@ -1,11 +1,10 @@
 /**
- * Created by n.vasileiadis on 6/21/2017.
+ * Created by n.vasileiadis on 6/27/2017.
  */
-
-Ext.define('EW20.view.testDataController', {
+Ext.define('EW20.view.DataController', {
     extend: 'Ext.app.ViewController',
-    alias: 'controller.contracts',
-
+    alias: 'controller.dataController',
+    //
 
     onShow: function () {
         debugger;
@@ -13,4 +12,6 @@ Ext.define('EW20.view.testDataController', {
         var store = viewModel.getStore('dataTests');
         store.load();
     }
+
+
 });
