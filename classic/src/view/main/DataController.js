@@ -11,7 +11,19 @@ Ext.define('EW20.view.DataController', {
         var viewModel = this.getViewModel();
         var store = viewModel.getStore('dataTests');
         store.load();
+    },
+
+    /**
+     *
+     * @param record
+     */
+    onEdit: function (sender, record) {
+        debugger;
+        var viewModel = this.getViewModel();
+        viewModel.getStore('dataTests').load();
     }
+
+
 
 
 });

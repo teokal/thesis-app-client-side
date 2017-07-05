@@ -17,11 +17,12 @@ Ext.define('Thesis.Manager.view.main.testData',{
         type: 'dataModel'
     },
     listeners: {
-        show: 'onShow'
+        show: 'onShow',
+        rowdblclick: 'onEdit'
     },
 
     // title: 'dataTest',
-    //
+
     store: {
         type: 'dataTests',
         autoLoad: true
@@ -30,7 +31,7 @@ Ext.define('Thesis.Manager.view.main.testData',{
     bind: {
         store: '{rec.data}'
     },
-
+    //
     // items: [
     //     {
     //         xtype: 'panel',
@@ -54,15 +55,16 @@ Ext.define('Thesis.Manager.view.main.testData',{
     //                         width: 60,
     //                         readOnly: true,
     //                         emptyText: ' ',
-    //                         dataIndex: 'id'
+    //                         bind: '{rec.id}'
+    //                         // dataIndex: 'id'
     //                     }]
     //             }]
     //     }]
-    //
+
     columns: [
         { text: 'ID',  dataIndex: 'id' },
         { text: 'Message',  dataIndex: 'message' },
-        { text: 'ID',  dataIndex: 'status' }
+        { text: 'Status',  dataIndex: 'status' }
         // { text: 'Email', dataIndex: 'email', flex: 1 },
         // { text: 'Phone', dataIndex: 'phone', flex: 1 }
     ]
