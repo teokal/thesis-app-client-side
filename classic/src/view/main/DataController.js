@@ -21,6 +21,17 @@ Ext.define('EW20.view.DataController', {
         debugger;
         var viewModel = this.getViewModel();
         viewModel.getStore('dataTests').load();
+
+        var proxy = new Ext.data.proxy.Ajax({
+            url: 'http:\/\/83.212.105.139:3000/users'
+        });
+
+        var operation = proxy.createOperation('read', {
+            start : 50,
+            limit : 25
+        });
+
+        proxy.read(operation);
     }
 
 
