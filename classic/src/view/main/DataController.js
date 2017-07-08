@@ -6,6 +6,10 @@ Ext.define('EW20.view.DataController', {
     alias: 'controller.dataController',
     //
 
+    requires: [
+        'Thesis.Manager.GlobalVar'
+    ],
+
     onShow: function () {
         debugger;
         var viewModel = this.getViewModel();
@@ -23,7 +27,7 @@ Ext.define('EW20.view.DataController', {
         viewModel.getStore('dataTests').load();
 
         var proxy = new Ext.data.proxy.Ajax({
-            url: 'http:\/\/83.212.105.139:3000/users'
+            url: Thesis.Manager.GlobalVar.urlData+'/users'
         });
 
         var operation = proxy.createOperation('read', {

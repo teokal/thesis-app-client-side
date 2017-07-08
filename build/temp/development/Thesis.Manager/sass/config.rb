@@ -1,1 +1,1 @@
-cache_path = 'C:\Users\n.vasileiadis\Documents\nikos\Thesis\thesis-app-client-side/build/.sass-cache'
+cache_path = '/home/user/Documents/thesis-client-side/thesis-app-client-side/build/.sass-cache'

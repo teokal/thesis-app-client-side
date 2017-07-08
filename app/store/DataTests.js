@@ -8,6 +8,10 @@ Ext.define('Thesis.Manager.store.DataTests', {
 
     model: 'Thesis.Manager.model.DataTest',
 
+    requires: [
+        'Thesis.Manager.GlobalVar'
+    ],
+
     viewModel: {
         type: 'dataModel'
     },
@@ -21,9 +25,9 @@ Ext.define('Thesis.Manager.store.DataTests', {
         },
         useDefaultXhrHeader: false,
         cors: true,
-        url: 'http:\/\/83.212.105.139:3000',
+        url: Thesis.Manager.GlobalVar.urlData,
         api: {
-            read: 'http:\/\/83.212.105.139:3000/api/1/test'
+            read: Thesis.Manager.GlobalVar.urlData +'/api/1/test'
         },
         writer: {
             type: 'json',
