@@ -3,25 +3,26 @@
  */
 
 Ext.define('Thesis.Manager.view.main.testData',{
-    // extend: 'Ext.Container',
-    extend: 'Ext.grid.Panel',
+    extend: 'Ext.Container',
+    // extend: 'Ext.grid.Panel',
     xtype: 'testListData',
 
     requires: [
-        'Thesis.Manager.store.DataTests'
-
+        'Thesis.Manager.store.DataTests',
+        'Ext.layout.container.Border'
     ],
 
     controller: 'dataController',
     viewModel: {
         type: 'dataModel'
     },
+
+    // listeners: {
+    //     show: 'onShow'
+    // },
     listeners: {
-        show: 'onShow',
         rowdblclick: 'onEdit'
     },
-
-    // title: 'dataTest',
 
     store: {
         type: 'dataTests',
@@ -31,6 +32,63 @@ Ext.define('Thesis.Manager.view.main.testData',{
     bind: {
         store: '{rec.data}'
     },
+    layout: 'border',
+    width: 500,
+    height: 400,
+
+    items: [
+        {
+            cls: 'middlecolumn',
+            bodyCls: 'transparent',
+            // xtype: 'panel',
+            // layout: 'fit',
+            // region: 'west',
+            xtype: 'panel',
+            // xtype: 'array-grid',
+            layout: 'fit',
+            region: 'west',
+            flex: 1,
+            minWidth: 500,
+            items: [{
+                
+                xtype: 'grid',
+                // layout: {
+                //     type: 'vbox',
+                //     align: 'stretch'
+                // },
+                // items: [{
+                    columns: [
+                        { text: 'ID',  dataIndex: 'id' },
+                        { text: 'Message',  dataIndex: 'message' },
+                        { text: 'Status',  dataIndex: 'status' }
+                    ]
+
+            // }]
+            }]
+
+
+        },
+        {
+            xtype: 'form',
+            reference: 'typeForm',
+            region: 'center',
+            collapseDirection: 'left',
+            collapsible: true,
+            collapseMode: 'mini',
+            hideCollapseTool: true,
+            preventHeader: true,
+            collapsed: true,
+            layout: 'fit',
+            flex: 6
+            // items: [
+            //     {
+            //         xtype: 'lineChart',
+            //         layout: 'fit'
+            //     }
+            //     ]
+
+        }
+    ],
     //
     // items: [
     //     {

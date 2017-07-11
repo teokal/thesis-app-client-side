@@ -36,6 +36,9 @@ Ext.define('EW20.view.DataController', {
         });
 
         proxy.read(operation);
+
+        var form = this.lookupReference('typeForm');
+        form.expand(false);
     }
 
 
