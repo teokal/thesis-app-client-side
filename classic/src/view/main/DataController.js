@@ -23,33 +23,35 @@ Ext.define('EW20.view.DataController', {
      */
     onEdit: function (sender, record) {
         // debugger;
-        var viewModel = this.getViewModel();
+        // var viewModel = this.getViewModel();
         // viewModel.getStore('dataTests').load();
 
         var proxy = new Ext.data.proxy.Ajax({
-            actionMethods: {
-                read: 'GET'
-            },
             useDefaultXhrHeader: false,
-            cors: true,
-            url: Thesis.Manager.GlobalVar.urlData+'/api/1/user/courses/logs?from_date=10-01-2015&to_date=now-1y&query=view&view=day&course=5',
+            url: Thesis.Manager.GlobalVar.urlData + '/api/1/user/courses/logs?from_date=10-01-2015&to_date=now-1y&query=view&view=day&course=5',
 
-            // method: 'GET',
-            headers: { 'Authorization': 'Toten token=tyPmHwzjeRfCkCSr47xgDv-VMTr9Fg',
-                'Access-Control-Allow-Origin' : '*'
-            }
+            pageParam: 'pageNumber'
         });
 
+        proxy.defaultHeaders = {
+            'Authorization': 'Token token=tyPmHwzjeRfCkCSr47xgDv-VMTr9Fg'
+        };
+        //
+        // var vara = 'test';
         var operation = proxy.createOperation('read', {
-            start : 50,
-            limit : 25
+            // from_date: '10-01-2015',
+            // to_date: 'now-1y',
+            // query:'view',
+            // view: 'day',
+            // course: 5
+            // pageParam: 'course'
         });
 
         proxy.read(operation);
         // proxy.read();
 
-        var form = this.lookupReference('typeForm');
-        form.expand(false);
+        // var form = this.lookupReference('typeForm');
+        // form.expand(false);
     }
 
 
