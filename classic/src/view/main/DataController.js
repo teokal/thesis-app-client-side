@@ -22,12 +22,22 @@ Ext.define('EW20.view.DataController', {
      * @param record
      */
     onEdit: function (sender, record) {
-        debugger;
+        // debugger;
         var viewModel = this.getViewModel();
-        viewModel.getStore('dataTests').load();
+        // viewModel.getStore('dataTests').load();
 
         var proxy = new Ext.data.proxy.Ajax({
-            url: Thesis.Manager.GlobalVar.urlData+'/users'
+            actionMethods: {
+                read: 'GET'
+            },
+            useDefaultXhrHeader: false,
+            cors: true,
+            url: Thesis.Manager.GlobalVar.urlData+'/api/1/user/courses/logs?from_date=10-01-2015&to_date=now-1y&query=view&view=day&course=5',
+
+            // method: 'GET',
+            headers: { 'Authorization': 'Toten token=tyPmHwzjeRfCkCSr47xgDv-VMTr9Fg',
+                'Access-Control-Allow-Origin' : '*'
+            }
         });
 
         var operation = proxy.createOperation('read', {
@@ -36,6 +46,7 @@ Ext.define('EW20.view.DataController', {
         });
 
         proxy.read(operation);
+        // proxy.read();
 
         var form = this.lookupReference('typeForm');
         form.expand(false);
