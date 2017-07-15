@@ -22,36 +22,35 @@ Ext.define('EW20.view.DataController', {
      * @param record
      */
     onEdit: function (sender, record) {
-        // debugger;
-        // var viewModel = this.getViewModel();
-        // viewModel.getStore('dataTests').load();
-
         var proxy = new Ext.data.proxy.Ajax({
             useDefaultXhrHeader: false,
-            url: Thesis.Manager.GlobalVar.urlData + '/api/1/user/courses/logs?from_date=10-01-2015&to_date=now-1y&query=view&view=day&course=5',
+            url: Thesis.Manager.GlobalVar.urlData + '/api/1/user/courses/logs',
 
-            pageParam: 'pageNumber'
+            headers: {
+                'Authorization': 'Token token=' + Thesis.Manager.GlobalVar.token
+            },
+
+            extraParams: {
+                from_date: '10-01-2015',
+                to_date: 'now-1y',
+                query:'view',
+                view: 'day',
+                course: 5
+            }
+
         });
 
-        proxy.defaultHeaders = {
-            'Authorization': 'Token token=tyPmHwzjeRfCkCSr47xgDv-VMTr9Fg'
-        };
-        //
-        // var vara = 'test';
-        var operation = proxy.createOperation('read', {
-            // from_date: '10-01-2015',
-            // to_date: 'now-1y',
-            // query:'view',
-            // view: 'day',
-            // course: 5
-            // pageParam: 'course'
-        });
-
+        var operation = proxy.createOperation('read', {});
         proxy.read(operation);
-        // proxy.read();
+        debugger;
 
-        // var form = this.lookupReference('typeForm');
-        // form.expand(false);
+        Ext.toast({
+            html: 'Data Saved',
+            // title: 'My Title',
+            width: 200,
+            align: 't'
+        });
+
     }
 
 

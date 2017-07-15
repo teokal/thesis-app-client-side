@@ -3,6 +3,7 @@
  * calls Ext.application(). This is the ideal place to handle application launch and
  * initialization details.
  */
+
 Ext.define('Thesis.Manager.Application', {
     extend: 'Ext.app.Application',
 
@@ -27,3 +28,4 @@ Ext.define('Thesis.Manager.Application', {
         );
     }
 });
+

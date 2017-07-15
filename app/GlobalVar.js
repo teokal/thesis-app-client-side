@@ -5,6 +5,7 @@
 Ext.define('Thesis.Manager.GlobalVar', {
     singleton: true,
 
-    urlData: 'http:\/\/83.212.105.139:3000'
+    urlData: 'http:\/\/83.212.105.139:3000',
+    token: 'tyPmHwzjeRfCkCSr47xgDv-VMTr9Fg'
 
 });
