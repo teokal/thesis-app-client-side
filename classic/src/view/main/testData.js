@@ -120,9 +120,9 @@ Ext.define('Thesis.Manager.view.main.testData',{
     //     }]
 
     columns: [
-        { text: 'ID',  dataIndex: 'id' },
-        { text: 'Message',  dataIndex: 'message' },
-        { text: 'Status',  dataIndex: 'status' }
+        { text: 'ID',  dataIndex: 'id', flex: 0.2 },
+        { text: 'Fullname',  dataIndex: 'fullname', flex: 1 },
+        { text: 'Shortname',  dataIndex: 'shortname', flex: 1 }
         // { text: 'Email', dataIndex: 'email', flex: 1 },
         // { text: 'Phone', dataIndex: 'phone', flex: 1 }
     ]

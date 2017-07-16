@@ -22,31 +22,41 @@ Ext.define('EW20.view.DataController', {
      * @param record
      */
     onEdit: function (sender, record) {
-        var proxy = new Ext.data.proxy.Ajax({
+
+        debugger;
+        Ext.Ajax.request({
             useDefaultXhrHeader: false,
             url: Thesis.Manager.GlobalVar.urlData + '/api/1/user/courses/logs',
-
+            method: 'GET',
             headers: {
                 'Authorization': 'Token token=' + Thesis.Manager.GlobalVar.token
             },
 
-            extraParams: {
+            params: {
                 from_date: '10-01-2015',
                 to_date: 'now-1y',
                 query:'view',
                 view: 'day',
-                course: 5
+                course: 1
+            },
+
+            success: function(response, opts) {
+                var obj = Ext.decode(response.responseText);
+                // Extract keys and values for the first element
+                Object.keys(obj.response.data)[0];
+                Object.values(obj.response.data)[0];
+
+                console.dir(obj);
+            },
+
+            failure: function(response, opts) {
+                console.log('server-side failure with status code ' + response.status);
             }
 
         });
 
-        var operation = proxy.createOperation('read', {});
-        proxy.read(operation);
-        debugger;
-
         Ext.toast({
             html: 'Data Saved',
-            // title: 'My Title',
             width: 200,
             align: 't'
         });

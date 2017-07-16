@@ -3,13 +3,10 @@
  */
 Ext.define('Thesis.Manager.model.DataTest', {
     extend: 'Ext.data.Model',
-    // extend: 'Ext.grid.Panel',
 
-    // schema: {
-    //     namespace: 'Thesis.Manager.model'
-    // },
     fields: [
         { name: 'id', type: 'int' },
-        { name: 'Message', type: 'int' }
+        { name: 'fullname', type: 'string' },
+        { name: 'shortname', type: 'string' }
     ]
 });

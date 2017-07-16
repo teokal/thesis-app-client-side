@@ -25,9 +25,12 @@ Ext.define('Thesis.Manager.store.DataTests', {
         },
         useDefaultXhrHeader: false,
         cors: true,
+        headers: {
+            'Authorization': 'Token token=' + Thesis.Manager.GlobalVar.token
+        },
         url: Thesis.Manager.GlobalVar.urlData,
         api: {
-            read: Thesis.Manager.GlobalVar.urlData +'/api/1/test'
+            read: Thesis.Manager.GlobalVar.urlData +'/api/1/user/courses'
         },
         writer: {
             type: 'json',
@@ -36,7 +39,7 @@ Ext.define('Thesis.Manager.store.DataTests', {
         },
         reader: {
             type: 'json',
-            rootProperty: 'response'
+            rootProperty: 'response.data'
         }
     }
 
