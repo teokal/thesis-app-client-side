@@ -21,9 +21,10 @@ Ext.define('EW20.view.DataController', {
      *
      * @param record
      */
-    onEdit: function (sender, record) {
-
-        debugger;
+    onEdit: function (sender, selected) {
+        var record = selected[0];
+        // debugger;
+        var form = this.lookupReference('coursesActionPanel');
         Ext.Ajax.request({
             useDefaultXhrHeader: false,
             url: Thesis.Manager.GlobalVar.urlData + '/api/1/user/courses/logs',
@@ -37,16 +38,18 @@ Ext.define('EW20.view.DataController', {
                 to_date: 'now-1y',
                 query:'view',
                 view: 'day',
-                course: 1
+                course: record.id
             },
 
             success: function(response, opts) {
+                // debugger;
                 var obj = Ext.decode(response.responseText);
                 // Extract keys and values for the first element
-                Object.keys(obj.response.data)[0];
-                Object.values(obj.response.data)[0];
+                console.dir(Object.keys(obj.response.data)[0]);
+                console.dir(Object.values(obj.response.data)[0]);
 
                 console.dir(obj);
+                form.expand(false);
             },
 
             failure: function(response, opts) {
@@ -55,11 +58,12 @@ Ext.define('EW20.view.DataController', {
 
         });
 
-        Ext.toast({
-            html: 'Data Saved',
-            width: 200,
-            align: 't'
-        });
+        // Ext.toast({
+        //     html: 'Data Saved',
+        //     width: 200,
+        //     align: 't'
+        // });
+
 
     }
 
