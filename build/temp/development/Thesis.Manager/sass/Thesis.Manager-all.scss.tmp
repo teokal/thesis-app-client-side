@@ -1,6 +1,7 @@
 $app-name:  dynamic( 'Thesis.Manager' );
 $image-search-path: 'C:/Users/n.vasileiadis/Documents/nikos/Thesis/thesis-app-client-side/build/development/Thesis.Manager/classic/resources';
 $theme-name:  dynamic( 'theme-triton' );
+$include-ew20-view-courseactionmodel: dynamic(true);;
 $include-ew20-view-datacontroller: dynamic(true);;
 $include-ew20-view-datamodel: dynamic(true);;
 $include-ext-abstractcomponent: dynamic(true);;
@@ -911,6 +912,7 @@ $include-ext-window-toast: dynamic(true);;
 $include-ext-window-window: dynamic(true);;
 $include-thesis-manager-application: dynamic(true);;
 $include-thesis-manager-globalvar: dynamic(true);;
+$include-thesis-manager-model-courseactions: dynamic(true);;
 $include-thesis-manager-model-datatest: dynamic(true);;
 $include-thesis-manager-store-datatests: dynamic(true);;
 $include-thesis-manager-store-personnel: dynamic(true);;

@@ -2,7 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f8dc9324-99df-43e6-be41-1aee28966c96" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/model/CourseActions.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/classic/src/view/main/CourseActionModel.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/development/Thesis.Manager/classic/resources/Thesis.Manager-all_1.css" afterPath="$PROJECT_DIR$/build/development/Thesis.Manager/classic/resources/Thesis.Manager-all_1.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/development/Thesis.Manager/classic/resources/Thesis.Manager-all_2.css" afterPath="$PROJECT_DIR$/build/development/Thesis.Manager/classic/resources/Thesis.Manager-all_2.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/temp/development/Thesis.Manager/sass/Thesis.Manager-all.scss" afterPath="$PROJECT_DIR$/build/temp/development/Thesis.Manager/sass/Thesis.Manager-all.scss" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/temp/development/Thesis.Manager/sass/Thesis.Manager-all.scss.tmp" afterPath="$PROJECT_DIR$/build/temp/development/Thesis.Manager/sass/Thesis.Manager-all.scss.tmp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/temp/development/Thesis.Manager/slicer-temp/bootstrap.json" afterPath="$PROJECT_DIR$/build/temp/development/Thesis.Manager/slicer-temp/bootstrap.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/temp/development/Thesis.Manager/slicer-temp/bootstrap.jsonp" afterPath="$PROJECT_DIR$/build/temp/development/Thesis.Manager/slicer-temp/bootstrap.jsonp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/classic.json" afterPath="$PROJECT_DIR$/classic.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/classic.jsonp" afterPath="$PROJECT_DIR$/classic.jsonp" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/classic/src/view/main/DataController.js" afterPath="$PROJECT_DIR$/classic/src/view/main/DataController.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/classic/src/view/main/testData.js" afterPath="$PROJECT_DIR$/classic/src/view/main/testData.js" />
     </list>
@@ -22,18 +32,30 @@
       <file leaf-file-name="DataTest.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/model/DataTest.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="153">
-              <caret line="9" column="26" lean-forward="false" selection-start-line="9" selection-start-column="17" selection-end-line="9" selection-end-column="26" />
+            <state relative-caret-position="187">
+              <caret line="11" column="3" lean-forward="false" selection-start-line="11" selection-start-column="3" selection-end-line="11" selection-end-column="3" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="testData.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="CourseActions.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/model/CourseActions.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="102">
+              <caret line="8" column="38" lean-forward="false" selection-start-line="8" selection-start-column="38" selection-end-line="8" selection-end-column="38" />
+              <folding>
+                <element signature="e#0#49#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="testData.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/classic/src/view/main/testData.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1394">
-              <caret line="82" column="32" lean-forward="true" selection-start-line="82" selection-start-column="32" selection-end-line="82" selection-end-column="32" />
+            <state relative-caret-position="357">
+              <caret line="21" column="16" lean-forward="true" selection-start-line="21" selection-start-column="16" selection-end-line="21" selection-end-column="16" />
               <folding />
             </state>
           </provider>
@@ -42,8 +64,8 @@
       <file leaf-file-name="DataModel.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/classic/src/view/main/DataModel.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="170">
-              <caret line="12" column="13" lean-forward="false" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
+            <state relative-caret-position="204">
+              <caret line="14" column="3" lean-forward="false" selection-start-line="14" selection-start-column="3" selection-end-line="14" selection-end-column="3" />
               <folding>
                 <element signature="e#0#49#0" expanded="false" />
               </folding>
@@ -51,11 +73,23 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="DataController.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="CourseActionModel.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/classic/src/view/main/CourseActionModel.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="204">
+              <caret line="14" column="5" lean-forward="false" selection-start-line="14" selection-start-column="5" selection-end-line="14" selection-end-column="5" />
+              <folding>
+                <element signature="e#0#49#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="DataController.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/classic/src/view/main/DataController.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="765">
-              <caret line="47" column="45" lean-forward="true" selection-start-line="47" selection-start-column="45" selection-end-line="47" selection-end-column="45" />
+            <state relative-caret-position="204">
+              <caret line="15" column="52" lean-forward="true" selection-start-line="15" selection-start-column="52" selection-end-line="15" selection-end-column="52" />
               <folding>
                 <element signature="e#0#49#0" expanded="false" />
               </folding>
@@ -68,16 +102,6 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="12461">
               <caret line="733" column="4" lean-forward="false" selection-start-line="733" selection-start-column="4" selection-end-line="733" selection-end-column="4" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Main.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/classic/src/view/main/Main.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="816">
-              <caret line="48" column="6" lean-forward="false" selection-start-line="48" selection-start-column="6" selection-end-line="48" selection-end-column="6" />
               <folding />
             </state>
           </provider>
@@ -96,8 +120,8 @@
       <file leaf-file-name="DataTests.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/store/DataTests.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="148">
-              <caret line="18" column="20" lean-forward="true" selection-start-line="18" selection-start-column="20" selection-end-line="18" selection-end-column="20" />
+            <state relative-caret-position="487">
+              <caret line="34" column="17" lean-forward="false" selection-start-line="34" selection-start-column="17" selection-end-line="34" selection-end-column="17" />
               <folding />
             </state>
           </provider>
@@ -109,18 +133,6 @@
             <state relative-caret-position="323">
               <caret line="19" column="5" lean-forward="false" selection-start-line="19" selection-start-column="5" selection-end-line="19" selection-end-column="5" />
               <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="LineChart.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/classic/src/view/main/LineChart.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="578">
-              <caret line="36" column="10" lean-forward="false" selection-start-line="36" selection-start-column="10" selection-end-line="36" selection-end-column="10" />
-              <folding>
-                <element signature="e#0#48#0" expanded="false" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -160,6 +172,8 @@
         <option value="$PROJECT_DIR$/app/view/main/MainController.js" />
         <option value="$PROJECT_DIR$/classic/src/view/main/DataModel.js" />
         <option value="$PROJECT_DIR$/app/store/DataTests.js" />
+        <option value="$PROJECT_DIR$/app/model/CourseActions.js" />
+        <option value="$PROJECT_DIR$/classic/src/view/main/CourseActionModel.js" />
         <option value="$PROJECT_DIR$/classic/src/view/main/DataController.js" />
         <option value="$PROJECT_DIR$/classic/src/view/main/testData.js" />
       </list>
@@ -193,7 +207,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -321,6 +334,7 @@
         </subPane>
       </pane>
       <pane id="Scope" />
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -432,7 +446,8 @@
       <workItem from="1500108892505" duration="8430000" />
       <workItem from="1500198719680" duration="9330000" />
       <workItem from="1500713216891" duration="14553000" />
-      <workItem from="1500735420949" duration="4599000" />
+      <workItem from="1500735420949" duration="4690000" />
+      <workItem from="1500807192906" duration="7367000" />
     </task>
     <task id="LOCAL-00001" summary="test testdata">
       <created>1498045002687</created>
@@ -518,11 +533,18 @@
       <option name="project" value="LOCAL" />
       <updated>1500217235069</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="Test Update courses View">
+      <created>1500740061421</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1500740061421</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="64905000" />
+    <option name="totallyTimeSpent" value="72363000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1176" extended-state="6" />
@@ -531,7 +553,6 @@
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.14330874" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="true" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32940018" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32940018" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -544,6 +565,7 @@
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32940018" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
@@ -586,22 +608,14 @@
     <MESSAGE value="Test Ajax custom params" />
     <MESSAGE value="Test Ajax call with header" />
     <MESSAGE value="Test Ajax request call" />
-    <option name="LAST_COMMIT_MESSAGE" value="Test Ajax request call" />
+    <MESSAGE value="Test Update courses View" />
+    <option name="LAST_COMMIT_MESSAGE" value="Test Update courses View" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/classic/src/view/main/testData.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="9" column="15" lean-forward="false" selection-start-line="9" selection-start-column="15" selection-end-line="9" selection-end-column="15" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/classic/src/view/main/testDataModel.js" />
     <entry file="file://$PROJECT_DIR$/app/store/DataTests.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="493">
@@ -885,47 +899,67 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/classic/src/view/main/DataModel.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="12" column="13" lean-forward="false" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
-          <folding>
-            <element signature="e#0#49#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/model/DataTest.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="9" column="26" lean-forward="false" selection-start-line="9" selection-start-column="17" selection-end-line="9" selection-end-column="26" />
+        <state relative-caret-position="187">
+          <caret line="11" column="3" lean-forward="false" selection-start-line="11" selection-start-column="3" selection-end-line="11" selection-end-column="3" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/store/DataTests.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="148">
-          <caret line="18" column="20" lean-forward="true" selection-start-line="18" selection-start-column="20" selection-end-line="18" selection-end-column="20" />
+        <state relative-caret-position="487">
+          <caret line="34" column="17" lean-forward="false" selection-start-line="34" selection-start-column="17" selection-end-line="34" selection-end-column="17" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/classic/src/view/main/testData.js">
+    <entry file="file://$PROJECT_DIR$/app/model/CourseActions.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1394">
-          <caret line="82" column="32" lean-forward="true" selection-start-line="82" selection-start-column="32" selection-end-line="82" selection-end-column="32" />
-          <folding />
+        <state relative-caret-position="102">
+          <caret line="8" column="38" lean-forward="false" selection-start-line="8" selection-start-column="38" selection-end-line="8" selection-end-column="38" />
+          <folding>
+            <element signature="e#0#49#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/classic/src/view/main/DataModel.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="14" column="3" lean-forward="false" selection-start-line="14" selection-start-column="3" selection-end-line="14" selection-end-column="3" />
+          <folding>
+            <element signature="e#0#49#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/classic/src/view/main/CourseActionModel.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="14" column="5" lean-forward="false" selection-start-line="14" selection-start-column="5" selection-end-line="14" selection-end-column="5" />
+          <folding>
+            <element signature="e#0#49#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/classic/src/view/main/DataController.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="765">
-          <caret line="47" column="45" lean-forward="true" selection-start-line="47" selection-start-column="45" selection-end-line="47" selection-end-column="45" />
+        <state relative-caret-position="204">
+          <caret line="15" column="52" lean-forward="true" selection-start-line="15" selection-start-column="52" selection-end-line="15" selection-end-column="52" />
           <folding>
             <element signature="e#0#49#0" expanded="false" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/classic/src/view/main/testData.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="357">
+          <caret line="21" column="16" lean-forward="true" selection-start-line="21" selection-start-column="16" selection-end-line="21" selection-end-column="16" />
+          <folding />
         </state>
       </provider>
     </entry>

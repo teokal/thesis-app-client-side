@@ -14,7 +14,18 @@ Ext.define('EW20.view.DataController', {
         debugger;
         var viewModel = this.getViewModel();
         var store = viewModel.getStore('dataTests');
-        store.load();
+        store.load({
+            params: {
+                group: 3,
+                type: 'user'
+            },
+            callback: function(records, operation, success) {
+                // do something after the load finishes
+                debugger;
+            },
+            scope: this
+
+        });
     },
 
     /**
@@ -25,12 +36,17 @@ Ext.define('EW20.view.DataController', {
         var record = selected[0];
         // debugger;
         var form = this.lookupReference('coursesActionPanel');
-        Ext.Ajax.request({
+        var store = Ext.Ajax.request({
             useDefaultXhrHeader: false,
             url: Thesis.Manager.GlobalVar.urlData + '/api/1/user/courses/logs',
             method: 'GET',
             headers: {
                 'Authorization': 'Token token=' + Thesis.Manager.GlobalVar.token
+            },
+            model: 'Thesis.Manager.model.CourseActions',
+
+            viewModel: {
+                type: 'courseActionModel'
             },
 
             params: {
@@ -45,8 +61,8 @@ Ext.define('EW20.view.DataController', {
                 // debugger;
                 var obj = Ext.decode(response.responseText);
                 // Extract keys and values for the first element
-                console.dir(Object.keys(obj.response.data)[0]);
-                console.dir(Object.values(obj.response.data)[0]);
+                console.dir(Object.keys(obj.response.data));
+                console.dir(Object.values(obj.response.data));
 
                 console.dir(obj);
                 form.expand(false);
@@ -57,6 +73,9 @@ Ext.define('EW20.view.DataController', {
             }
 
         });
+        console.dir("TEST");
+        console.dir(store);
+        store.load();
 
         // Ext.toast({
         //     html: 'Data Saved',

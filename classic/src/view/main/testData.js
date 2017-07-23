@@ -19,6 +19,14 @@ Ext.define('Thesis.Manager.view.main.testData',{
         autoLoad: true
     },
 
+    viewModel: {
+        type: 'dataModel'
+    },
+
+    listeners: {
+        // rowdblclick: 'onEdit',
+        render: 'onShow'
+    },
 
     layout: {
         type : 'border',
