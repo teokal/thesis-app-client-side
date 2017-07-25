@@ -11,17 +11,18 @@ Ext.define('EW20.view.DataController', {
     ],
 
     onShow: function () {
-        debugger;
+        // debugger;
         var viewModel = this.getViewModel();
         var store = viewModel.getStore('dataTests');
         store.load({
             params: {
                 group: 3,
-                type: 'user'
+                type: 'user',
+                from_date: '10-01-2015'
             },
             callback: function(records, operation, success) {
                 // do something after the load finishes
-                debugger;
+                // debugger;
             },
             scope: this
 
@@ -34,7 +35,7 @@ Ext.define('EW20.view.DataController', {
      */
     onEdit: function (sender, selected) {
         var record = selected[0];
-        // debugger;
+        debugger;
         var form = this.lookupReference('coursesActionPanel');
         var store = Ext.Ajax.request({
             useDefaultXhrHeader: false,
@@ -73,10 +74,27 @@ Ext.define('EW20.view.DataController', {
             }
 
         });
-        console.dir("TEST");
-        console.dir(store);
-        store.load();
+        // console.dir("TEST");
 
+        // store.load();
+
+        var viewModel = this.getViewModel();
+        var store = viewModel.getStore('courseActions');
+        store.load({
+            params: {
+                group: 3,
+                type: 'user',
+                from_date: '10-01-2015'
+            },
+            callback: function(records, operation, success) {
+                // do something after the load finishes
+                debugger;
+            },
+            scope: this
+
+        });
+
+        console.dir(store);
         // Ext.toast({
         //     html: 'Data Saved',
         //     width: 200,

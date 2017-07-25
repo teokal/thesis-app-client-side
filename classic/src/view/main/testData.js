@@ -9,13 +9,15 @@ Ext.define('Thesis.Manager.view.main.testData',{
 
     requires: [
         'Thesis.Manager.store.DataTests',
+        'Thesis.Manager.store.CourseActions',
         'Ext.layout.container.Border'
     ],
 
     controller: 'dataController',
 
     store: {
-        type: 'dataTests',
+        // type: 'dataTests',
+        type: 'courseActions',
         autoLoad: true
     },
 
