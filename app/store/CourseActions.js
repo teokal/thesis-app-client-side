@@ -13,9 +13,9 @@ Ext.define('Thesis.Manager.store.CourseActions', {
         'Thesis.Manager.GlobalVar'
     ],
 
-    viewModel: {
-        type: 'CourseActionModel'
-    },
+    // viewModel: {
+    //     type: 'CourseActionModel'
+    // },
 
     autoLoad: false,
 

@@ -48,9 +48,9 @@ Ext.define('Thesis.Manager.view.main.testData',{
 
             minWidth: 290,
             layout: 'fit',
-            viewModel: {
-                type: 'dataModel'
-            },
+            // viewModel: {
+            //     type: 'dataModel'
+            // },
             store: {
                 type: 'dataTests',
                 autoLoad: true
@@ -72,6 +72,10 @@ Ext.define('Thesis.Manager.view.main.testData',{
         {
                 xtype: 'panel',
                 reference: 'coursesActionPanel',
+                // viewModel: {
+                //     type: 'courseActions'
+                // },
+
                 region: 'east',
                 title: 'Common Informations',
                 width: 500,
@@ -88,6 +92,11 @@ Ext.define('Thesis.Manager.view.main.testData',{
                 layout: 'fit',
                 items: [
                     {
+                        // xtype: 'textfield',
+                        // bind: '{rec.value}',
+                        // width: 60,
+                        // heigth: 100,
+                        // readOnly: true,
                         xtype: 'fieldcontainer',
                         layout: 'hbox',
                         items: [
@@ -99,13 +108,69 @@ Ext.define('Thesis.Manager.view.main.testData',{
                                 labelAlign: 'top',
                                 name: 'id',
                                 fieldLabel: 'ID',
-                                width: 60,
+                                width: 600,
+                                // readOnly: true,
+                                emptyText: ' ',
+                                bind: '{filterText}',
+                                // dataIndex: 'value'
+                                listeners: {
+                                    change: 'filterChanged'
+                                },
+                                bind: {
+                                    readOnly: '{readOnly}'
+                                }
+                            },
+                            {
+                                xtype: 'button',
+                                text: 'FILTER',
+                                handler: 'filter'
+                            },
+                            {
+                                xtype: 'grid',
+                                flex: 1,
+                                height: 200,
+                                bind: {
+                                    store: '{list}',
+                                },
+                                columns: [
+                                    { text: 'Date',  dataIndex: 'date', flex: 0.2 },
+                                    { text: 'Value',  dataIndex: 'value', flex: 1 }
+                                ],
+                                listeners: {
+                                    selectionchange: 'listCelChanged'
+                                }
+                            },
+                            {
+                                xtype: 'grid',
+                                flex: 1,
+                                height: 200,
+                                bind: {
+                                    store: '{nestedList}',
+                                },
+                                columns: [
+                                    { text: 'Date',  dataIndex: 'date', flex: 0.2 },
+                                    { text: 'Value',  dataIndex: 'value', flex: 1 }
+                                ],
+                            }
+                            /*
+                            {
+                                xtype: 'textfield',
+                                padding: '0 0 0 10',
+                                labelSeparator: '',
+                                msgTarget: 'side',
+                                labelAlign: 'top',
+                                name: 'id',
+                                fieldLabel: 'ID',
+                                width: 600,
                                 readOnly: true,
                                 emptyText: ' ',
-                                bind: '{rec.id}'
-                                // dataIndex: 'id'
-                            }]
+                                bind: '{firstRec.date}'
+                                // dataIndex: 'value'
+                            }
+                           */
+                           ]
                     }]
             }
+
     ]
 });

@@ -7,9 +7,17 @@ Ext.define('EW20.view.DataModel', {
     stores: {
         dataTests: {
             type: 'dataTests'
+        },
+        courseActions: {
+            type: 'courseActions'
         }
+
     },
     data: {
-        rec: null
+        readOnly: false,
+        recs: null,
+        list: null,
+        filterText: '',
+        nestedList: null
     }
 });

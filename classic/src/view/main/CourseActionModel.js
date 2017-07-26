@@ -6,9 +6,10 @@ Ext.define('EW20.view.CourseActionModel', {
     alias: 'viewmodel.courseActionModel',
 
     stores: {
-        dataTests: {
-            type: 'dataTests'
+        courseActions: {
+            type: 'courseActions'
         }
+
     },
     data: {
         rec: null
