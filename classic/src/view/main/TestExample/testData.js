@@ -2,7 +2,7 @@
  * Created by user on 6/6/2017.
  */
 
-Ext.define('Thesis.Manager.view.main.testData',{
+Ext.define('Thesis.Manager.view.main.TestExample.testData',{
     // extend: 'Ext.container.Container',
     extend: 'Ext.panel.Panel',
     xtype: 'testListData',

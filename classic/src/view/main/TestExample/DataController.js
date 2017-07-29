@@ -1,7 +1,7 @@
 /**
  * Created by n.vasileiadis on 6/27/2017.
  */
-Ext.define('EW20.view.DataController', {
+Ext.define('Thesis.Manager.view.main.TestExample.DataController', {
     extend: 'Ext.app.ViewController',
     alias: 'controller.dataController',
     //

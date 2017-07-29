@@ -11,7 +11,8 @@ Ext.define('Thesis.Manager.Application', {
 
     stores: [
         // TODO: add global / shared stores here
-        'DataTests'
+        'DataTests',
+        'Courses'
     ],
 
     launch: function () {

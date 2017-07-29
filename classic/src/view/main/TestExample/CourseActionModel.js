@@ -1,7 +1,7 @@
 /**
  * Created by n.vasileiadis on 7/23/2017.
  */
-Ext.define('EW20.view.CourseActionModel', {
+Ext.define('Thesis.Manager.view.main.TestExample.CourseActionModel', {
     extend: 'Ext.app.ViewModel',
     alias: 'viewmodel.courseActionModel',
 

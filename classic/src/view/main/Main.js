@@ -85,15 +85,16 @@ Ext.define('Thesis.Manager.view.main.Main', {
     }, {
         title: 'Users',
         iconCls: 'fa-user',
-        items: [{
-            xtype: 'testListData'
-        }]
-    }, {
-        title: 'Groups',
-        iconCls: 'fa-users',
         bind: {
             html: '{loremIpsum}'
         }
+    }, {
+        title: 'Courses',
+        iconCls: 'fa-book',
+        items: [{
+            xtype: 'courseView'
+        }]
+        //courseView
     }, {
         title: 'Settings',
         iconCls: 'fa-cog',
