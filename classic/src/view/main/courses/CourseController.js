@@ -148,11 +148,20 @@ Ext.define('EW20.view.Courses.CourseController', {
 
 
     onReloadData: function() {
-        // debugger;
+        debugger;
         var dateFrom = this.lookupReference('dateFrom');
         var date_From = dateFrom.getSubmitValue();
         var dateTo = this.lookupReference('dateTo');
         var date_To = dateTo.getSubmitValue();
+
+
+        if (date_From == "" || date_To == "" ) {
+            Ext.toast({
+                html: 'Please select dates',
+                width: 200,
+                align: 't'
+            });
+        } else {
 
 
 
@@ -188,7 +197,7 @@ Ext.define('EW20.view.Courses.CourseController', {
             scope: this
 
         });
-
+        }
     },
 
     onDownload: function() {
