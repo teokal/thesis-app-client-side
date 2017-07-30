@@ -9,6 +9,7 @@ Ext.define('KitchenSink.store.GDP', {
     fields: ['year', 'china', 'japan', 'usa'],
 
     data: [
+
         {
             "year": 1984,
             "china": "546.877",
@@ -195,5 +196,6 @@ Ext.define('KitchenSink.store.GDP', {
             "japan": "4788.03",
             "usa": "17416.25"
         }
-    ]
+
+]
 });

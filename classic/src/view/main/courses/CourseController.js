@@ -37,21 +37,21 @@ Ext.define('EW20.view.Courses.CourseController', {
         var record = selected[0];
 
         var form = this.lookupReference('coursesActionPanel');
-        var chart = this.lookup('chart');
+        // var chart = this.lookup('chart');
 
         var viewModel = this.getViewModel();
         var store = viewModel.getStore('courseActions');
         store.load({
             params: {
-                from_date: '10-01-2015',
-                to_date: 'now-1y',
+                from_date: 'now-1y',
+                to_date: 'now',
                 query:'view',
                 view: 'day',
                 course: record.id
             },
             callback: function(records, operation, success) {
                 // do something after the load finishes
-                debugger;
+                // debugger;
                 if (success == true){
                     form.expand(false);
                     viewModel.setData({
@@ -59,11 +59,6 @@ Ext.define('EW20.view.Courses.CourseController', {
                         firstRec: records[0],
                         list: store
                     });
-
-                    // viewModel.getStore('courseActions').refreshData();
-                    // store.refresh();
-
-                    // this.onAfterRender();
                 }
             },
             scope: this
@@ -97,30 +92,26 @@ Ext.define('EW20.view.Courses.CourseController', {
         viewModel.setData({ nestedList: viewModel.data.list, readOnly: true });
     },
 
-
     onAxisLabelRender: function (axis, label, layoutContext) {
         // Custom renderer overrides the native axis label renderer.
         // Since we don't want to do anything fancy with the value
         // ourselves except appending a '%' sign, but at the same time
         // don't want to loose the formatting done by the native renderer,
         // we let the native renderer process the value first.
-        // debugger;
         var value = layoutContext.renderer(label);
-        return value !== '0' ? (value / 1000 + ',000') : value;
+        return value;
     },
 
     onPreview: function () {
-        debugger;
-        var chart = this.lookup('chart');
+        var chart = this.lookupReference('chart');
         chart.preview();
     },
 
     getSeriesConfig: function (field, title) {
-        debugger;
         return {
             type: 'area',
             title: title,
-            xField: 'year',
+            xField: 'date',
             yField: field,
             style: {
                 opacity: 0.60
@@ -128,7 +119,7 @@ Ext.define('EW20.view.Courses.CourseController', {
             marker: {
                 opacity: 0,
                 scaling: 0.01,
-                animation: {
+                fx: {
                     duration: 200,
                     easing: 'easeOut'
                 }
@@ -140,31 +131,80 @@ Ext.define('EW20.view.Courses.CourseController', {
             tooltip: {
                 trackMouse: true,
                 renderer: function (tooltip, record, item) {
-                    tooltip.setHtml(title + ' (' + record.get('year') + '): ' + record.get(field));
+                    tooltip.setHtml(title + ' (' + record.get('date') + '): ' + record.get(field));
                 }
             }
         };
     },
 
     onAfterRender: function () {
-        debugger;
         var me = this,
-            chart = me.lookup('chart');
+            chart = me.lookupReference('chart');
 
         chart.setSeries([
-            me.getSeriesConfig('{list.value}', 'VALUE')
-            // me.getSeriesConfig('usa', 'USA'),
-            // me.getSeriesConfig('china', 'China'),
-            // me.getSeriesConfig('japan', 'Japan')
-
+            me.getSeriesConfig('value', 'VALUE')
         ]);
-        // chart.getStore().reloadData();
     },
 
+
     onReloadData: function() {
+        // debugger;
+        var dateFrom = this.lookupReference('dateFrom');
+        var date_From = dateFrom.getSubmitValue();
+        var dateTo = this.lookupReference('dateTo');
+        var date_To = dateTo.getSubmitValue();
+
+
+
+        var viewModel = this.getViewModel();
+        var store = viewModel.getStore('courseActions');
+        store.load({
+            params: {
+                from_date: date_From,
+                to_date: date_To,
+                query:'view',
+                view: 'day',
+                course: 57
+            },
+            callback: function(records, operation, success) {
+                // do something after the load finishes
+                // debugger;
+                if (success == true){
+                    // form.expand(false);
+                    viewModel.setData({
+                        recs: records,
+                        firstRec: records[0],
+                        list: store
+                    });
+                } else {
+                    Ext.toast({
+                        html: 'Failure.!!',
+                        width: 200,
+                        align: 't'
+                    });
+
+                }
+            },
+            scope: this
+
+        });
+
+    },
+
+    onDownload: function() {
+        if (Ext.isIE8) {
+            Ext.Msg.alert('Unsupported Operation', 'This operation requires a newer version of Internet Explorer.');
+            return;
+        }
         var chart = this.lookupReference('chart');
-        var store = chart.getStore();
-        store.refreshData();
-    }
+        if (Ext.os.is.Desktop) {
+            chart.download({
+                filename: 'Logout Values'
+            });
+        } else {
+            chart.preview();
+        }
+    },
+
 
 });

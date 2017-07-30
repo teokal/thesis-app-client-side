@@ -11,13 +11,11 @@ Ext.define('Thesis.Manager.view.main.courses.CourseView',{
         'Thesis.Manager.store.Courses',
         'Thesis.Manager.store.CourseActions',
         'Ext.layout.container.Border'
-        // 'Ext.chart.Cartesian'
     ],
 
     controller: 'courseController',
 
     store: {
-        // type: 'dataTests',
         type: 'courses',
         autoLoad: true
     },
@@ -27,7 +25,6 @@ Ext.define('Thesis.Manager.view.main.courses.CourseView',{
     },
 
     listeners: {
-        // rowdblclick: 'onEdit',
         render: 'onShow'
     },
 
@@ -49,9 +46,6 @@ Ext.define('Thesis.Manager.view.main.courses.CourseView',{
 
             minWidth: 290,
             layout: 'fit',
-            // viewModel: {
-            //     type: 'dataModel'
-            // },
             store: {
                 type: 'courses',
                 autoLoad: true
@@ -65,7 +59,6 @@ Ext.define('Thesis.Manager.view.main.courses.CourseView',{
             ],
 
             listeners: {
-                // rowdblclick: 'onEdit',
                 selectionchange: 'onEdit'
             }
 
@@ -75,9 +68,8 @@ Ext.define('Thesis.Manager.view.main.courses.CourseView',{
             reference: 'coursesActionPanel',
 
             region: 'east',
-            title: 'Common Informations',
             width: 500,
-            // height: 800,
+            minWidth: 200,
             flex: 3,
             collapseDirection: 'left',
             collapsible: true,
@@ -86,7 +78,6 @@ Ext.define('Thesis.Manager.view.main.courses.CourseView',{
             preventHeader: true,
             collapsed: true,
             //
-            minWidth: 200,
             layout: 'fit',
             listeners: {
                 afterrender: 'onAfterRender'
@@ -95,152 +86,141 @@ Ext.define('Thesis.Manager.view.main.courses.CourseView',{
             tbar: [
                 '->',
                 {
+                    text: 'Preview',
+                    platformConfig: {
+                        desktop: {
+                            text: 'Download'
+                        }
+                    },
+                    handler: 'onDownload'
+                },
+                {
                     text: 'Reload Data',
                     handler: 'onReloadData'
                 }
             ],
 
-            items: [{
-                // xtype: 'area-basic'
-                xtype: 'cartesian',
-                reference: 'chart',
-                width: '100%',
-                height: 600,
-                insetPadding: '40 40 40 40',
+            items: [
+                {
+                    xtype: 'panel',
+                    layout: 'vbox',
+                    items: [
+                        {
+                            xtype: 'panel',
+                            layout: 'hbox',
+                            items: [
+                                {
+                                    reference: 'dateFrom',
+                                    xtype: 'datefield',
+                                    format: 'Y-m-d',
+                                    labelAlign: 'left',
+                                    labelSeparator: '',
+                                    name: 'dateFrom',
+                                    itemId: 'dateFrom',
+                                    // vtype: 'daterange',
+                                    endDateField: 'dateTo',
+                                    submitFormat: 'd-m-Y',
+                                    padding: '0 0 0 30',
+                                    fieldLabel: 'Date From',
+                                    // width: 320,
+                                    flex: 1
+
+                                },
+                                {
+                                    reference: 'dateTo',
+                                    xtype: 'datefield',
+                                    format: 'Y-m-d',
+                                    labelAlign: 'left',
+                                    labelSeparator: '',
+                                    name: 'dateTo',
+                                    itemId: 'dateTo',
+                                    // vtype: 'daterange',
+                                    endDateField: 'dateFrom',
+                                    submitFormat: 'd-m-Y',
+                                    padding: '0 0 0 30',
+                                    fieldLabel: 'Date To',
+                                    // width: 320,
+                                    flex: 1
+
+                                }
+                                // {
+                                //     xtype: 'button',
+                                //     text: 'Reload Data',
+                                //     handler: 'onReloadData',
+                                //     padding: '0 0 0 10',
+                                //     flex: 1
+                                //
+                                // }
+                            ]
+                        },
+                        {
+                            xtype: 'cartesian',
+                            reference: 'chart',
+                            width: '100%',
+                            height: 600,
+                            insetPadding: '40 40 40 40',
+                            bind: {
+                                store: '{list}'
+                            },
+
+                            legend: {
+                                docked: 'bottom'
+                            },
+                            axes: [{
+                                type: 'numeric',
+                                position: 'left',
+                                fields: 'value',
+                                title: 'LOGOUT',
+                                grid: true,
+                                majorTickSteps: 10,
+                                renderer: 'onAxisLabelRender'
+                            }, {
+                                type: 'category',
+                                position: 'bottom',
+                                fields: 'date',
+                                label: {
+                                    rotate: {
+                                        degrees: -45
+                                    }
+                                }
+                            }]
+
+                        }
+                    ]
+                // }
+
+                // {
+                // xtype: 'cartesian',
+                // reference: 'chart',
+                // width: '100%',
+                // height: 600,
+                // insetPadding: '40 40 40 40',
                 // bind: {
                 //     store: '{list}'
                 // },
-
-                store: {
-                    // type: 'gdp',
-                    type: 'courseActions',
-                    autoLoad: true
-                },
-                legend: {
-                    docked: 'bottom'
-                },
-                // sprites: [{
-                //     type: 'text',
-                //     text: 'Economic Development in the USA, Japan and China',
-                //     fontSize: 22,
-                //     width: 100,
-                //     height: 30,
-                //     x: 40, // the sprite x position
-                //     y: 20  // the sprite y position
+                //
+                // legend: {
+                //     docked: 'bottom'
+                // },
+                // axes: [{
+                //     type: 'numeric',
+                //     position: 'left',
+                //     fields: 'value',
+                //     title: 'LOGOUT',
+                //     grid: true,
+                //     majorTickSteps: 10,
+                //     renderer: 'onAxisLabelRender'
                 // }, {
-                //     type: 'text',
-                //     text: 'Data: Gross domestic product based on purchasing-power-parity (PPP) valuation of country GDP. Figures for FY2014 are forecasts.',
-                //     fontSize: 10,
-                //     x: 12,
-                //     y: 525
-                // }, {
-                //     type: 'text',
-                //     text: 'Source: http://www.imf.org/ World Economic Outlook Database October 2014.',
-                //     fontSize: 10,
-                //     x: 12,
-                //     y: 540
-                // }],
-                axes: [{
-                    type: 'numeric',
-                    position: 'left',
-                    fields: '{list.value}',
-                    // fields: ['china', 'japan', 'usa'],
+                //     type: 'category',
+                //     position: 'bottom',
+                //     fields: 'date',
+                //     label: {
+                //         rotate: {
+                //             degrees: -45
+                //         }
+                //     }
+                // }]
 
-                    title: 'GDP in billions of US Dollars',
-                    grid: true,
-                    minimum: 0,
-                    maximum: 20000,
-                    majorTickSteps: 10,
-                    renderer: 'onAxisLabelRender'
-                }, {
-                    type: 'category',
-                    position: 'bottom',
-                    fields: '{list.date}',
-                    // fields: 'year',
-                    label: {
-                        rotate: {
-                            degrees: -45
-                        }
-                    }
-                }]
-
-
-                // bind: '{rec.value}',
-                    // width: 60,
-                    // heigth: 100,
-                    // readOnly: true,
-                    // xtype: 'fieldcontainer',
-                    // layout: 'hbox',
-                    // items: [
-                    //     {
-                    //         xtype: 'textfield',
-                    //         padding: '0 0 0 10',
-                    //         labelSeparator: '',
-                    //         msgTarget: 'side',
-                    //         labelAlign: 'top',
-                    //         name: 'id',
-                    //         fieldLabel: 'ID',
-                    //         width: 600,
-                    //         // readOnly: true,
-                    //         emptyText: ' ',
-                    //         bind: '{filterText}',
-                    //         // dataIndex: 'value'
-                    //
-                    //             change: 'filterChanged'
-                    //         },
-                    //         bind: {
-                    //             readOnly: '{readOnly}'
-                    //         }
-                    //     },
-                    //     {
-                    //         xtype: 'button',
-                    //         text: 'FILTER',
-                    //         handler: 'filter'
-                    //     },
-                    //     {
-                    //         xtype: 'grid',
-                    //         flex: 1,
-                    //         height: 200,
-                    //         bind: {
-                    //             store: '{list}',
-                    //         },
-                    //         columns: [
-                    //             { text: 'Date',  dataIndex: 'date', flex: 0.2 },
-                    //             { text: 'Value',  dataIndex: 'value', flex: 1 }
-                    //         ],
-                    //         listeners: {
-                    //             selectionchange: 'listCelChanged'
-                    //         }
-                    //     },
-                    //     {
-                    //         xtype: 'grid',
-                    //         flex: 1,
-                    //         height: 200,
-                    //         bind: {
-                    //             store: '{nestedList}',
-                    //         },
-                    //         columns: [
-                    //             { text: 'Date',  dataIndex: 'date', flex: 0.2 },
-                    //             { text: 'Value',  dataIndex: 'value', flex: 1 }
-                    //         ],
-                    //     }
-                    //     /*
-                    //      {
-                    //      xtype: 'textfield',
-                    //      padding: '0 0 0 10',
-                    //      labelSeparator: '',
-                    //      msgTarget: 'side',
-                    //      labelAlign: 'top',
-                    //      name: 'id',
-                    //      fieldLabel: 'ID',
-                    //      width: 600,
-                    //      readOnly: true,
-                    //      emptyText: ' ',
-                    //      bind: '{firstRec.date}'
-                    //      // dataIndex: 'value'
-                    //      }
-                    //      */
-                    // ]
                 }]
 
 
