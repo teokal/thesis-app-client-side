@@ -6,6 +6,7 @@ Ext.define('EW20.view.Courses.CourseController', {
     alias: 'controller.courseController',
     //
 
+    selectedId: 0,
     requires: [
         'Thesis.Manager.GlobalVar'
     ],
@@ -35,7 +36,7 @@ Ext.define('EW20.view.Courses.CourseController', {
      */
     onEdit: function (sender, selected) {
         var record = selected[0];
-
+        selectedId = record;
         var form = this.lookupReference('coursesActionPanel');
         // var chart = this.lookup('chart');
 
@@ -206,5 +207,14 @@ Ext.define('EW20.view.Courses.CourseController', {
         }
     },
 
+    onZoomUndo: function() {
+        var chart = this.lookupReference('chart'),
+            interaction = chart && Ext.ComponentQuery.query('interaction', chart)[0],
+            undoButton = interaction && interaction.getUndoButton(),
+            handler = undoButton && undoButton.handler;
+        if (handler) {
+            handler();
+        }
+    }
 
 });

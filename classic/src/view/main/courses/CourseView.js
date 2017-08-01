@@ -10,7 +10,11 @@ Ext.define('Thesis.Manager.view.main.courses.CourseView',{
     requires: [
         'Thesis.Manager.store.Courses',
         'Thesis.Manager.store.CourseActions',
-        'Ext.layout.container.Border'
+        'Ext.layout.container.Border',
+        'Ext.chart.axis.Numeric',
+        'Ext.chart.axis.Time',
+        'Ext.chart.interactions.CrossZoom'
+
     ],
 
     controller: 'courseController',
@@ -85,6 +89,11 @@ Ext.define('Thesis.Manager.view.main.courses.CourseView',{
 
             tbar: [
                 '->',
+
+                {
+                    text: 'Reload Data',
+                    handler: 'onReloadData'
+                },
                 {
                     text: 'Preview',
                     platformConfig: {
@@ -95,8 +104,8 @@ Ext.define('Thesis.Manager.view.main.courses.CourseView',{
                     handler: 'onDownload'
                 },
                 {
-                    text: 'Reload Data',
-                    handler: 'onReloadData'
+                    text: 'Undo Zoom',
+                    handler: 'onZoomUndo'
                 }
             ],
 
@@ -113,7 +122,7 @@ Ext.define('Thesis.Manager.view.main.courses.CourseView',{
                                     reference: 'dateFrom',
                                     xtype: 'datefield',
                                     format: 'Y-m-d',
-                                    labelAlign: 'left',
+                                    labelAlign: 'top',
                                     labelSeparator: '',
                                     name: 'dateFrom',
                                     itemId: 'dateFrom',
@@ -130,7 +139,7 @@ Ext.define('Thesis.Manager.view.main.courses.CourseView',{
                                     reference: 'dateTo',
                                     xtype: 'datefield',
                                     format: 'Y-m-d',
-                                    labelAlign: 'left',
+                                    labelAlign: 'top',
                                     labelSeparator: '',
                                     name: 'dateTo',
                                     itemId: 'dateTo',
@@ -162,13 +171,17 @@ Ext.define('Thesis.Manager.view.main.courses.CourseView',{
                             bind: {
                                 store: '{list}'
                             },
-
+                            interactions: {
+                                type: 'crosszoom',
+                                zoomOnPanGesture: false
+                            },
                             legend: {
                                 docked: 'bottom'
                             },
                             axes: [{
                                 type: 'numeric',
                                 position: 'left',
+
                                 fields: 'value',
                                 title: 'LOGOUT',
                                 grid: true,
@@ -176,6 +189,9 @@ Ext.define('Thesis.Manager.view.main.courses.CourseView',{
                                 renderer: 'onAxisLabelRender'
                             }, {
                                 type: 'category',
+                                // type: 'date',
+                                dateFormat: 'Y-m-d',
+
                                 position: 'bottom',
                                 fields: 'date',
                                 label: {
