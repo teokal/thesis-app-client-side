@@ -35,10 +35,21 @@ Ext.define('EW20.view.Courses.CourseController', {
      * @param record
      */
     onEdit: function (sender, selected) {
+        // debugger;
         var record = selected[0];
         selectedId = record;
+
         var form = this.lookupReference('coursesActionPanel');
-        // var chart = this.lookup('chart');
+        var date = new Date() ;
+        date.setFullYear( date.getFullYear() - 1 );
+        var dateFrom = this.lookupReference('dateFrom');
+        dateFrom.setValue(date.toISOString().substr(0,10));
+        var dateTo = this.lookupReference('dateTo');
+        dateTo.setValue(new Date().toISOString().substr(0,10));
+        var view = this.lookupReference('actionView');
+        view.setValue('day');
+        var actionQuery = this.lookupReference('actionsQuery');
+        actionQuery.setValue('view');
 
         var viewModel = this.getViewModel();
         var store = viewModel.getStore('courseActions');
@@ -66,39 +77,9 @@ Ext.define('EW20.view.Courses.CourseController', {
 
         });
 
-        console.dir(store);
-    },
-
-    filterChanged: function(sender) {
-        var viewModel = this.getViewModel();
-        viewModel.data.filterText = sender.getValue();
-        this.filter();
-    },
-
-    filter: function() {
-        var viewModel = this.getViewModel();
-        var filterText = viewModel.data.filterText;
-        viewModel.data.list.clearFilter();
-        viewModel.data.list.filterBy(function(record){
-            if (filterText == '') {
-                return true;
-            }
-            return record.get('value') == filterText;
-        });
-    },
-
-    listCelChanged: function() {
-        debugger;
-        var viewModel = this.getViewModel();
-        viewModel.setData({ nestedList: viewModel.data.list, readOnly: true });
     },
 
     onAxisLabelRender: function (axis, label, layoutContext) {
-        // Custom renderer overrides the native axis label renderer.
-        // Since we don't want to do anything fancy with the value
-        // ourselves except appending a '%' sign, but at the same time
-        // don't want to loose the formatting done by the native renderer,
-        // we let the native renderer process the value first.
         var value = layoutContext.renderer(label);
         return value;
     },
@@ -151,12 +132,11 @@ Ext.define('EW20.view.Courses.CourseController', {
     onReloadData: function() {
         debugger;
         var dateFrom = this.lookupReference('dateFrom');
-        var date_From = dateFrom.getSubmitValue();
         var dateTo = this.lookupReference('dateTo');
-        var date_To = dateTo.getSubmitValue();
+        var view = this.lookupReference('actionView');
+        var actionQuery = this.lookupReference('actionsQuery');
 
-
-        if (date_From == "" || date_To == "" ) {
+        if (dateFrom.getSubmitValue() == "" || dateTo.getSubmitValue() == "" ) {
             Ext.toast({
                 html: 'Please select dates',
                 width: 200,
@@ -164,17 +144,15 @@ Ext.define('EW20.view.Courses.CourseController', {
             });
         } else {
 
-
-
         var viewModel = this.getViewModel();
         var store = viewModel.getStore('courseActions');
         store.load({
             params: {
-                from_date: date_From,
-                to_date: date_To,
-                query:'view',
-                view: 'day',
-                course: 57
+                from_date: dateFrom.getSubmitValue(),
+                to_date: dateTo.getSubmitValue(),
+                query: actionQuery.getSubmitValue(),
+                view: view.getSubmitValue(),
+                course: selectedId.id
             },
             callback: function(records, operation, success) {
                 // do something after the load finishes
@@ -209,7 +187,7 @@ Ext.define('EW20.view.Courses.CourseController', {
         var chart = this.lookupReference('chart');
         if (Ext.os.is.Desktop) {
             chart.download({
-                filename: 'Logout Values'
+                filename: 'Action Values'
             });
         } else {
             chart.preview();

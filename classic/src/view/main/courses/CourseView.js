@@ -126,7 +126,6 @@ Ext.define('Thesis.Manager.view.main.courses.CourseView',{
                                     labelSeparator: '',
                                     name: 'dateFrom',
                                     itemId: 'dateFrom',
-                                    // vtype: 'daterange',
                                     endDateField: 'dateTo',
                                     submitFormat: 'd-m-Y',
                                     padding: '0 0 0 30',
@@ -143,23 +142,56 @@ Ext.define('Thesis.Manager.view.main.courses.CourseView',{
                                     labelSeparator: '',
                                     name: 'dateTo',
                                     itemId: 'dateTo',
-                                    // vtype: 'daterange',
-                                    endDateField: 'dateFrom',
+                                    startDateField: 'dateFrom',
                                     submitFormat: 'd-m-Y',
                                     padding: '0 0 0 30',
                                     fieldLabel: 'Date To',
                                     // width: 320,
                                     flex: 1
 
+                                },
+                                {
+                                    reference: 'actionView',
+                                    xtype:'combo',
+                                    labelAlign: 'top',
+                                    fieldLabel:'View per',
+                                    name:'actionView',
+                                    queryMode:'local',
+                                    store:['year','quarter','month', 'week', 'day','hour', 'minute', 'second'],
+                                    displayField:'actionView',
+                                    padding: '0 0 0 30',
+                                    autoSelect:true,
+                                    forceSelection:true,
+                                    listeners:{
+                                        afterrender:function(rec){
+                                            this.setValue('day');
+                                        }
+                                    },
+                                    flex: 0.5
+
+
+                                },
+                                {
+                                    reference: 'actionsQuery',
+                                    xtype:'combo',
+                                    labelAlign: 'top',
+                                    fieldLabel:'Actions',
+                                    name:'actionsQuery',
+                                    queryMode:'local',
+                                    store:['all','view','logout', 'login'],
+                                    displayField:'actionsQuery',
+                                    padding: '0 0 0 30',
+                                    autoSelect:true,
+                                    forceSelection:true,
+                                    listeners:{
+                                        afterrender:function(rec){
+                                            this.setValue('view');
+                                        }
+                                    },
+                                    flex: 0.5
+
+
                                 }
-                                // {
-                                //     xtype: 'button',
-                                //     text: 'Reload Data',
-                                //     handler: 'onReloadData',
-                                //     padding: '0 0 0 10',
-                                //     flex: 1
-                                //
-                                // }
                             ]
                         },
                         {
@@ -183,17 +215,24 @@ Ext.define('Thesis.Manager.view.main.courses.CourseView',{
                                 position: 'left',
 
                                 fields: 'value',
-                                title: 'LOGOUT',
+                                title: 'Actions',
                                 grid: true,
                                 majorTickSteps: 10,
                                 renderer: 'onAxisLabelRender'
                             }, {
                                 type: 'category',
-                                // type: 'date',
+                                // type: 'time',
                                 dateFormat: 'Y-m-d',
 
                                 position: 'bottom',
                                 fields: 'date',
+                                renderer: function(axis, data){
+                                    var year = data.substring(0, 4);
+                                    var month = data.substring(4, 6);
+                                    var day = data.substring(6, 8);
+                                    return year + '-' + month + '-' + day;
+                                },
+
                                 label: {
                                     rotate: {
                                         degrees: -45
@@ -203,39 +242,6 @@ Ext.define('Thesis.Manager.view.main.courses.CourseView',{
 
                         }
                     ]
-                // }
-
-                // {
-                // xtype: 'cartesian',
-                // reference: 'chart',
-                // width: '100%',
-                // height: 600,
-                // insetPadding: '40 40 40 40',
-                // bind: {
-                //     store: '{list}'
-                // },
-                //
-                // legend: {
-                //     docked: 'bottom'
-                // },
-                // axes: [{
-                //     type: 'numeric',
-                //     position: 'left',
-                //     fields: 'value',
-                //     title: 'LOGOUT',
-                //     grid: true,
-                //     majorTickSteps: 10,
-                //     renderer: 'onAxisLabelRender'
-                // }, {
-                //     type: 'category',
-                //     position: 'bottom',
-                //     fields: 'date',
-                //     label: {
-                //         rotate: {
-                //             degrees: -45
-                //         }
-                //     }
-                // }]
 
                 }]
 
