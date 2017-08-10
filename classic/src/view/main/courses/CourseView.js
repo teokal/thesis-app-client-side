@@ -185,7 +185,7 @@ Ext.define('Thesis.Manager.view.main.courses.CourseView',{
                                     forceSelection:true,
                                     listeners:{
                                         afterrender:function(rec){
-                                            this.setValue('view');
+                                            this.setValue('all');
                                         }
                                     },
                                     flex: 0.5
@@ -214,8 +214,10 @@ Ext.define('Thesis.Manager.view.main.courses.CourseView',{
                                 type: 'numeric',
                                 position: 'left',
 
-                                fields: 'value',
+                                // fields: 'value',
+                                fields: ['login','logout','view'],
                                 title: 'Actions',
+
                                 grid: true,
                                 majorTickSteps: 10,
                                 renderer: 'onAxisLabelRender'
@@ -227,10 +229,11 @@ Ext.define('Thesis.Manager.view.main.courses.CourseView',{
                                 position: 'bottom',
                                 fields: 'date',
                                 renderer: function(axis, data){
-                                    var year = data.substring(0, 4);
-                                    var month = data.substring(4, 6);
-                                    var day = data.substring(6, 8);
-                                    return year + '-' + month + '-' + day;
+                                    // var year = data.substring(0, 4);
+                                    // var month = data.substring(4, 6);
+                                    // var day = data.substring(6, 8);
+                                    // return year + '-' + month + '-' + day;
+                                    return data.substring(0, 10);
                                 },
 
                                 label: {

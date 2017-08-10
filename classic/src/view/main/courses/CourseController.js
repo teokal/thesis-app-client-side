@@ -49,7 +49,7 @@ Ext.define('EW20.view.Courses.CourseController', {
         var view = this.lookupReference('actionView');
         view.setValue('day');
         var actionQuery = this.lookupReference('actionsQuery');
-        actionQuery.setValue('view');
+        actionQuery.setValue('all');
 
         var viewModel = this.getViewModel();
         var store = viewModel.getStore('courseActions');
@@ -57,7 +57,7 @@ Ext.define('EW20.view.Courses.CourseController', {
             params: {
                 from_date: 'now-1y',
                 to_date: 'now',
-                query:'view',
+                query:'all',
                 view: 'day',
                 course: record.id
             },
@@ -124,7 +124,10 @@ Ext.define('EW20.view.Courses.CourseController', {
             chart = me.lookupReference('chart');
 
         chart.setSeries([
-            me.getSeriesConfig('value', 'VALUE')
+            me.getSeriesConfig('login', 'LOGIN'),
+            me.getSeriesConfig('logout', 'LOGOUT'),
+            me.getSeriesConfig('view', 'VIEW')
+
         ]);
     },
 
