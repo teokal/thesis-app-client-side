@@ -7,6 +7,9 @@ Ext.define('Thesis.Manager.model.CourseAction', {
 
     fields: [
         { name: 'date', type: 'string' },
-        { name: 'value', type: 'int' }
+        { name: 'quiz', type: 'string' },
+        { name: 'view', type: 'string' },
+        { name: 'enrol', type: 'string' },
+        { name: 'unenrol', type: 'string' }
     ]
 });

@@ -1,31 +1,28 @@
 /**
- * Created by n.vasileiadis on 7/29/2017.
+ * Created by n.vasileiadis on 8/13/2017.
  */
-
-Ext.define('Thesis.Manager.view.main.courses.CourseView',{
+Ext.define('Thesis.Manager.view.main.admin.users.AdminUserView',{
     // extend: 'Ext.container.Container',
     extend: 'Ext.panel.Panel',
-    xtype: 'courseView',
+    xtype: 'adminUserView',
 
     requires: [
-        'Thesis.Manager.store.Courses',
-        'Thesis.Manager.store.CourseActions',
+        'Thesis.Manager.store.AdminUsers',
         'Ext.layout.container.Border',
         'Ext.chart.axis.Numeric',
         'Ext.chart.axis.Time',
         'Ext.chart.interactions.CrossZoom'
-
     ],
 
-    controller: 'courseController',
+    controller: 'adminUserController',
 
     store: {
-        type: 'courses',
+        type: 'adminUsers',
         autoLoad: true
     },
 
     viewModel: {
-        type: 'courseModel'
+        type: 'adminUserModel'
     },
 
     listeners: {
@@ -41,38 +38,38 @@ Ext.define('Thesis.Manager.view.main.courses.CourseView',{
     height: Ext.getBody().getViewSize().height,
 
     items: [
-        {
-            xtype:'grid',
-            region: 'center',
-            flex: 1,
-            width: 500,
-            height: 400,
-
-            minWidth: 290,
-            layout: 'fit',
-            store: {
-                type: 'courses',
-                autoLoad: true
-            },
-
-            columns: [
-                { text: 'ID',  dataIndex: 'id', flex: 0.2 },
-                { text: 'Fullname',  dataIndex: 'fullname', flex: 1 },
-                { text: 'Shortname',  dataIndex: 'shortname', flex: 1 }
-
-            ],
-
-            listeners: {
-                selectionchange: 'onEdit'
-            }
-
-        },
+        // {
+        //     xtype:'grid',
+        //     region: 'center',
+        //     flex: 1,
+        //     width: 500,
+        //     height: 400,
+        //
+        //     minWidth: 290,
+        //     layout: 'fit',
+        //     store: {
+        //         type: 'courses',
+        //         autoLoad: true
+        //     },
+        //
+        //     columns: [
+        //         { text: 'ID',  dataIndex: 'id', flex: 0.2 },
+        //         { text: 'Fullname',  dataIndex: 'fullname', flex: 1 },
+        //         { text: 'Shortname',  dataIndex: 'shortname', flex: 1 }
+        //
+        //     ],
+        //
+        //     listeners: {
+        //         selectionchange: 'onEdit'
+        //     }
+        //
+        // },
         {
             xtype: 'panel',
-            reference: 'coursesActionPanel',
+            reference: 'adminUserPanel',
 
-            region: 'east',
-            width: 500,
+            region: 'center',
+            // width: 500,
             minWidth: 200,
             flex: 3,
             collapseDirection: 'left',
@@ -80,7 +77,7 @@ Ext.define('Thesis.Manager.view.main.courses.CourseView',{
             collapseMode: 'mini',
             hideCollapseTool: true,
             preventHeader: true,
-            collapsed: true,
+            collapsed: false,
             //
             layout: 'fit',
             listeners: {
@@ -178,7 +175,7 @@ Ext.define('Thesis.Manager.view.main.courses.CourseView',{
                                     fieldLabel:'Actions',
                                     name:'actionsQuery',
                                     queryMode:'local',
-                                    store:['all','view','quiz', 'enrol','unenrol'],
+                                    store:['all','view','add', 'login','logout', 'update'],
                                     displayField:'actionsQuery',
                                     padding: '0 0 0 30',
                                     autoSelect:true,
@@ -203,6 +200,11 @@ Ext.define('Thesis.Manager.view.main.courses.CourseView',{
                             bind: {
                                 store: '{list}'
                             },
+                            // store: {
+                            //     type: 'adminUsers',
+                            //     autoLoad: true
+                            // },
+
                             interactions: {
                                 type: 'crosszoom',
                                 zoomOnPanGesture: false
@@ -215,7 +217,7 @@ Ext.define('Thesis.Manager.view.main.courses.CourseView',{
                                 position: 'left',
 
                                 // fields: 'value',
-                                fields: ['view','quiz', 'enrol','unenrol'],
+                                fields: ['view','login', 'logout','add', 'update'],
                                 title: 'Actions',
 
                                 grid: true,

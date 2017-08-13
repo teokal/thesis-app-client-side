@@ -1,9 +1,10 @@
 /**
- * Created by n.vasileiadis on 7/29/2017.
+ * Created by n.vasileiadis on 8/13/2017.
  */
-Ext.define('EW20.view.Courses.CourseController', {
+
+Ext.define('EW20.view.admin.users.AdminuserController', {
     extend: 'Ext.app.ViewController',
-    alias: 'controller.courseController',
+    alias: 'controller.adminUserController',
     //
 
     selectedId: 0,
@@ -12,63 +13,30 @@ Ext.define('EW20.view.Courses.CourseController', {
     ],
 
     onShow: function () {
-        // debugger;
-        var viewModel = this.getViewModel();
-        var store = viewModel.getStore('courses');
-        store.load({
-            params: {
-                group: 3,
-                type: 'user',
-                from_date: '10-01-2015'
-            },
-            callback: function(records, operation, success) {
-                // do something after the load finishes
-                // debugger;
-            },
-            scope: this
-
-        });
-    },
-
-    /**
-     *
-     * @param record
-     */
-    onEdit: function (sender, selected) {
-        // debugger;
-        var record = selected[0];
-        selectedId = record;
-
-        var form = this.lookupReference('coursesActionPanel');
+        debugger;
         var date = new Date() ;
         date.setFullYear( date.getFullYear() - 1 );
         var dateFrom = this.lookupReference('dateFrom');
         dateFrom.setValue(date.toISOString().substr(0,10));
         var dateTo = this.lookupReference('dateTo');
         dateTo.setValue(new Date().toISOString().substr(0,10));
-        var view = this.lookupReference('actionView');
-        view.setValue('day');
-        var actionQuery = this.lookupReference('actionsQuery');
-        actionQuery.setValue('all');
 
         var viewModel = this.getViewModel();
-        var store = viewModel.getStore('courseActions');
+        var store = viewModel.getStore('adminUsers');
         store.load({
             params: {
                 from_date: 'now-1y',
                 to_date: 'now',
                 query:'all',
-                view: 'day',
-                course: record.id
+                view: 'day'
             },
-            callback: function(records, operation, success) {
+            callback: function (records, operation, success) {
                 // do something after the load finishes
-                // debugger;
+                debugger;
                 if (success == true){
-                    form.expand(false);
+                    // form.expand(false);
                     viewModel.setData({
                         recs: records,
-                        firstRec: records[0],
                         list: store
                     });
                 }
@@ -76,7 +44,6 @@ Ext.define('EW20.view.Courses.CourseController', {
             scope: this
 
         });
-
     },
 
     onAxisLabelRender: function (axis, label, layoutContext) {
@@ -124,14 +91,13 @@ Ext.define('EW20.view.Courses.CourseController', {
             chart = me.lookupReference('chart');
 
         chart.setSeries([
-            me.getSeriesConfig('quiz', 'QUIZ'),
-            me.getSeriesConfig('enrol', 'ENROL'),
+            me.getSeriesConfig('update', 'UPDATE'),
+            me.getSeriesConfig('logout', 'LOGOUT'),
+            me.getSeriesConfig('login', 'LOGIN'),
             me.getSeriesConfig('view', 'VIEW'),
-            me.getSeriesConfig('unenrol', 'UNENROL')
-
+            me.getSeriesConfig('add', 'ADD')
         ]);
     },
-
 
     onReloadData: function() {
         debugger;
@@ -148,38 +114,36 @@ Ext.define('EW20.view.Courses.CourseController', {
             });
         } else {
 
-        var viewModel = this.getViewModel();
-        var store = viewModel.getStore('courseActions');
-        store.load({
-            params: {
-                from_date: dateFrom.getSubmitValue(),
-                to_date: dateTo.getSubmitValue(),
-                query: actionQuery.getSubmitValue(),
-                view: view.getSubmitValue(),
-                course: selectedId.id
-            },
-            callback: function(records, operation, success) {
-                // do something after the load finishes
-                // debugger;
-                if (success == true){
-                    // form.expand(false);
-                    viewModel.setData({
-                        recs: records,
-                        firstRec: records[0],
-                        list: store
-                    });
-                } else {
-                    Ext.toast({
-                        html: 'Failure.!!',
-                        width: 200,
-                        align: 't'
-                    });
+            var viewModel = this.getViewModel();
+            var store = viewModel.getStore('adminUsers');
+            store.load({
+                params: {
+                    from_date: dateFrom.getSubmitValue(),
+                    to_date: dateTo.getSubmitValue(),
+                    query: actionQuery.getSubmitValue(),
+                    view: view.getSubmitValue()
+                },
+                callback: function(records, operation, success) {
+                    // do something after the load finishes
+                    // debugger;
+                    if (success == true){
+                        // form.expand(false);
+                        viewModel.setData({
+                            recs: records,
+                            list: store
+                        });
+                    } else {
+                        Ext.toast({
+                            html: 'Failure.!!',
+                            width: 200,
+                            align: 't'
+                        });
 
-                }
-            },
-            scope: this
+                    }
+                },
+                scope: this
 
-        });
+            });
         }
     },
 

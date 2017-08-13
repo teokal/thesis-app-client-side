@@ -79,15 +79,19 @@ Ext.define('Thesis.Manager.view.main.Main', {
         title: 'Home',
         iconCls: 'fa-home',
         // The following grid shares a store with the classic version's grid as well!
-        items: [{
-            xtype: 'mainlist'
-        }]
-    }, {
-        title: 'Users',
-        iconCls: 'fa-user',
+        // items: [{
+        //     xtype: 'mainlist'
+        // }]
         bind: {
             html: '{loremIpsum}'
         }
+    }, {
+        title: 'Admin',
+        iconCls: 'fa-user',
+        // adminUserView
+        items: [{
+            xtype: 'adminUserView'
+        }]
     }, {
         title: 'Courses',
         iconCls: 'fa-book',

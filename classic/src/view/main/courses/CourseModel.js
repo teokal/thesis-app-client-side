@@ -11,9 +11,6 @@ Ext.define('EW20.view.Courses.CourseModel', {
         },
         courseActions: {
             type: 'courseActions'
-        },
-        gdp: {
-            type: 'gdp'
         }
 
     },
