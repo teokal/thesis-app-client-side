@@ -113,6 +113,7 @@ Ext.define('Thesis.Manager.view.main.courses.CourseView',{
                 {
                     xtype: 'panel',
                     layout: 'vbox',
+                    autoScroll: true,
                     items: [
                         {
                             xtype: 'panel',
@@ -229,10 +230,133 @@ Ext.define('Thesis.Manager.view.main.courses.CourseView',{
                                 position: 'bottom',
                                 fields: 'date',
                                 renderer: function(axis, data){
-                                    // var year = data.substring(0, 4);
-                                    // var month = data.substring(4, 6);
-                                    // var day = data.substring(6, 8);
-                                    // return year + '-' + month + '-' + day;
+                                    return data.substring(0, 10);
+                                },
+
+                                label: {
+                                    rotate: {
+                                        degrees: -45
+                                    }
+                                }
+                            }]
+
+                        },
+                        {
+                            xtype: 'panel',
+                            layout: 'hbox',
+                            title: 'Resources',
+                            items: [
+                                {
+                                    reference: 'dateFromResources',
+                                    xtype: 'datefield',
+                                    format: 'Y-m-d',
+                                    labelAlign: 'top',
+                                    labelSeparator: '',
+                                    name: 'dateFromResources',
+                                    itemId: 'dateFromResources',
+                                    endDateField: 'dateToResources',
+                                    submitFormat: 'd-m-Y',
+                                    padding: '0 0 0 30',
+                                    fieldLabel: 'Date From',
+                                    // width: 320,
+                                    flex: 1
+
+                                },
+                                {
+                                    reference: 'dateToResources',
+                                    xtype: 'datefield',
+                                    format: 'Y-m-d',
+                                    labelAlign: 'top',
+                                    labelSeparator: '',
+                                    name: 'dateToResources',
+                                    itemId: 'dateToResources',
+                                    startDateField: 'dateFromResources',
+                                    submitFormat: 'd-m-Y',
+                                    padding: '0 0 0 30',
+                                    fieldLabel: 'Date To',
+                                    // width: 320,
+                                    flex: 1
+
+                                },
+                                {
+                                    reference: 'actionViewResources',
+                                    xtype:'combo',
+                                    labelAlign: 'top',
+                                    fieldLabel:'View per',
+                                    name:'actionViewResources',
+                                    queryMode:'local',
+                                    store:['year','quarter','month', 'week', 'day','hour', 'minute', 'second'],
+                                    displayField:'actionViewResources',
+                                    padding: '0 0 0 30',
+                                    autoSelect:true,
+                                    forceSelection:true,
+                                    listeners:{
+                                        afterrender:function(rec){
+                                            this.setValue('day');
+                                        }
+                                    },
+                                    flex: 0.5
+                                },
+                                {
+                                    reference: 'resourceQuery',
+                                    xtype:'combo',
+                                    labelAlign: 'top',
+                                    fieldLabel:'Resources',
+                                    name:'resourceQuery',
+                                    queryMode:'local',
+                                    // store: 'courseResourcesLists',
+                                    // bind: '{listResourcesLists.title}',
+                                    bind: {
+                                        store: '{listResourcesLists.id}'
+                                    },
+                                    valueField: 'title',
+                                    displayField:'resourceQuery',
+                                    padding: '0 0 0 30',
+                                    autoSelect:true,
+                                    forceSelection:true,
+                                    // listeners:{
+                                    //     afterrender:function(rec){
+                                    //         this.setValue('all');
+                                    //     }
+                                    // },
+                                    flex: 0.5
+                                }
+                            ]
+                        },
+                        {
+                            xtype: 'cartesian',
+                            reference: 'chartResource',
+                            width: '100%',
+                            height: 600,
+                            insetPadding: '40 40 40 40',
+                            bind: {
+                                store: '{listResources}'
+                            },
+                            interactions: {
+                                type: 'crosszoom',
+                                zoomOnPanGesture: false
+                            },
+                            legend: {
+                                docked: 'bottom'
+                            },
+                            axes: [{
+                                type: 'numeric',
+                                position: 'left',
+
+                                fields: ['view'],
+                                title: 'Actions',
+
+                                grid: true,
+                                majorTickSteps: 10,
+                                renderer: 'onAxisLabelRender'
+                            }, {
+                                type: 'category',
+                                // type: 'time',
+                                dateFormat: 'Y-m-d',
+
+                                position: 'bottom',
+                                fields: 'date',
+                                renderer: function(axis, data){
                                     return data.substring(0, 10);
                                 },
 

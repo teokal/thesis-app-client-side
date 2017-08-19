@@ -11,16 +11,22 @@ Ext.define('EW20.view.Courses.CourseModel', {
         },
         courseActions: {
             type: 'courseActions'
+        },
+        courseResources: {
+            type: 'courseResources'
+        },
+        courseResourcesLists: {
+            type: 'courseResourcesLists'
         }
-
     },
+
     data: {
-        readOnly: false,
         recs: null,
         list: null,
-        filterText: '',
-        nestedList: null
-        // date: '',
-        // value: ''
+        recsResources: null,
+        listResources: null,
+        recsResourcesList: null,
+        listResourcesList: null
+
     }
 });

@@ -52,6 +52,7 @@ Ext.define('EW20.view.Courses.CourseController', {
         actionQuery.setValue('all');
 
         var viewModel = this.getViewModel();
+
         var store = viewModel.getStore('courseActions');
         store.load({
             params: {
@@ -68,13 +69,62 @@ Ext.define('EW20.view.Courses.CourseController', {
                     form.expand(false);
                     viewModel.setData({
                         recs: records,
-                        firstRec: records[0],
                         list: store
                     });
                 }
             },
             scope: this
 
+        });
+
+        var storeResources = viewModel.getStore('courseResources');
+        storeResources.load({
+            params: {
+                from_date: 'now-1y',
+                to_date: 'now',
+                query:'view',
+                view: 'day',
+                course: record.id,
+                resource: 14352
+            },
+            callback: function(records, operation, success) {
+                // do something after the load finishes
+                // debugger;
+                if (success == true){
+                    form.expand(false);
+                    viewModel.setData({
+                        recsResources: records,
+                        listResources: storeResources
+                    });
+                }
+            },
+            scope: this
+
+        });
+
+        var storeResourcesLists = viewModel.getStore('courseResourcesLists');
+        storeResourcesLists.load({
+            params: {
+                from_date: 'now-1y',
+                to_date: 'now',
+                query:'view',
+                view: 'day',
+                course: record.id
+            },
+            callback: function(records, operation, success) {
+                // do something after the load finishes
+                // debugger;
+                if (success == true){
+                    form.expand(false);
+                    viewModel.setData({
+                        recsResourcesLists: records,
+                        listResourcesLists: storeResourcesLists
+                    });
+                    debugger;
+                    console.log(storeResourcesLists.title);
+                }
+            },
+            scope: this
         });
 
     },
@@ -86,6 +136,7 @@ Ext.define('EW20.view.Courses.CourseController', {
 
     onPreview: function () {
         var chart = this.lookupReference('chart');
+        var chartResource = this.lookupReference('chartResource');
         chart.preview();
     },
 
@@ -121,15 +172,20 @@ Ext.define('EW20.view.Courses.CourseController', {
 
     onAfterRender: function () {
         var me = this,
-            chart = me.lookupReference('chart');
+            chart = me.lookupReference('chart'),
+            chartResource = me.lookupReference('chartResource');
 
         chart.setSeries([
             me.getSeriesConfig('quiz', 'QUIZ'),
             me.getSeriesConfig('enrol', 'ENROL'),
             me.getSeriesConfig('view', 'VIEW'),
             me.getSeriesConfig('unenrol', 'UNENROL')
-
         ]);
+
+        chartResource.setSeries([
+            me.getSeriesConfig('view', 'VIEW')
+        ]);
+
     },
 
 
@@ -148,38 +204,69 @@ Ext.define('EW20.view.Courses.CourseController', {
             });
         } else {
 
-        var viewModel = this.getViewModel();
-        var store = viewModel.getStore('courseActions');
-        store.load({
-            params: {
-                from_date: dateFrom.getSubmitValue(),
-                to_date: dateTo.getSubmitValue(),
-                query: actionQuery.getSubmitValue(),
-                view: view.getSubmitValue(),
-                course: selectedId.id
-            },
-            callback: function(records, operation, success) {
-                // do something after the load finishes
-                // debugger;
-                if (success == true){
-                    // form.expand(false);
-                    viewModel.setData({
-                        recs: records,
-                        firstRec: records[0],
-                        list: store
-                    });
-                } else {
-                    Ext.toast({
-                        html: 'Failure.!!',
-                        width: 200,
-                        align: 't'
-                    });
+            var viewModel = this.getViewModel();
+            var store = viewModel.getStore('courseActions');
+            store.load({
+                params: {
+                    from_date: dateFrom.getSubmitValue(),
+                    to_date: dateTo.getSubmitValue(),
+                    query: actionQuery.getSubmitValue(),
+                    view: view.getSubmitValue(),
+                    course: selectedId.id,
+                    resource: 14352
+                },
+                callback: function(records, operation, success) {
+                    // do something after the load finishes
+                    // debugger;
+                    if (success == true){
+                        // form.expand(false);
+                        viewModel.setData({
+                            recs: records,
+                            list: store
+                        });
+                    } else {
+                        Ext.toast({
+                            html: 'Failure.!!',
+                            width: 200,
+                            align: 't'
+                        });
 
-                }
-            },
-            scope: this
+                    }
+                },
+                scope: this
 
-        });
+            });
+
+            var storeResources = viewModel.getStore('courseResources');
+            storeResources.load({
+                params: {
+                    from_date: dateFrom.getSubmitValue(),
+                    to_date: dateTo.getSubmitValue(),
+                    query: 'view',
+                    view: view.getSubmitValue(),
+                    course: selectedId.id
+                },
+                callback: function(records, operation, success) {
+                    // do something after the load finishes
+                    // debugger;
+                    if (success == true){
+                        // form.expand(false);
+                        viewModel.setData({
+                            recsResources: records,
+                            listResources: storeResources
+                        });
+                    } else {
+                        Ext.toast({
+                            html: 'Failure.!!',
+                            width: 200,
+                            align: 't'
+                        });
+
+                    }
+                },
+                scope: this
+
+            });
         }
     },
 
