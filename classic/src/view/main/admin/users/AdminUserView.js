@@ -38,32 +38,6 @@ Ext.define('Thesis.Manager.view.main.admin.users.AdminUserView',{
     height: Ext.getBody().getViewSize().height,
 
     items: [
-        // {
-        //     xtype:'grid',
-        //     region: 'center',
-        //     flex: 1,
-        //     width: 500,
-        //     height: 400,
-        //
-        //     minWidth: 290,
-        //     layout: 'fit',
-        //     store: {
-        //         type: 'courses',
-        //         autoLoad: true
-        //     },
-        //
-        //     columns: [
-        //         { text: 'ID',  dataIndex: 'id', flex: 0.2 },
-        //         { text: 'Fullname',  dataIndex: 'fullname', flex: 1 },
-        //         { text: 'Shortname',  dataIndex: 'shortname', flex: 1 }
-        //
-        //     ],
-        //
-        //     listeners: {
-        //         selectionchange: 'onEdit'
-        //     }
-        //
-        // },
         {
             xtype: 'panel',
             reference: 'adminUserPanel',
@@ -200,10 +174,6 @@ Ext.define('Thesis.Manager.view.main.admin.users.AdminUserView',{
                             bind: {
                                 store: '{list}'
                             },
-                            // store: {
-                            //     type: 'adminUsers',
-                            //     autoLoad: true
-                            // },
 
                             interactions: {
                                 type: 'crosszoom',
@@ -216,25 +186,19 @@ Ext.define('Thesis.Manager.view.main.admin.users.AdminUserView',{
                                 type: 'numeric',
                                 position: 'left',
 
-                                // fields: 'value',
                                 fields: ['view','login', 'logout','add', 'update'],
-                                title: 'Actions',
+                                title: 'Users Actions',
 
                                 grid: true,
                                 majorTickSteps: 10,
                                 renderer: 'onAxisLabelRender'
                             }, {
                                 type: 'category',
-                                // type: 'time',
                                 dateFormat: 'Y-m-d',
 
                                 position: 'bottom',
                                 fields: 'date',
                                 renderer: function(axis, data){
-                                    // var year = data.substring(0, 4);
-                                    // var month = data.substring(4, 6);
-                                    // var day = data.substring(6, 8);
-                                    // return year + '-' + month + '-' + day;
                                     return data.substring(0, 10);
                                 },
 

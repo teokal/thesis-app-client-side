@@ -10,6 +10,7 @@ Ext.define('Thesis.Manager.view.main.courses.CourseView',{
     requires: [
         'Thesis.Manager.store.Courses',
         'Thesis.Manager.store.CourseActions',
+        'Thesis.Manager.store.CourseResourcesLists',
         'Ext.layout.container.Border',
         'Ext.chart.axis.Numeric',
         'Ext.chart.axis.Time',
@@ -118,6 +119,7 @@ Ext.define('Thesis.Manager.view.main.courses.CourseView',{
                         {
                             xtype: 'panel',
                             layout: 'hbox',
+                            title: 'Actions',
                             items: [
                                 {
                                     reference: 'dateFrom',
@@ -158,7 +160,7 @@ Ext.define('Thesis.Manager.view.main.courses.CourseView',{
                                     fieldLabel:'View per',
                                     name:'actionView',
                                     queryMode:'local',
-                                    store:['year','quarter','month', 'week', 'day','hour', 'minute', 'second'],
+                                    store:['year','quarter','month', 'week', 'day'], //'hour', 'minute', 'second'],
                                     displayField:'actionView',
                                     padding: '0 0 0 30',
                                     autoSelect:true,
@@ -285,7 +287,7 @@ Ext.define('Thesis.Manager.view.main.courses.CourseView',{
                                     fieldLabel:'View per',
                                     name:'actionViewResources',
                                     queryMode:'local',
-                                    store:['year','quarter','month', 'week', 'day','hour', 'minute', 'second'],
+                                    store:['year','quarter','month', 'week', 'day'], //'hour', 'minute', 'second'],
                                     displayField:'actionViewResources',
                                     padding: '0 0 0 30',
                                     autoSelect:true,
@@ -304,19 +306,17 @@ Ext.define('Thesis.Manager.view.main.courses.CourseView',{
                                     fieldLabel:'Resources',
                                     name:'resourceQuery',
                                     queryMode:'local',
-                                    // store: 'courseResourcesLists',
-                                    // bind: '{listResourcesLists.title}',
                                     bind: {
-                                        store: '{listResourcesLists.id}'
+                                        store: '{listResourcesLists}'
                                     },
-                                    valueField: 'title',
-                                    displayField:'resourceQuery',
+                                    valueField: 'id',
+                                    displayField:'title',
                                     padding: '0 0 0 30',
                                     autoSelect:true,
                                     forceSelection:true,
                                     // listeners:{
                                     //     afterrender:function(rec){
-                                    //         this.setValue('all');
+                                    //         this.setValue(this.getStore().getAt(0));
                                     //     }
                                     // },
                                     flex: 0.5
@@ -344,7 +344,7 @@ Ext.define('Thesis.Manager.view.main.courses.CourseView',{
                                 position: 'left',
 
                                 fields: ['view'],
-                                title: 'Actions',
+                                title: 'Resources',
 
                                 grid: true,
                                 majorTickSteps: 10,

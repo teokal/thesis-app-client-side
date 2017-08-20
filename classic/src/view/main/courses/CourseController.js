@@ -12,7 +12,6 @@ Ext.define('EW20.view.Courses.CourseController', {
     ],
 
     onShow: function () {
-        // debugger;
         var viewModel = this.getViewModel();
         var store = viewModel.getStore('courses');
         store.load({
@@ -23,7 +22,6 @@ Ext.define('EW20.view.Courses.CourseController', {
             },
             callback: function(records, operation, success) {
                 // do something after the load finishes
-                // debugger;
             },
             scope: this
 
@@ -35,13 +33,14 @@ Ext.define('EW20.view.Courses.CourseController', {
      * @param record
      */
     onEdit: function (sender, selected) {
-        // debugger;
         var record = selected[0];
         selectedId = record;
 
         var form = this.lookupReference('coursesActionPanel');
         var date = new Date() ;
         date.setFullYear( date.getFullYear() - 1 );
+
+        // Actions
         var dateFrom = this.lookupReference('dateFrom');
         dateFrom.setValue(date.toISOString().substr(0,10));
         var dateTo = this.lookupReference('dateTo');
@@ -51,8 +50,15 @@ Ext.define('EW20.view.Courses.CourseController', {
         var actionQuery = this.lookupReference('actionsQuery');
         actionQuery.setValue('all');
 
-        var viewModel = this.getViewModel();
+        // Resources
+        var dateFromResources = this.lookupReference('dateFromResources');
+        dateFromResources.setValue(date.toISOString().substr(0,10));
+        var dateToResources = this.lookupReference('dateToResources');
+        dateToResources.setValue(new Date().toISOString().substr(0,10));
 
+        var resourceQuery = this.lookupReference('resourceQuery');
+
+        var viewModel = this.getViewModel();
         var store = viewModel.getStore('courseActions');
         store.load({
             params: {
@@ -64,7 +70,6 @@ Ext.define('EW20.view.Courses.CourseController', {
             },
             callback: function(records, operation, success) {
                 // do something after the load finishes
-                // debugger;
                 if (success == true){
                     form.expand(false);
                     viewModel.setData({
@@ -85,11 +90,10 @@ Ext.define('EW20.view.Courses.CourseController', {
                 query:'view',
                 view: 'day',
                 course: record.id,
-                resource: 14352
+                resource: -1
             },
             callback: function(records, operation, success) {
                 // do something after the load finishes
-                // debugger;
                 if (success == true){
                     form.expand(false);
                     viewModel.setData({
@@ -113,15 +117,12 @@ Ext.define('EW20.view.Courses.CourseController', {
             },
             callback: function(records, operation, success) {
                 // do something after the load finishes
-                // debugger;
                 if (success == true){
                     form.expand(false);
                     viewModel.setData({
                         recsResourcesLists: records,
                         listResourcesLists: storeResourcesLists
                     });
-                    debugger;
-                    console.log(storeResourcesLists.title);
                 }
             },
             scope: this
@@ -190,11 +191,18 @@ Ext.define('EW20.view.Courses.CourseController', {
 
 
     onReloadData: function() {
-        debugger;
+        //Actions
         var dateFrom = this.lookupReference('dateFrom');
         var dateTo = this.lookupReference('dateTo');
         var view = this.lookupReference('actionView');
         var actionQuery = this.lookupReference('actionsQuery');
+
+        //Resources
+        var dateFromResources = this.lookupReference('dateFromResources');
+        var dateToResources = this.lookupReference('dateToResources');
+        var viewResources = this.lookupReference('actionViewResources');
+        var resourceQuery = this.lookupReference('resourceQuery');
+
 
         if (dateFrom.getSubmitValue() == "" || dateTo.getSubmitValue() == "" ) {
             Ext.toast({
@@ -212,12 +220,10 @@ Ext.define('EW20.view.Courses.CourseController', {
                     to_date: dateTo.getSubmitValue(),
                     query: actionQuery.getSubmitValue(),
                     view: view.getSubmitValue(),
-                    course: selectedId.id,
-                    resource: 14352
+                    course: selectedId.id
                 },
                 callback: function(records, operation, success) {
                     // do something after the load finishes
-                    // debugger;
                     if (success == true){
                         // form.expand(false);
                         viewModel.setData({
@@ -240,17 +246,15 @@ Ext.define('EW20.view.Courses.CourseController', {
             var storeResources = viewModel.getStore('courseResources');
             storeResources.load({
                 params: {
-                    from_date: dateFrom.getSubmitValue(),
-                    to_date: dateTo.getSubmitValue(),
+                    from_date: dateFromResources.getSubmitValue(),
+                    to_date: dateToResources.getSubmitValue(),
                     query: 'view',
-                    view: view.getSubmitValue(),
-                    course: selectedId.id
+                    view: viewResources.getSubmitValue(),
+                    course: selectedId.id,
+                    resource: resourceQuery.getSubmitValue()
                 },
                 callback: function(records, operation, success) {
-                    // do something after the load finishes
-                    // debugger;
                     if (success == true){
-                        // form.expand(false);
                         viewModel.setData({
                             recsResources: records,
                             listResources: storeResources
@@ -276,13 +280,35 @@ Ext.define('EW20.view.Courses.CourseController', {
             return;
         }
         var chart = this.lookupReference('chart');
-        if (Ext.os.is.Desktop) {
-            chart.download({
-                filename: 'Action Values'
-            });
-        } else {
-            chart.preview();
-        }
+        var chartResource = this.lookupReference('chartResource');
+        Ext.Msg.show({
+            title:'Download',
+            msg:'Choose the chart you want to download on .png format',
+            buttons:Ext.Msg.YESNO,
+            buttonText:{
+                yes: "Actions Chart",
+                no: "Resources Chart"
+            },
+            callback:function(btn) {
+                if('yes' === btn) {
+                    if (Ext.os.is.Desktop) {
+                        chart.download({
+                            filename: 'Actions'
+                        });
+                    } else {
+                        chart.preview();
+                    }
+                }else {
+                    if (Ext.os.is.Desktop) {
+                        chartResource.download({
+                            filename: 'Resources'
+                        });
+                    } else {
+                        chartResource.preview();
+                    }
+                }
+            }
+        });
     },
 
     onZoomUndo: function() {
@@ -290,8 +316,17 @@ Ext.define('EW20.view.Courses.CourseController', {
             interaction = chart && Ext.ComponentQuery.query('interaction', chart)[0],
             undoButton = interaction && interaction.getUndoButton(),
             handler = undoButton && undoButton.handler;
+
+        var chartResources = this.lookupReference('chartResource'),
+            interaction = chartResources && Ext.ComponentQuery.query('interaction', chartResources)[0],
+            undoButton = interaction && interaction.getUndoButton(),
+            handlerResources = undoButton && undoButton.handler;
+
         if (handler) {
             handler();
+        }
+        if (handlerResources) {
+            handlerResources();
         }
     }
 

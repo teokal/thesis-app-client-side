@@ -2,7 +2,7 @@
  * Created by n.vasileiadis on 8/13/2017.
  */
 
-Ext.define('EW20.view.admin.users.AdminuserController', {
+Ext.define('EW20.view.admin.users.AdminUserController', {
     extend: 'Ext.app.ViewController',
     alias: 'controller.adminUserController',
     //
@@ -13,8 +13,7 @@ Ext.define('EW20.view.admin.users.AdminuserController', {
     ],
 
     onShow: function () {
-        debugger;
-        var date = new Date() ;
+        var date = new Date();
         date.setFullYear( date.getFullYear() - 1 );
         var dateFrom = this.lookupReference('dateFrom');
         dateFrom.setValue(date.toISOString().substr(0,10));
@@ -32,7 +31,6 @@ Ext.define('EW20.view.admin.users.AdminuserController', {
             },
             callback: function (records, operation, success) {
                 // do something after the load finishes
-                debugger;
                 if (success == true){
                     // form.expand(false);
                     viewModel.setData({
@@ -100,7 +98,6 @@ Ext.define('EW20.view.admin.users.AdminuserController', {
     },
 
     onReloadData: function() {
-        debugger;
         var dateFrom = this.lookupReference('dateFrom');
         var dateTo = this.lookupReference('dateTo');
         var view = this.lookupReference('actionView');
@@ -125,7 +122,6 @@ Ext.define('EW20.view.admin.users.AdminuserController', {
                 },
                 callback: function(records, operation, success) {
                     // do something after the load finishes
-                    // debugger;
                     if (success == true){
                         // form.expand(false);
                         viewModel.setData({
@@ -155,7 +151,7 @@ Ext.define('EW20.view.admin.users.AdminuserController', {
         var chart = this.lookupReference('chart');
         if (Ext.os.is.Desktop) {
             chart.download({
-                filename: 'Action Values'
+                filename: 'Users Actions'
             });
         } else {
             chart.preview();
