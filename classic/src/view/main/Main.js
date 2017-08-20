@@ -83,7 +83,18 @@ Ext.define('Thesis.Manager.view.main.Main', {
         //     xtype: 'mainlist'
         // }]
         bind: {
-            html: '{loremIpsum}'
+            html: '<h1>Learning Analytics</h1>' +
+            '<h3>Development of a Web-based Application for the Analysis of e-Learning Data in Moodle Using Visualization Techniques.</h3>' +
+            '<h4>Develop by: </h4>' +
+            '<ul> ' +
+            '<li>Kalatzis Theodoros</li>' +
+            '<li>Vasileiadis Nikoloas</li> ' +
+            '</ul>' +
+            '<h4>Supervisor: </h4>' +
+            '<ul> ' +
+            '<li>Psaromiligkos Ioannis</li>' +
+            '</ul>' +
+            '<h4>Open Source (GPLv3) License</h4>'
         }
     }, {
         title: 'Admin',
@@ -103,7 +114,7 @@ Ext.define('Thesis.Manager.view.main.Main', {
         title: 'Settings',
         iconCls: 'fa-cog',
         bind: {
-            html: '{loremIpsum}'
+            html: '<h1>Under Development</h1>'
         }
     }]
 });

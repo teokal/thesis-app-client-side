@@ -298,7 +298,7 @@ Ext.define('EW20.view.Courses.CourseController', {
                     } else {
                         chart.preview();
                     }
-                }else {
+                }else if('no' === btn){
                     if (Ext.os.is.Desktop) {
                         chartResource.download({
                             filename: 'Resources'
