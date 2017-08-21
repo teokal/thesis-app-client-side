@@ -88,7 +88,7 @@ Ext.define('Thesis.Manager.view.main.Main', {
             '<h4>Developed by: </h4>' +
             '<ul> ' +
             '<li>Kalatzis Theodoros</li>' +
-            '<li>Vasileiadis Nikoloas</li> ' +
+            '<li>Vasileiadis Nikolaos</li> ' +
             '</ul>' +
             '<h4>Supervisor: </h4>' +
             '<ul> ' +
