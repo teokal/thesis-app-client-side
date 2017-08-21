@@ -85,7 +85,7 @@ Ext.define('Thesis.Manager.view.main.Main', {
         bind: {
             html: '<h1>Learning Analytics</h1>' +
             '<h3>Development of a Web-based Application for the Analysis of e-Learning Data in Moodle Using Visualization Techniques.</h3>' +
-            '<h4>Develop by: </h4>' +
+            '<h4>Developed by: </h4>' +
             '<ul> ' +
             '<li>Kalatzis Theodoros</li>' +
             '<li>Vasileiadis Nikoloas</li> ' +
