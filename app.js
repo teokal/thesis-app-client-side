@@ -1,28 +1,19 @@
 /*
- * This file is generated and updated by Sencha Cmd. You can edit this file as
- * needed for your application, but these edits will have to be merged by
- * Sencha Cmd when upgrading.
+ * This file is responsible for launching the application. Application logic should be
+ * placed in the LearningAnalytics.Application class.
  */
 Ext.application({
-    name: 'Thesis.Manager',
+    name: 'LearningAnalytics',
 
-    extend: 'Thesis.Manager.Application',
+    extend: 'LearningAnalytics.Application',
 
-    requires: [
-        'Thesis.Manager.view.main.Main'
-    ],
-
-    // The name of the initial view to create. With the classic toolkit this class
-    // will gain a "viewport" plugin if it does not extend Ext.Viewport. With the
-    // modern toolkit, the main view will be added to the Viewport.
+    // Simply require all classes in the application. This is sufficient to ensure
+    // that all LearningAnalytics classes will be included in the application build. If classes
+    // have specific requirements on each other, you may need to still require them
+    // explicitly.
     //
-    mainView: 'Thesis.Manager.view.main.Main'
-
-
-    //-------------------------------------------------------------------------
-    // Most customizations should be made to Thesis.Manager.Application. If you need to
-    // customize this file, doing so below this section reduces the likelihood
-    // of merge conflicts when upgrading to new versions of Sencha Cmd.
-    //-------------------------------------------------------------------------
+    requires: [
+        'LearningAnalytics.*',
+        'LearningAnalytics.config.Runtime'
+    ]
 });
-

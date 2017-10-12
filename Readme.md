@@ -1,16 +1,38 @@
-# Thesis.Manager
+#Admin Dashboard Template
 
-This folder is primarily a container for the top-level pieces of the application.
-While you can remove some files and folders that this application does not use,
-be sure to read below before deciding what can be deleted and what needs to be
-kept in source control.
+This Admin Dashboard Template is based in the original app made in the examples of ExtJS
+Framework, the idea of this is to use it as a real "template" to generate a application
+based on the original Admin Dashboard app.
+
+If you are like me, and tried to do a new app based on the sample but ended with a "Admin"
+app everywhere (the sencha generate command didn't replaced the Admin name with the correct
+App Name) then this repository is for you.
+
+Just clone in a directory and then run the command (from the framework) to create a new
+App based from this template as follows:
+
+    sencha generate app -s Path_To_The_Downloaded_Template YourAppName Path_To_The_Destination_App
+
+Enjoy!
+
+Let me know any suggestion you may have and happy coding
+
+[syscobra](http://www.twitter.com/syscobra)
+
+# Original Readme
+# Admin Dashboard
+
+The Admin Dashboard is an application template for you to copy and adapt to suite
+your specific needs. While you can remove the files and folders that your application
+does not use, be sure to read below before deciding what can be deleted and what needs
+to be kept in source control.
 
 The following files are all needed to build and load the application.
 
+ - `"app.js"` - The file that launches the application. This is primarily used to
+   launch an instance of the `Admin.Application` class.
  - `"app.json"` - The application descriptor which controls how the application is
    built and loaded.
- - `"app.js"` - The file that launches the application. This is primarily used to
-   launch an instance of the `MyApp.Application` class.
  - `"index.html"` - The default web page for this application. This can be customized
    in `"app.json"`.
  - `"build.xml"` - The entry point for Sencha Cmd to access the generated build
@@ -32,9 +54,10 @@ process.
 
 # Other Folders
 
-## Basic Application Structure
+## Application Structure
 
-Applications that target a single toolkit will have the following structure.
+This application is a Universal Application. The following folders contain the code,
+resources, etc. that are shared by both Classic and Modern build profiles.
 
     app/                # Contains JavaScript code
         model/          # Data model classes
@@ -53,12 +76,8 @@ Applications that target a single toolkit will have the following structure.
 
 See the [Sass readme](sass/Readme.md) for details on the "sass" folder.
 
-## Universal Applications
-
-In a Universal Application, the basic application structure above is retained but
-only holds code, resources, etc. pieces that are used in both classic and modern
-build profiles. The following additional directories are used to isolate code and
-other files that are toolkit-specific:
+The following additional directories are used to isolate code and other files that are
+toolkit-specific:
 
     classic/                # Content specific to the classic toolkit
         src/
@@ -98,7 +117,7 @@ The contents of "overrides" folders are automatically required and included in
 builds. These should not be explicitly mentioned in "requires" or "uses" in code.
 This area is intended for overrides like these:
 
-    Ext.define('Thesis.Manager.overrides.foo.Bar', {
+    Ext.define('Admin.overrides.foo.Bar', {
         override: 'Ext.foo.Bar',
         ...
     });

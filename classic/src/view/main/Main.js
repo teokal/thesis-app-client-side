@@ -1,120 +1,94 @@
-/**
- * This class is the main view for the application. It is specified in app.js as the
- * "mainView" property. That setting automatically applies the "viewport"
- * plugin causing this view to become the body element (i.e., the viewport).
- *
- * TODO - Replace this content of this view to suite the needs of your application.
- */
-Ext.define('Thesis.Manager.view.main.Main', {
-    extend: 'Ext.tab.Panel',
-    xtype: 'app-main',
+Ext.define('LearningAnalytics.view.main.Main', {
+    extend: 'Ext.container.Viewport',
 
     requires: [
-        'Ext.plugin.Viewport',
-        'Ext.window.MessageBox',
-
-        'Thesis.Manager.view.main.MainController',
-        'Thesis.Manager.view.main.MainModel',
-        'Thesis.Manager.view.main.List'
+        'Ext.button.Segmented',
+        'Ext.list.Tree'
     ],
 
     controller: 'main',
     viewModel: 'main',
 
-    ui: 'navigation',
+    cls: 'sencha-dash-viewport',
+    itemId: 'mainView',
 
-    tabBarHeaderPosition: 1,
-    titleRotation: 0,
-    tabRotation: 0,
-
-    header: {
-        layout: {
-            align: 'stretchmax'
-        },
-        title: {
-            bind: {
-                text: '{name}'
-            },
-            flex: 0
-        },
-        iconCls: 'fa-th-list'
+    layout: {
+        type: 'vbox',
+        align: 'stretch'
     },
 
-    tabBar: {
-        flex: 1,
-        layout: {
-            align: 'stretch',
-            overflowHandler: 'none'
-        }
+    listeners: {
+        render: 'onMainViewRender'
     },
 
-    responsiveConfig: {
-        tall: {
-            headerPosition: 'top'
-        },
-        wide: {
-            headerPosition: 'left'
-        }
-    },
-
-    defaults: {
-        bodyPadding: 20,
-        tabConfig: {
-            plugins: 'responsive',
-            responsiveConfig: {
-                wide: {
-                    iconAlign: 'left',
-                    textAlign: 'left'
+    items: [
+        {
+            xtype: 'toolbar',
+            cls: 'sencha-dash-dash-headerbar shadow',
+            height: 64,
+            itemId: 'headerBar',
+            items: [
+                {
+                    xtype: 'component',
+                    reference: 'senchaLogo',
+                    cls: 'sencha-logo',
+                    html: '<div class="main-logo"><img src="resources/images/company-logo.png">Learning Analytics</div>',
+                    width: 250
                 },
-                tall: {
-                    iconAlign: 'top',
-                    textAlign: 'center',
-                    width: 120
+                {
+                    margin: '0 0 0 8',
+                    ui: 'header',
+                    iconCls:'x-fa fa-navicon',
+                    id: 'main-navigation-btn',
+                    handler: 'onToggleNavigationSize'
+                },
+                '->',
+                {
+                    xtype: 'tbtext',
+                    text: 'Username',
+                    cls: 'top-user-name'
+                },
+                {
+                    xtype: 'image',
+                    cls: 'header-right-profile-image',
+                    height: 35,
+                    width: 35,
+                    alt:'current user image',
+                    src: 'resources/images/profile-icon.png'
                 }
-            }
+            ]
+        },
+        {
+            xtype: 'maincontainerwrap',
+            id: 'main-view-detail-wrap',
+            reference: 'mainContainerWrap',
+            flex: 1,
+            items: [
+                {
+                    xtype: 'treelist',
+                    reference: 'navigationTreeList',
+                    itemId: 'navigationTreeList',
+                    ui: 'navigation',
+                    store: 'NavigationTree',
+                    width: 250,
+                    expanderFirst: false,
+                    expanderOnly: false,
+                    listeners: {
+                        selectionchange: 'onNavigationTreeSelectionChange'
+                    }
+                },
+                {
+                    xtype: 'container',
+                    flex: 1,
+                    reference: 'mainCardPanel',
+                    cls: 'sencha-dash-right-main-container',
+                    itemId: 'contentPanel',
+                    layout: {
+                        type: 'card',
+                        anchor: '100%'
+                    }
+                }
+            ]
         }
-    },
-
-    items: [{
-        title: 'Home',
-        iconCls: 'fa-home',
-        // The following grid shares a store with the classic version's grid as well!
-        // items: [{
-        //     xtype: 'mainlist'
-        // }]
-        bind: {
-            html: '<h1>Learning Analytics</h1>' +
-            '<h3>Development of a Web-based Application for the Analysis of e-Learning Data in Moodle Using Visualization Techniques.</h3>' +
-            '<h4>Developed by: </h4>' +
-            '<ul> ' +
-            '<li>Kalatzis Theodoros</li>' +
-            '<li>Vasileiadis Nikolaos</li> ' +
-            '</ul>' +
-            '<h4>Supervisor: </h4>' +
-            '<ul> ' +
-            '<li>Psaromiligkos Ioannis</li>' +
-            '</ul>' +
-            '<h4>Open Source (GPLv3) License</h4>'
-        }
-    }, {
-        title: 'Admin',
-        iconCls: 'fa-user',
-        // adminUserView
-        items: [{
-            xtype: 'adminUserView'
-        }]
-    }, {
-        title: 'Courses',
-        iconCls: 'fa-book',
-        items: [{
-            xtype: 'courseView'
-        }]
-        //courseView
-    }, {
-        title: 'Settings',
-        iconCls: 'fa-cog',
-        bind: {
-            html: '<h1>Under Development</h1>'
-        }
-    }]
+    ]
 });
