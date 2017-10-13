@@ -2,17 +2,14 @@ Ext.define('LearningAnalytics.view.dashboard.Dashboard', {
     extend: 'Ext.Container',
     xtype: 'admindashboard',
 
-    // requires: [
-    //     'Ext.ux.layout.ResponsiveColumn'
-    // ],
-
     controller: 'dashboard',
     viewModel: {
         type: 'dashboard'
     },
 
-    layout: 'responsivecolumn',
+    cls: 'dashboard',
 
+    scrollable: true,
     listeners: {
         beforerender: 'onShow'
     },
@@ -20,15 +17,15 @@ Ext.define('LearningAnalytics.view.dashboard.Dashboard', {
     items: [
         {
             xtype: 'course', //
-            userCls: 'big-33 small-100'
+            userCls: 'big-60 small-100 dashboard-item shadow'
         },
         {
             xtype: 'viewStudentsChart',
-            userCls: 'big-60 small-100'
+            userCls: 'big-60 small-100 dashboard-item shadow'
         },
         {
             xtype: 'studentsWidget',
-            userCls: 'big-50 small-50'
+            userCls: 'big-20 small-50 dashboard-item shadow'
         }
     ]
 });

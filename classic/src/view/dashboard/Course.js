@@ -18,8 +18,9 @@ Ext.define('LearningAnalytics.view.dashboard.Course', {
     controller: 'dashboard',
 
     title: 'Courses',
-    height: 320,
+    height: 380,
     bodyPadding: 15,
+    disableSelection:true,
     layout: 'fit',
     items: [
         {

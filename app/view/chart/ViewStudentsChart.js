@@ -9,8 +9,7 @@ Ext.define('LearningAnalytics.view.chart.ViewStudentsChart', {
     requires: [
         'Ext.chart.axis.Category',
         'Ext.chart.axis.Numeric',
-        'Ext.chart.series.Line',
-        'Ext.chart.interactions.PanZoom'
+        'Ext.chart.series.Line'
     ],
 
     animation : !Ext.isIE9m && Ext.os.is.Desktop,
@@ -20,22 +19,21 @@ Ext.define('LearningAnalytics.view.chart.ViewStudentsChart', {
     axes: [
         {
             type: 'category',
-            fields: [
-                'date'
-            ],
+            fields: 'date',
             hidden: true,
             position: 'bottom'
         },
         {
             type: 'numeric',
-            fields: [
-                'view'
-            ],
+            minimum: 0,
+            fields: 'view',
             grid: {
                 odd: {
                     fill: '#e8e8e8'
                 }
             },
+
+            majorTickSteps: 10,
             hidden: true,
             position: 'left'
         }
@@ -49,18 +47,29 @@ Ext.define('LearningAnalytics.view.chart.ViewStudentsChart', {
             ],
             useDarkerStrokeColor: false,
             xField: 'date',
-            yField: [
-                'view'
-            ],
-            fill: true
-            // smooth: true
+            yField: 'view',
+            fill: true,
+            smooth: true,
+            marker: {
+                opacity: 0,
+                scaling: 0.01,
+                fx: {
+                    duration: 200,
+                    easing: 'easeOut'
+                }
+            },
+            highlightCfg: {
+                opacity: 1,
+                scaling: 1.5
+            },
+            tooltip: {
+                trackMouse: true,
+                renderer: function (tooltip, record, item) {
+                    tooltip.setHtml(' (' + record.get('date') + '): ' + record.get('view'));
+                }
+            }
         }
 
-    ],
-
-    interactions: [
-        {
-            type: 'panzoom'
-        }
     ]
+
 });

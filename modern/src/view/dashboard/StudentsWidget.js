@@ -10,21 +10,16 @@ Ext.define('LearningAnalytics.view.dashboard.StudentsWidget', {
     ],
 
     controller: 'dashboard',
-    layout: 'responsivecolumn',
 
     defaults: {
         xtype: 'container'
-    },
-
-    store: {
-        type: 'viewStudents'
     },
 
     items: [
         {
             xtype: 'widgetSmall',
             containerColor: 'orange',
-            userCls: 'big-50 small-50',
+            userCls: 'big-20 small-50',
             height: 170,
 
             bind: {

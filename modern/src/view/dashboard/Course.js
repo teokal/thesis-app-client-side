@@ -8,10 +8,7 @@ Ext.define('LearningAnalytics.view.dashboard.Course', {
 
     requires: [
         'Ext.grid.Grid',
-        // 'Ext.grid.View',
-        'Ext.field.Text',
-        'Ext.Button',
-        'Ext.grid.plugin.MultiSelection'
+        'Ext.field.Text'
     ],
     cls: 'shadow-panel',
 
@@ -23,19 +20,17 @@ Ext.define('LearningAnalytics.view.dashboard.Course', {
     layout: 'fit',
     items: [
         {
-            xtype: 'gridpanel',
-            header: false,
+            xtype: 'grid',
+            flex: 1,
+            width: '100%',
             hideHeaders: true,
-            scrollable: {
-                x: false,
-                y: false
-            },
+            header: false,
+            disableSelection:true,
             bind: {
                 store: '{courses}'
             },
             columns: [
                 {
-                    xtype: 'gridcolumn',
                     dataIndex: 'fullname',
                     text: 'Fullname',
                     flex: 1

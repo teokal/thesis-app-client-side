@@ -20,23 +20,14 @@ Ext.define('LearningAnalytics.view.dashboard.ViewStudentsChartWidget', {
     bodyPadding: 15,
 
     title: 'Views',
-    layout: {
-        type: 'vbox',
-        align: 'stretch'
-    },
+
+    layout: 'fit',
 
     items: [
         {
-            xtype: 'container',
-            flex: 1,
-            layout: 'fit',
-            items: [
-                {
-                    xtype: 'viewChart',
-                    bind: '{viewStudentsChart}'
-                }
-            ]
-
+            xtype: 'viewChart',
+            bind: '{viewStudentsChart}',
+            flex:1
         }
     ]
 });

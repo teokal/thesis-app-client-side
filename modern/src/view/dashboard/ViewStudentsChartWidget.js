@@ -6,6 +6,7 @@ Ext.define('LearningAnalytics.view.dashboard.ViewStudentsChartWidget', {
     xtype: 'viewStudentsChart',
 
     requires: [
+        'Ext.Progress',
         'Ext.chart.CartesianChart',
         'Ext.chart.axis.Category',
         'Ext.chart.axis.Numeric',
@@ -13,29 +14,24 @@ Ext.define('LearningAnalytics.view.dashboard.ViewStudentsChartWidget', {
         'Ext.chart.interactions.PanZoom'
     ],
 
-    cls: 'dashboard-main-chart shadow',
     height: 380,
+
+    platformConfig: {
+        phone: {
+            height: 300
+        }
+    },
 
     bodyPadding: 15,
 
     title: 'Views',
-    layout: {
-        type: 'vbox',
-        align: 'stretch'
-    },
+    layout: 'fit',
 
     items: [
         {
-            xtype: 'container',
-            flex: 1,
-            layout: 'fit',
-            items: [
-                {
-                    xtype: 'viewChart',
-                    bind: '{viewStudentsChart}'
-                }
-            ]
-
+            xtype: 'viewChart',
+            bind: '{viewStudentsChart}',
+            flex:1
         }
     ]
 });
