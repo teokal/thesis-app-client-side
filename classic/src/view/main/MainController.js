@@ -11,7 +11,8 @@ Ext.define('LearningAnalytics.view.main.MainController', {
     },
 
     routes: {
-        ':node': 'onRouteChange'
+        ':node': 'onRouteChange',
+        'pageblank/user/:id' : 'onUser'
     },
 
     lastView: null,
@@ -164,6 +165,42 @@ Ext.define('LearningAnalytics.view.main.MainController', {
 
     onRouteChange:function(id){
         this.setCurrentView(id);
+    },
+
+    onBeforeRender: function() {
+        var viewModel = this.getViewModel();
+        var store = viewModel.getStore('courses');
+        var coursesTree = this.lookupReference('navigationTreeList').rootItem.getNode().getChildAt(1);
+
+        store.load({
+            callback: function(records, operation, success) {
+                store.each(function(record) {
+                    var jsonObj = {
+                        text: record.data.fullname,
+                        iconCls: 'x-fa fa-lightbulb-o',
+                        data: {
+                            course: '123'
+                        },
+                        leaf: true
+                    };
+                    coursesTree.appendChild(jsonObj);
+                });
+            },
+            scope: this
+
+        });
+    },
+
+    onUser : function(id) {
+        //...
+    },
+
+    onItemClick: function (view,rec,item) {
+        // debugger;
+        // rec.node.parentNode.id
+        if (rec.node.parentNode.id === 'courses'){
+            this.redirectTo('pageblank', true);
+        }
     }
 
 });

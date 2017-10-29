@@ -22,5 +22,5 @@ Ext.define('LearningAnalytics.view.dashboard.DashboardController', {
             },
             scope: this
         });
-    },
+    }
 });

@@ -17,6 +17,7 @@ Ext.define('LearningAnalytics.store.NavigationTree', {
         children: [
             {
                 text: 'Dashboard',
+                id:'dash',
                 iconCls: 'x-fa fa-desktop',
                 viewType: 'admindashboard',
                 routeId: 'dashboard',
@@ -26,7 +27,13 @@ Ext.define('LearningAnalytics.store.NavigationTree', {
                 text: 'Courses',
                 iconCls: 'x-fa fa-leanpub',
                 viewType: 'pageblank',
-                leaf: true
+                leaf: false,
+                id:'courses',
+                data: {
+                    course: '123'
+                }
+
+                // course: 'default',
             }
         ]
     }

@@ -18,7 +18,8 @@ Ext.define('LearningAnalytics.view.main.Main', {
     },
 
     listeners: {
-        render: 'onMainViewRender'
+        render: 'onMainViewRender',
+        beforerender: 'onBeforeRender'
     },
 
     items: [
@@ -74,7 +75,10 @@ Ext.define('LearningAnalytics.view.main.Main', {
                     expanderFirst: false,
                     expanderOnly: false,
                     listeners: {
-                        selectionchange: 'onNavigationTreeSelectionChange'
+                        selectionchange: 'onNavigationTreeSelectionChange',
+                        // beforerender: 'onShowNavigationTree'
+                        itemclick: 'onItemClick'
+
                     }
                 },
                 {

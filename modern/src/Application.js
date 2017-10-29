@@ -18,7 +18,6 @@ Ext.define('LearningAnalytics.Application', {
     ],
 
     stores: [
-        'NavigationTree',
-        'dashboard.Courses'
+        'NavigationTree'
     ]
 });
