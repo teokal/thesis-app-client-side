@@ -11,8 +11,7 @@ Ext.define('LearningAnalytics.view.main.MainController', {
     },
 
     routes: {
-        ':node': 'onRouteChange',
-        'pageblank/user/:id' : 'onUser'
+        ':node': 'onRouteChange'
     },
 
     lastView: null,
@@ -77,10 +76,20 @@ Ext.define('LearningAnalytics.view.main.MainController', {
     },
 
     onNavigationTreeSelectionChange: function (tree, node) {
+        // debugger;
         var to = node && (node.get('routeId') || node.get('viewType'));
 
         if (to) {
             this.redirectTo(to);
+        }
+
+        if (node.parentNode.id === 'courses'){
+            // debugger;
+            var viewModel = this.getViewModel();
+            viewModel.setData({
+                courseid: '123'
+            });
+            // this.redirectTo('pageblank');
         }
 
         if (to === 'courses') {
@@ -98,7 +107,6 @@ Ext.define('LearningAnalytics.view.main.MainController', {
             }
 
         }
-
     },
 
     onToggleNavigationSize: function () {
@@ -178,9 +186,7 @@ Ext.define('LearningAnalytics.view.main.MainController', {
                     var jsonObj = {
                         text: record.data.fullname,
                         iconCls: 'x-fa fa-lightbulb-o',
-                        data: {
-                            course: '123'
-                        },
+                        viewType: 'courseView',
                         leaf: true
                     };
                     coursesTree.appendChild(jsonObj);
@@ -191,15 +197,31 @@ Ext.define('LearningAnalytics.view.main.MainController', {
         });
     },
 
-    onUser : function(id) {
-        //...
-    },
-
     onItemClick: function (view,rec,item) {
-        // debugger;
-        // rec.node.parentNode.id
         if (rec.node.parentNode.id === 'courses'){
-            this.redirectTo('pageblank', true);
+            var viewModel = this.getViewModel();
+
+            var store = viewModel.getStore('courseEnrolledStudents');
+            store.load({
+                params: {
+                    courseid: '5'
+                },
+                callback: function(records, operation, success) {
+                    // do something after the load finishes
+                    if (success == true){
+                        debugger;
+                        // form.expand(false);
+                        viewModel.setData({
+                            list: store,
+                            enrolledusercount: 23
+                        });
+                    }
+                },
+                scope: this
+
+            });
+
+            // this.redirectTo('pageblank');
         }
     }
 

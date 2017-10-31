@@ -18,9 +18,9 @@ Ext.define('LearningAnalytics.view.dashboard.StudentsWidget', {
         xtype: 'container'
     },
 
-    store: {
-        type: 'viewStudents'
-    },
+    // store: {
+    //     type: 'viewStudents'
+    // },
 
     items: [
         {
