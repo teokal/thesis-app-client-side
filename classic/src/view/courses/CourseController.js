@@ -11,21 +11,6 @@ Ext.define('LearningAnalytics.view.courses.CourseController', {
     ],
 
     onShow: function () {
-        // var viewModel = this.getViewModel();
-        // var store = viewModel.getStore('courseEnrolledStudents');
-        // store.load({
-        //     callback: function(records, operation, success) {
-        //         if (success == true){
-        //             debugger;
-        //             // viewModel.setData({
-        //             //     recs: records,
-        //             //     enrolledusercount: records[0].data.enrolledusercount,
-        //             //     viewStudentsChart: store.first().viewed()
-        //             //
-        //             // });
-        //         }
-        //     },
-        //     scope: this
-        // });
+
     }
 });

@@ -29,7 +29,14 @@ Ext.define('LearningAnalytics.store.NavigationTree', {
                 // viewType: 'pageblank',
                 leaf: false,
                 id:'courses'
+            },
+            {
+                text: 'About',
+                iconCls: 'x-fa fa-info-circle',
+                viewType: 'about',
+                leaf: true
             }
+
         ]
     }
 });

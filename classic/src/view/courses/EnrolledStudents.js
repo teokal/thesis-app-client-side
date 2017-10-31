@@ -14,11 +14,6 @@ Ext.define('LearningAnalytics.view.courses.EnrolledStudents', {
     ],
     cls: 'shadow-panel',
 
-    // controller: 'dashboard',
-    // viewModel: {
-    //     type: 'main'
-    // },
-
     title: 'Enrolled Students',
     height: 380,
     bodyPadding: 15,
@@ -33,13 +28,9 @@ Ext.define('LearningAnalytics.view.courses.EnrolledStudents', {
                 x: false,
                 y: false
             },
-            // bind: {
-            //     store: '{courseEnrolledStudents}'
-            // },
             bind: {
                 store: '{list}'
             },
-
             columns: [
                 {
                     xtype: 'gridcolumn',

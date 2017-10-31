@@ -7,13 +7,6 @@ Ext.define('LearningAnalytics.view.courses.CourseViewModel', {
     alias: 'viewmodel.courseViewModel',
 
     stores: {
-        courseEnrolledStudents: {
-            type: 'courseEnrolledStudents',
-            autoLoad: true
-        }
-    },
-
-    data: {
-        courseid: '0987'
     }
+
 });

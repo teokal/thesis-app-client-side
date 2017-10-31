@@ -76,20 +76,10 @@ Ext.define('LearningAnalytics.view.main.MainController', {
     },
 
     onNavigationTreeSelectionChange: function (tree, node) {
-        // debugger;
         var to = node && (node.get('routeId') || node.get('viewType'));
 
         if (to) {
             this.redirectTo(to);
-        }
-
-        if (node.parentNode.id === 'courses'){
-            // debugger;
-            var viewModel = this.getViewModel();
-            viewModel.setData({
-                courseid: '123'
-            });
-            // this.redirectTo('pageblank');
         }
 
         if (to === 'courses') {
@@ -166,7 +156,7 @@ Ext.define('LearningAnalytics.view.main.MainController', {
     },
 
     onMainViewRender:function() {
-        if (!window.location.hash) {
+        if (!window.location.hash || window.location.hash === "#courses") {
             this.redirectTo("dashboard");
         }
     },
@@ -184,9 +174,10 @@ Ext.define('LearningAnalytics.view.main.MainController', {
             callback: function(records, operation, success) {
                 store.each(function(record) {
                     var jsonObj = {
+                        id: record.data.id,
                         text: record.data.fullname,
-                        iconCls: 'x-fa fa-lightbulb-o',
-                        viewType: 'courseView',
+                        iconCls: 'x-fa fa-book',
+                        viewType: 'courses',
                         leaf: true
                     };
                     coursesTree.appendChild(jsonObj);
@@ -200,28 +191,22 @@ Ext.define('LearningAnalytics.view.main.MainController', {
     onItemClick: function (view,rec,item) {
         if (rec.node.parentNode.id === 'courses'){
             var viewModel = this.getViewModel();
-
+            var courseid = rec.node.id;
             var store = viewModel.getStore('courseEnrolledStudents');
             store.load({
                 params: {
-                    courseid: '5'
+                    courseid: courseid
                 },
                 callback: function(records, operation, success) {
-                    // do something after the load finishes
-                    if (success == true){
-                        debugger;
-                        // form.expand(false);
+                    if (success === true){
                         viewModel.setData({
                             list: store,
-                            enrolledusercount: 23
+                            enrolledusercount: records.length
                         });
                     }
                 },
                 scope: this
-
             });
-
-            // this.redirectTo('pageblank');
         }
     }
 
