@@ -18,6 +18,11 @@ Ext.define('LearningAnalytics.view.courses.CourseView', {
             userCls: 'big-33 small-100'
         },
         {
+            xtype: 'courseStatisticsChartWidget',
+            userCls: 'big-60 small-100'
+        },
+
+        {
             xtype: 'studentsWidget',
             userCls: 'big-50 small-50'
         }

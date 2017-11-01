@@ -207,6 +207,22 @@ Ext.define('LearningAnalytics.view.main.MainController', {
                 },
                 scope: this
             });
+
+            var storeCourse = viewModel.getStore('courseStatistics');
+            storeCourse.load({
+                params: {
+                    course: 45
+                },
+                callback: function(records, operation, success) {
+                    if (success === true){
+                        viewModel.setData({
+                            courseStatisticsData: storeCourse
+                        });
+                    }
+                },
+                scope: this
+            });
+
         }
     }
 

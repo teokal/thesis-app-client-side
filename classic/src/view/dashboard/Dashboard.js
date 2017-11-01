@@ -3,7 +3,8 @@ Ext.define('LearningAnalytics.view.dashboard.Dashboard', {
     xtype: 'admindashboard',
 
     requires: [
-        'Ext.ux.layout.ResponsiveColumn'
+        'Ext.ux.layout.ResponsiveColumn',
+        'Ext.chart.interactions.ItemHighlight'
     ],
 
     controller: 'dashboard',
