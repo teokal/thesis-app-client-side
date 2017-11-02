@@ -30,6 +30,10 @@ Ext.define('LearningAnalytics.view.dashboard.Dashboard', {
         {
             xtype: 'studentsWidget',
             userCls: 'big-50 small-50'
+        },
+        {
+            xtype: 'gradesWidget',
+            userCls: 'big-50 small-50'
         }
     ]
 });

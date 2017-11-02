@@ -14,14 +14,13 @@ Ext.define('LearningAnalytics.view.courses.CourseView', {
 
     items: [
         {
-            xtype: 'enrolledStudents', //
-            userCls: 'big-33 small-100'
-        },
-        {
             xtype: 'courseStatisticsChartWidget',
             userCls: 'big-60 small-100'
         },
-
+        {
+            xtype: 'enrolledStudents', //
+            userCls: 'big-33 small-100'
+        },
         {
             xtype: 'studentsWidget',
             userCls: 'big-50 small-50'
