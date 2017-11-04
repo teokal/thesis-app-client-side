@@ -23,6 +23,12 @@ Ext.define('LearningAnalytics.view.dashboard.ViewStudentsChartWidget', {
 
     layout: 'fit',
 
+    tools: [
+        {
+            type: 'expand'
+        }
+    ],
+
     items: [
         {
             xtype: 'viewChart',

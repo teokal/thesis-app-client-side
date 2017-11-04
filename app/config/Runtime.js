@@ -16,7 +16,10 @@ Ext.define('LearningAnalytics.config.Runtime',{
     },
 
     onBeforeRequest : function(connection, options) {
+        // debugger;
         options.url = this.getBaseUrl() + options.url;
-        options.headers.Authorization = "Token token=" + this.getToken();
+        // if (options.method === 'GET'){
+            options.headers.Authorization = "Token token=" + this.getToken();
+        // }
     }
 });

@@ -21,7 +21,7 @@ Ext.define('LearningAnalytics.view.dashboard.Dashboard', {
     items: [
         {
             xtype: 'course', //
-            userCls: 'big-33 small-100'
+            userCls: 'big-33 small-100 dashboard-item shadow'
         },
         {
             xtype: 'viewStudentsChart',

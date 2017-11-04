@@ -65,7 +65,7 @@ Ext.define('LearningAnalytics.view.chart.ViewStudentsChart', {
             tooltip: {
                 trackMouse: true,
                 renderer: function (tooltip, record, item) {
-                    tooltip.setHtml(' (' + record.get('date') + '): ' + record.get(item.field));
+                    tooltip.setHtml(' (' + record.get('date').substring(0,10) + '): ' + record.get(item.field));
                 }
             }
         }

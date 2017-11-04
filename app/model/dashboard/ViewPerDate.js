@@ -5,7 +5,7 @@ Ext.define('LearningAnalytics.model.dashboard.ViewPerDate', {
     extend: 'LearningAnalytics.model.Base',
 
     fields: [
-        { name: 'date', type: 'date' },
+        { name: 'date', type: 'string' },
         { name: 'view', type: 'int'}
     ]
 });

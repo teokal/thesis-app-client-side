@@ -11,7 +11,7 @@ Ext.define('LearningAnalytics.view.dashboard.DashboardController', {
         var store = viewModel.getStore('viewStudents');
         store.load({
             callback: function(records, operation, success) {
-                if (success == true){
+                if (success === true){
                     viewModel.setData({
                         recs: records,
                         enrolledusercount: records[0].data.enrolledusercount,

@@ -157,3 +157,9 @@
     @include font-icon($fa-var-wrench 16px);
     background: none;
 }
+
+// Custom Tool type: 'expand'
+.#{$prefix}tool-expand {
+    @include font-icon($fa-var-expand 16px);
+    background: none;
+}

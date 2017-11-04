@@ -31,6 +31,12 @@ Ext.define('LearningAnalytics.store.NavigationTree', {
                 id:'courses'
             },
             {
+                text: 'Login',
+                iconCls: 'x-fa fa-check',
+                viewType: 'login',
+                leaf: true
+            },
+            {
                 text: 'About',
                 iconCls: 'x-fa fa-info-circle',
                 viewType: 'about',
