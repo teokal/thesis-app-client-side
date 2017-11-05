@@ -21,11 +21,17 @@ Ext.define('LearningAnalytics.view.dashboard.Dashboard', {
     items: [
         {
             xtype: 'course', //
-            userCls: 'big-33 small-100 dashboard-item shadow'
+            style: {
+                'box-shadow': '0 0 5px rgba(0, 0, 0, 0.3)'
+            },
+            cls: 'big-33 small-100'
         },
         {
             xtype: 'viewStudentsChart',
-            userCls: 'big-60 small-100'
+            style: {
+                'box-shadow': '0 0 5px rgba(0, 0, 0, 0.3)'
+            },
+            cls: 'big-60 small-100'
         },
         {
             xtype: 'studentsWidget',

@@ -14,6 +14,9 @@ Ext.define('LearningAnalytics.view.widgets.WidgetSmall', {
 
     value: 0,
 
+    style: {
+        'box-shadow': '0 0 5px rgba(0, 0, 0, 0.3)'
+    },
 
     // data: {
     //     amount: 0,
