@@ -6,7 +6,7 @@ Ext.define('LearningAnalytics.view.widgets.WidgetSmall', {
     extend: 'Ext.panel.Panel',
     xtype: 'widgetSmall',
 
-    cls: 'info-card-item shadow',
+    cls: 'info-card-item',
 
     containerColor: '',
 

@@ -15,10 +15,16 @@ Ext.define('LearningAnalytics.view.courses.CourseView', {
     items: [
         {
             xtype: 'courseStatisticsChartWidget',
+            style: {
+                'box-shadow': '0 0 5px rgba(0, 0, 0, 0.3)'
+            },
             userCls: 'big-60 small-100'
         },
         {
             xtype: 'enrolledStudents', //
+            style: {
+                'box-shadow': '0 0 5px rgba(0, 0, 0, 0.3)'
+            },
             userCls: 'big-33 small-100'
         },
         {

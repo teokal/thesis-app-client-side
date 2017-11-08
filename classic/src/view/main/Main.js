@@ -28,6 +28,9 @@ Ext.define('LearningAnalytics.view.main.Main', {
             cls: 'sencha-dash-dash-headerbar shadow',
             height: 64,
             itemId: 'headerBar',
+            style: {
+                'box-shadow': '0 0 5px rgba(0, 0, 0, 0.3)'
+            },
             items: [
                 {
                     xtype: 'component',
@@ -74,6 +77,9 @@ Ext.define('LearningAnalytics.view.main.Main', {
                     width: 250,
                     expanderFirst: false,
                     expanderOnly: false,
+                    style: {
+                        'box-shadow': '0 0 5px rgba(0, 0, 0, 0.3)'
+                    },
                     listeners: {
                         selectionchange: 'onNavigationTreeSelectionChange',
                         // beforerender: 'onShowNavigationTree'
