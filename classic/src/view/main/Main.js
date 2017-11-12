@@ -66,6 +66,10 @@ Ext.define('LearningAnalytics.view.main.Main', {
             xtype: 'maincontainerwrap',
             id: 'main-view-detail-wrap',
             reference: 'mainContainerWrap',
+            // listeners: {
+            //     beforerender: 'onShowNavigationTree',
+            //
+            // },
             flex: 1,
             items: [
                 {
@@ -82,7 +86,8 @@ Ext.define('LearningAnalytics.view.main.Main', {
                     },
                     listeners: {
                         selectionchange: 'onNavigationTreeSelectionChange',
-                        // beforerender: 'onShowNavigationTree'
+                        // beforerender: 'onShowNavigationTree',
+
                         itemclick: 'onItemClick'
 
                     }
@@ -94,6 +99,11 @@ Ext.define('LearningAnalytics.view.main.Main', {
                     reference: 'mainCardPanel',
                     cls: 'sencha-dash-right-main-container',
                     itemId: 'contentPanel',
+                    listeners: {
+                        afterrender: 'onShowNavigationTree',
+
+                    },
+
                     layout: {
                         type: 'card',
                         anchor: '100%'

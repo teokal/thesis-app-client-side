@@ -7,7 +7,7 @@ Ext.define('LearningAnalytics.config.Runtime',{
     singleton : true,
     config : {
         baseUrl: 'http:\/\/83.212.105.139:3000',
-        token: 'tyPmHwzjeRfCkCSr47xgDv-VMTr9Fg'
+        token: ''
     },
 
     constructor : function(config){
@@ -18,8 +18,8 @@ Ext.define('LearningAnalytics.config.Runtime',{
     onBeforeRequest : function(connection, options) {
         // debugger;
         options.url = this.getBaseUrl() + options.url;
-        // if (options.method === 'GET'){
+        if (options.method === 'GET'){
             options.headers.Authorization = "Token token=" + this.getToken();
-        // }
+        }
     }
 });
