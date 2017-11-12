@@ -90,6 +90,7 @@ Ext.define('LearningAnalytics.view.main.Main', {
                 {
                     xtype: 'container',
                     flex: 1,
+                    id: 'container-view',
                     reference: 'mainCardPanel',
                     cls: 'sencha-dash-right-main-container',
                     itemId: 'contentPanel',

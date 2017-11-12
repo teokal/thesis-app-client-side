@@ -16,25 +16,33 @@ Ext.define('LearningAnalytics.view.chart.ViewStudentsChart', {
 
     insetPadding: 0,
 
+    innerPadding: {
+        top: 5
+    },
+
     axes: [
         {
             type: 'category',
             fields: 'date',
-            hidden: true,
-            position: 'bottom'
+            label: {
+                rotate: {
+                    degrees: -45
+                }
+            },
+            hidden: false,
+            position: 'bottom',
+            renderer: function(axis, data){
+                return data.substring(5,10);
+            }
         },
         {
             type: 'numeric',
             minimum: 0,
             fields: 'view',
-            grid: {
-                odd: {
-                    fill: '#e8e8e8'
-                }
-            },
+            grid: false,
 
-            majorTickSteps: 10,
-            hidden: true,
+            majorTickSteps: 3,
+            hidden: false,
             position: 'left'
         }
     ],

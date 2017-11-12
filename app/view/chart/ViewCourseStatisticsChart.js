@@ -16,6 +16,10 @@ Ext.define('LearningAnalytics.view.chart.ViewCourseStatisticsChart', {
 
     insetPadding: 0,
 
+    innerPadding: {
+        top: 5
+    },
+
     axes: [
         {
             type: 'category',
@@ -39,7 +43,6 @@ Ext.define('LearningAnalytics.view.chart.ViewCourseStatisticsChart', {
                 }
             },
 
-            majorTickSteps: 10,
             hidden: true,
             position: 'left'
         }

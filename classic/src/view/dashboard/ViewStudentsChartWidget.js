@@ -14,7 +14,7 @@ Ext.define('LearningAnalytics.view.dashboard.ViewStudentsChartWidget', {
         'Ext.ProgressBar'
     ],
 
-    cls: 'dashboard-main-chart shadow',
+    cls: 'dashboard-main-chart',
     height: 380,
 
     bodyPadding: 15,
@@ -25,7 +25,11 @@ Ext.define('LearningAnalytics.view.dashboard.ViewStudentsChartWidget', {
 
     tools: [
         {
-            type: 'expand'
+            type: 'expand',
+            toggleValue: true,
+            listeners: {
+                click: 'onExpand'
+            }
         }
     ],
 
