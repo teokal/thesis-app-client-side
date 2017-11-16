@@ -14,7 +14,13 @@ Ext.define('LearningAnalytics.view.main.MainController', {
         ':node': 'onRouteChange'
     },
 
+    requires: [
+        'LearningAnalytics.config.Runtime'
+    ],
+
     lastView: null,
+
+    navView: '',
 
     setCurrentView: function(hashTag) {
         hashTag = (hashTag || '').toLowerCase();
@@ -156,9 +162,10 @@ Ext.define('LearningAnalytics.view.main.MainController', {
     },
 
     onMainViewRender:function() {
-        if (!window.location.hash || window.location.hash === "#courses") {
-            this.redirectTo("login");
-        }
+        LearningAnalytics.config.Runtime.checkIfLogin();
+        // if (!window.location.hash || window.location.hash === "#courses") {
+        //     this.redirectTo("login");
+        // }
     },
 
     onRouteChange:function(id){
@@ -167,6 +174,7 @@ Ext.define('LearningAnalytics.view.main.MainController', {
 
     onBeforeRender: function() {
         debugger;
+        navView = this;
         var viewModel = this.getViewModel();
         var store = viewModel.getStore('courses');
         var coursesTree = this.lookupReference('navigationTreeList').rootItem.getNode().getChildAt(1);
@@ -223,15 +231,13 @@ Ext.define('LearningAnalytics.view.main.MainController', {
                 },
                 scope: this
             });
-
         }
     },
 
     onShowNavigationTree: function () {
-        debugger;
-        var viewModel = this.getViewModel();
+        var viewModel = navView.getViewModel();
         var store = viewModel.getStore('courses');
-        var coursesTree = this.lookupReference('navigationTreeList').rootItem.getNode().getChildAt(1);
+        var coursesTree = navView.lookupReference('navigationTreeList').rootItem.getNode().getChildAt(1);
 
         store.load({
             callback: function(records, operation, success) {
@@ -246,7 +252,7 @@ Ext.define('LearningAnalytics.view.main.MainController', {
                     coursesTree.appendChild(jsonObj);
                 });
             },
-            scope: this
+            scope: navView
 
         });
     },
@@ -256,13 +262,9 @@ Ext.define('LearningAnalytics.view.main.MainController', {
         var preparedData = {};
         preparedData.userid = this.lookupReference('userid').getSubmitValue();
         preparedData.password = this.lookupReference('password').getSubmitValue();
-        // debugger;
-        // var test = LearningAnalytics.config.Runtime.getToken();
-        // LearningAnalytics.config.Runtime.setToken('asdad');
         Ext.Ajax.request({
             url: '/api/1/sign_in',
             method: 'POST',
-            // type: 'json',
             jsonData: {
                 'username' : preparedData.userid,
                 'password' : preparedData.password
@@ -272,14 +274,12 @@ Ext.define('LearningAnalytics.view.main.MainController', {
                 var statusMessage = jsonData.response.status;
 
                 if(statusMessage === 'success'){
-                    // jsonData.response.user.access_token;
-                    LearningAnalytics.config.Runtime.setToken(jsonData.response.user.access_token);
                     debugger;
-                    // me.onShowNavigationTree();
+                    Ext.util.Cookies.set('AccessToken', jsonData.response.user.access_token);
+                    me.onShowNavigationTree();
                     me.redirectTo('dashboard', true);
                 } else {
-                    Ext.Msg.alert(jsonData.response.data);
-                    // me.redirectTo('dashboard', true);
+                    Ext.Msg.alert(jsonData.response.data, "Please try again");
                 }
             }
         });

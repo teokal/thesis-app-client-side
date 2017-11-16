@@ -22,8 +22,11 @@ Ext.define('LearningAnalytics.Application', {
                 }
             }
         );
-    }
+    },
 
+    launch: function () {
+        LearningAnalytics.config.Runtime.checkIfLogin();
+    }
 
 
 });

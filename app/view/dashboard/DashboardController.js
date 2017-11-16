@@ -3,7 +3,9 @@ Ext.define('LearningAnalytics.view.dashboard.DashboardController', {
     alias: 'controller.dashboard',
 
     requires: [
-        'Ext.util.TaskRunner'
+        'Ext.util.TaskRunner',
+        'LearningAnalytics.config.Runtime'
+
     ],
 
     onShow: function () {
@@ -25,12 +27,11 @@ Ext.define('LearningAnalytics.view.dashboard.DashboardController', {
     },
 
     onExpand: function(event, toolEl, panel) {
-        debugger;
         var chart = this.lookupReference('chart');
 
         chart.el.removeCls('big-33');
 
-        var chartWidth = this.getContainerViewWidth();
+        var chartWidth = LearningAnalytics.config.Runtime.getContainerViewWidth();
         chart.animate({dynamic: true, to: {width: chartWidth - 40 }});
     },
 
@@ -89,9 +90,5 @@ Ext.define('LearningAnalytics.view.dashboard.DashboardController', {
                 });
             }
         }
-    },
-
-    getContainerViewWidth: function() {
-        return document.getElementById('container-view').clientWidth;
     }
 });
