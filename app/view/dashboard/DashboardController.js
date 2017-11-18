@@ -5,7 +5,6 @@ Ext.define('LearningAnalytics.view.dashboard.DashboardController', {
     requires: [
         'Ext.util.TaskRunner',
         'LearningAnalytics.config.Runtime'
-
     ],
 
     onShow: function () {

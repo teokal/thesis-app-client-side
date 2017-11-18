@@ -6,18 +6,13 @@ Ext.define('LearningAnalytics.view.authentication.AuthenticationController', {
     alias: 'controller.authentication',
 
     requires: [
-        'LearningAnalytics.config.Runtime',
-        'LearningAnalytics.view.main.MainController'
+        'LearningAnalytics.config.Runtime'
     ],
 
     onLoginButton: function() {
-        var me = this;
         var preparedData = {};
         preparedData.userid = this.lookupReference('userid').getSubmitValue();
         preparedData.password = this.lookupReference('password').getSubmitValue();
-        // debugger;
-        // var test = LearningAnalytics.config.Runtime.getToken();
-        // LearningAnalytics.config.Runtime.setToken('asdad');
         Ext.Ajax.request({
             url: '/api/1/sign_in',
             method: 'POST',
@@ -31,18 +26,17 @@ Ext.define('LearningAnalytics.view.authentication.AuthenticationController', {
                 var statusMessage = jsonData.response.status;
 
                 if(statusMessage === 'success'){
-                    // jsonData.response.user.access_token;
-                    LearningAnalytics.config.Runtime.setToken(jsonData.response.user.access_token);
-                    debugger;
-                    me.onShowNavigationTree();
-                    me.redirectTo('dashboard', true);
+                    // me.onShowNavigationTree();
+                    Ext.util.Cookies.set('AccessToken', jsonData.response.user.access_token);
+                    // me.redirectTo('dashboard', true);
+                    Ext.create('LearningAnalytics.view.main.Main');
                 } else {
                     Ext.Msg.alert(jsonData.response.data);
                     // me.redirectTo('dashboard', true);
                 }
             }
         });
-    },
+    }
 
     // onShowNavigationTree: function () {
     //     debugger;

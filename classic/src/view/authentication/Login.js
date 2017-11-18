@@ -12,7 +12,7 @@ Ext.define('LearningAnalytics.view.authentication.Login', {
         'Ext.form.field.Text',
         'Ext.form.field.Checkbox',
         'Ext.button.Button',
-        'LearningAnalytics.view.main.Main'
+        // 'LearningAnalytics.view.main.Main'
     ],
 
     title: 'Let\'s Log In',

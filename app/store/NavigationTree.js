@@ -26,15 +26,8 @@ Ext.define('LearningAnalytics.store.NavigationTree', {
             {
                 text: 'Courses',
                 iconCls: 'x-fa fa-leanpub',
-                // viewType: 'pageblank',
                 leaf: false,
                 id:'courses'
-            },
-            {
-                text: 'Login',
-                iconCls: 'x-fa fa-check',
-                viewType: 'login',
-                leaf: true
             },
             {
                 text: 'About',

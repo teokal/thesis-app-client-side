@@ -20,8 +20,6 @@ Ext.define('LearningAnalytics.view.main.MainController', {
 
     lastView: null,
 
-    navView: '',
-
     setCurrentView: function(hashTag) {
         hashTag = (hashTag || '').toLowerCase();
 
@@ -162,10 +160,10 @@ Ext.define('LearningAnalytics.view.main.MainController', {
     },
 
     onMainViewRender:function() {
-        LearningAnalytics.config.Runtime.checkIfLogin();
-        // if (!window.location.hash || window.location.hash === "#courses") {
-        //     this.redirectTo("login");
-        // }
+        if (!window.location.hash || window.location.hash === "#courses" || window.location.hash === "#dashboard") {
+            this.redirectTo("dashboard");
+            this.setCurrentView("dashboard");
+        }
     },
 
     onRouteChange:function(id){
@@ -173,8 +171,6 @@ Ext.define('LearningAnalytics.view.main.MainController', {
     },
 
     onBeforeRender: function() {
-        debugger;
-        navView = this;
         var viewModel = this.getViewModel();
         var store = viewModel.getStore('courses');
         var coursesTree = this.lookupReference('navigationTreeList').rootItem.getNode().getChildAt(1);
@@ -232,57 +228,6 @@ Ext.define('LearningAnalytics.view.main.MainController', {
                 scope: this
             });
         }
-    },
-
-    onShowNavigationTree: function () {
-        var viewModel = navView.getViewModel();
-        var store = viewModel.getStore('courses');
-        var coursesTree = navView.lookupReference('navigationTreeList').rootItem.getNode().getChildAt(1);
-
-        store.load({
-            callback: function(records, operation, success) {
-                store.each(function(record) {
-                    var jsonObj = {
-                        id: record.data.id,
-                        text: record.data.fullname,
-                        iconCls: 'x-fa fa-book',
-                        viewType: 'courses',
-                        leaf: true
-                    };
-                    coursesTree.appendChild(jsonObj);
-                });
-            },
-            scope: navView
-
-        });
-    },
-
-    onLoginButton: function() {
-        var me = this;
-        var preparedData = {};
-        preparedData.userid = this.lookupReference('userid').getSubmitValue();
-        preparedData.password = this.lookupReference('password').getSubmitValue();
-        Ext.Ajax.request({
-            url: '/api/1/sign_in',
-            method: 'POST',
-            jsonData: {
-                'username' : preparedData.userid,
-                'password' : preparedData.password
-            },
-            callback:function(records, operation, success){
-                var jsonData = Ext.util.JSON.decode(success.responseText);
-                var statusMessage = jsonData.response.status;
-
-                if(statusMessage === 'success'){
-                    debugger;
-                    Ext.util.Cookies.set('AccessToken', jsonData.response.user.access_token);
-                    me.onShowNavigationTree();
-                    me.redirectTo('dashboard', true);
-                } else {
-                    Ext.Msg.alert(jsonData.response.data, "Please try again");
-                }
-            }
-        });
-    },
+    }
 
 });

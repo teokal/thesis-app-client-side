@@ -6,13 +6,13 @@ Ext.define('LearningAnalytics.view.authentication.Dialog', {
     xtype: 'authdialog',
 
     requires: [
-        'LearningAnalytics.view.authentication.AuthenticationController',
-        'LearningAnalytics.view.main.MainController',
+        // 'LearningAnalytics.view.authentication.AuthenticationController',
+        // 'LearningAnalytics.view.main.MainController',
         'Ext.form.Panel'
     ],
 
-    // controller: 'authentication',
-    controller: 'main',
+    controller: 'authentication',
+    // controller: 'main',
 
     viewModel: {
         type: 'authentication'

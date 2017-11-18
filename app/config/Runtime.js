@@ -10,6 +10,7 @@ Ext.define('LearningAnalytics.config.Runtime',{
     },
 
     constructor : function(config){
+        debugger;
         this.initConfig(config);
         Ext.Ajax.on('requestexception', this.onRequest, this);
         Ext.Ajax.on('beforerequest', this.onBeforeRequest, this);
@@ -25,11 +26,11 @@ Ext.define('LearningAnalytics.config.Runtime',{
     onRequest : function(conn, response, options, eOpts) {
         if (response){
             if (response.status === 401){
-                debugger;
-                delete options.failure;
-                delete options.callback;
-                window.location.assign('#login');
-                Ext.Msg.alert("Session timeout", "Please login");
+                Ext.Msg.alert("Session timeout", "", function()
+                {
+                    Ext.create('LearningAnalytics.view.authentication.Login');
+                    window.location.assign('');
+                });
             }
         }
     },
@@ -47,12 +48,14 @@ Ext.define('LearningAnalytics.config.Runtime',{
 
                 if(statusMessage === 'success'){
                     window.location.assign('#dashboard');
+                    return true;
                 } else {
                     debugger;
                     window.location.assign('#login');
                 }
             }
         });
+        return false;
     },
 
     getContainerViewWidth: function() {
