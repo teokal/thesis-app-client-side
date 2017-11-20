@@ -5,16 +5,12 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/temp/production/LearningAnalytics/slicer-temp/theme-capture.png" afterPath="$PROJECT_DIR$/build/temp/production/LearningAnalytics/slicer-temp/theme-capture.png" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/config/Runtime.js" afterPath="$PROJECT_DIR$/app/config/Runtime.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/store/NavigationTree.js" afterPath="$PROJECT_DIR$/app/store/NavigationTree.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/store/courses/CourseEnrolledStudents.js" afterPath="$PROJECT_DIR$/app/store/courses/CourseEnrolledStudents.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/store/courses/CourseStatistics.js" afterPath="$PROJECT_DIR$/app/store/courses/CourseStatistics.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/view/dashboard/DashboardController.js" afterPath="$PROJECT_DIR$/app/view/dashboard/DashboardController.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/LearningAnalytics-dashboard/classic.jsonp" afterPath="$PROJECT_DIR$/build/LearningAnalytics-dashboard/classic.jsonp" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/LearningAnalytics-dashboard/classic/app.js" afterPath="$PROJECT_DIR$/build/LearningAnalytics-dashboard/classic/app.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/LearningAnalytics-dashboard/classic/resources/LearningAnalytics-all_1.css" afterPath="$PROJECT_DIR$/build/LearningAnalytics-dashboard/classic/resources/LearningAnalytics-all_1.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/LearningAnalytics-dashboard/classic/resources/LearningAnalytics-all_2.css" afterPath="$PROJECT_DIR$/build/LearningAnalytics-dashboard/classic/resources/LearningAnalytics-all_2.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/LearningAnalytics-dashboard/classic/resources/LearningAnalytics-all_3.css" afterPath="$PROJECT_DIR$/build/LearningAnalytics-dashboard/classic/resources/LearningAnalytics-all_3.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/LearningAnalytics-dashboard/index.html" afterPath="$PROJECT_DIR$/build/LearningAnalytics-dashboard/index.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/LearningAnalytics-dashboard/modern.json" afterPath="$PROJECT_DIR$/build/LearningAnalytics-dashboard/modern.json" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/LearningAnalytics-dashboard/modern.jsonp" afterPath="$PROJECT_DIR$/build/LearningAnalytics-dashboard/modern.jsonp" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/LearningAnalytics-dashboard/modern/app.js" afterPath="$PROJECT_DIR$/build/LearningAnalytics-dashboard/modern/app.js" />
@@ -31,13 +27,9 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/temp/production/LearningAnalytics/slicer-temp/LearningAnalytics-example_3.css" afterPath="$PROJECT_DIR$/build/temp/production/LearningAnalytics/slicer-temp/LearningAnalytics-example_3.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/temp/production/LearningAnalytics/slicer-temp/bootstrap.json" afterPath="$PROJECT_DIR$/build/temp/production/LearningAnalytics/slicer-temp/bootstrap.json" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/temp/production/LearningAnalytics/slicer-temp/bootstrap.jsonp" afterPath="$PROJECT_DIR$/build/temp/production/LearningAnalytics/slicer-temp/bootstrap.jsonp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/classic.json" afterPath="$PROJECT_DIR$/classic.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/classic.jsonp" afterPath="$PROJECT_DIR$/classic.jsonp" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/classic/src/Application.js" afterPath="$PROJECT_DIR$/classic/src/Application.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/classic/src/view/authentication/AuthenticationController.js" afterPath="$PROJECT_DIR$/classic/src/view/authentication/AuthenticationController.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/classic/src/view/authentication/Dialog.js" afterPath="$PROJECT_DIR$/classic/src/view/authentication/Dialog.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/classic/src/view/authentication/Login.js" afterPath="$PROJECT_DIR$/classic/src/view/authentication/Login.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/classic/src/view/main/Main.js" afterPath="$PROJECT_DIR$/classic/src/view/main/Main.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/classic/src/view/dashboard/ViewStudentsChartWidget.js" afterPath="$PROJECT_DIR$/classic/src/view/dashboard/ViewStudentsChartWidget.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/classic/src/view/main/MainController.js" afterPath="$PROJECT_DIR$/classic/src/view/main/MainController.js" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -55,68 +47,8 @@
       <file leaf-file-name="Main.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/classic/src/view/main/Main.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="870">
-              <caret line="58" column="30" lean-forward="true" selection-start-line="58" selection-start-column="30" selection-end-line="58" selection-end-column="30" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Main.scss" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/classic/sass/src/view/main/Main.scss">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="114">
-              <caret line="79" column="0" lean-forward="false" selection-start-line="79" selection-start-column="0" selection-end-line="79" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="all.scss" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/modern/sass/etc/all.scss">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="45">
-              <caret line="3" column="0" lean-forward="false" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Component.scss" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/ext/classic/theme-neutral/sass/var/Component.scss">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="116">
-              <caret line="28" column="3" lean-forward="false" selection-start-line="28" selection-start-column="3" selection-end-line="28" selection-end-column="3" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Runtime.js" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/config/Runtime.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="660">
-              <caret line="44" column="59" lean-forward="true" selection-start-line="44" selection-start-column="59" selection-end-line="44" selection-end-column="59" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="MessageBox.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/ext/classic/classic/src/window/MessageBox.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="230">
-              <caret line="1033" column="47" lean-forward="true" selection-start-line="1033" selection-start-column="47" selection-end-line="1033" selection-end-column="47" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="all.scss" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/sass/var/all.scss">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="150">
-              <caret line="10" column="0" lean-forward="true" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
+            <state relative-caret-position="0">
+              <caret line="32" column="14" lean-forward="false" selection-start-line="32" selection-start-column="14" selection-end-line="32" selection-end-column="14" />
               <folding />
             </state>
           </provider>
@@ -125,28 +57,48 @@
       <file leaf-file-name="MainController.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/classic/src/view/main/MainController.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="285">
-              <caret line="19" column="0" lean-forward="true" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
+            <state relative-caret-position="1728">
+              <caret line="183" column="43" lean-forward="false" selection-start-line="183" selection-start-column="43" selection-end-line="183" selection-end-column="43" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="DashboardController.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="Dashboard.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/classic/src/view/dashboard/Dashboard.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="330">
+              <caret line="22" column="31" lean-forward="false" selection-start-line="22" selection-start-column="31" selection-end-line="22" selection-end-column="31" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ViewStudentsChartWidget.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/classic/src/view/dashboard/ViewStudentsChartWidget.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="375">
+              <caret line="25" column="12" lean-forward="true" selection-start-line="25" selection-start-column="12" selection-end-line="25" selection-end-column="12" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="DashboardController.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/view/dashboard/DashboardController.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="17" column="55" lean-forward="false" selection-start-line="17" selection-start-column="55" selection-end-line="17" selection-end-column="55" />
+            <state relative-caret-position="645">
+              <caret line="43" column="0" lean-forward="true" selection-start-line="43" selection-start-column="0" selection-end-line="43" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="NavigationTree.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/store/NavigationTree.js">
+      <file leaf-file-name="ViewStudentsChart.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/view/chart/ViewStudentsChart.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="480">
-              <caret line="32" column="30" lean-forward="true" selection-start-line="32" selection-start-column="30" selection-end-line="32" selection-end-column="30" />
+            <state relative-caret-position="300">
+              <caret line="20" column="6" lean-forward="false" selection-start-line="20" selection-start-column="6" selection-end-line="20" selection-end-column="6" />
               <folding />
             </state>
           </provider>
@@ -163,22 +115,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>dashboard-todo-list</find>
-      <find>viewStudents</find>
-      <find>onbeforerender</find>
-      <find>// Custom Tool type: 'wrench'</find>
-      <find>expand</find>
-      <find>dashboard-item</find>
-      <find>box-shadow</find>
-      <find>shadow</find>
-      <find>setDisplayGrid</find>
-      <find>nav-tree-animating</find>
-      <find>big-33</find>
-      <find>calc</find>
-      <find>mainContainerWrap</find>
-      <find>controller</find>
-      <find>onShowNavigationTree</find>
-      <find>LearningAnalytics.config.Runtime</find>
       <find>getContainerViewWidth</find>
       <find>onRouteChange</find>
       <find>auth-dialog-login</find>
@@ -189,10 +125,26 @@
       <find>api/1/courses/enrolled_users</find>
       <find>sencha-dash-right-main-container</find>
       <find>sencha</find>
-      <find>main-container</find>
       <find>setCurrentView</find>
       <find>navView</find>
+      <find>:</find>
+      <find>debu</find>
+      <find>messagebox-body-border-color</find>
+      <find>x-window-header</find>
+      <find>5FB8F1</find>
+      <find>#5FB8F1</find>
+      <find>main-container</find>
       <find>courseEnrolledStudents</find>
+      <find>x-treelist-row</find>
+      <find>margin-left: 44</find>
+      <find>element.style</find>
+      <find>margin</find>
+      <find>44px</find>
+      <find>margin-left:</find>
+      <find>margin-left: 40px</find>
+      <find>'margin-left': '</find>
+      <find>x-treelist-item</find>
+      <find>x-treelist-item-wrap</find>
     </findStrings>
     <dirStrings>
       <dir>$PROJECT_DIR$/modern/src</dir>
@@ -205,8 +157,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/modern/resources/LearningAnalytics-all.css" />
-        <option value="$PROJECT_DIR$/modern/src/view/pages/BlankPage.js" />
         <option value="$PROJECT_DIR$/modern/src/view/dashboard/Course.js" />
         <option value="$PROJECT_DIR$/modern/src/view/dashboard/DashboardController.js" />
         <option value="$PROJECT_DIR$/modern/src/Application.js" />
@@ -240,11 +190,8 @@
         <option value="$PROJECT_DIR$/app/view/chart/ViewStudentsChart.js" />
         <option value="$PROJECT_DIR$/app/view/chart/ViewCourseStatisticsChart.js" />
         <option value="$PROJECT_DIR$/classic/src/view/dashboard/Dashboard.js" />
-        <option value="$PROJECT_DIR$/classic/src/view/dashboard/ViewStudentsChartWidget.js" />
         <option value="$PROJECT_DIR$/app.js" />
-        <option value="$PROJECT_DIR$/classic/src/view/authentication/Dialog.js" />
         <option value="$PROJECT_DIR$/classic/src/view/authentication/Login.js" />
-        <option value="$PROJECT_DIR$/classic/src/Application.js" />
         <option value="$PROJECT_DIR$/app/store/courses/CourseStatistics.js" />
         <option value="$PROJECT_DIR$/app/store/courses/CourseEnrolledStudents.js" />
         <option value="$PROJECT_DIR$/classic/src/view/authentication/AuthenticationController.js" />
@@ -252,10 +199,15 @@
         <option value="$PROJECT_DIR$/ext/classic/theme-neutral/sass/var/Component.scss" />
         <option value="$PROJECT_DIR$/sass/var/all.scss" />
         <option value="$PROJECT_DIR$/classic/src/view/main/Main.js" />
-        <option value="$PROJECT_DIR$/classic/src/view/main/MainController.js" />
-        <option value="$PROJECT_DIR$/app/view/dashboard/DashboardController.js" />
         <option value="$PROJECT_DIR$/app/store/NavigationTree.js" />
+        <option value="$PROJECT_DIR$/classic/src/Application.js" />
+        <option value="$PROJECT_DIR$/classic/src/view/authentication/Dialog.js" />
+        <option value="$PROJECT_DIR$/classic/sass/src/view/main/Main.scss" />
         <option value="$PROJECT_DIR$/app/config/Runtime.js" />
+        <option value="$PROJECT_DIR$/classic/resources/LearningAnalytics-all_1.css" />
+        <option value="$PROJECT_DIR$/classic/src/view/main/MainController.js" />
+        <option value="$PROJECT_DIR$/classic/src/view/dashboard/ViewStudentsChartWidget.js" />
+        <option value="$PROJECT_DIR$/app/view/dashboard/DashboardController.js" />
       </list>
     </option>
   </component>
@@ -293,7 +245,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -316,27 +268,7 @@
               <item name="thesis-app-client-side" type="b2602c69:ProjectViewProjectNode" />
               <item name="thesis-app-client-side" type="462c0819:PsiDirectoryNode" />
               <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="store" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="thesis-app-client-side" type="b2602c69:ProjectViewProjectNode" />
-              <item name="thesis-app-client-side" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="store" type="462c0819:PsiDirectoryNode" />
-              <item name="dashboard" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="thesis-app-client-side" type="b2602c69:ProjectViewProjectNode" />
-              <item name="thesis-app-client-side" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
               <item name="view" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="thesis-app-client-side" type="b2602c69:ProjectViewProjectNode" />
-              <item name="thesis-app-client-side" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="view" type="462c0819:PsiDirectoryNode" />
-              <item name="chart" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="thesis-app-client-side" type="b2602c69:ProjectViewProjectNode" />
@@ -354,60 +286,6 @@
               <item name="thesis-app-client-side" type="b2602c69:ProjectViewProjectNode" />
               <item name="thesis-app-client-side" type="462c0819:PsiDirectoryNode" />
               <item name="classic" type="462c0819:PsiDirectoryNode" />
-              <item name="sass" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="thesis-app-client-side" type="b2602c69:ProjectViewProjectNode" />
-              <item name="thesis-app-client-side" type="462c0819:PsiDirectoryNode" />
-              <item name="classic" type="462c0819:PsiDirectoryNode" />
-              <item name="sass" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="thesis-app-client-side" type="b2602c69:ProjectViewProjectNode" />
-              <item name="thesis-app-client-side" type="462c0819:PsiDirectoryNode" />
-              <item name="classic" type="462c0819:PsiDirectoryNode" />
-              <item name="sass" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="view" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="thesis-app-client-side" type="b2602c69:ProjectViewProjectNode" />
-              <item name="thesis-app-client-side" type="462c0819:PsiDirectoryNode" />
-              <item name="classic" type="462c0819:PsiDirectoryNode" />
-              <item name="sass" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="view" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="thesis-app-client-side" type="b2602c69:ProjectViewProjectNode" />
-              <item name="thesis-app-client-side" type="462c0819:PsiDirectoryNode" />
-              <item name="classic" type="462c0819:PsiDirectoryNode" />
-              <item name="sass" type="462c0819:PsiDirectoryNode" />
-              <item name="var" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="thesis-app-client-side" type="b2602c69:ProjectViewProjectNode" />
-              <item name="thesis-app-client-side" type="462c0819:PsiDirectoryNode" />
-              <item name="classic" type="462c0819:PsiDirectoryNode" />
-              <item name="sass" type="462c0819:PsiDirectoryNode" />
-              <item name="var" type="462c0819:PsiDirectoryNode" />
-              <item name="view" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="thesis-app-client-side" type="b2602c69:ProjectViewProjectNode" />
-              <item name="thesis-app-client-side" type="462c0819:PsiDirectoryNode" />
-              <item name="classic" type="462c0819:PsiDirectoryNode" />
-              <item name="sass" type="462c0819:PsiDirectoryNode" />
-              <item name="var" type="462c0819:PsiDirectoryNode" />
-              <item name="view" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="thesis-app-client-side" type="b2602c69:ProjectViewProjectNode" />
-              <item name="thesis-app-client-side" type="462c0819:PsiDirectoryNode" />
-              <item name="classic" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -416,22 +294,6 @@
               <item name="classic" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="view" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="thesis-app-client-side" type="b2602c69:ProjectViewProjectNode" />
-              <item name="thesis-app-client-side" type="462c0819:PsiDirectoryNode" />
-              <item name="classic" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="view" type="462c0819:PsiDirectoryNode" />
-              <item name="authentication" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="thesis-app-client-side" type="b2602c69:ProjectViewProjectNode" />
-              <item name="thesis-app-client-side" type="462c0819:PsiDirectoryNode" />
-              <item name="classic" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="view" type="462c0819:PsiDirectoryNode" />
-              <item name="courses" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="thesis-app-client-side" type="b2602c69:ProjectViewProjectNode" />
@@ -453,7 +315,7 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scratches" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -615,7 +477,8 @@
       <workItem from="1510591317488" duration="680000" />
       <workItem from="1510678649692" duration="4447000" />
       <workItem from="1510850194780" duration="5463000" />
-      <workItem from="1510936018172" duration="16643000" />
+      <workItem from="1510936018172" duration="22251000" />
+      <workItem from="1511198537248" duration="2239000" />
     </task>
     <task id="LOCAL-00001" summary="test testdata">
       <created>1498045002687</created>
@@ -806,11 +669,18 @@
       <option name="project" value="LOCAL" />
       <updated>1510856154665</updated>
     </task>
-    <option name="localTasksCounter" value="28" />
+    <task id="LOCAL-00028" summary="update login / timeout">
+      <created>1511025953037</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1511025953037</updated>
+    </task>
+    <option name="localTasksCounter" value="29" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="268939000" />
+    <option name="totallyTimeSpent" value="276786000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="2880" height="1523" extended-state="0" />
@@ -897,7 +767,8 @@
     <MESSAGE value="add expand on chart" />
     <MESSAGE value="update login" />
     <MESSAGE value="update timeout" />
-    <option name="LAST_COMMIT_MESSAGE" value="update timeout" />
+    <MESSAGE value="update login / timeout" />
+    <option name="LAST_COMMIT_MESSAGE" value="update login / timeout" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -906,48 +777,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/modern/sass/src/view/widgets/StatusTile.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-28">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/modern/sass/src/view/widgets/SocialStatus.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/modern/sass/src/view/widgets/BioTile.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="92">
-          <caret line="8" column="1" lean-forward="true" selection-start-line="8" selection-start-column="1" selection-end-line="8" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/classic/src/view/dashboard/GradesWidget.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="18" column="24" lean-forward="true" selection-start-line="18" selection-start-column="24" selection-end-line="18" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/classic/sass/etc/all.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="284">
-          <caret line="24" column="17" lean-forward="false" selection-start-line="24" selection-start-column="7" selection-end-line="24" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sass/etc/all.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/sass/src/Application.scss">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -1004,13 +833,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/modern/src/view/dashboard/ViewStudentsChartWidget.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="4" column="13" lean-forward="false" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/build/LearningAnalytics-dashboard/myclassic/resources/LearningAnalytics-all_2.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="513">
@@ -1018,33 +840,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/view/chart/ViewStudentsChart.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="795">
-          <caret line="53" column="42" lean-forward="false" selection-start-line="53" selection-start-column="42" selection-end-line="53" selection-end-column="42" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/classic/src/view/dashboard/ViewStudentsChartWidget.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="22" column="0" lean-forward="false" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/store/dashboard/Courses.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="315">
           <caret line="21" column="0" lean-forward="false" selection-start-line="18" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/classic/src/view/dashboard/Course.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="6" column="4" lean-forward="false" selection-start-line="6" selection-start-column="4" selection-end-line="6" selection-end-column="4" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1052,9 +851,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="285">
           <caret line="19" column="0" lean-forward="false" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
-          <folding>
-            <element signature="n#!!doc" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1062,15 +858,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="322">
           <caret line="70061" column="4" lean-forward="false" selection-start-line="70061" selection-start-column="4" selection-end-line="70061" selection-end-column="4" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/classic/src/view/dashboard/Dashboard.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="9" column="21" lean-forward="false" selection-start-line="9" selection-start-column="21" selection-end-line="9" selection-end-column="21" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1078,7 +865,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="195">
           <caret line="13" column="16" lean-forward="false" selection-start-line="13" selection-start-column="16" selection-end-line="13" selection-end-column="16" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1086,7 +872,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="75">
           <caret line="5" column="25" lean-forward="false" selection-start-line="5" selection-start-column="12" selection-end-line="5" selection-end-column="25" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1100,27 +885,10 @@
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/classic/src/view/authentication/Dialog.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="11" column="6" lean-forward="false" selection-start-line="11" selection-start-column="6" selection-end-line="11" selection-end-column="6" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/classic/src/Application.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="420">
-          <caret line="28" column="37" lean-forward="false" selection-start-line="28" selection-start-column="37" selection-end-line="28" selection-end-column="37" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/classic/src/view/main/MainModel.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="165">
           <caret line="11" column="30" lean-forward="false" selection-start-line="11" selection-start-column="8" selection-end-line="11" selection-end-column="30" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1128,7 +896,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1136,7 +903,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="345">
           <caret line="23" column="0" lean-forward="false" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1144,7 +910,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1152,7 +917,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="210">
           <caret line="14" column="24" lean-forward="false" selection-start-line="14" selection-start-column="24" selection-end-line="14" selection-end-column="24" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1160,7 +924,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="495">
           <caret line="33" column="5" lean-forward="false" selection-start-line="33" selection-start-column="5" selection-end-line="33" selection-end-column="5" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1168,7 +931,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="225">
           <caret line="15" column="12" lean-forward="false" selection-start-line="15" selection-start-column="12" selection-end-line="15" selection-end-column="12" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1176,7 +938,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="585">
           <caret line="39" column="0" lean-forward="false" selection-start-line="39" selection-start-column="0" selection-end-line="39" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1184,7 +945,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="330">
           <caret line="22" column="14" lean-forward="false" selection-start-line="22" selection-start-column="14" selection-end-line="22" selection-end-column="14" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1192,7 +952,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="60">
           <caret line="4" column="55" lean-forward="false" selection-start-line="4" selection-start-column="12" selection-end-line="4" selection-end-column="55" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1200,7 +959,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="15">
           <caret line="1" column="1" lean-forward="false" selection-start-line="1" selection-start-column="1" selection-end-line="1" selection-end-column="1" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1208,15 +966,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="195">
           <caret line="13" column="0" lean-forward="false" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/classic/sass/src/view/main/Main.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="114">
-          <caret line="79" column="0" lean-forward="false" selection-start-line="79" selection-start-column="0" selection-end-line="79" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1224,31 +973,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="45">
           <caret line="3" column="0" lean-forward="false" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ext/classic/theme-neutral/sass/var/Component.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="116">
-          <caret line="28" column="3" lean-forward="false" selection-start-line="28" selection-start-column="3" selection-end-line="28" selection-end-column="3" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/sass/var/all.scss">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="150">
-          <caret line="10" column="0" lean-forward="true" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/store/NavigationTree.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="480">
-          <caret line="32" column="30" lean-forward="true" selection-start-line="32" selection-start-column="30" selection-end-line="32" selection-end-column="30" />
-          <folding />
+          <caret line="10" column="0" lean-forward="false" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
         </state>
       </provider>
     </entry>
@@ -1256,38 +987,155 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="230">
           <caret line="1033" column="47" lean-forward="true" selection-start-line="1033" selection-start-column="47" selection-end-line="1033" selection-end-column="47" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/store/NavigationTree.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="615">
+          <caret line="41" column="0" lean-forward="false" selection-start-line="41" selection-start-column="0" selection-end-line="41" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ext/classic/theme-neutral/sass/var/window/MessageBox.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="20" column="54" lean-forward="false" selection-start-line="20" selection-start-column="54" selection-end-line="20" selection-end-column="54" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ext/classic/theme-classic/sass/var/window/Window.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="45">
+          <caret line="3" column="34" lean-forward="false" selection-start-line="3" selection-start-column="34" selection-end-line="3" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ext/classic/theme-neutral/sass/var/Component.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="179">
+          <caret line="34" column="3" lean-forward="false" selection-start-line="34" selection-start-column="3" selection-end-line="34" selection-end-column="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/classic/sass/src/view/pages/Error404Window.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="495">
+          <caret line="33" column="0" lean-forward="false" selection-start-line="33" selection-start-column="0" selection-end-line="33" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/classic/sass/src/view/pages/FAQ.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/classic/src/view/authentication/Dialog.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="435">
+          <caret line="29" column="7" lean-forward="false" selection-start-line="29" selection-start-column="7" selection-end-line="29" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/classic/sass/src/view/main/Main.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="115">
+          <caret line="64" column="0" lean-forward="true" selection-start-line="64" selection-start-column="0" selection-end-line="64" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/config/Runtime.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="19" column="38" lean-forward="true" selection-start-line="19" selection-start-column="38" selection-end-line="19" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/classic/src/Application.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="14" column="40" lean-forward="false" selection-start-line="14" selection-start-column="40" selection-end-line="14" selection-end-column="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/classic/src/view/main/Main.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="32" column="14" lean-forward="false" selection-start-line="32" selection-start-column="14" selection-end-line="32" selection-end-column="14" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/classic/resources/LearningAnalytics-all_1.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="168">
+          <caret line="459" column="54" lean-forward="true" selection-start-line="459" selection-start-column="54" selection-end-line="459" selection-end-column="54" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/classic/src/view/dashboard/Course.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="6" column="4" lean-forward="false" selection-start-line="6" selection-start-column="4" selection-end-line="6" selection-end-column="4" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/classic/src/view/dashboard/StudentsWidget.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/classic/src/view/dashboard/Dashboard.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="330">
+          <caret line="22" column="31" lean-forward="false" selection-start-line="22" selection-start-column="31" selection-end-line="22" selection-end-column="31" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/modern/src/view/dashboard/ViewStudentsChartWidget.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="13" column="38" lean-forward="false" selection-start-line="13" selection-start-column="38" selection-end-line="13" selection-end-column="38" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/view/chart/ViewStudentsChart.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="20" column="6" lean-forward="false" selection-start-line="20" selection-start-column="6" selection-end-line="20" selection-end-column="6" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/classic/src/view/main/MainController.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="19" column="0" lean-forward="true" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
+        <state relative-caret-position="1728">
+          <caret line="183" column="43" lean-forward="false" selection-start-line="183" selection-start-column="43" selection-end-line="183" selection-end-column="43" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/classic/src/view/dashboard/ViewStudentsChartWidget.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="375">
+          <caret line="25" column="12" lean-forward="true" selection-start-line="25" selection-start-column="12" selection-end-line="25" selection-end-column="12" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/view/dashboard/DashboardController.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="17" column="55" lean-forward="false" selection-start-line="17" selection-start-column="55" selection-end-line="17" selection-end-column="55" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/classic/src/view/main/Main.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="870">
-          <caret line="58" column="30" lean-forward="true" selection-start-line="58" selection-start-column="30" selection-end-line="58" selection-end-column="30" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/config/Runtime.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="660">
-          <caret line="44" column="59" lean-forward="true" selection-start-line="44" selection-start-column="59" selection-end-line="44" selection-end-column="59" />
+        <state relative-caret-position="645">
+          <caret line="43" column="0" lean-forward="true" selection-start-line="43" selection-start-column="0" selection-end-line="43" selection-end-column="0" />
           <folding />
         </state>
       </provider>

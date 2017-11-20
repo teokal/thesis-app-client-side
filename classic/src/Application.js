@@ -25,8 +25,6 @@ Ext.define('LearningAnalytics.Application', {
     },
 
     launch: function () {
-        debugger;
-        // var test = LearningAnalytics.config.Runtime.checkIfLogin();
         var me = this;
         Ext.Ajax.request({
             url: '/api/1/test',
@@ -39,21 +37,16 @@ Ext.define('LearningAnalytics.Application', {
                 var statusMessage = jsonData.response.data.authorized;
 
                 if(statusMessage === true){
-                    debugger;
                     me.setDefaultToken('dashboard');
                     me.setMainView('LearningAnalytics.view.main.Main');
                     // window.location.assign('#dashboard');
                     // return true;
                 } else {
-                    debugger;
                     me.setDefaultToken('login');
                     me.setMainView('LearningAnalytics.view.authentication.Login');
                 }
             }
         });
-
-        // this.setMainView('LearningAnalytics.view.authentication.Login');
-        // this.mainView = 'LearningAnalytics.view.main.Main';
     }
 
 });

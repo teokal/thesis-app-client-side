@@ -30,6 +30,14 @@ Ext.define('LearningAnalytics.view.dashboard.ViewStudentsChartWidget', {
             listeners: {
                 click: 'onExpand'
             }
+        },
+        {
+            itemId: 'collapse',
+            type: 'collapse',
+            hidden: true,
+            listeners: {
+                click: 'onCollapse'
+            }
         }
     ],
 

@@ -27,13 +27,24 @@ Ext.define('LearningAnalytics.view.dashboard.DashboardController', {
 
     onExpand: function(event, toolEl, panel) {
         var chart = this.lookupReference('chart');
-
         chart.el.removeCls('big-33');
 
         var chartWidth = LearningAnalytics.config.Runtime.getContainerViewWidth();
         chart.animate({dynamic: true, to: {width: chartWidth - 40 }});
+
+        panel.tools.expand.setHidden(true);
+        panel.tools.collapse.setHidden(false);
     },
 
+    onCollapse: function(event, toolEl, panel) {
+        var chart = this.lookupReference('chart');
+
+        var chartWidth = LearningAnalytics.config.Runtime.getContainerViewWidth();
+        chart.animate({dynamic: true, to: {width: chartWidth / 3 }});
+
+        panel.tools.expand.setHidden(false);
+        panel.tools.collapse.setHidden(true);
+    },
 
     onToggleNavigationSize: function () {
         var me = this,

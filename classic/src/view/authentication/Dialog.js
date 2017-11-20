@@ -28,6 +28,7 @@ Ext.define('LearningAnalytics.view.authentication.Dialog', {
      * Enables browser (or Password Managers) support for autoCompletion of User Id and
      * password.
      */
+
     autoComplete : true,
 
     initComponent: function () {

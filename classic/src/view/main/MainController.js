@@ -175,6 +175,7 @@ Ext.define('LearningAnalytics.view.main.MainController', {
         var store = viewModel.getStore('courses');
         var coursesTree = this.lookupReference('navigationTreeList').rootItem.getNode().getChildAt(1);
 
+
         store.load({
             callback: function(records, operation, success) {
                 store.each(function(record) {
@@ -183,6 +184,10 @@ Ext.define('LearningAnalytics.view.main.MainController', {
                         text: record.data.fullname,
                         iconCls: 'x-fa fa-book',
                         viewType: 'courses',
+                        style: {
+                            'margin-left': '10px'
+                        },
+                        // margin: '0 5 3 10',
                         leaf: true
                     };
                     coursesTree.appendChild(jsonObj);
