@@ -26,9 +26,16 @@ Ext.define('LearningAnalytics.view.authentication.AuthenticationController', {
                 var statusMessage = jsonData.response.status;
 
                 if(statusMessage === 'success'){
-                    // me.onShowNavigationTree();
-                    Ext.util.Cookies.set('AccessToken', jsonData.response.user.access_token);
-                    // me.redirectTo('dashboard', true);
+                    var object = {
+                        'first_name' : jsonData.response.user.first_name,
+                        'last_name' : jsonData.response.user.last_name,
+                        'full_name' : jsonData.response.user.full_name,
+                        'access_token' : jsonData.response.user.access_token,
+                        'picture_url' : jsonData.response.user.picture_url,
+                        'username' : jsonData.response.user.username
+                    };
+                    var cookies = JSON.stringify(object);
+                    Ext.util.Cookies.set('AccessToken', cookies);
                     Ext.create('LearningAnalytics.view.main.Main');
                 } else {
                     Ext.Msg.alert(jsonData.response.data);
@@ -37,30 +44,4 @@ Ext.define('LearningAnalytics.view.authentication.AuthenticationController', {
             }
         });
     }
-
-    // onShowNavigationTree: function () {
-    //     debugger;
-    //     var viewModel = this.getViewModel();
-    //     var store = viewModel.getStore('courses');
-    //     var coursesTree = this.lookupReference('navigationTreeList').rootItem.getNode().getChildAt(1);
-    //
-    //     store.load({
-    //         callback: function(records, operation, success) {
-    //             store.each(function(record) {
-    //                 var jsonObj = {
-    //                     id: record.data.id,
-    //                     text: record.data.fullname,
-    //                     iconCls: 'x-fa fa-book',
-    //                     viewType: 'courses',
-    //                     leaf: true
-    //                 };
-    //                 coursesTree.appendChild(jsonObj);
-    //             });
-    //         },
-    //         scope: this
-    //
-    //     });
-    //
-    // }
-
 });

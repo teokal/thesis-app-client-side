@@ -19,7 +19,8 @@ Ext.define('LearningAnalytics.view.main.Main', {
 
     listeners: {
         render: 'onMainViewRender',
-        beforerender: 'onBeforeRender'
+        beforerender: 'onBeforeRender',
+        afterrender: 'onAfterRender'
     },
 
     items: [
@@ -49,11 +50,13 @@ Ext.define('LearningAnalytics.view.main.Main', {
                 '->',
                 {
                     xtype: 'tbtext',
+                    reference: 'username',
                     text: 'Username',
                     cls: 'top-user-name'
                 },
                 {
                     xtype: 'image',
+                    reference: 'userImage',
                     cls: 'header-right-profile-image',
                     height: 35,
                     width: 35,

@@ -18,7 +18,13 @@ Ext.define('LearningAnalytics.config.Runtime',{
     onBeforeRequest : function(connection, options, eOpts) {
         options.url = this.getBaseUrl() + options.url;
         if (options.method === 'GET'){
-            options.headers.Authorization = "Token token=" + Ext.util.Cookies.get('AccessToken');
+            var object = Ext.util.Cookies.get('AccessToken');
+            var cookies = JSON.parse(object);
+            var token = null;
+            if (cookies !== null) {
+                token = cookies.access_token
+            }
+            options.headers.Authorization = "Token token=" + token;
         }
     },
 

@@ -198,6 +198,16 @@ Ext.define('LearningAnalytics.view.main.MainController', {
         });
     },
 
+    onAfterRender: function() {
+        var username = this.lookupReference('username');
+        var userImage = this.lookupReference('userImage');
+        var object = Ext.util.Cookies.get('AccessToken');
+        var cookies = JSON.parse(object);
+
+        username.setText(cookies.full_name);
+        userImage.setSrc(cookies.picture_url);
+    },
+
     onItemClick: function (view,rec,item) {
         if (rec.node.parentNode.id === 'courses'){
             var viewModel = this.getViewModel();
