@@ -23,13 +23,14 @@ Ext.define('LearningAnalytics.view.chart.ViewStudentsChart', {
     axes: [
         {
             type: 'category',
+            id: 'category',
             fields: 'date',
             label: {
                 rotate: {
                     degrees: -45
                 }
             },
-            hidden: false,
+            hidden: true,
             position: 'bottom',
             renderer: function(axis, data){
                 return data.substring(5,10);
@@ -37,12 +38,13 @@ Ext.define('LearningAnalytics.view.chart.ViewStudentsChart', {
         },
         {
             type: 'numeric',
+            id: 'numeric',
             minimum: 0,
             fields: 'view',
             grid: false,
 
             majorTickSteps: 3,
-            hidden: false,
+            hidden: true,
             position: 'left'
         }
     ],
