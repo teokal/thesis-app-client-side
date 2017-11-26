@@ -17,8 +17,6 @@ Ext.define('LearningAnalytics.view.main.MainModel', {
             type: 'courseStatistics',
             autoLoad: true
         }
-
-
     },
 
     data: {

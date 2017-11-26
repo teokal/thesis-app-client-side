@@ -12,9 +12,12 @@ Ext.define('LearningAnalytics.view.courses.CourseView', {
 
     layout: 'responsivecolumn',
 
+
     items: [
         {
             xtype: 'courseStatisticsChartWidget',
+            id: 'chartCourseLog',
+            reference: 'chartCourseLog',
             style: {
                 'box-shadow': '0 0 5px rgba(0, 0, 0, 0.3)'
             },

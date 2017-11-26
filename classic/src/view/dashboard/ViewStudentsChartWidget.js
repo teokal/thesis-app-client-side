@@ -35,6 +35,14 @@ Ext.define('LearningAnalytics.view.dashboard.ViewStudentsChartWidget', {
             }
         },
         {
+            type: 'refresh',
+            toggleValue: false,
+            hidden: true,
+            listeners: {
+                click: 'onRefreshToggle'
+            }
+        },
+        {
             itemId: 'collapse',
             type: 'collapse',
             hidden: true,
@@ -69,7 +77,7 @@ Ext.define('LearningAnalytics.view.dashboard.ViewStudentsChartWidget', {
                     submitFormat: 'd-m-Y',
                     padding: '0 0 0 30',
                     fieldLabel: 'Date From',
-                    // width: 320,
+                    maxWidth: 200,
                     flex: 1
                 },
                 {
@@ -84,9 +92,8 @@ Ext.define('LearningAnalytics.view.dashboard.ViewStudentsChartWidget', {
                     submitFormat: 'd-m-Y',
                     padding: '0 0 0 30',
                     fieldLabel: 'Date To',
-                    // width: 320,
+                    maxWidth: 200,
                     flex: 1
-
                 },
                 {
                     reference: 'actionView',
@@ -100,36 +107,34 @@ Ext.define('LearningAnalytics.view.dashboard.ViewStudentsChartWidget', {
                     padding: '0 0 0 30',
                     autoSelect:true,
                     forceSelection:true,
+                    maxWidth: 200,
                     listeners:{
                         afterrender:function(rec){
                             this.setValue('day');
                         }
                     },
                     flex: 0.5
-
-
-                },
-                {
-                    reference: 'actionsQuery',
-                    xtype:'combo',
-                    labelAlign: 'top',
-                    fieldLabel:'Actions',
-                    name:'actionsQuery',
-                    queryMode:'local',
-                    store:['all','view','quiz', 'enrol','unenrol'],
-                    displayField:'actionsQuery',
-                    padding: '0 0 0 30',
-                    autoSelect:true,
-                    forceSelection:true,
-                    listeners:{
-                        afterrender:function(rec){
-                            this.setValue('all');
-                        }
-                    },
-                    flex: 0.5
-
-
                 }
+                // {
+                //     reference: 'actionsQuery',
+                //     xtype:'combo',
+                //     labelAlign: 'top',
+                //     fieldLabel:'Actions',
+                //     name:'actionsQuery',
+                //     queryMode:'local',
+                //     store:['all','view','quiz', 'enrol','unenrol'],
+                //     displayField:'actionsQuery',
+                //     padding: '0 0 0 30',
+                //     autoSelect:true,
+                //     forceSelection:true,
+                //     maxWidth: 200,
+                //     listeners:{
+                //         afterrender:function(rec){
+                //             this.setValue('all');
+                //         }
+                //     },
+                //     flex: 0.5
+                // }
             ]
         },
         {

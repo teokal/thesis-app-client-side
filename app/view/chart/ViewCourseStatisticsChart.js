@@ -17,7 +17,7 @@ Ext.define('LearningAnalytics.view.chart.ViewCourseStatisticsChart', {
     insetPadding: 0,
 
     innerPadding: {
-        top: 5
+        top: 20
     },
 
     axes: [
@@ -25,7 +25,15 @@ Ext.define('LearningAnalytics.view.chart.ViewCourseStatisticsChart', {
             type: 'category',
             fields: 'date',
             hidden: true,
-            position: 'bottom'
+            position: 'bottom',
+            label: {
+                rotate: {
+                    degrees: -45
+                }
+            },
+            renderer: function(axis, data){
+                return data.substring(5,10);
+            }
         },
         {
             type: 'numeric',
@@ -36,13 +44,8 @@ Ext.define('LearningAnalytics.view.chart.ViewCourseStatisticsChart', {
                 'enrol',
                 'unenrol'
             ],
-
-            grid: {
-                odd: {
-                    fill: '#e8e8e8'
-                }
-            },
-
+            grid: false,
+            majorTickSteps: 3,
             hidden: true,
             position: 'left'
         }
@@ -172,8 +175,6 @@ Ext.define('LearningAnalytics.view.chart.ViewCourseStatisticsChart', {
                     tooltip.setHtml(item.field.toString() + ' (' + record.get('date').substring(0,10) + '): ' + record.get(item.field));
                 }
             }
-        },
-
+        }
     ]
-
 });
