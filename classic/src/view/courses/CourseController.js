@@ -7,7 +7,8 @@ Ext.define('LearningAnalytics.view.courses.CourseController', {
     alias: 'controller.courseController',
 
     requires: [
-        'Ext.util.TaskRunner'
+        'Ext.util.TaskRunner',
+        'Ext.window.Toast'
     ],
 
     onShow: function () {
@@ -15,7 +16,6 @@ Ext.define('LearningAnalytics.view.courses.CourseController', {
     },
 
     onExpand: function(event, toolEl, panel) {
-        debugger;
         var me = this;
         var chartPanel = me.view;
         var viewChart = me.lookupReference('viewCourseStatisticsChart');
@@ -65,49 +65,52 @@ Ext.define('LearningAnalytics.view.courses.CourseController', {
     },
 
     onRefreshToggle: function(event, toolEl, panel) {
-        debugger;
-        //Actions
         var dateFrom = this.lookupReference('dateFrom');
         var dateTo = this.lookupReference('dateTo');
         var view = this.lookupReference('actionView');
         var actionQuery = this.lookupReference('actionsQuery');
 
-        if (dateFrom.getSubmitValue() === "" || dateTo.getSubmitValue() === "" ) {
-            Ext.toast({
-                html: 'Please select dates',
-                width: 200,
-                align: 't'
-            });
-            // Ext.toast('Please select dates!', 5000);
-        } else {
-            var viewModel = this.getViewModel();
-            var store = viewModel.getStore('viewStudents');
-            store.load({
-                params: {
-                    from_date: dateFrom.getSubmitValue(),
-                    to_date: dateTo.getSubmitValue(),
-                    view: view.getSubmitValue()
-                },
-                callback: function(records, operation, success) {
-                    // do something after the load finishes
-                    if (success == true){
-                        // form.expand(false);
-                        viewModel.setData({
-                            recs: records,
-                            list: store
-                        });
-                    } else {
-                        Ext.toast({
-                            html: 'Failure.!!',
-                            width: 200,
-                            align: 't'
-                        });
+        Ext.toast({
+            html: 'Please select dates',
+            width: 200,
+            align: 't'
+        });
 
-                    }
-                },
-                scope: this
-            });
-        }
+        // if (dateFrom.getSubmitValue() === "" || dateTo.getSubmitValue() === "" ) {
+        //     Ext.toast({
+        //         html: 'Please select dates',
+        //         width: 200,
+        //         align: 't'
+        //     });
+        // } else {
+        //     var viewModel = this.getViewModel();
+        //     var store = viewModel.getStore('viewStudents');
+        //     store.load({
+        //         params: {
+        //             from_date: dateFrom.getSubmitValue(),
+        //             to_date: dateTo.getSubmitValue(),
+        //             view: view.getSubmitValue()
+        //         },
+        //         callback: function(records, operation, success) {
+        //             // do something after the load finishes
+        //             if (success == true){
+        //                 // form.expand(false);
+        //                 viewModel.setData({
+        //                     recs: records,
+        //                     list: store
+        //                 });
+        //             } else {
+        //                 Ext.toast({
+        //                     html: 'Failure.!!',
+        //                     width: 200,
+        //                     align: 't'
+        //                 });
+        //
+        //             }
+        //         },
+        //         scope: this
+        //     });
+        // }
 
     }
 

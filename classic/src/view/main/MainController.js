@@ -112,7 +112,6 @@ Ext.define('LearningAnalytics.view.main.MainController', {
             new_width = collapsing ? 64 : 250;
 
         var chartPanel = wrapContainer.down('chart');
-        debugger;
         if (Ext.isIE9m || !Ext.os.is.Desktop) {
             Ext.suspendLayouts();
 

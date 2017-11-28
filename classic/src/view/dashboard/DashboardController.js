@@ -1,3 +1,7 @@
+/**
+ *  Created by n.vasileiadis on 28.11.17
+ */
+
 Ext.define('LearningAnalytics.view.dashboard.DashboardController', {
     extend: 'Ext.app.ViewController',
     alias: 'controller.dashboard',
@@ -27,7 +31,6 @@ Ext.define('LearningAnalytics.view.dashboard.DashboardController', {
     },
 
     onExpand: function(event, toolEl, panel) {
-        debugger;
         var chartPanel = this.lookupReference('chart');
         var viewChart = chartPanel.getComponent('viewChartContainer').getComponent('viewChart');
         var filterContainer = chartPanel.getComponent('filterContainer');
@@ -75,8 +78,6 @@ Ext.define('LearningAnalytics.view.dashboard.DashboardController', {
     },
 
     onRefreshToggle: function(event, toolEl, panel) {
-        debugger;
-        //Actions
         var dateFrom = this.lookupReference('dateFrom');
         var dateTo = this.lookupReference('dateTo');
         var view = this.lookupReference('actionView');
@@ -88,7 +89,6 @@ Ext.define('LearningAnalytics.view.dashboard.DashboardController', {
                 width: 200,
                 align: 't'
             });
-            // Ext.toast('Please select dates!', 5000);
         } else {
             var viewModel = this.getViewModel();
             var store = viewModel.getStore('viewStudents');
@@ -99,9 +99,7 @@ Ext.define('LearningAnalytics.view.dashboard.DashboardController', {
                     view: view.getSubmitValue()
                 },
                 callback: function(records, operation, success) {
-                    // do something after the load finishes
-                    if (success == true){
-                        // form.expand(false);
+                    if (success === true){
                         viewModel.setData({
                             recs: records,
                             list: store
@@ -122,3 +120,4 @@ Ext.define('LearningAnalytics.view.dashboard.DashboardController', {
     }
 
 });
+

@@ -2,10 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f8dc9324-99df-43e6-be41-1aee28966c96" name="Default" comment="update username and image">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/classic/src/view/dashboard/DashboardController.js" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/view/dashboard/DashboardController.js" afterPath="" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/app/view/dashboard/DashboardModel.js" afterPath="$PROJECT_DIR$/classic/src/view/dashboard/DashboardModel.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/temp/production/LearningAnalytics/slicer-temp/theme-capture.png" afterPath="$PROJECT_DIR$/build/temp/production/LearningAnalytics/slicer-temp/theme-capture.png" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/view/chart/ViewCourseStatisticsChart.js" afterPath="$PROJECT_DIR$/app/view/chart/ViewCourseStatisticsChart.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/view/dashboard/DashboardController.js" afterPath="$PROJECT_DIR$/app/view/dashboard/DashboardController.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/LearningAnalytics-dashboard/classic.jsonp" afterPath="$PROJECT_DIR$/build/LearningAnalytics-dashboard/classic.jsonp" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/LearningAnalytics-dashboard/classic/app.js" afterPath="$PROJECT_DIR$/build/LearningAnalytics-dashboard/classic/app.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/LearningAnalytics-dashboard/classic/resources/LearningAnalytics-all_1.css" afterPath="$PROJECT_DIR$/build/LearningAnalytics-dashboard/classic/resources/LearningAnalytics-all_1.css" />
@@ -30,10 +31,7 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/classic.json" afterPath="$PROJECT_DIR$/classic.json" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/classic.jsonp" afterPath="$PROJECT_DIR$/classic.jsonp" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/classic/src/view/courses/CourseController.js" afterPath="$PROJECT_DIR$/classic/src/view/courses/CourseController.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/classic/src/view/courses/CourseStatisticsChartWidget.js" afterPath="$PROJECT_DIR$/classic/src/view/courses/CourseStatisticsChartWidget.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/classic/src/view/courses/CourseView.js" afterPath="$PROJECT_DIR$/classic/src/view/courses/CourseView.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/classic/src/view/dashboard/ViewStudentsChartWidget.js" afterPath="$PROJECT_DIR$/classic/src/view/dashboard/ViewStudentsChartWidget.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/classic/src/view/main/MainModel.js" afterPath="$PROJECT_DIR$/classic/src/view/main/MainModel.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/classic/src/view/main/MainController.js" afterPath="$PROJECT_DIR$/classic/src/view/main/MainController.js" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -49,17 +47,7 @@
     <window id="3">
       <content type="file-editors">
         <state>
-          <leaf>
-            <file leaf-file-name="DashboardController.js" pinned="false" current-in-tab="false">
-              <entry file="file://$PROJECT_DIR$/app/view/dashboard/DashboardController.js">
-                <provider selected="true" editor-type-id="text-editor">
-                  <state relative-caret-position="210">
-                    <caret line="14" column="55" lean-forward="false" selection-start-line="14" selection-start-column="55" selection-end-line="14" selection-end-column="55" />
-                    <folding />
-                  </state>
-                </provider>
-              </entry>
-            </file>
+          <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
             <file leaf-file-name="ViewStudentsChart.js" pinned="false" current-in-tab="true">
               <entry file="file://$PROJECT_DIR$/app/view/chart/ViewStudentsChart.js">
                 <provider selected="true" editor-type-id="text-editor">
@@ -80,28 +68,18 @@
       <file leaf-file-name="Main.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/classic/src/view/main/Main.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="495">
+            <state relative-caret-position="0">
               <caret line="33" column="14" lean-forward="false" selection-start-line="33" selection-start-column="14" selection-end-line="33" selection-end-column="14" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ViewCourseStatisticsChart.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="ViewCourseStatisticsChart.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/view/chart/ViewCourseStatisticsChart.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="600">
-              <caret line="40" column="21" lean-forward="true" selection-start-line="40" selection-start-column="21" selection-end-line="40" selection-end-column="21" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="MainModel.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/classic/src/view/main/MainModel.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="240">
-              <caret line="16" column="37" lean-forward="false" selection-start-line="16" selection-start-column="37" selection-end-line="16" selection-end-column="37" />
+            <state relative-caret-position="465">
+              <caret line="31" column="17" lean-forward="false" selection-start-line="31" selection-start-column="17" selection-end-line="31" selection-end-column="17" />
               <folding />
             </state>
           </provider>
@@ -110,8 +88,8 @@
       <file leaf-file-name="Dashboard.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/classic/src/view/dashboard/Dashboard.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="285">
-              <caret line="19" column="0" lean-forward="false" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
+            <state relative-caret-position="135">
+              <caret line="9" column="26" lean-forward="false" selection-start-line="9" selection-start-column="26" selection-end-line="9" selection-end-column="26" />
               <folding />
             </state>
           </provider>
@@ -120,8 +98,28 @@
       <file leaf-file-name="CourseController.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/classic/src/view/courses/CourseController.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="275">
-              <caret line="19" column="32" lean-forward="false" selection-start-line="19" selection-start-column="32" selection-end-line="19" selection-end-column="32" />
+            <state relative-caret-position="352">
+              <caret line="77" column="0" lean-forward="true" selection-start-line="77" selection-start-column="0" selection-end-line="77" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="MainController.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/classic/src/view/main/MainController.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="2070">
+              <caret line="138" column="0" lean-forward="true" selection-start-line="138" selection-start-column="0" selection-end-line="138" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="DashboardController.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/classic/src/view/dashboard/DashboardController.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="345">
+              <caret line="23" column="58" lean-forward="false" selection-start-line="23" selection-start-column="58" selection-end-line="23" selection-end-column="58" />
               <folding />
             </state>
           </provider>
@@ -147,21 +145,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ViewAndStudents.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/store/dashboard/ViewAndStudents.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="135">
-              <caret line="9" column="30" lean-forward="false" selection-start-line="9" selection-start-column="18" selection-end-line="9" selection-end-column="30" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="DashboardModel.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/view/dashboard/DashboardModel.js">
+        <entry file="file://$PROJECT_DIR$/classic/src/view/dashboard/DashboardModel.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="375">
-              <caret line="25" column="20" lean-forward="false" selection-start-line="25" selection-start-column="20" selection-end-line="25" selection-end-column="20" />
+            <state relative-caret-position="0">
+              <caret line="0" column="21" lean-forward="false" selection-start-line="0" selection-start-column="21" selection-end-line="0" selection-end-column="21" />
               <folding />
             </state>
           </provider>
@@ -188,8 +176,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>auth-dialog-login</find>
-      <find>lock-screen</find>
       <find>dashboard</find>
       <find>Let's Log In</find>
       <find>api/1/courses/logs</find>
@@ -218,6 +204,8 @@
       <find>x-treelist-item-wrap</find>
       <find>after</find>
       <find>viewCourseStatisticsChartCourseLog</find>
+      <find>Ext.window.Toast</find>
+      <find>debugger;</find>
     </findStrings>
     <dirStrings>
       <dir>$PROJECT_DIR$/modern/src</dir>
@@ -230,8 +218,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/modern/src/view/dashboard/DashboardController.js" />
-        <option value="$PROJECT_DIR$/modern/src/Application.js" />
         <option value="$PROJECT_DIR$/modern/src/view/dashboard/StudentsWidget.js" />
         <option value="$PROJECT_DIR$/app.json" />
         <option value="$PROJECT_DIR$/app/store/course/CourseEnrolledStudents.js" />
@@ -254,7 +240,6 @@
         <option value="$PROJECT_DIR$/sass/src/view/main/Main.scss" />
         <option value="$PROJECT_DIR$/modern/src/view/widgets/WidgetSmall.js" />
         <option value="$PROJECT_DIR$/classic/src/view/widgets/WidgetSmall.js" />
-        <option value="$PROJECT_DIR$/classic/src/view/dashboard/Dashboard.js" />
         <option value="$PROJECT_DIR$/app.js" />
         <option value="$PROJECT_DIR$/classic/src/view/authentication/Login.js" />
         <option value="$PROJECT_DIR$/app/store/courses/CourseStatistics.js" />
@@ -272,15 +257,18 @@
         <option value="$PROJECT_DIR$/classic/src/view/main/Main.js" />
         <option value="$PROJECT_DIR$/classic/src/view/profile/ProfileView.js" />
         <option value="$PROJECT_DIR$/app/view/chart/ViewStudentsChart.js" />
-        <option value="$PROJECT_DIR$/classic/src/view/main/MainController.js" />
         <option value="$PROJECT_DIR$/modern/src/view/dashboard/ViewStudentsChartWidget.js" />
         <option value="$PROJECT_DIR$/classic/src/view/main/MainModel.js" />
         <option value="$PROJECT_DIR$/classic/src/view/dashboard/ViewStudentsChartWidget.js" />
-        <option value="$PROJECT_DIR$/app/view/dashboard/DashboardController.js" />
         <option value="$PROJECT_DIR$/classic/src/view/courses/CourseView.js" />
         <option value="$PROJECT_DIR$/classic/src/view/courses/CourseStatisticsChartWidget.js" />
-        <option value="$PROJECT_DIR$/classic/src/view/courses/CourseController.js" />
         <option value="$PROJECT_DIR$/app/view/chart/ViewCourseStatisticsChart.js" />
+        <option value="$PROJECT_DIR$/app/view/dashboard/DashboardController.js" />
+        <option value="$PROJECT_DIR$/classic/src/view/dashboard/Dashboard.js" />
+        <option value="$PROJECT_DIR$/classic/src/view/dashboard/DashBoardController.js" />
+        <option value="$PROJECT_DIR$/classic/src/view/dashboard/DashboardController.js" />
+        <option value="$PROJECT_DIR$/classic/src/view/courses/CourseController.js" />
+        <option value="$PROJECT_DIR$/classic/src/view/main/MainController.js" />
       </list>
     </option>
   </component>
@@ -318,6 +306,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -385,13 +375,6 @@
             <path>
               <item name="thesis-app-client-side" type="b2602c69:ProjectViewProjectNode" />
               <item name="thesis-app-client-side" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="view" type="462c0819:PsiDirectoryNode" />
-              <item name="dashboard" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="thesis-app-client-side" type="b2602c69:ProjectViewProjectNode" />
-              <item name="thesis-app-client-side" type="462c0819:PsiDirectoryNode" />
               <item name="classic" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -435,8 +418,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
-      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -445,17 +426,17 @@
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/modern/src/view/dashboard" />
-      <recent name="$PROJECT_DIR$/modern/src/view/pages" />
-      <recent name="$PROJECT_DIR$/modern/src/view/phone" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/classic/src/view/dashboard" />
       <recent name="C:\Users\n.vasileiadis\Documents\nikos\Thesis\thesis-app-client-side\classic\src\view\main\courses" />
       <recent name="C:\Users\n.vasileiadis\Documents\nikos\Thesis\thesis-app-client-side\classic\src\view\main\TestExample" />
       <recent name="C:\Users\n.vasileiadis\Documents\nikos\Thesis\thesis-app-client-side\app\store" />
       <recent name="C:\Users\n.vasileiadis\Documents\nikos\Thesis\thesis-app-client-side\app\model" />
-      <recent name="C:\Users\n.vasileiadis\Documents\nikos\Thesis\thesis-app-client-side\app\model\Courses" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/modern/src/view/dashboard" />
+      <recent name="$PROJECT_DIR$/modern/src/view/pages" />
+      <recent name="$PROJECT_DIR$/modern/src/view/phone" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -602,7 +583,9 @@
       <workItem from="1511198537248" duration="2639000" />
       <workItem from="1511457709209" duration="3482000" />
       <workItem from="1511609298489" duration="468000" />
-      <workItem from="1511610925031" duration="12554000" />
+      <workItem from="1511610925031" duration="12715000" />
+      <workItem from="1511775322699" duration="1859000" />
+      <workItem from="1511859189651" duration="988000" />
     </task>
     <task id="LOCAL-00001" summary="test testdata">
       <created>1498045002687</created>
@@ -821,11 +804,18 @@
       <option name="project" value="LOCAL" />
       <updated>1511627956297</updated>
     </task>
-    <option name="localTasksCounter" value="32" />
+    <task id="LOCAL-00032" summary="update expand chart">
+      <created>1511711106786</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1511711106786</updated>
+    </task>
+    <option name="localTasksCounter" value="33" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="293690000" />
+    <option name="totallyTimeSpent" value="296698000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1440" height="1523" extended-state="0" />
@@ -834,12 +824,13 @@
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22410148" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.29537368" sideWeight="0.5051814" order="10" side_tool="true" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32882562" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32882562" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32882562" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2669039" sideWeight="0.49481866" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="PlantUML" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.17758985" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32940018" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
@@ -847,7 +838,6 @@
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32882562" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
@@ -916,7 +906,8 @@
     <MESSAGE value="change style, collapse, expand" />
     <MESSAGE value="update username and image" />
     <MESSAGE value="update chart expand" />
-    <option name="LAST_COMMIT_MESSAGE" value="update chart expand" />
+    <MESSAGE value="update expand chart" />
+    <option name="LAST_COMMIT_MESSAGE" value="update expand chart" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -925,27 +916,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/classic/src/view/main/MainContainerWrap.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" column="29" lean-forward="false" selection-start-line="2" selection-start-column="12" selection-end-line="2" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/build/LearningAnalytics-dashboard/myclassic/resources/LearningAnalytics-all_2.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="513">
-          <caret line="8394" column="21" lean-forward="false" selection-start-line="8394" selection-start-column="21" selection-end-line="8394" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="19" column="0" lean-forward="false" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/ext/build/ext-modern-debug.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="322">
@@ -1121,7 +1091,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="675">
           <caret line="45" column="5" lean-forward="false" selection-start-line="45" selection-start-column="5" selection-end-line="45" selection-end-column="5" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1129,31 +1098,14 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="255">
           <caret line="17" column="20" lean-forward="false" selection-start-line="17" selection-start-column="20" selection-end-line="17" selection-end-column="20" />
-          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/classic/src/view/profile/ProfileView.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="3" column="0" lean-forward="true" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/classic/src/view/profile/ProfileView.js" />
     <entry file="file://$PROJECT_DIR$/classic/src/view/dashboard/Course.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="90">
           <caret line="6" column="4" lean-forward="false" selection-start-line="6" selection-start-column="4" selection-end-line="6" selection-end-column="4" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/classic/src/view/main/MainController.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="485">
-          <caret line="94" column="37" lean-forward="false" selection-start-line="94" selection-start-column="37" selection-end-line="94" selection-end-column="37" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1161,7 +1113,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="480">
           <caret line="32" column="37" lean-forward="false" selection-start-line="32" selection-start-column="20" selection-end-line="32" selection-end-column="37" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1169,7 +1120,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="330">
           <caret line="22" column="38" lean-forward="false" selection-start-line="22" selection-start-column="38" selection-end-line="22" selection-end-column="38" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1177,7 +1127,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1185,7 +1134,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="315">
           <caret line="21" column="0" lean-forward="false" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1193,7 +1141,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="180">
           <caret line="12" column="0" lean-forward="false" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1201,15 +1148,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="585">
           <caret line="39" column="0" lean-forward="false" selection-start-line="39" selection-start-column="0" selection-end-line="39" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/view/dashboard/DashboardModel.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="375">
-          <caret line="25" column="20" lean-forward="false" selection-start-line="25" selection-start-column="20" selection-end-line="25" selection-end-column="20" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1217,7 +1155,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="135">
           <caret line="9" column="30" lean-forward="false" selection-start-line="9" selection-start-column="18" selection-end-line="9" selection-end-column="30" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1225,22 +1162,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="240">
           <caret line="16" column="37" lean-forward="false" selection-start-line="16" selection-start-column="37" selection-end-line="16" selection-end-column="37" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/classic/src/view/dashboard/Dashboard.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="19" column="0" lean-forward="false" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/view/dashboard/DashboardController.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="14" column="55" lean-forward="false" selection-start-line="14" selection-start-column="55" selection-end-line="14" selection-end-column="55" />
           <folding />
         </state>
       </provider>
@@ -1269,17 +1190,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/classic/src/view/courses/CourseController.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="275">
-          <caret line="19" column="32" lean-forward="false" selection-start-line="19" selection-start-column="32" selection-end-line="19" selection-end-column="32" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/classic/src/view/main/Main.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="495">
+        <state relative-caret-position="0">
           <caret line="33" column="14" lean-forward="false" selection-start-line="33" selection-start-column="14" selection-end-line="33" selection-end-column="14" />
           <folding />
         </state>
@@ -1295,8 +1208,90 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/view/chart/ViewCourseStatisticsChart.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="600">
-          <caret line="40" column="21" lean-forward="true" selection-start-line="40" selection-start-column="21" selection-end-line="40" selection-end-column="21" />
+        <state relative-caret-position="465">
+          <caret line="31" column="17" lean-forward="false" selection-start-line="31" selection-start-column="17" selection-end-line="31" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/classic/src/view/dashboard/Dashboard.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="9" column="26" lean-forward="false" selection-start-line="9" selection-start-column="26" selection-end-line="9" selection-end-column="26" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/view/dashboard/DashboardController.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="14" column="32" lean-forward="false" selection-start-line="14" selection-start-column="32" selection-end-line="14" selection-end-column="32" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="uml://JavaScript-modules-diagram//Users/n.vasileiadis/Thesis/thesis-app-client-side/app/view/dashboard/DashboardModel.js">
+      <provider selected="true" editor-type-id="UmlEditorProvider">
+        <state>
+          <ID>JavaScript-modules-diagram</ID>
+          <OriginalElement>$PROJECT_DIR$/app/view/dashboard/DashboardModel.js</OriginalElement>
+          <nodes />
+          <notes />
+          <edges />
+          <settings layout="Hierarchic Group" zoom="1.0" x="550.5" y="-4831.0" />
+          <SelectedNodes />
+          <Categories>
+            <Category>All</Category>
+          </Categories>
+          <VISIBILITY>Details</VISIBILITY>
+        </state>
+      </provider>
+    </entry>
+    <entry file="uml://JavaScript-modules-diagram//Users/n.vasileiadis/Thesis/thesis-app-client-side/classic/src/view/dashboard/DashboardController.js">
+      <provider selected="true" editor-type-id="UmlEditorProvider">
+        <state>
+          <ID>JavaScript-modules-diagram</ID>
+          <OriginalElement>$PROJECT_DIR$/classic/src/view/dashboard/DashboardController.js</OriginalElement>
+          <nodes />
+          <notes />
+          <edges />
+          <settings layout="Hierarchic Group" zoom="1.0" x="550.5" y="489.0" />
+          <SelectedNodes />
+          <Categories>
+            <Category>All</Category>
+          </Categories>
+          <VISIBILITY>Details</VISIBILITY>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/classic/src/view/dashboard/DashboardModel.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="21" lean-forward="false" selection-start-line="0" selection-start-column="21" selection-end-line="0" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/classic/src/view/courses/CourseController.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="352">
+          <caret line="77" column="0" lean-forward="true" selection-start-line="77" selection-start-column="0" selection-end-line="77" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/classic/src/view/main/MainController.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2070">
+          <caret line="138" column="0" lean-forward="true" selection-start-line="138" selection-start-column="0" selection-end-line="138" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/classic/src/view/dashboard/DashboardController.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="345">
+          <caret line="23" column="58" lean-forward="false" selection-start-line="23" selection-start-column="58" selection-end-line="23" selection-end-column="58" />
           <folding />
         </state>
       </provider>
