@@ -161,9 +161,11 @@ Ext.define('LearningAnalytics.view.main.MainController', {
     },
 
     onMainViewRender:function() {
-        if (!window.location.hash || window.location.hash === "#courses" || window.location.hash === "#dashboard") {
+        if (window.location.hash === "" || window.location.hash === "#courses" || window.location.hash === "#dashboard") {
             this.redirectTo("dashboard");
             this.setCurrentView("dashboard");
+        } else {
+            this.setCurrentView(window.location.hash.replace(/^#+/i, ''));
         }
     },
 
@@ -243,6 +245,12 @@ Ext.define('LearningAnalytics.view.main.MainController', {
                 },
                 scope: this
             });
+        }
+        if (rec.node.id === "logout") {
+            Ext.util.Cookies.clear('AccessToken');
+            Ext.create('LearningAnalytics.view.authentication.Login');
+            window.location.assign('');
+
         }
     }
 
