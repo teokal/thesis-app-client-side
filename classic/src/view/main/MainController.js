@@ -178,7 +178,6 @@ Ext.define('LearningAnalytics.view.main.MainController', {
         var store = viewModel.getStore('courses');
         var coursesTree = this.lookupReference('navigationTreeList').rootItem.getNode().getChildAt(1);
 
-
         store.load({
             callback: function(records, operation, success) {
                 store.each(function(record) {

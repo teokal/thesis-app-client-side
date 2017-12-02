@@ -10,6 +10,7 @@ Ext.define('LearningAnalytics.view.dashboard.ViewStudentsChartWidget', {
         'Ext.chart.axis.Category',
         'Ext.chart.axis.Numeric',
         'Ext.chart.series.Line',
+        'Ext.form.DateField',
         'Ext.chart.interactions.PanZoom',
         'Ext.ProgressBar'
     ],
