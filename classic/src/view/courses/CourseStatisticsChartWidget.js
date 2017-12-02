@@ -11,6 +11,7 @@ Ext.define('LearningAnalytics.view.courses.CourseStatisticsChartWidget', {
         'Ext.chart.axis.Category',
         'Ext.chart.axis.Numeric',
         'Ext.chart.series.Line',
+        'Ext.form.field.ComboBox',
         'Ext.form.DateField',
         'Ext.chart.interactions.PanZoom',
         'Ext.ProgressBar'
