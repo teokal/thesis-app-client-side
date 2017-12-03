@@ -70,6 +70,17 @@ Ext.define('LearningAnalytics.config.Runtime',{
 
     getContainerViewWidth: function() {
         return document.getElementById('container-view').clientWidth;
-    }
+    },
 
+    // set width and height with animation.
+    setViewWidthHeight: function(view, widthValue, heightValue) {
+        debugger;
+        var viewWidth = LearningAnalytics.config.Runtime.getContainerViewWidth();
+        var viewHeight = view.getHeight();
+        view.animate({dynamic: true, to: {
+            width: viewWidth * widthValue - 40,
+            height: viewHeight * heightValue
+        }
+        });
+    }
 });

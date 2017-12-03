@@ -10,8 +10,6 @@ Ext.define('LearningAnalytics.view.widgets.WidgetSmall', {
 
     containerColor: '',
 
-    height: 170,
-
     value: 0,
 
     style: {

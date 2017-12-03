@@ -28,11 +28,11 @@ Ext.define('LearningAnalytics.view.courses.CourseView', {
             style: {
                 'box-shadow': '0 0 5px rgba(0, 0, 0, 0.3)'
             },
-            userCls: 'big-33 small-100'
+            userCls: 'big-40 small-100'
         },
         {
             xtype: 'studentsWidget',
-            userCls: 'big-50 small-50'
+            userCls: 'big-20 small-50'
         }
     ]
 });

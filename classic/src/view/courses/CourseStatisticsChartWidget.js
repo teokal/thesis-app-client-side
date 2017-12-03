@@ -6,6 +6,7 @@ Ext.define('LearningAnalytics.view.courses.CourseStatisticsChartWidget', {
     extend: 'Ext.panel.Panel',
     xtype: 'courseStatisticsChartWidget',
 
+    id: 'chartCourseLog',
     requires: [
         'Ext.chart.CartesianChart',
         'Ext.chart.axis.Category',

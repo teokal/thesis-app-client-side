@@ -27,23 +27,23 @@ Ext.define('LearningAnalytics.view.dashboard.Dashboard', {
             style: {
                 'box-shadow': '0 0 5px rgba(0, 0, 0, 0.3)'
             },
-            cls: 'big-33 small-100'
+            cls: 'big-60 small-100'
         },
         {
             xtype: 'course', //
             style: {
                 'box-shadow': '0 0 5px rgba(0, 0, 0, 0.3)'
             },
-            cls: 'big-33 small-100'
+            cls: 'big-40 small-100'
         },
 
         {
             xtype: 'studentsWidget',
-            userCls: 'big-50 small-50'
+            userCls: 'big-20 small-50'
         },
         {
             xtype: 'gradesWidget',
-            userCls: 'big-50 small-50'
+            userCls: 'big-20 small-50'
         }
     ]
 });

@@ -111,7 +111,10 @@ Ext.define('LearningAnalytics.view.main.MainController', {
             collapsing = !navigationList.getMicro(),
             new_width = collapsing ? 64 : 250;
 
-        var chartPanel = wrapContainer.down('chart');
+        // TODO: resize chart
+        // debugger;
+        // var courseChartPanel = wrapContainer.down('courseStatisticsChartWidget');
+        // var viewStudentsChartPanel = wrapContainer.down('viewStudentsChart');
         if (Ext.isIE9m || !Ext.os.is.Desktop) {
             Ext.suspendLayouts();
 
@@ -158,6 +161,17 @@ Ext.define('LearningAnalytics.view.main.MainController', {
                 });
             }
         }
+        //
+        // if (collapsing) {
+        //     var viewWidth = LearningAnalytics.config.Runtime.getContainerViewWidth();
+        //     var viewHeight = view.getHeight();
+        //     view.animate({dynamic: true, to: {
+        //         width: viewWidth * widthValue - 40,
+        //         height: viewHeight * heightValue
+        //     }
+        //     });
+        // }
+        // LearningAnalytics.config.Runtime.setViewWidthHeight(courseChartPanel, 0.5, 2)
     },
 
     onMainViewRender:function() {

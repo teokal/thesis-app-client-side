@@ -37,13 +37,7 @@ Ext.define('LearningAnalytics.view.dashboard.DashboardController', {
 
         chartPanel.el.removeCls('big-33');
 
-        var chartWidth = LearningAnalytics.config.Runtime.getContainerViewWidth();
-        var chartHeight = chartPanel.getHeight();
-        chartPanel.animate({dynamic: true, to: {
-            width: chartWidth - 40,
-            height: chartHeight * 1.5
-        }
-        });
+        LearningAnalytics.config.Runtime.setViewWidthHeight(chartPanel, 1, 1.5);
 
         filterContainer.setHidden(false);
         viewChart.axes[0].setHidden(false);
@@ -59,14 +53,7 @@ Ext.define('LearningAnalytics.view.dashboard.DashboardController', {
         var viewChart = chartPanel.getComponent('viewChartContainer').getComponent('viewChart');
         var filterContainer = chartPanel.getComponent('filterContainer');
 
-        var chartWidth = LearningAnalytics.config.Runtime.getContainerViewWidth();
-        var chartHeight = chartPanel.getHeight();
-        chartPanel.animate({dynamic: true, to: {
-            width: chartWidth / 3,
-            height: chartHeight / 1.5
-        }
-        });
-
+        LearningAnalytics.config.Runtime.setViewWidthHeight(chartPanel, 0.6, 0.666666);
 
         filterContainer.setHidden(true);
         viewChart.axes[0].setHidden(true);

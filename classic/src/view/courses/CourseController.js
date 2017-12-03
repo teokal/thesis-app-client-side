@@ -17,19 +17,12 @@ Ext.define('LearningAnalytics.view.courses.CourseController', {
 
     onExpand: function(event, toolEl, panel) {
         var me = this;
+        debugger;
         var chartPanel = me.view;
         var viewChart = me.lookupReference('viewCourseStatisticsChart');
         var filterContainer = me.lookupReference('filterContainerCourseLog');
 
-        chartPanel.el.removeCls('big-60');
-
-        var chartWidth = LearningAnalytics.config.Runtime.getContainerViewWidth();
-        var chartHeight = chartPanel.getHeight();
-        chartPanel.animate({dynamic: true, to: {
-            width: chartWidth - 40,
-            height: chartHeight * 1.5
-        }
-        });
+        LearningAnalytics.config.Runtime.setViewWidthHeight(chartPanel, 1, 1.5);
 
         filterContainer.setHidden(false);
         viewChart.axes[0].setHidden(false);
@@ -46,14 +39,7 @@ Ext.define('LearningAnalytics.view.courses.CourseController', {
         var viewChart = me.lookupReference('viewCourseStatisticsChart');
         var filterContainer = me.lookupReference('filterContainerCourseLog');
 
-        var chartWidth = LearningAnalytics.config.Runtime.getContainerViewWidth();
-        var chartHeight = chartPanel.getHeight();
-        chartPanel.animate({dynamic: true, to: {
-            width: chartWidth / 3,
-            height: chartHeight / 1.5
-        }
-        });
-
+        LearningAnalytics.config.Runtime.setViewWidthHeight(chartPanel, 0.6, 0.666666);
 
         filterContainer.setHidden(true);
         viewChart.axes[0].setHidden(true);
