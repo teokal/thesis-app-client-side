@@ -36,14 +36,18 @@ Ext.define('LearningAnalytics.store.NavigationTree', {
                 leaf: true
             },
             {
+                text: 'Calendar',
+                iconCls: 'x-fa fa-calendar',
+                id:'fullcalendarView',
+                viewType: 'fullcalendarView',
+                leaf: true
+            },
+            {
                 text: 'Logout',
                 iconCls: 'x-fa fa-sign-out',
                 id: 'logout',
-                // viewType: 'about',
                 leaf: true
             }
-
-
         ]
     }
 });

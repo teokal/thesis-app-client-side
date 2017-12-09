@@ -17,7 +17,6 @@ Ext.define('LearningAnalytics.view.courses.CourseController', {
 
     onExpand: function(event, toolEl, panel) {
         var me = this;
-        debugger;
         var chartPanel = me.view;
         var viewChart = me.lookupReference('viewCourseStatisticsChart');
         var filterContainer = me.lookupReference('filterContainerCourseLog');
