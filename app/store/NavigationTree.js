@@ -30,16 +30,16 @@ Ext.define('LearningAnalytics.store.NavigationTree', {
                 id:'courses'
             },
             {
-                text: 'About',
-                iconCls: 'x-fa fa-info-circle',
-                viewType: 'about',
-                leaf: true
-            },
-            {
                 text: 'Calendar',
                 iconCls: 'x-fa fa-calendar',
                 id:'fullcalendarView',
                 viewType: 'fullcalendarView',
+                leaf: true
+            },
+            {
+                text: 'About',
+                iconCls: 'x-fa fa-info-circle',
+                viewType: 'about',
                 leaf: true
             },
             {

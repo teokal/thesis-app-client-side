@@ -6,18 +6,26 @@ Ext.define('LearningAnalytics.view.fullcalendar.FullCalendarView', {
     xtype: 'fullcalendarView',
 
     requires: [
-        'Ext.ux.FullCalendar'
+        'Ext.ux.FullCalendar',
+        'Ext.ux.layout.ResponsiveColumn'
     ],
 
     defaults: {
         xtype: 'container'
     },
 
+    layout: 'responsivecolumn',
+
     items: [
         {
             xtype: 'fullcalendar',
             id: 'calendar',
-            flex: 1
+            style: {
+                'box-shadow': '0 0 5px rgba(0, 0, 0, 0.3)'
+            },
+            padding: 5,
+            cls: 'big-100 small-100'
+            // flex: 1
         }
     ]
 });
