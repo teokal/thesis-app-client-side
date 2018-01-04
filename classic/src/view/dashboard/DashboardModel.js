@@ -18,7 +18,6 @@ Ext.define('LearningAnalytics.view.dashboard.DashboardModel', {
             autoLoad: true,
             type: 'viewStudents'
         }
-
     },
 
     data: {

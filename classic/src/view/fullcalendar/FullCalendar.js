@@ -11,6 +11,15 @@ Ext.define('Ext.ux.FullCalendar', {
 
     // height: 680,
 
+    // controller: 'fullcalendar',
+    // viewModel: {
+    //     type: 'fullcalendar'
+    // },
+    //
+    // listeners: {
+    //     beforerender: 'onShow'
+    // },
+
     afterRender: function(t, eOpts){
         this.callParent(arguments);
 
@@ -28,27 +37,39 @@ Ext.define('Ext.ux.FullCalendar', {
                 },
                 editable: false,
                 defaultView: 'month',
-                events: [
-                    // all day event
-                    {
-                        title  : 'Meeting',
-                        start  : '2017-12-12',
-                        description: 'long description'
-                    },
-                    // long-term event
-                    {
-                        title  : 'Conference',
-                        start  : '2017-12-13',
-                        end    : '2017-12-15'
-                    },
-                    // short term event
-                    {
-                        title  : 'Dentist',
-                        start  : '2017-12-09T11:30:00',
-                        end  : '2017-12-09T012:30:00',
-                        allDay : false // will make the time show
-                    }
-                ],
+                events: function(start, end, timezone, callback) {
+                    debugger;
+                    var object = Ext.util.Cookies.get('AccessToken');
+                    var cookies = JSON.parse(object);
+
+                    $.ajax({
+                        url: 'http://83.212.105.139:3000/api/1/events',
+                        dataType: 'json',
+
+                        type: 'GET',
+                        useDefaultXhrHeader: false,
+                        cors: true,
+                        headers: {
+                            'Authorization': 'Token token=' + cookies.access_token
+                        },
+                        success: function(doc) {
+                            var eventsArray = [];
+                            doc.response.events.forEach(function(element) {
+                                eventsArray.push({
+                                    title: element.title,
+                                    start: element.start,
+                                    end: element.end,
+                                    description: element.description,
+                                    allDay: element.allDay
+                                });
+                            });
+                            callback(eventsArray);
+                        },
+                        error: function() {
+                            alert('there was an error while fetching events!');
+                        }
+                    });
+                },
                 eventClick: function(calEvent, jsEvent, view) {
                     alert('Event: ' + calEvent.title + '\nDescription: ' + calEvent.description);
                     // alert('Coordinates: ' + jsEvent.pageX + ',' + jsEvent.pageY);
@@ -56,7 +77,6 @@ Ext.define('Ext.ux.FullCalendar', {
 
                     // change the border color just for fun
                     $(this).css('border-color', 'red');
-
                 }
             })
 
