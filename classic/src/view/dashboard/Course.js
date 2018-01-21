@@ -27,9 +27,11 @@ Ext.define('LearningAnalytics.view.dashboard.Course', {
             xtype: 'gridpanel',
             header: false,
             hideHeaders: true,
+            readOnly : true,
+            disableSelection: true,
             scrollable: {
                 x: false,
-                y: false
+                y: true
             },
             bind: {
                 store: '{courses}'

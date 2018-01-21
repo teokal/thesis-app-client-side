@@ -38,12 +38,11 @@ Ext.define('Ext.ux.FullCalendar', {
                 editable: false,
                 defaultView: 'month',
                 events: function(start, end, timezone, callback) {
-                    debugger;
                     var object = Ext.util.Cookies.get('AccessToken');
                     var cookies = JSON.parse(object);
 
                     $.ajax({
-                        url: 'http://83.212.105.139:3000/api/1/events',
+                        url: LearningAnalytics.config.Runtime.baseUrl + '/api/1/events',
                         dataType: 'json',
 
                         type: 'GET',

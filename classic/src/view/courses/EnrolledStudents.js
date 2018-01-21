@@ -26,7 +26,7 @@ Ext.define('LearningAnalytics.view.courses.EnrolledStudents', {
             hideHeaders: true,
             scrollable: {
                 x: false,
-                y: false
+                y: true
             },
             bind: {
                 store: '{list}'
