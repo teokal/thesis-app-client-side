@@ -40,9 +40,8 @@ Ext.define('Ext.ux.FullCalendar', {
                 events: function(start, end, timezone, callback) {
                     var object = Ext.util.Cookies.get('AccessToken');
                     var cookies = JSON.parse(object);
-
                     $.ajax({
-                        url: LearningAnalytics.config.Runtime.baseUrl + '/api/1/events',
+                        url: LearningAnalytics.config.Runtime.getBaseUrl() + '/api/1/events',
                         dataType: 'json',
 
                         type: 'GET',
