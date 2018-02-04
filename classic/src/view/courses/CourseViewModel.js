@@ -7,6 +7,15 @@ Ext.define('LearningAnalytics.view.courses.CourseViewModel', {
     alias: 'viewmodel.courseViewModel',
 
     stores: {
+        // courseStatistics: {
+        //     autoLoad: true,
+        //     type: 'courseStatistics'
+        // }
+    },
+
+    data: {
+        // recs: null,
+        // courseStatisticsChart: null
     }
 
 });

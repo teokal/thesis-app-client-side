@@ -23,7 +23,7 @@ Ext.define('LearningAnalytics.view.courses.CourseStatisticsChartWidget', {
 
     bodyPadding: 15,
 
-    controller: 'courseController',
+    // controller: 'courseController',
 
     title: 'Views',
 

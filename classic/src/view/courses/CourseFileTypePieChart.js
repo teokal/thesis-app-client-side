@@ -11,6 +11,7 @@ Ext.define('LearningAnalytics.view.courses.CourseFileTypePieChart', {
         'Ext.chart.axis.Category',
         'Ext.chart.axis.Numeric',
         'Ext.chart.series.Pie',
+        'Ext.chart.PolarChart',
         'Ext.chart.series.sprite.PieSlice',
         'Ext.chart.interactions.PanZoom'
     ],

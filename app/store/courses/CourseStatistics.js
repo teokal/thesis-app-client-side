@@ -24,7 +24,7 @@ Ext.define('LearningAnalytics.store.courses.CourseStatistics', {
             'Authorization': ''
         },
         api: {
-            read: '/api/1/courses/logs?from_date=2015&to_date=now&query=all&view=month'
+            read: '/api/1/courses/logs'
         },
         writer: {
             type: 'json',

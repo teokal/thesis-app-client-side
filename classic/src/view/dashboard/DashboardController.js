@@ -69,7 +69,6 @@ Ext.define('LearningAnalytics.view.dashboard.DashboardController', {
         var dateTo = this.lookupReference('dateTo');
         var view = this.lookupReference('actionView');
         var actionQuery = this.lookupReference('actionsQuery');
-
         if (dateFrom.getSubmitValue() === "" || dateTo.getSubmitValue() === "" ) {
             Ext.toast({
                 html: 'Please select dates',
@@ -89,6 +88,7 @@ Ext.define('LearningAnalytics.view.dashboard.DashboardController', {
                     if (success === true){
                         viewModel.setData({
                             recs: records,
+                            viewStudentsChart: store.first().viewed(),
                             list: store
                         });
                     } else {
@@ -105,6 +105,7 @@ Ext.define('LearningAnalytics.view.dashboard.DashboardController', {
         }
 
     }
+
 
 });
 

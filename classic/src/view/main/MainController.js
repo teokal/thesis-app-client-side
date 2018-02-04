@@ -15,10 +15,13 @@ Ext.define('LearningAnalytics.view.main.MainController', {
     },
 
     requires: [
-        'LearningAnalytics.config.Runtime'
+        'LearningAnalytics.config.Runtime',
+        'Ext.util.TaskRunner',
+        'Ext.window.Toast'
     ],
 
     lastView: null,
+    currentCourseId: null,
 
     setCurrentView: function(hashTag) {
         hashTag = (hashTag || '').toLowerCase();
@@ -227,11 +230,11 @@ Ext.define('LearningAnalytics.view.main.MainController', {
     onItemClick: function (view,rec,item) {
         if (rec.node.parentNode.id === 'courses'){
             var viewModel = this.getViewModel();
-            var courseid = rec.node.id;
+            this.currentCourseId = rec.node.id;
             var store = viewModel.getStore('courseEnrolledStudents');
             store.load({
                 params: {
-                    courseid: courseid
+                    courseid: this.currentCourseId
                 },
                 callback: function(records, operation, success) {
                     if (success === true){
@@ -247,12 +250,17 @@ Ext.define('LearningAnalytics.view.main.MainController', {
             var storeCourse = viewModel.getStore('courseStatistics');
             storeCourse.load({
                 params: {
-                    course: 45
+                    from_date: '2015',
+                    to_date: 'now',
+                    query: 'all',
+                    view: 'month',
+                    course: this.currentCourseId
                 },
                 callback: function(records, operation, success) {
                     if (success === true){
                         viewModel.setData({
-                            courseStatisticsData: storeCourse
+                            courseStatisticsData: storeCourse,
+                            recs: records
                         });
                     }
                 },
@@ -265,6 +273,88 @@ Ext.define('LearningAnalytics.view.main.MainController', {
             window.location.assign('');
 
         }
+    },
+
+    // Controller for Courses
+    onExpand: function(event, toolEl, panel) {
+        var me = this;
+        var chartPanel = me.lookupReference('chartCourseLog');
+        var viewChart = me.lookupReference('viewCourseStatisticsChart');
+        var filterContainer = me.lookupReference('filterContainerCourseLog');
+
+        LearningAnalytics.config.Runtime.setViewWidthHeight(chartPanel, 1, 1.5);
+
+        filterContainer.setHidden(false);
+        viewChart.axes[0].setHidden(false);
+        viewChart.axes[1].setHidden(false);
+
+        panel.tools.expand.setHidden(true);
+        panel.tools.collapse.setHidden(false);
+        panel.tools.refresh.setHidden(false);
+    },
+
+    onCollapse: function(event, toolEl, panel) {
+        var me = this;
+        var chartPanel = me.lookupReference('chartCourseLog');
+        var viewChart = me.lookupReference('viewCourseStatisticsChart');
+        var filterContainer = me.lookupReference('filterContainerCourseLog');
+
+        LearningAnalytics.config.Runtime.setViewWidthHeight(chartPanel, 0.6, 0.666666);
+
+        filterContainer.setHidden(true);
+        viewChart.axes[0].setHidden(true);
+        viewChart.axes[1].setHidden(true);
+
+        panel.tools.expand.setHidden(false);
+        panel.tools.collapse.setHidden(true);
+        panel.tools.refresh.setHidden(true);
+    },
+
+    onRefreshToggle: function(event, toolEl, panel) {
+        var me = this;
+        var dateFrom = me.lookupReference('dateFromCourseLog');
+        var dateTo = me.lookupReference('dateToCourseLog');
+        var view = me.lookupReference('actionViewCourseLog');
+        var actionQuery = me.lookupReference('actionsQueryCourseLog');
+
+        if (dateFrom.getSubmitValue() === "" || dateTo.getSubmitValue() === "" ) {
+            Ext.toast({
+                html: 'Please select dates',
+                width: 200,
+                align: 't'
+            });
+        } else {
+            var viewModel = this.getViewModel();
+            // var mask = Ext.getBody().mask('Loading, please stand by...');
+            var store = viewModel.getStore('courseStatistics');
+            store.load({
+                params: {
+                    from_date: dateFrom.getSubmitValue(),
+                    to_date: dateTo.getSubmitValue(),
+                    query: actionQuery.getSubmitValue(),
+                    view: view.getSubmitValue(),
+                    course: this.currentCourseId
+                },
+                callback: function(records, operation, success) {
+                    if (success === true){
+                        viewModel.setData({
+                            recs: records,
+                            courseStatisticsData: store
+                        });
+                    } else {
+                        Ext.toast({
+                            html: 'Failure.!!',
+                            width: 200,
+                            align: 't'
+                        });
+
+                    }
+                },
+                scope: this
+            });
+
+        }
     }
+
 
 });

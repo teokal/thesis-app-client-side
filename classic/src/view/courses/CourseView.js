@@ -12,6 +12,12 @@ Ext.define('LearningAnalytics.view.courses.CourseView', {
 
     layout: 'responsivecolumn',
 
+    // controller: 'courseController',
+    // viewModel: 'courseViewModel',
+
+    // listeners: {
+    //     beforerender: 'onShow'
+    // },
 
     items: [
         {
