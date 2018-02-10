@@ -30,10 +30,10 @@ Ext.define('LearningAnalytics.view.chart.ViewStudentsChart', {
                     degrees: -45
                 }
             },
-            hidden: true,
+            hidden: false,
             position: 'bottom',
             renderer: function(axis, data){
-                return data.substring(5,10);
+                return data.substring(0,10);
             }
         },
         {
@@ -44,7 +44,7 @@ Ext.define('LearningAnalytics.view.chart.ViewStudentsChart', {
             grid: false,
 
             majorTickSteps: 3,
-            hidden: true,
+            hidden: false,
             position: 'left'
         }
     ],

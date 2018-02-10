@@ -24,15 +24,16 @@ Ext.define('LearningAnalytics.view.chart.ViewCourseStatisticsChart', {
         {
             type: 'category',
             fields: 'date',
-            hidden: true,
+            hidden: false,
             position: 'bottom',
             label: {
                 rotate: {
                     degrees: -45
                 }
             },
+
             renderer: function(axis, data){
-                return data.substring(5,10);
+                return data.substring(0,10);
             }
         },
         {
@@ -44,9 +45,10 @@ Ext.define('LearningAnalytics.view.chart.ViewCourseStatisticsChart', {
                 'enrol',
                 'unenrol'
             ],
+
             grid: false,
             majorTickSteps: 3,
-            hidden: true,
+            hidden: false,
             position: 'left'
         }
     ],

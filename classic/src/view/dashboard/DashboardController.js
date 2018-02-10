@@ -31,17 +31,19 @@ Ext.define('LearningAnalytics.view.dashboard.DashboardController', {
     },
 
     onExpand: function(event, toolEl, panel) {
-        var chartPanel = this.lookupReference('chart');
-        var viewChart = chartPanel.getComponent('viewChartContainer').getComponent('viewChart');
-        var filterContainer = chartPanel.getComponent('filterContainer');
+        // var chartPanel = this.lookupReference('chart');
+        var viewChart = panel.getComponent('viewChartContainer').getComponent('viewChart');
+        var filterContainer = panel.getComponent('filterContainer');
 
-        chartPanel.el.removeCls('big-33');
 
-        LearningAnalytics.config.Runtime.setViewWidthHeight(chartPanel, 1, 1.5);
+        panel.el.removeCls('big-33');
+        debugger;
+        LearningAnalytics.config.Runtime.setViewWidthHeight(panel, 1, 1.5);
 
         filterContainer.setHidden(false);
-        viewChart.axes[0].setHidden(false);
-        viewChart.axes[1].setHidden(false);
+        // viewChart.axes[0].setHidden(false);
+        // viewChart.axes[1].setHidden(false);
+
 
         panel.tools.expand.setHidden(true);
         panel.tools.collapse.setHidden(false);
@@ -49,15 +51,17 @@ Ext.define('LearningAnalytics.view.dashboard.DashboardController', {
     },
 
     onCollapse: function(event, toolEl, panel) {
-        var chartPanel = this.lookupReference('chart');
-        var viewChart = chartPanel.getComponent('viewChartContainer').getComponent('viewChart');
-        var filterContainer = chartPanel.getComponent('filterContainer');
+        // var chartPanel = this.lookupReference('chart');
+        var viewChart = panel.getComponent('viewChartContainer').getComponent('viewChart');
+        var filterContainer = panel.getComponent('filterContainer');
 
-        LearningAnalytics.config.Runtime.setViewWidthHeight(chartPanel, 0.6, 0.666666);
+        debugger;
+        LearningAnalytics.config.Runtime.setViewWidthHeight(panel, 0.6, 0.666666);
 
         filterContainer.setHidden(true);
-        viewChart.axes[0].setHidden(true);
-        viewChart.axes[1].setHidden(true);
+        // viewChart.axes[0].setHidden(true);
+        // viewChart.axes[1].setHidden(true);
+
 
         panel.tools.expand.setHidden(false);
         panel.tools.collapse.setHidden(true);
