@@ -285,8 +285,8 @@ Ext.define('LearningAnalytics.view.main.MainController', {
         LearningAnalytics.config.Runtime.setViewWidthHeight(chartPanel, 1, 1.5);
 
         filterContainer.setHidden(false);
-        viewChart.axes[0].setHidden(false);
-        viewChart.axes[1].setHidden(false);
+        // viewChart.axes[0].setHidden(false);
+        // viewChart.axes[1].setHidden(false);
 
         panel.tools.expand.setHidden(true);
         panel.tools.collapse.setHidden(false);
@@ -302,8 +302,8 @@ Ext.define('LearningAnalytics.view.main.MainController', {
         LearningAnalytics.config.Runtime.setViewWidthHeight(chartPanel, 0.6, 0.666666);
 
         filterContainer.setHidden(true);
-        viewChart.axes[0].setHidden(true);
-        viewChart.axes[1].setHidden(true);
+        // viewChart.axes[0].setHidden(true);
+        // viewChart.axes[1].setHidden(true);
 
         panel.tools.expand.setHidden(false);
         panel.tools.collapse.setHidden(true);
