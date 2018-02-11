@@ -16,7 +16,7 @@ Ext.define('LearningAnalytics.view.courses.CourseView', {
     // viewModel: 'courseViewModel',
 
     // listeners: {
-    //     beforerender: 'onShow'
+    //     beforerender: 'onBeforeRender'
     // },
 
     items: [
@@ -38,6 +38,7 @@ Ext.define('LearningAnalytics.view.courses.CourseView', {
         },
         {
             xtype: 'courseFileTypePieChart', //
+            reference: 'courseFileTypePieChart',
             style: {
                 'box-shadow': '0 0 5px rgba(0, 0, 0, 0.3)'
             },

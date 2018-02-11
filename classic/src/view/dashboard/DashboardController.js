@@ -37,7 +37,6 @@ Ext.define('LearningAnalytics.view.dashboard.DashboardController', {
 
 
         panel.el.removeCls('big-33');
-        debugger;
         LearningAnalytics.config.Runtime.setViewWidthHeight(panel, 1, 1.5);
 
         filterContainer.setHidden(false);
@@ -55,7 +54,6 @@ Ext.define('LearningAnalytics.view.dashboard.DashboardController', {
         var viewChart = panel.getComponent('viewChartContainer').getComponent('viewChart');
         var filterContainer = panel.getComponent('filterContainer');
 
-        debugger;
         LearningAnalytics.config.Runtime.setViewWidthHeight(panel, 0.6, 0.666666);
 
         filterContainer.setHidden(true);

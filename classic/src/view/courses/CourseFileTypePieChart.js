@@ -21,13 +21,12 @@ Ext.define('LearningAnalytics.view.courses.CourseFileTypePieChart', {
 
     bodyPadding: 15,
 
-    controller: 'courseController',
+    // controller: 'courseController',
 
     title: 'File Types',
 
     layout: {
-        type: 'vbox',
-        align: 'stretch'
+        type: 'card'
     },
 
     items: [
@@ -39,41 +38,25 @@ Ext.define('LearningAnalytics.view.courses.CourseFileTypePieChart', {
             layout: 'fit',
             defaults: {
                 background: 'rgba(255, 255, 255, 1)',
-                store: {
-                    fields: ['xvalue', 'yvalue'],
-                    data: [{
-                        xvalue: 'metric one',
-                        yvalue: 14
-                    }, {
-                        xvalue: 'metric two',
-                        yvalue: 16
-                    }, {
-                        xvalue: 'metric three',
-                        yvalue: 14
-                    }, {
-                        xvalue: 'metric four',
-                        yvalue: 6
-                    }, {
-                        xvalue: 'metric five',
-                        yvalue: 36
-                    }]
-                },
+                bind: '{courseContentsFileTypes}',
                 series: [
                     {
                         type: 'pie',
                         label: {
-                            field: 'xField',
+                            field: 'type',
                             contrast: true,
-                            font: '12px Arial'
+                            font: '12px Arial',
+                            display: 'none'
                         },
                         useDarkerStrokeColor: false,
-                        xField: 'yvalue',
+                        xField: 'counter',
                         donut: 50,
                         padding:0,
                         tooltip: {
                             trackMouse: true,
                             renderer: function (tooltip, record, item) {
-                                tooltip.setHtml(item.field.toString() + ' (' + record.get('yvalue') + '): ' + record.get(item.field));
+                                debugger;
+                                tooltip.setHtml(record.data.type + ': ' + record.data.counter.toString());
                             }
                         }
 
@@ -90,7 +73,16 @@ Ext.define('LearningAnalytics.view.courses.CourseFileTypePieChart', {
                     xtype: 'polar'
                 }
             ]
+        },
+        {
+            xtype: 'panel',
+            reference: 'courseFileTypeNoDataText',
+            id: 'courseFileTypeNoDataText',
+            bind: {
+                html: '<div><h2>No Data for this Course</h2><div>'
+            }
         }
+
     ]
 
 });

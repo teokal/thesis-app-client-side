@@ -16,12 +16,18 @@ Ext.define('LearningAnalytics.view.main.MainModel', {
         courseStatistics: {
             type: 'courseStatistics',
             autoLoad: true
+        },
+        courseContents: {
+            type: 'courseContents',
+            autoLoad: true
         }
+
     },
 
     data: {
         currentView: null,
         list: null,
-        courseStatisticsData: null
+        courseStatisticsData: null,
+        courseContentsFileTypes: null
     }
 });

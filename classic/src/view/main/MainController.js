@@ -266,6 +266,34 @@ Ext.define('LearningAnalytics.view.main.MainController', {
                 },
                 scope: this
             });
+
+            var storeCourseContents = viewModel.getStore('courseContents');
+            storeCourseContents.load({
+                params: {
+                    courseid: this.currentCourseId
+                },
+                callback: function(records, operation, success) {
+                    if (success === true){ //courseFileTypeNoDateText
+                        debugger;
+                        var message = this.lookupReference('courseFileTypeNoDataText');
+                        var layout = this.getReferences().courseFileTypePieChart.getLayout();
+
+                        if (storeCourseContents.first().filetypes().count() === 0) {
+                            // message.setHidden(false);
+                            layout.setActiveItem('courseFileTypeNoDataText');
+                        } else {
+                            // message.setHidden(true);
+                            layout.setActiveItem('courseFileTypePieChartContainer');
+                            viewModel.setData({
+                                courseContentsFileTypes: storeCourseContents.first().filetypes()
+                            });
+
+                        }
+                    }
+                },
+                scope: this
+            });
+
         }
         if (rec.node.id === "logout") {
             Ext.util.Cookies.clear('AccessToken');
