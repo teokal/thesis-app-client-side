@@ -55,7 +55,6 @@ Ext.define('LearningAnalytics.view.courses.CourseFileTypePieChart', {
                         tooltip: {
                             trackMouse: true,
                             renderer: function (tooltip, record, item) {
-                                debugger;
                                 tooltip.setHtml(record.data.type + ': ' + record.data.counter.toString());
                             }
                         }

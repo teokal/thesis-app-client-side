@@ -20,7 +20,12 @@ Ext.define('LearningAnalytics.view.main.MainModel', {
         courseContents: {
             type: 'courseContents',
             autoLoad: true
+        },
+        riskAnalysis: {
+            autoLoad: true,
+            type: 'courseRiskAnalysis'
         }
+
 
     },
 

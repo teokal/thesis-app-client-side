@@ -274,7 +274,6 @@ Ext.define('LearningAnalytics.view.main.MainController', {
                 },
                 callback: function(records, operation, success) {
                     if (success === true){ //courseFileTypeNoDateText
-                        debugger;
                         var message = this.lookupReference('courseFileTypeNoDataText');
                         var layout = this.getReferences().courseFileTypePieChart.getLayout();
 
@@ -382,7 +381,27 @@ Ext.define('LearningAnalytics.view.main.MainController', {
             });
 
         }
+    },
+
+    onRiskAnalysisClick: function () {
+        // Ext.toast({
+        //     html: 'Coming Soon!!!',
+        //     width: 200,
+        //     align: 't'
+        // });
+
+        var cfg = Ext.apply({
+            xtype: 'popUpWindow',
+            items: [
+                {
+                    xtype: 'riskAnalysisWindow'
+                }
+            ],
+            title: 'Students Overview'
+        });
+
+        Ext.create(cfg);
+
+
     }
-
-
 });
