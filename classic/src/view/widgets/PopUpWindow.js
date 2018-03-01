@@ -46,7 +46,7 @@ Ext.define('TestMobile.view.email.PopUpWindow', {
         // We use percentage sizes so we'll never overflow the screen (potentially
         // clipping buttons and locking the user in to the dialog).
 
-        this.setSize(Math.floor(width * 0.4), Math.floor(height * 0.4));
+        this.setSize(Math.floor(width * 0.5), Math.floor(height * 0.6));
         this.setXY([ Math.floor(width * 0.05), Math.floor(height * 0.05) ]);
     }
 });

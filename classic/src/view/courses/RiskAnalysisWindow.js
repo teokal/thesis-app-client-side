@@ -56,8 +56,8 @@ Ext.define('LearningAnalytics.view.courses.RiskAnalysisWindow', {
                 },
                 {
                     dataIndex: 'in_danger',
-                    text: 'in Danger',
-                    width: 80,
+                    text: 'Status',
+                    width: 130,
                     align: 'center',
                     renderer: function(value) {
                         return '<span class="x-fa '+ (value ? 'fa-exclamation-circle' : 'fa-check-circle') +'" style="color:'+ (value ? 'red' : 'green') + '"></span>';

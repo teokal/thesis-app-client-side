@@ -384,23 +384,39 @@ Ext.define('LearningAnalytics.view.main.MainController', {
     },
 
     onRiskAnalysisClick: function () {
-        // Ext.toast({
-        //     html: 'Coming Soon!!!',
-        //     width: 200,
-        //     align: 't'
-        // });
+        var viewModel = this.getViewModel();
+        var store = viewModel.getStore('riskAnalysis');
+        store.load({
+            params: {
+                courseid: this.currentCourseId
+            },
+            callback: function(records, operation, success) {
+                if (success === true){
+                    if (records.length > 0) {
+                        var cfg = Ext.apply({
+                            xtype: 'popUpWindow',
+                            items: [
+                                {
+                                    xtype: 'riskAnalysisWindow'
+                                }
+                            ],
+                            title: 'Students Overview'
+                        });
 
-        var cfg = Ext.apply({
-            xtype: 'popUpWindow',
-            items: [
-                {
-                    xtype: 'riskAnalysisWindow'
+                        Ext.create(cfg);
+                    } else {
+                        alert('Course does not have scorm data for users');
+                    }
+                } else {
+                    Ext.toast({
+                        html: 'Failure.!!',
+                        width: 200,
+                        align: 't'
+                    });
                 }
-            ],
-            title: 'Students Overview'
+            },
+            scope: this
         });
-
-        Ext.create(cfg);
 
 
     }
