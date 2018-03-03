@@ -4,7 +4,6 @@
 
 Ext.define('LearningAnalytics.view.courses.RiskAnalysisWindow', {
     extend: 'Ext.form.Panel',
-    // alias: 'widget.riskAnalysisWindow',
     xtype: 'riskAnalysisWindow',
     requires: [
         'Ext.button.Button',
@@ -27,10 +26,11 @@ Ext.define('LearningAnalytics.view.courses.RiskAnalysisWindow', {
         labelSeparator: ''
     },
 
-
     items: [
         {
             xtype: 'gridpanel',
+            id: 'riskAnalysisGridPanel',
+            reference: 'riskAnalysisGridPanel',
             header: false,
             hideHeaders: false,
             readOnly : false,
@@ -63,7 +63,6 @@ Ext.define('LearningAnalytics.view.courses.RiskAnalysisWindow', {
                         return '<span class="x-fa '+ (value ? 'fa-exclamation-circle' : 'fa-check-circle') +'" style="color:'+ (value ? 'red' : 'green') + '"></span>';
                     }
                 }
-
             ]
         }
     ],
@@ -75,8 +74,9 @@ Ext.define('LearningAnalytics.view.courses.RiskAnalysisWindow', {
             {
                 xtype: 'button',
                 ui: 'soft-green',
-                text: 'Send Email',
-                disabled: true
+                text: 'Compose Message',
+                disabled: false,
+                handler: 'onComposeMessageClick'
             }
         ]
     }

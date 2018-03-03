@@ -33,6 +33,7 @@ Ext.define('LearningAnalytics.view.main.MainModel', {
         currentView: null,
         list: null,
         courseStatisticsData: null,
-        courseContentsFileTypes: null
+        courseContentsFileTypes: null,
+        composeEmailStudentsData: []
     }
 });

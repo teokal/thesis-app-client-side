@@ -383,6 +383,7 @@ Ext.define('LearningAnalytics.view.main.MainController', {
         }
     },
 
+    // RiskAnalysis Controller
     onRiskAnalysisClick: function () {
         var viewModel = this.getViewModel();
         var store = viewModel.getStore('riskAnalysis');
@@ -405,7 +406,13 @@ Ext.define('LearningAnalytics.view.main.MainController', {
 
                         Ext.create(cfg);
                     } else {
-                        alert('Course does not have scorm data for users');
+                        Ext.Msg.alert({
+                            title:'Risk Analysis',
+                            message: 'This course does not have any scorm data for students',
+                            buttons: Ext.Msg.OK,
+                            icon: Ext.Msg.INFO,
+                            draggable: false
+                        });
                     }
                 } else {
                     Ext.toast({
@@ -417,7 +424,55 @@ Ext.define('LearningAnalytics.view.main.MainController', {
             },
             scope: this
         });
+    },
 
+    onComposeMessageClick: function (bt) {
+        var viewModel = this.getViewModel();
+        var riskGrid = this.lookupReference('riskAnalysisGridPanel');
+        var selections = riskGrid.getSelection();
+        if (selections.length > 0) {
+            viewModel.data.composeEmailStudentsData = selections;
+            var win = bt.up('window');
+            if (win) {
+                win.close();
+            }
+            var cfg = Ext.apply({
+                xtype: 'popUpWindow',
+                items: [
+                    {
+                        xtype: 'composeMessage'
+                    }
+                ],
+                title: 'Compose Message'
+            });
 
+            Ext.create(cfg);
+        } else {
+            Ext.Msg.alert({
+                title:'Compose Message',
+                message: 'Please select one or more students to send a message',
+                buttons: Ext.Msg.OK,
+                icon: Ext.Msg.INFO,
+                draggable: false
+            });
+        }
+    },
+
+    onComposeDiscardClick: function(bt) {
+        var win = bt.up('window');
+        if (win) {
+            win.close();
+        }
+    },
+
+    onComposeSendClick: function(bt) {
+        var viewModel = this.getViewModel();
+        var message = this.lookupReference('composeMessageEditor').getValue();
+        Ext.toast({
+            html: 'Coming soon!!',
+            width: 200,
+            align: 't'
+        });
     }
+
 });
