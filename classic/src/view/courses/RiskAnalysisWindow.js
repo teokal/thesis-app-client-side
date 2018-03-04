@@ -31,6 +31,7 @@ Ext.define('LearningAnalytics.view.courses.RiskAnalysisWindow', {
             xtype: 'gridpanel',
             id: 'riskAnalysisGridPanel',
             reference: 'riskAnalysisGridPanel',
+            plugins: 'gridfilters',
             header: false,
             hideHeaders: false,
             readOnly : false,
@@ -44,7 +45,6 @@ Ext.define('LearningAnalytics.view.courses.RiskAnalysisWindow', {
                 checkOnly: true,
                 showHeaderCheckbox: true
             },
-
             bind: {
                 store: '{riskAnalysis}'
             },
@@ -52,13 +52,21 @@ Ext.define('LearningAnalytics.view.courses.RiskAnalysisWindow', {
                 {
                     dataIndex: 'fullname',
                     text: 'Fullname',
-                    flex: 1
+                    flex: 1,
+                    filter: {
+                        type: 'string'
+                    }
                 },
                 {
                     dataIndex: 'in_danger',
                     text: 'Status',
                     width: 130,
                     align: 'center',
+                    filter: {
+                        type: 'boolean',
+                        yesText: 'Danger',
+                        noText: 'Success'
+                    },
                     renderer: function(value) {
                         return '<span class="x-fa '+ (value ? 'fa-exclamation-circle' : 'fa-check-circle') +'" style="color:'+ (value ? 'red' : 'green') + '"></span>';
                     }

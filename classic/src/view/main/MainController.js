@@ -430,6 +430,7 @@ Ext.define('LearningAnalytics.view.main.MainController', {
         var viewModel = this.getViewModel();
         var riskGrid = this.lookupReference('riskAnalysisGridPanel');
         var selections = riskGrid.getSelection();
+        debugger;
         if (selections.length > 0) {
             viewModel.data.composeEmailStudentsData = selections;
             var win = bt.up('window');
