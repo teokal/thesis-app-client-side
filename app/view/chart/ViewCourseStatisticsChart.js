@@ -40,7 +40,7 @@ Ext.define('LearningAnalytics.view.chart.ViewCourseStatisticsChart', {
             type: 'numeric',
             minimum: 0,
             fields: [
-                'view',
+                'viewed',
                 'quiz',
                 'enrol',
                 'unenrol'
@@ -62,7 +62,7 @@ Ext.define('LearningAnalytics.view.chart.ViewCourseStatisticsChart', {
             useDarkerStrokeColor: false,
             xField: 'date',
             yField: [
-                'view'
+                'viewed'
             ],
             fill: true,
             smooth: true,

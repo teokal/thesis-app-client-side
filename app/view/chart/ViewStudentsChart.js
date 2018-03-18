@@ -40,7 +40,7 @@ Ext.define('LearningAnalytics.view.chart.ViewStudentsChart', {
             type: 'numeric',
             id: 'numeric',
             minimum: 0,
-            fields: 'view',
+            fields: 'viewed',
             grid: false,
 
             majorTickSteps: 3,
@@ -57,7 +57,7 @@ Ext.define('LearningAnalytics.view.chart.ViewStudentsChart', {
             ],
             useDarkerStrokeColor: false,
             xField: 'date',
-            yField: 'view',
+            yField: 'viewed',
             fill: true,
             smooth: true,
             marker: {

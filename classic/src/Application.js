@@ -35,7 +35,6 @@ Ext.define('LearningAnalytics.Application', {
             callback:function(records, operation, success){
                 var jsonData = Ext.util.JSON.decode(success.responseText);
                 var statusMessage = jsonData.response.data.authorized;
-
                 if(statusMessage === true){
                     me.setDefaultToken('dashboard');
                     me.setMainView('LearningAnalytics.view.main.Main');

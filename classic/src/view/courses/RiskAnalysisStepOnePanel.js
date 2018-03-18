@@ -1,10 +1,9 @@
 /**
- *  Created by n.vasileiadis on 25.02.18
+ *  Created by n.vasileiadis on 17.03.18
  */
-
-Ext.define('LearningAnalytics.view.courses.RiskAnalysisWindow', {
+Ext.define('LearningAnalytics.view.courses.RiskAnalysisStepOnePanel', {
     extend: 'Ext.form.Panel',
-    xtype: 'riskAnalysisWindow',
+    xtype: 'riskAnalysisStepOnePanel',
     requires: [
         'Ext.button.Button',
         'Ext.form.field.Text',
@@ -26,7 +25,13 @@ Ext.define('LearningAnalytics.view.courses.RiskAnalysisWindow', {
         labelSeparator: ''
     },
 
-    items: [
+    // listeners: {
+    //     render: 'onBeforeRenderRiskAnalysisStepOne'
+    // },
+
+    items: [{
+            html : '<p>Please select the type of each activity. If you don\'t select a type for an activity, the default value will be "None". </p>'
+        },
         {
             xtype: 'gridpanel',
             reference: 'riskAnalysisGridPanel',
@@ -42,11 +47,6 @@ Ext.define('LearningAnalytics.view.courses.RiskAnalysisWindow', {
             viewConfig:{
                 markDirty:false
             },
-            // selModel: {
-            //     selType: 'checkboxmodel',
-            //     checkOnly: true,
-            //     showHeaderCheckbox: true
-            // },
             bind: {
                 store: '{riskAnalysisScorms}'
             },
@@ -62,6 +62,7 @@ Ext.define('LearningAnalytics.view.courses.RiskAnalysisWindow', {
                     selType: 'checkboxmodel',
                     width: 130,
                     renderer: function(value) {
+                        // this.set
                         return '<span class="x-fa fa-'+ (value ? 'check-square-o' : 'square-o') +'"></span>';
                     }
                 },
@@ -82,47 +83,13 @@ Ext.define('LearningAnalytics.view.courses.RiskAnalysisWindow', {
                     }
                 }
 
-                // {
-                //     dataIndex: 'status',
-                //     text: 'Status',
-                //     width: 130,
-                //     align: 'center',
-                //     filter: {
-                //         type: 'boolean',
-                //         yesText: 'Danger',
-                //         noText: 'Success'
-                //     },
-                //     renderer: function(value) {
-                //         return '<span class="x-fa '+ (value ? 'fa-exclamation-circle' : 'fa-check-circle') +'" style="color:'+ (value ? 'red' : 'green') + '"></span>';
-                //     }
-                // }
             ],
             listeners: {
-                // 'cellclick': function(iView, iCellEl, iColIdx, iStore, iRowEl, iRowIdx, iEvent) {
-                //     var zRec = iView.getRecord(iRowEl);
-                //     //alert(zRec.data.name);
-                //     debugger;
-                // }
                 'cellclick': 'onRiskAnalysisGridCellItemClick'
 
             }
 
         }
     ]
-
-    // bbar: {
-    //     overflowHandler: 'menu',
-    //     items: [
-    //         '->',
-    //         {
-    //             xtype: 'button',
-    //             ui: 'soft-green',
-    //             text: 'Compose Message',
-    //             disabled: false,
-    //             handler: 'onComposeMessageClick'
-    //         }
-    //     ]
-    // }
-
 
 });

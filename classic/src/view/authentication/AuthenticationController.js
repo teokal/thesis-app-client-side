@@ -24,7 +24,6 @@ Ext.define('LearningAnalytics.view.authentication.AuthenticationController', {
             callback:function(records, operation, success){
                 var jsonData = Ext.util.JSON.decode(success.responseText);
                 var statusMessage = jsonData.response.status;
-
                 if(statusMessage === 'success'){
                     var object = {
                         'first_name' : jsonData.response.user.first_name,

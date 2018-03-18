@@ -28,10 +28,14 @@ Ext.define('LearningAnalytics.view.courses.ComposeMessage', {
     },
 
     items: [
-        // {
-        //     xtype: 'textfield',
-        //     fieldLabel: 'To'
-        // },
+        {
+            xtype: 'textfield',
+            reference: 'toTextField',
+            name: 'composeMessageToTextField',
+            id: 'composeMessageToTextField',
+            fieldLabel: 'To',
+            readOnly: true
+        },
         {
             xtype: 'htmleditor',
             id: 'composeMessageEditor',
@@ -70,4 +74,5 @@ Ext.define('LearningAnalytics.view.courses.ComposeMessage', {
             }
         ]
     }
+
 });

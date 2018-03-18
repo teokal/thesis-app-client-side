@@ -359,7 +359,7 @@ Ext.define('LearningAnalytics.view.main.MainController', {
                     from_date: dateFrom.getSubmitValue(),
                     to_date: dateTo.getSubmitValue(),
                     query: actionQuery.getSubmitValue(),
-                    view: view.getSubmitValue(),
+                    viewed: view.getSubmitValue(),
                     course: this.currentCourseId
                 },
                 callback: function(records, operation, success) {
@@ -394,14 +394,23 @@ Ext.define('LearningAnalytics.view.main.MainController', {
             callback: function(records, operation, success) {
                 if (success === true){
                     if (records.length > 0) {
+                        viewModel.setData({
+                            riskAnalysisScorms:  store.first().scorms(),
+                            riskAnalysisUsers: store.first().users(),
+                            riskAnalysisUsersAnalysis: store.first().users().first().analysis()
+                        });
+
                         var cfg = Ext.apply({
                             xtype: 'popUpWindow',
+                            reference: 'riskAnalysisGridWindow',
                             items: [
                                 {
-                                    xtype: 'riskAnalysisWindow'
+                                    id: 'riskAnalysisGridWindow',
+                                    // reference: 'riskAnalysisGridWindow',
+                                    xtype: 'riskAnalysisWindowForm'
                                 }
                             ],
-                            title: 'Students Overview'
+                            title: 'Risk Analysis Overview'
                         });
 
                         Ext.create(cfg);
@@ -426,27 +435,84 @@ Ext.define('LearningAnalytics.view.main.MainController', {
         });
     },
 
+    // onCompareButtonClick: function (bt) {
+    //     var win = bt.up('window');
+    //     var heigh = win.getY();
+    //     win.setPosition([ 0, heigh - 1 ]);
+    //     win.modal = false;
+    //     bt.hide();
+    //     var cfg = new Ext.apply({
+    //         xtype: 'popUpWindow',
+    //         modal: false,
+    //         title: 'Students Overview - Compare',
+    //         reference: 'compareWindow',
+    //
+    //         items: [
+    //             {
+    //                 id: 'compareWindow',
+    //                 xtype: 'riskAnalysisWindow',
+    //                 bbar: {
+    //                     overflowHandler: 'menu',
+    //                     items: [
+    //                         '->',
+    //                         {
+    //                             xtype: 'button',
+    //                             ui: 'soft-green',
+    //                             text: 'Compose Message',
+    //                             disabled: false,
+    //                             handler: 'onComposeMessageClick'
+    //                         }
+    //                     ]
+    //                 }
+    //
+    //
+    //             }
+    //         ],
+    //
+    //         syncSize: function () {
+    //             var width = Ext.Element.getViewportWidth(),
+    //                 height = Ext.Element.getViewportHeight();
+    //             this.setSize(Math.floor(width * 0.5), Math.floor(height * 0.6));
+    //             this.setPosition([ Math.floor(width * 0.5), Math.floor(height * 0.20) ]);
+    //         }
+    //
+    //     });
+    //
+    //     Ext.create(cfg);
+    // },
+
     onComposeMessageClick: function (bt) {
         var viewModel = this.getViewModel();
-        var riskGrid = this.lookupReference('riskAnalysisGridPanel');
-        var selections = riskGrid.getSelection();
-        debugger;
+        var selections = bt.getRefOwner().ownerCt.items.items[0].getSelection();
         if (selections.length > 0) {
             viewModel.data.composeEmailStudentsData = selections;
             var win = bt.up('window');
             if (win) {
                 win.close();
             }
+
             var cfg = Ext.apply({
                 xtype: 'popUpWindow',
                 items: [
                     {
-                        xtype: 'composeMessage'
+                        xtype: 'composeMessage',
+                        sendersName: '',
+
+                        beforeRender: function () {
+                            Ext.ComponentQuery.query('[name=composeMessageToTextField]')[0].setValue(this.sendersName)
+                        }
                     }
                 ],
                 title: 'Compose Message'
+
             });
 
+            var sendersData = '';
+            selections.forEach(function(element) {
+                sendersData = sendersData + element.data.fullname + ', ' ;
+            });
+
+            cfg.items[0].sendersName = sendersData ;
             Ext.create(cfg);
         } else {
             Ext.Msg.alert({
@@ -469,11 +535,123 @@ Ext.define('LearningAnalytics.view.main.MainController', {
     onComposeSendClick: function(bt) {
         var viewModel = this.getViewModel();
         var message = this.lookupReference('composeMessageEditor').getValue();
+        var students = viewModel.data.composeEmailStudentsData;
         Ext.toast({
             html: 'Coming soon!!',
             width: 200,
             align: 't'
         });
-    }
+    },
+
+    onRiskAnalysisGridCellItemClick: function(view, td, cellIndex, record){
+        if(cellIndex > 0){
+            record.set('page', false);
+            record.set('quiz', false);
+            record.set('none', false);
+        }
+        if (cellIndex === 1) {
+            record.set('page', !record.get('page'));
+        }
+        if (cellIndex === 2) {
+            record.set('quiz', !record.get('quiz'));
+        }
+        if (cellIndex === 3) {
+            record.set('none', !record.get('none'));
+        }
+    },
+
+    initForRiskForm: function(view) {
+        var tb = this.lookupReference('navigation-toolbar'),
+            buttons = tb.items.items,
+            ui = view.colorScheme;
+
+        //Apply styling buttons
+        if (ui) {
+            buttons[1].setUI(ui);
+            buttons[2].setUI(ui);
+        }
+    },
+
+    onNextClick: function(button) {
+        //This is where you can handle any logic prior to moving to the next card
+        var panel = button.up('panel');
+        var layout = panel.getLayout();
+        var curActiveItem = layout.getActiveItem();
+        var curActiveIndex = panel.items.indexOf(curActiveItem);
+        var viewModel = this.getViewModel();
+
+        this.getViewModel().set('atBeginning', false);
+        if (curActiveIndex === 0) {
+            var gridStore = curActiveItem.items.items[0].items.items[1].getStore();
+            var itemsCount = gridStore.count();
+            var item;
+            for (var i = 0; i < itemsCount; i++) {
+                item = gridStore.getAt(i);
+                if (typeof item.data.none === 'undefined' || typeof item.data.quiz === 'undefined' || typeof item.data.page === 'undefined') {
+                    var test = 'asda';
+                } else {
+                    // TODO: calculate the A1, B1 etc
+                }
+            }
+        } else if(curActiveIndex === 1) {
+            var parameterA1 = viewModel.data.riskParameterA1;
+        }
+        this.navigate(button, panel, 'next');
+    },
+
+    onPreviousClick: function(button) {
+        var panel = button.up('panel');
+
+        this.getViewModel().set('atEnd', false);
+        this.navigate(button, panel, 'prev');
+    },
+
+    navigate: function(button, panel, direction) {
+        var layout = panel.getLayout(),
+            progress = this.lookupReference('progress'),
+            model = this.getViewModel(),
+            progressItems = progress.items.items,
+            item, i, activeItem, activeIndex;
+
+        layout[direction]();
+
+        activeItem = layout.getActiveItem();
+        activeIndex = panel.items.indexOf(activeItem);
+
+        for (i = 0; i < progressItems.length; i++) {
+            item = progressItems[i];
+
+            if (activeIndex === item.step) {
+                item.setPressed(true);
+            }
+            else {
+                item.setPressed(false);
+            }
+
+            // IE8 has an odd bug with handling font icons in pseudo elements;
+            // it will render the icon once and not update it when something
+            // like text color is changed via style addition or removal.
+            // We have to force icon repaint by adding a style with forced empty
+            // pseudo element content, (x-sync-repaint) and removing it back to work
+            // around this issue.
+            // See this: https://github.com/FortAwesome/Font-Awesome/issues/954
+            // and this: https://github.com/twbs/bootstrap/issues/13863
+            if (Ext.isIE8) {
+                item.btnIconEl.syncRepaint();
+            }
+        }
+
+        activeItem.focus();
+
+        // beginning disables previous
+        if (activeIndex === 0) {
+            model.set('atBeginning', true);
+        }
+
+        // wizard is 4 steps. Disable next at end.
+        if (activeIndex === 3) {
+            model.set('atEnd', true);
+        }
+    },
 
 });

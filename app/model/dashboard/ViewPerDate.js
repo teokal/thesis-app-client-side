@@ -6,6 +6,6 @@ Ext.define('LearningAnalytics.model.dashboard.ViewPerDate', {
 
     fields: [
         { name: 'date', type: 'string' },
-        { name: 'view', type: 'int'}
+        { name: 'viewed', type: 'int'}
     ]
 });

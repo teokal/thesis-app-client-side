@@ -6,7 +6,19 @@ Ext.define('LearningAnalytics.model.courses.CourseRiskAnalysisModel', {
     extend: 'LearningAnalytics.model.Base',
 
     fields: [
-        { name: 'id', type: 'int' },
-        { name: 'fullname', type: 'string' }
+    ],
+
+    hasMany: [
+        {
+            model: 'LearningAnalytics.model.courses.CourseRiskAnalysisScorms',
+            name: 'scorms',
+            associationKey: 'scorms'
+        },
+        {
+            model: 'LearningAnalytics.model.courses.CourseRiskAnalysisUsers',
+            name: 'users',
+            associationKey: 'users'
+        }
     ]
+
 });

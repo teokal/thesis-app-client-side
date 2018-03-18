@@ -34,6 +34,18 @@ Ext.define('LearningAnalytics.view.main.MainModel', {
         list: null,
         courseStatisticsData: null,
         courseContentsFileTypes: null,
-        composeEmailStudentsData: []
+        composeEmailStudentsData: [],
+        riskAnalysisScorms: null,
+        riskAnalysisUsers: null,
+        riskAnalysisUsersAnalysis: null,
+        // risk form
+        atBeginning: true,
+        atEnd: false,
+        riskParameterA1: 11.803,
+        riskParameterB1: 13.385,
+        riskParameterC1: 5.343,
+        riskParameterA2: -0.233,
+        riskParameterB2: 3.381,
+        riskParameterC2: 0.788
     }
 });

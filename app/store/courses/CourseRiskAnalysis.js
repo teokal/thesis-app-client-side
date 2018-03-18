@@ -11,7 +11,7 @@ Ext.define('LearningAnalytics.store.courses.CourseRiskAnalysis', {
 
     model: 'LearningAnalytics.model.courses.CourseRiskAnalysisModel',
 
-    // autoLoad: true,
+    autoLoad: true,
 
     proxy: {
         type: 'ajax',

@@ -8,7 +8,7 @@ Ext.define('LearningAnalytics.model.courses.CourseStatistic', {
     fields: [
         { name: 'date', type: 'string' },
         { name: 'quiz', type: 'string' },
-        { name: 'view', type: 'string' },
+        { name: 'viewed', type: 'string' },
         { name: 'enrol', type: 'string' },
         { name: 'unenrol', type: 'string' }
     ]
