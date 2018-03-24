@@ -573,7 +573,6 @@ Ext.define('LearningAnalytics.view.main.MainController', {
     },
 
     onNextClick: function(button) {
-        //This is where you can handle any logic prior to moving to the next card
         var panel = button.up('panel');
         var layout = panel.getLayout();
         var curActiveItem = layout.getActiveItem();
@@ -582,19 +581,80 @@ Ext.define('LearningAnalytics.view.main.MainController', {
 
         this.getViewModel().set('atBeginning', false);
         if (curActiveIndex === 0) {
-            var gridStore = curActiveItem.items.items[0].items.items[1].getStore();
-            var itemsCount = gridStore.count();
-            var item;
-            for (var i = 0; i < itemsCount; i++) {
-                item = gridStore.getAt(i);
-                if (typeof item.data.none === 'undefined' || typeof item.data.quiz === 'undefined' || typeof item.data.page === 'undefined') {
-                    var test = 'asda';
-                } else {
-                    // TODO: calculate the A1, B1 etc
-                }
-            }
+
         } else if(curActiveIndex === 1) {
-            var parameterA1 = viewModel.data.riskParameterA1;
+            var gridStore = this.lookupReference('riskAnalysisGridPanel').items.items[0].getStore();
+            var itemsCount = gridStore.count();
+            var studentsStore = viewModel.data.riskAnalysisUsers;
+            var scormsDataForStudent;
+            var item, scormData, parameterP1, parameterP2, resultY1, resultY2;
+            var student, pageAll, pageSuccess, quizAll, quizSuccess;
+            var result = [];
+            var parameterA1 = viewModel.data.riskParameterA1,
+                parameterB1 = viewModel.data.riskParameterB1,
+                parameterC1 = viewModel.data.riskParameterC1,
+                parameterA2 = viewModel.data.riskParameterA2,
+                parameterB2 = viewModel.data.riskParameterB2,
+                parameterC2 = viewModel.data.riskParameterC2;
+
+            for (var studentIndex = 0; studentIndex < studentsStore.count(); studentIndex++) {
+                student = studentsStore.getAt(studentIndex);
+                scormsDataForStudent = student.analysis();
+                pageAll = 0, pageSuccess = 0, quizAll = 0, quizSuccess = 0;
+                for (var i = 0; i < itemsCount; i++) {
+                    item = gridStore.getAt(i);
+                    scormData = scormsDataForStudent.getAt(i);
+                    if (typeof item.data.none === 'undefined' || typeof item.data.quiz === 'undefined' || typeof item.data.page === 'undefined') {
+                    } else {
+                        // TODO: calculate the A1, B1 etc
+                        if (item.data.page === true) {
+                            pageAll ++;
+                            if (scormData.data.value === true){
+                                pageSuccess ++;
+                            }
+                        } else if(item.data.quiz === true) {
+                            quizAll ++;
+                            if (scormData.data.value === true){
+                                quizSuccess ++;
+                            }
+                        }
+                    }
+                }
+                parameterP1 = ( pageSuccess / pageAll );
+                parameterP2 = ( quizSuccess / quizAll );
+
+                resultY1 = parameterA1 * parameterP1 + parameterB1 * parameterP2 - parameterC1;
+                resultY2 = parameterA2 * parameterP1 + parameterB2 * parameterP2 - parameterC2;
+                viewModel.data.riskAnalysisResultsId = student.data.id;
+                viewModel.data.riskAnalysisResultsName = student.data.name;
+
+                viewModel.data.riskAnalysisResultsStatus = resultY1 > resultY2;
+
+                result.push({
+                    id: student.data.id,
+                    name: student.data.name,
+                    status: viewModel.data.riskAnalysisResultsStatus
+                });
+            }
+
+            var mystore = viewModel.getStore('courseRiskAnalysisResults');
+            mystore.load({
+                params: {
+                    data: JSON.stringify(result)
+                },
+                callback: function(records, operation, success) {
+                    if (success === true){
+                    } else {
+                        Ext.toast({
+                            html: 'Failure.!!',
+                            width: 200,
+                            align: 't'
+                        });
+                    }
+                },
+                scope: this
+            });
+
         }
         this.navigate(button, panel, 'next');
     },

@@ -1,22 +1,22 @@
 /**
- *  Created by n.vasileiadis on 25.02.18
+ *  Created by n.vasileiadis on 24.03.18
  */
 
-Ext.define('LearningAnalytics.store.courses.CourseRiskAnalysis', {
+Ext.define('LearningAnalytics.store.courses.CourseRiskAnalysisResults', {
     extend: 'Ext.data.Store',
 
-    storeId: 'CourseRiskAnalysis',
+    storeId: 'CourseRiskAnalysisResults',
 
-    alias: 'store.courseRiskAnalysis',
+    alias: 'store.courseRiskAnalysisResults',
 
-    model: 'LearningAnalytics.model.courses.CourseRiskAnalysisModel',
+    model: 'LearningAnalytics.model.courses.CourseRiskAnalysisResult',
 
     // autoLoad: true,
 
     proxy: {
         type: 'ajax',
         actionMethods: {
-            read: 'GET'
+            read: 'POST'
         },
         useDefaultXhrHeader: false,
         cors: true,
@@ -24,7 +24,7 @@ Ext.define('LearningAnalytics.store.courses.CourseRiskAnalysis', {
             'Authorization': ''
         },
         api: {
-            read: '/api/1/courses/risk_analysis'
+            read: '/api/1/courses/risk_analysis_transform'
         },
         writer: {
             type: 'json',

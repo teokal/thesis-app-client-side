@@ -48,7 +48,7 @@ Ext.define('LearningAnalytics.view.courses.RiskAnalysisWindowForms', {
             scrollable: true,
             items:[
                 {
-                    xtype: 'riskAnalysisWindow'
+                    xtype: 'riskAnalysisStepThreePanel'
                 }
 
             ]

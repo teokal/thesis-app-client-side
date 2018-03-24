@@ -24,6 +24,17 @@ Ext.define('LearningAnalytics.view.main.MainModel', {
         riskAnalysis: {
             autoLoad: true,
             type: 'courseRiskAnalysis'
+        },
+        courseRiskAnalysisResults: {
+            autoLoad: true,
+            type: 'courseRiskAnalysisResults'
+        },
+        riskAnalysisResultsStore: {
+            autoLoad: true
+            // id: '{riskAnalysisResultsId}',
+            // name: '{riskAnalysisResultsName}',
+            // status: '{riskAnalysisResultsStatus}',
+            // type: 'riskAnalysisResults'
         }
 
 
@@ -38,6 +49,10 @@ Ext.define('LearningAnalytics.view.main.MainModel', {
         riskAnalysisScorms: null,
         riskAnalysisUsers: null,
         riskAnalysisUsersAnalysis: null,
+        riskAnalysisResults: null,
+        riskAnalysisResultsId: null,
+        riskAnalysisResultsName: null,
+        riskAnalysisResultsStatus: null,
         // risk form
         atBeginning: true,
         atEnd: false,
