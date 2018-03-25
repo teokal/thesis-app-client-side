@@ -26,7 +26,7 @@ Ext.define('LearningAnalytics.view.courses.RiskAnalysisStepOnePanel', {
     },
 
     // listeners: {
-    //     render: 'onBeforeRenderRiskAnalysisStepOne'
+    //     afterrender: 'onBeforeRenderRiskAnalysisStepOne'
     // },
 
     items: [{
@@ -58,11 +58,10 @@ Ext.define('LearningAnalytics.view.courses.RiskAnalysisStepOnePanel', {
                 },
                 {
                     dataIndex: 'page',
-                    text: 'Page',
-                    selType: 'checkboxmodel',
+                    text: 'Slides',
+                    // selType: 'checkboxmodel',
                     width: 130,
                     renderer: function(value) {
-                        // this.set
                         return '<span class="x-fa fa-'+ (value ? 'check-square-o' : 'square-o') +'"></span>';
                     }
                 },
@@ -86,6 +85,9 @@ Ext.define('LearningAnalytics.view.courses.RiskAnalysisStepOnePanel', {
             ],
             listeners: {
                 'cellclick': 'onRiskAnalysisGridCellItemClick'
+                // afterlayout: function() {
+                //     debugger;
+                // }
 
             }
 

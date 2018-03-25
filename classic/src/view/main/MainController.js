@@ -2,10 +2,10 @@ Ext.define('LearningAnalytics.view.main.MainController', {
     extend: 'Ext.app.ViewController',
     alias: 'controller.main',
 
-    listen : {
-        controller : {
-            '#' : {
-                unmatchedroute : 'onRouteChange'
+    listen: {
+        controller: {
+            '#': {
+                unmatchedroute: 'onRouteChange'
             }
         }
     },
@@ -23,7 +23,7 @@ Ext.define('LearningAnalytics.view.main.MainController', {
     lastView: null,
     currentCourseId: null,
 
-    setCurrentView: function(hashTag) {
+    setCurrentView: function (hashTag) {
         hashTag = (hashTag || '').toLowerCase();
 
         var me = this,
@@ -33,7 +33,7 @@ Ext.define('LearningAnalytics.view.main.MainController', {
             navigationList = refs.navigationTreeList,
             store = navigationList.getStore(),
             node = store.findNode('routeId', hashTag) ||
-                   store.findNode('viewType', hashTag),
+                store.findNode('viewType', hashTag),
             view = (node && node.get('viewType')) || 'page404',
             lastView = me.lastView,
             existingItem = mainCard.child('component[routeId=' + hashTag + ']'),
@@ -177,7 +177,7 @@ Ext.define('LearningAnalytics.view.main.MainController', {
         // LearningAnalytics.config.Runtime.setViewWidthHeight(courseChartPanel, 0.5, 2)
     },
 
-    onMainViewRender:function() {
+    onMainViewRender: function () {
         if (window.location.hash === "" || window.location.hash === "#courses" || window.location.hash === "#dashboard") {
             this.redirectTo("dashboard");
             this.setCurrentView("dashboard");
@@ -186,18 +186,18 @@ Ext.define('LearningAnalytics.view.main.MainController', {
         }
     },
 
-    onRouteChange:function(id){
+    onRouteChange: function (id) {
         this.setCurrentView(id);
     },
 
-    onBeforeRender: function() {
+    onBeforeRender: function () {
         var viewModel = this.getViewModel();
         var store = viewModel.getStore('courses');
         var coursesTree = this.lookupReference('navigationTreeList').rootItem.getNode().getChildAt(1);
 
         store.load({
-            callback: function(records, operation, success) {
-                store.each(function(record) {
+            callback: function (records, operation, success) {
+                store.each(function (record) {
                     var jsonObj = {
                         id: record.data.id,
                         text: record.data.fullname,
@@ -217,7 +217,7 @@ Ext.define('LearningAnalytics.view.main.MainController', {
         });
     },
 
-    onAfterRender: function() {
+    onAfterRender: function () {
         var username = this.lookupReference('username');
         var userImage = this.lookupReference('userImage');
         var object = Ext.util.Cookies.get('AccessToken');
@@ -227,8 +227,8 @@ Ext.define('LearningAnalytics.view.main.MainController', {
         userImage.setSrc(cookies.picture_url);
     },
 
-    onItemClick: function (view,rec,item) {
-        if (rec.node.parentNode.id === 'courses'){
+    onItemClick: function (view, rec, item) {
+        if (rec.node.parentNode.id === 'courses') {
             var viewModel = this.getViewModel();
             this.currentCourseId = rec.node.id;
             var store = viewModel.getStore('courseEnrolledStudents');
@@ -236,8 +236,8 @@ Ext.define('LearningAnalytics.view.main.MainController', {
                 params: {
                     courseid: this.currentCourseId
                 },
-                callback: function(records, operation, success) {
-                    if (success === true){
+                callback: function (records, operation, success) {
+                    if (success === true) {
                         viewModel.setData({
                             list: store,
                             enrolledusercount: records.length
@@ -256,8 +256,8 @@ Ext.define('LearningAnalytics.view.main.MainController', {
                     view: 'month',
                     course: this.currentCourseId
                 },
-                callback: function(records, operation, success) {
-                    if (success === true){
+                callback: function (records, operation, success) {
+                    if (success === true) {
                         viewModel.setData({
                             courseStatisticsData: storeCourse,
                             recs: records
@@ -272,8 +272,8 @@ Ext.define('LearningAnalytics.view.main.MainController', {
                 params: {
                     courseid: this.currentCourseId
                 },
-                callback: function(records, operation, success) {
-                    if (success === true){ //courseFileTypeNoDateText
+                callback: function (records, operation, success) {
+                    if (success === true) { //courseFileTypeNoDateText
                         var message = this.lookupReference('courseFileTypeNoDataText');
                         var layout = this.getReferences().courseFileTypePieChart.getLayout();
 
@@ -303,7 +303,7 @@ Ext.define('LearningAnalytics.view.main.MainController', {
     },
 
     // Controller for Courses
-    onExpand: function(event, toolEl, panel) {
+    onExpand: function (event, toolEl, panel) {
         var me = this;
         var chartPanel = me.lookupReference('chartCourseLog');
         var viewChart = me.lookupReference('viewCourseStatisticsChart');
@@ -320,7 +320,7 @@ Ext.define('LearningAnalytics.view.main.MainController', {
         panel.tools.refresh.setHidden(false);
     },
 
-    onCollapse: function(event, toolEl, panel) {
+    onCollapse: function (event, toolEl, panel) {
         var me = this;
         var chartPanel = me.lookupReference('chartCourseLog');
         var viewChart = me.lookupReference('viewCourseStatisticsChart');
@@ -337,14 +337,14 @@ Ext.define('LearningAnalytics.view.main.MainController', {
         panel.tools.refresh.setHidden(true);
     },
 
-    onRefreshToggle: function(event, toolEl, panel) {
+    onRefreshToggle: function (event, toolEl, panel) {
         var me = this;
         var dateFrom = me.lookupReference('dateFromCourseLog');
         var dateTo = me.lookupReference('dateToCourseLog');
         var view = me.lookupReference('actionViewCourseLog');
         var actionQuery = me.lookupReference('actionsQueryCourseLog');
 
-        if (dateFrom.getSubmitValue() === "" || dateTo.getSubmitValue() === "" ) {
+        if (dateFrom.getSubmitValue() === "" || dateTo.getSubmitValue() === "") {
             Ext.toast({
                 html: 'Please select dates',
                 width: 200,
@@ -362,8 +362,8 @@ Ext.define('LearningAnalytics.view.main.MainController', {
                     viewed: view.getSubmitValue(),
                     course: this.currentCourseId
                 },
-                callback: function(records, operation, success) {
-                    if (success === true){
+                callback: function (records, operation, success) {
+                    if (success === true) {
                         viewModel.setData({
                             recs: records,
                             courseStatisticsData: store
@@ -391,11 +391,11 @@ Ext.define('LearningAnalytics.view.main.MainController', {
             params: {
                 courseid: this.currentCourseId
             },
-            callback: function(records, operation, success) {
-                if (success === true){
+            callback: function (records, operation, success) {
+                if (success === true) {
                     if (records.length > 0) {
                         viewModel.setData({
-                            riskAnalysisScorms:  store.first().scorms(),
+                            riskAnalysisScorms: store.first().scorms(),
                             riskAnalysisUsers: store.first().users(),
                             riskAnalysisUsersAnalysis: store.first().users().first().analysis()
                         });
@@ -416,7 +416,7 @@ Ext.define('LearningAnalytics.view.main.MainController', {
                         Ext.create(cfg);
                     } else {
                         Ext.Msg.alert({
-                            title:'Risk Analysis',
+                            title: 'Risk Analysis',
                             message: 'This course does not have any scorm data for students',
                             buttons: Ext.Msg.OK,
                             icon: Ext.Msg.INFO,
@@ -481,15 +481,32 @@ Ext.define('LearningAnalytics.view.main.MainController', {
     //     Ext.create(cfg);
     // },
 
+    onCompareButtonClick: function (bt) {
+        var cfg = Ext.apply({
+            xtype: 'popUpWindow',
+            items: [
+                {
+                    xtype: 'riskAnalysisSummaryChart'
+                }
+            ],
+            title: 'Compare Chart'
+        });
+        Ext.create(cfg);
+    },
+
     onComposeMessageClick: function (bt) {
         var viewModel = this.getViewModel();
-        var selections = bt.getRefOwner().ownerCt.items.items[0].getSelection();
+        var panel = bt.up('panel');
+        var layout = panel.getLayout();
+        var curActiveItem = layout.getActiveItem();
+        var selections = curActiveItem.items.items[0].items.items[1].getSelection();
+
         if (selections.length > 0) {
             viewModel.data.composeEmailStudentsData = selections;
-            var win = bt.up('window');
-            if (win) {
-                win.close();
-            }
+            // var win = bt.up('window');
+            // if (win) {
+            //     win.close();
+            // }
 
             var cfg = Ext.apply({
                 xtype: 'popUpWindow',
@@ -509,7 +526,7 @@ Ext.define('LearningAnalytics.view.main.MainController', {
 
             var sendersData = '';
             selections.forEach(function(element) {
-                sendersData = sendersData + element.data.fullname + ', ' ;
+                sendersData = sendersData + element.data.name + ', ' ;
             });
 
             cfg.items[0].sendersName = sendersData ;
@@ -589,13 +606,22 @@ Ext.define('LearningAnalytics.view.main.MainController', {
             var scormsDataForStudent;
             var item, scormData, parameterP1, parameterP2, resultY1, resultY2;
             var student, pageAll, pageSuccess, quizAll, quizSuccess;
-            var result = [];
+            var result = [], summary = [];
             var parameterA1 = viewModel.data.riskParameterA1,
                 parameterB1 = viewModel.data.riskParameterB1,
                 parameterC1 = viewModel.data.riskParameterC1,
                 parameterA2 = viewModel.data.riskParameterA2,
                 parameterB2 = viewModel.data.riskParameterB2,
                 parameterC2 = viewModel.data.riskParameterC2;
+
+            for (var i = 0; i < itemsCount; i++) {
+                summary.push({
+                    index: i,
+                    title: gridStore.getAt(i).data.title,
+                    success: 0,
+                    failure: 0
+                })
+            }
 
             for (var studentIndex = 0; studentIndex < studentsStore.count(); studentIndex++) {
                 student = studentsStore.getAt(studentIndex);
@@ -605,17 +631,24 @@ Ext.define('LearningAnalytics.view.main.MainController', {
                     item = gridStore.getAt(i);
                     scormData = scormsDataForStudent.getAt(i);
                     if (typeof item.data.none === 'undefined' || typeof item.data.quiz === 'undefined' || typeof item.data.page === 'undefined') {
+                        summary[i].failure ++;
                     } else {
                         // TODO: calculate the A1, B1 etc
                         if (item.data.page === true) {
                             pageAll ++;
                             if (scormData.data.value === true){
                                 pageSuccess ++;
+                                summary[i].success ++;
+                            } else {
+                                summary[i].failure ++;
                             }
                         } else if(item.data.quiz === true) {
                             quizAll ++;
                             if (scormData.data.value === true){
                                 quizSuccess ++;
+                                summary[i].success ++;
+                            } else {
+                                summary[i].failure ++;
                             }
                         }
                     }
@@ -636,25 +669,13 @@ Ext.define('LearningAnalytics.view.main.MainController', {
                     status: viewModel.data.riskAnalysisResultsStatus
                 });
             }
+            viewModel.data.riskAnalysisResultChart = summary;
+
+            var storeSummary =  viewModel.getStore('courseRiskAnalysisSummary');
+            storeSummary.addData(summary);
 
             var mystore = viewModel.getStore('courseRiskAnalysisResults');
-            mystore.load({
-                params: {
-                    data: JSON.stringify(result)
-                },
-                callback: function(records, operation, success) {
-                    if (success === true){
-                    } else {
-                        Ext.toast({
-                            html: 'Failure.!!',
-                            width: 200,
-                            align: 't'
-                        });
-                    }
-                },
-                scope: this
-            });
-
+            mystore.addData(result)
         }
         this.navigate(button, panel, 'next');
     },
@@ -678,6 +699,11 @@ Ext.define('LearningAnalytics.view.main.MainController', {
         activeItem = layout.getActiveItem();
         activeIndex = panel.items.indexOf(activeItem);
 
+        if (activeIndex === 2) {
+            this.getViewModel().set('atResultPage', true);
+        } else {
+            this.getViewModel().set('atResultPage', false);
+        }
         for (i = 0; i < progressItems.length; i++) {
             item = progressItems[i];
 
@@ -709,9 +735,24 @@ Ext.define('LearningAnalytics.view.main.MainController', {
         }
 
         // wizard is 4 steps. Disable next at end.
-        if (activeIndex === 3) {
+        if (activeIndex === 2) {
             model.set('atEnd', true);
         }
     },
+
+    onRiskAnalysisChartDownload: function() {
+        if (Ext.isIE8) {
+            Ext.Msg.alert('Unsupported Operation', 'This operation requires a newer version of Internet Explorer.');
+            return;
+        }
+        var chart = this.lookupReference('viewRiskAnalysisSummaryChart');
+        if (Ext.os.is.Desktop) {
+            chart.download({
+                filename: 'Risk Analysis Summary'
+            });
+        } else {
+            chart.preview();
+        }
+    }
 
 });

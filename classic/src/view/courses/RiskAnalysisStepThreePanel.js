@@ -26,8 +26,8 @@ Ext.define('LearningAnalytics.view.courses.RiskAnalysisStepThreePanel', {
     },
 
     items: [{
-        html : '<p>Results </p>'
-    },
+            html : '<p>Results </p>'
+        },
         {
             xtype: 'gridpanel',
             reference: 'riskAnalysisResultsGridPanel',
@@ -35,13 +35,19 @@ Ext.define('LearningAnalytics.view.courses.RiskAnalysisStepThreePanel', {
             hideHeaders: false,
             readOnly : false,
             disableSelection: false,
+            selModel: {
+                selType: 'checkboxmodel',
+                checkOnly: true,
+                showHeaderCheckbox: true
+            },
+            plugins: 'gridfilters',
+
             scrollable: {
                 x: false,
                 y: true
             },
             viewConfig:{
                 markDirty:false
-
             },
             bind: {
                 store: '{courseRiskAnalysisResults}'
@@ -49,21 +55,29 @@ Ext.define('LearningAnalytics.view.courses.RiskAnalysisStepThreePanel', {
             columns: [
                 {
                     dataIndex: 'id',
-                    text: 'id',
-                    width: 130
+                    text: 'ID',
+                    width: 90
                 },
                 {
                     dataIndex: 'name',
-                    text: 'name',
-                    flex: 1
+                    text: 'Name',
+                    flex: 1,
+                    filter: {
+                        type: 'string'
+                    }
                 },
                 {
                     dataIndex: 'status',
                     text: 'Status',
                     width: 130,
                     align: 'center',
+                    filter: {
+                        type: 'boolean',
+                        yesText: 'Success',
+                        noText: 'Danger'
+                    },
                     renderer: function(value) {
-                        return '<span class="x-fa '+ (value ? 'fa-exclamation-circle' : 'fa-check-circle') +'" style="color:'+ (value ? 'red' : 'green') + '"></span>';
+                        return '<span class="x-fa '+ (value ? 'fa-check-circle' : 'fa-exclamation-circle') +'" style="color:'+ (value ? 'green' : 'red') + '"></span>';
                     }
                 }
             ]

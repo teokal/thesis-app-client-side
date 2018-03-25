@@ -52,15 +52,15 @@ Ext.define('LearningAnalytics.view.courses.RiskAnalysisWindowForms', {
                 }
 
             ]
-        },
-        {
-            xtype: 'form',
-            items:[
-                {
-                    html : '<h2>Thank You</h2><p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.</p>'
-                }
-            ]
         }
+        // {
+        //     xtype: 'form',
+        //     items:[
+        //         {
+        //             html : '<h2>Thank You</h2><p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.</p>'
+        //         }
+        //     ]
+        // }
     ],
 
 
@@ -91,13 +91,13 @@ Ext.define('LearningAnalytics.view.courses.RiskAnalysisWindowForms', {
             {
                 step: 2,
                 enableToggle: true,
-                text: 'Step 3'
-            },
-            {
-                step: 3,
-                enableToggle: true,
                 text: 'Results'
             }
+            // {
+            //     step: 3,
+            //     enableToggle: true,
+            //     text: 'Results'
+            // }
         ]
     },
 
@@ -107,6 +107,28 @@ Ext.define('LearningAnalytics.view.courses.RiskAnalysisWindowForms', {
         margin: 8,
         items: [
             '->',
+            {
+                text: 'Compare',
+                ui: 'soft-purple',
+                formBind: true,
+                bind: {
+                    hidden: '{!atResultPage}'
+                },
+                listeners: {
+                    click: 'onCompareButtonClick'
+                }
+            },
+            {
+                text: 'Compose Message',
+                ui: 'soft-purple',
+                formBind: true,
+                bind: {
+                    hidden: '{!atResultPage}'
+                },
+                listeners: {
+                    click: 'onComposeMessageClick'
+                }
+            },
             {
                 text: 'Previous',
                 ui: 'soft-purple',

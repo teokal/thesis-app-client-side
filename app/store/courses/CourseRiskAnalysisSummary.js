@@ -1,13 +1,13 @@
 /**
- *  Created by n.vasileiadis on 24.03.18
+ *  Created by n.vasileiadis on 25.03.18
  */
 
-Ext.define('LearningAnalytics.store.courses.CourseRiskAnalysisResults', {
+Ext.define('LearningAnalytics.store.courses.CourseRiskAnalysisSummary', {
     extend: 'Ext.data.Store',
 
-    storeId: 'CourseRiskAnalysisResults',
+    storeId: 'CourseRiskAnalysisSummary',
 
-    alias: 'store.courseRiskAnalysisResults',
+    alias: 'store.courseRiskAnalysisSummary',
 
     constructor: function (config) {
         config = config || {};
@@ -18,4 +18,6 @@ Ext.define('LearningAnalytics.store.courses.CourseRiskAnalysisResults', {
     addData: function (data) {
         this.loadRawData(data);
     }
+
 });
+

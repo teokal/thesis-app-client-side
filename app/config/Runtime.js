@@ -6,7 +6,7 @@ Ext.define('LearningAnalytics.config.Runtime',{
 
     singleton : true,
     config : {
-        baseUrl: 'http:\/\/64abb72a.ngrok.io' //'http:\/\/83.212.105.139:3000' // localhost:3000
+        baseUrl: 'http:\/\/83.212.105.139:3000' // localhost:3000
     },
 
     constructor : function(config){
@@ -17,7 +17,7 @@ Ext.define('LearningAnalytics.config.Runtime',{
 
     onBeforeRequest : function(connection, options, eOpts) {
         options.url = this.getBaseUrl() + options.url;
-        // if (options.method === 'GET'){
+        if (options.url.indexOf('sign_in') === -1) {
             var object = Ext.util.Cookies.get('AccessToken');
             var cookies = JSON.parse(object);
             var token = null;
@@ -25,7 +25,7 @@ Ext.define('LearningAnalytics.config.Runtime',{
                 token = cookies.access_token
             }
             options.headers.Authorization = "Token token=" + token;
-        // }
+        }
     },
 
     onRequest : function(conn, response, options, eOpts) {
