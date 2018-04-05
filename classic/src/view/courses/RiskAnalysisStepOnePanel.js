@@ -33,6 +33,34 @@ Ext.define('LearningAnalytics.view.courses.RiskAnalysisStepOnePanel', {
             html : '<p>Please select the type of each activity. If you don\'t select a type for an activity, the default value will be "None". </p>'
         },
         {
+            layout: {
+                type:'hbox',
+                align:'stretch'
+            },
+            items: [{
+                xtype: 'button',
+                text: 'Add Column',
+                maxWidth: 200,
+                ui: 'soft-green',
+                margin: '0 30 5 0',
+                flex: 1,
+                listeners: {
+                    click: 'onAddColumn'
+                }
+            },{
+                xtype: 'button',
+                text: 'Remove Column',
+                ui: 'soft-red',
+                maxWidth: 200,
+                margin: '0 30 5 0',
+                flex: 1
+                // listeners: {
+                //     click: 'onAddColumn'
+                // }
+            }
+            ]
+        },
+        {
             xtype: 'gridpanel',
             reference: 'riskAnalysisGridPanel',
             plugins: 'gridfilters',
@@ -41,7 +69,7 @@ Ext.define('LearningAnalytics.view.courses.RiskAnalysisStepOnePanel', {
             readOnly : false,
             disableSelection: false,
             scrollable: {
-                x: false,
+                x: true,
                 y: true
             },
             viewConfig:{

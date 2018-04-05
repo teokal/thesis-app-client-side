@@ -435,52 +435,6 @@ Ext.define('LearningAnalytics.view.main.MainController', {
         });
     },
 
-    // onCompareButtonClick: function (bt) {
-    //     var win = bt.up('window');
-    //     var heigh = win.getY();
-    //     win.setPosition([ 0, heigh - 1 ]);
-    //     win.modal = false;
-    //     bt.hide();
-    //     var cfg = new Ext.apply({
-    //         xtype: 'popUpWindow',
-    //         modal: false,
-    //         title: 'Students Overview - Compare',
-    //         reference: 'compareWindow',
-    //
-    //         items: [
-    //             {
-    //                 id: 'compareWindow',
-    //                 xtype: 'riskAnalysisWindow',
-    //                 bbar: {
-    //                     overflowHandler: 'menu',
-    //                     items: [
-    //                         '->',
-    //                         {
-    //                             xtype: 'button',
-    //                             ui: 'soft-green',
-    //                             text: 'Compose Message',
-    //                             disabled: false,
-    //                             handler: 'onComposeMessageClick'
-    //                         }
-    //                     ]
-    //                 }
-    //
-    //
-    //             }
-    //         ],
-    //
-    //         syncSize: function () {
-    //             var width = Ext.Element.getViewportWidth(),
-    //                 height = Ext.Element.getViewportHeight();
-    //             this.setSize(Math.floor(width * 0.5), Math.floor(height * 0.6));
-    //             this.setPosition([ Math.floor(width * 0.5), Math.floor(height * 0.20) ]);
-    //         }
-    //
-    //     });
-    //
-    //     Ext.create(cfg);
-    // },
-
     onCompareButtonClick: function (bt) {
         var cfg = Ext.apply({
             xtype: 'popUpWindow',
@@ -561,19 +515,15 @@ Ext.define('LearningAnalytics.view.main.MainController', {
     },
 
     onRiskAnalysisGridCellItemClick: function(view, td, cellIndex, record){
-        if(cellIndex > 0){
-            record.set('page', false);
-            record.set('quiz', false);
-            record.set('none', false);
-        }
-        if (cellIndex === 1) {
-            record.set('page', !record.get('page'));
-        }
-        if (cellIndex === 2) {
-            record.set('quiz', !record.get('quiz'));
-        }
-        if (cellIndex === 3) {
-            record.set('none', !record.get('none'));
+        var columns = view.getColumnManager().columns;
+        if(columns[cellIndex].dataIndex !== 'title'){
+            for (var i = 1; i < columns.length; i++) {
+                if (i === cellIndex) {
+                    record.set(columns[i].dataIndex, true);
+                } else {
+                    record.set(columns[i].dataIndex, false);
+                }
+            }
         }
     },
 
@@ -753,6 +703,25 @@ Ext.define('LearningAnalytics.view.main.MainController', {
         } else {
             chart.preview();
         }
+    },
+
+    onAddColumn: function() {
+        Ext.MessageBox.prompt('Add Column', 'Please enter the column name:', function(btnText, sInput){
+            debugger;
+            if(btnText === 'ok'){
+                // Ext.Msg.alert("Status", "You entered:" + sInput);
+                var gridView = this.lookupReference('riskAnalysisGridPanel').items.items[0];
+                var column = Ext.create('Ext.grid.column.Column', {
+                    text: sInput,
+                    dataIndex: sInput,
+                    width: 130,
+                    renderer: function(value) {
+                        return '<span class="x-fa fa-'+ (value ? 'check-square-o' : 'square-o') +'"></span>';
+                    }
+                });
+                gridView.headerCt.insert(gridView.getColumnManager().columns.length - 1, column);
+            }
+        }, this);
     }
 
 });
