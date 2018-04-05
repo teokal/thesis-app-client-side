@@ -77,10 +77,8 @@ Ext.define('LearningAnalytics.view.courses.RiskAnalysisStepTwoPanel', {
             fieldLabel: 'C2',
             allowBlank: false // requires value to be a valid email address format
         },{
-            html : '<p>These parameters are used to calculate the risk on the next step</br>' +
-            'The Algorithms are:</br>' +
-            'Discriminant Function for students not at risk: <b> Y1 = A1*P1 + B1*P2 - C1</b></br>' +
-            'Discriminant Function for students at risk: <b> Y2 = A2*P1 + B2*P2 - C2</b></p>'
+            html : '<p><b> Y1 = A1*P1 + B1*P2 + C1</b></br>' +
+            '<b> Y2 = A2*P1 + B2*P2 + C2</b></p>'
         }
     ]
 

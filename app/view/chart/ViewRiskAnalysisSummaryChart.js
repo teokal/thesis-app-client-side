@@ -9,7 +9,8 @@ Ext.define('LearningAnalytics.view.chart.ViewRiskAnalysisSummaryChart', {
     requires: [
         'Ext.chart.axis.Category',
         'Ext.chart.axis.Numeric',
-        'Ext.chart.series.Line'
+        'Ext.chart.series.Line',
+        'Ext.chart.series.Bar'
     ],
 
     animation : !Ext.isIE9m && Ext.os.is.Desktop,
@@ -33,7 +34,7 @@ Ext.define('LearningAnalytics.view.chart.ViewRiskAnalysisSummaryChart', {
             },
 
             renderer: function(axis, data){
-                return data.substring(0,10);
+                return data.substring(0,30);
             }
         },
         {
@@ -45,7 +46,6 @@ Ext.define('LearningAnalytics.view.chart.ViewRiskAnalysisSummaryChart', {
             ],
 
             grid: true,
-            // majorTickSteps: 1,
             hidden: false,
             position: 'left'
         }
@@ -53,8 +53,9 @@ Ext.define('LearningAnalytics.view.chart.ViewRiskAnalysisSummaryChart', {
 
     series: [
         {
-            type: 'line',
+            type: 'bar',
             colors: [
+                'rgba(112, 191, 115, 0.6)',
                 'rgba(103, 144, 199, 0.6)'
             ],
             style: {
@@ -64,45 +65,12 @@ Ext.define('LearningAnalytics.view.chart.ViewRiskAnalysisSummaryChart', {
             useDarkerStrokeColor: false,
             xField: 'title',
             yField: [
-                'success'
-            ],
-            fill: false,
-            smooth: false,
-            marker: {
-                opacity: 0,
-                scaling: 0.01,
-                fx: {
-                    duration: 200,
-                    easing: 'easeOut'
-                }
-            },
-            highlightCfg: {
-                opacity: 1,
-                scaling: 1.5
-            },
-            tooltip: {
-                trackMouse: true,
-                renderer: function (tooltip, record, item) {
-                    tooltip.setHtml(record.data.title + '<br>' + item.field.toString() + ': ' + record.get('success'));
-                }
-            }
-        },
-        {
-            type: 'line',
-            colors: [
-                'rgba(112, 191, 115, 0.6)'
-            ],
-            useDarkerStrokeColor: false,
-            xField: 'title',
-            yField: [
+                'success',
                 'failure'
             ],
-            style: {
-                lineWidth: 3
-            },
-
             fill: false,
             smooth: false,
+            stacked: false,
             marker: {
                 opacity: 0,
                 scaling: 0.01,
@@ -113,7 +81,7 @@ Ext.define('LearningAnalytics.view.chart.ViewRiskAnalysisSummaryChart', {
             },
             highlightCfg: {
                 opacity: 1,
-                scaling: 1.5
+                scaling: 1.05
             },
             tooltip: {
                 trackMouse: true,

@@ -128,7 +128,7 @@ Ext.define('LearningAnalytics.view.courses.CourseStatisticsChartWidget', {
                     fieldLabel:'Actions',
                     name:'actionsQueryCourseLog',
                     queryMode:'local',
-                    store:['all','view','quiz', 'enrol','unenrol'],
+                    store:['viewed'],
                     displayField:'actionsQueryCourseLog',
                     padding: '0 0 0 30',
                     autoSelect:true,
