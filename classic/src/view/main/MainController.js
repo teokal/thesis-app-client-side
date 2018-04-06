@@ -550,6 +550,7 @@ Ext.define('LearningAnalytics.view.main.MainController', {
         if (curActiveIndex === 0) {
 
         } else if(curActiveIndex === 1) {
+            debugger;
             var gridStore = this.lookupReference('riskAnalysisGridPanel').items.items[0].getStore();
             var itemsCount = gridStore.count();
             var studentsStore = viewModel.data.riskAnalysisUsers;
@@ -707,13 +708,12 @@ Ext.define('LearningAnalytics.view.main.MainController', {
 
     onAddColumn: function() {
         Ext.MessageBox.prompt('Add Column', 'Please enter the column name:', function(btnText, sInput){
-            debugger;
             if(btnText === 'ok'){
-                // Ext.Msg.alert("Status", "You entered:" + sInput);
                 var gridView = this.lookupReference('riskAnalysisGridPanel').items.items[0];
                 var column = Ext.create('Ext.grid.column.Column', {
                     text: sInput,
                     dataIndex: sInput,
+                    id: sInput,
                     width: 130,
                     renderer: function(value) {
                         return '<span class="x-fa fa-'+ (value ? 'check-square-o' : 'square-o') +'"></span>';
@@ -722,6 +722,31 @@ Ext.define('LearningAnalytics.view.main.MainController', {
                 gridView.headerCt.insert(gridView.getColumnManager().columns.length - 1, column);
             }
         }, this);
+    },
+
+    onRemoveColumn: function() {
+        var grid = this.lookupReference('riskAnalysisGridPanel');
+        var gridView = this.lookupReference('riskAnalysisGridPanel').items.items[0];
+        var columns = gridView.getColumnManager().columns;
+        var result = "";
+        for (var i=1; i < columns.length; i++) {
+            result = result + '<option value="' + columns[i].dataIndex + '">' + columns[i].dataIndex + '</option>';
+        }
+        Ext.MessageBox.show({
+            title: 'Address',
+            msg: 'Please select which column to delete.<br /><br /><select id="columnToBeRemoved">' +
+            result +
+            '</select>',
+            width:300,
+            buttons: Ext.MessageBox.OKCANCEL,
+            multiline: false,
+            fn: function(btn) {
+                if (btn === 'ok') {
+                    gridView.headerCt.remove(Ext.get('columnToBeRemoved').getValue());
+                    grid.getView().refresh();
+                }
+            }
+        });
     }
 
 });
