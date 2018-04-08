@@ -545,19 +545,160 @@ Ext.define('LearningAnalytics.view.main.MainController', {
         var curActiveItem = layout.getActiveItem();
         var curActiveIndex = panel.items.indexOf(curActiveItem);
         var viewModel = this.getViewModel();
+        var alphabet = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'];
 
         this.getViewModel().set('atBeginning', false);
         if (curActiveIndex === 0) {
 
+            var gridStore = this.lookupReference('riskAnalysisGridPanel').items.items[0];
+            var columns = gridStore.getColumnManager().columns;
+            // var grid = gridStore.getStore();
+            var panelStepTwo = this.lookupReference('riskAnalysisStepTwoPanel');
+            var algorithOne = "", algorithTwo = "", columnsPSummary = "";
+
+            panelStepTwo.removeAll();
+
+            panelStepTwo.add(new Ext.form.Panel({
+                html : '<p>If you want, you can change the default parameter\'s value</p>'
+            }));
+
+            algorithOne = "Y1 = "
+            algorithTwo = "Y2 = "
+            columnsPSummary = "Where: </br>"
+            for (var y = 2; y < columns.length; y ++) { // create viewmodel data
+                var alpha = alphabet[y-2];
+                var index = eval("y-1");
+                if (y > 2) {
+                    algorithOne = algorithOne + " + "
+                    algorithTwo = algorithTwo + " + "
+                }
+                algorithOne = algorithOne + alphabet[y-2] + "1*P" + index;
+                algorithTwo = algorithTwo + alphabet[y-2] + "2*P" + index;
+                columnsPSummary = columnsPSummary + "P" + index + ": " + columns[index].dataIndex + "</br>";
+
+                if (alpha !== "A" && alpha !== "B") {
+                    var key1 = 'riskParameter' + alphabet[y-2] + '1';
+                    var key2 = 'riskParameter' + alphabet[y-2] + '2';
+                    this.getViewModel().data[key1] = 0;
+                    this.getViewModel().data[key2] = 0;
+                }
+            }
+            algorithOne = algorithOne + " + Constant1";
+            algorithTwo = algorithTwo + " + Constant2";
+
+            var fieldsFirst = [];
+            var fieldsSecond = [];
+            for (var index = 2; index < columns.length; index ++){
+                //TODO: create and add numberfields
+                var alpha = alphabet[index-2];
+                fieldsFirst.push(new Ext.form.NumberField({
+                        xtype: 'numberfield',
+                        name: 'riskAnalysisParameter' + alpha + '1',
+                        width: 180,
+                        bind: '{riskParameter' + alpha + '1}',
+                        margin: '0 30 5 0',
+                        forcePrecision: true,
+                        decimalPrecision: 10,
+                        fieldLabel: alpha+'1',
+                        labelAlign: 'top',
+                        allowBlank: false
+                    })
+                )
+
+                fieldsSecond.push(new Ext.form.NumberField({
+                        xtype: 'numberfield',
+                        name: 'riskAnalysisParameter' + alpha + '2',
+                        width: 180,
+                        bind: '{riskParameter' + alpha + '2}',
+                        margin: '0 30 5 0',
+                        forcePrecision: true,
+                        decimalPrecision: 10,
+                        fieldLabel: alpha+'2',
+                        labelAlign: 'top',
+                        allowBlank: false
+                    })
+                )
+            }
+
+            fieldsFirst.push(new Ext.form.NumberField({
+                    xtype: 'numberfield',
+                    name: 'riskParameterConstant1',
+                    width: 180,
+                    bind: '{riskParameterConstant1}',
+                    margin: '0 30 5 0',
+                    forcePrecision: true,
+                    decimalPrecision: 10,
+                    fieldLabel: 'Constant1',
+                    labelAlign: 'top',
+                    allowBlank: false
+                })
+            )
+
+            fieldsSecond.push(new Ext.form.NumberField({
+                    xtype: 'numberfield',
+                    name: 'riskParameterConstant2',
+                    width: 180,
+                    bind: '{riskParameterConstant2}',
+                    margin: '0 30 5 0',
+                    forcePrecision: true,
+                    decimalPrecision: 10,
+                    fieldLabel: 'Constant2',
+                    labelAlign: 'top',
+                    allowBlank: false
+                })
+            )
+
+            panelStepTwo.add(new Ext.form.Panel({
+                layout: {
+                    type:'hbox',
+                    align:'stretch'
+                },
+                items: [{  }],
+                listeners: {
+                    afterrender: function(){
+                        var fields = fieldsFirst;
+                        var test = 0;
+                        for (var i=0; i < fieldsFirst.length; i ++) {
+                            this.add(fieldsFirst[i])
+                        }
+                    }
+                },
+
+            }));
+
+            panelStepTwo.add(new Ext.form.Panel({
+                layout: {
+                    type:'hbox',
+                    align:'stretch'
+                },
+                items: [{  }],
+                listeners: {
+                    afterrender: function(){
+                        var fields = fieldsSecond;
+                        var test = 0;
+                        for (var i=0; i < fieldsSecond.length; i ++) {
+                            this.add(fieldsSecond[i])
+                        }
+                    }
+                },
+
+            }));
+            panelStepTwo.add(new Ext.form.Panel({
+                html : '<p><b>' + algorithOne + '</b></br>' +
+                '<b>' + algorithTwo + '</b></br></br>' +
+                columnsPSummary + '</p>'
+            }));
+
         } else if(curActiveIndex === 1) {
-            debugger;
-            var gridStore = this.lookupReference('riskAnalysisGridPanel').items.items[0].getStore();
+            var grid = this.lookupReference('riskAnalysisGridPanel').items.items[0];
+            var gridStore = grid.getStore();
             var itemsCount = gridStore.count();
+            var columns = grid.getColumnManager().columns;
             var studentsStore = viewModel.data.riskAnalysisUsers;
             var scormsDataForStudent;
             var item, scormData, parameterP1, parameterP2, resultY1, resultY2;
             var student, pageAll, pageSuccess, quizAll, quizSuccess;
-            var result = [], summary = [];
+            var result = [], summary = [], parameters = [], variableP = [];
             var parameterA1 = viewModel.data.riskParameterA1,
                 parameterB1 = viewModel.data.riskParameterB1,
                 parameterC1 = viewModel.data.riskParameterC1,
@@ -574,6 +715,13 @@ Ext.define('LearningAnalytics.view.main.MainController', {
                 })
             }
 
+            for (var y = 0; y < columns.length - 1; y ++) {
+                parameters.push('riskParameter' + alphabet[y] + '1');
+                parameters.push('riskParameter' + alphabet[y] + '2');
+            }
+            parameters.push('riskParameterConstant1');
+            parameters.push('riskParameterConstant2');
+
             for (var studentIndex = 0; studentIndex < studentsStore.count(); studentIndex++) {
                 student = studentsStore.getAt(studentIndex);
                 scormsDataForStudent = student.analysis();
@@ -581,10 +729,11 @@ Ext.define('LearningAnalytics.view.main.MainController', {
                 for (var i = 0; i < itemsCount; i++) {
                     item = gridStore.getAt(i);
                     scormData = scormsDataForStudent.getAt(i);
-                    if (typeof item.data.none === 'undefined' || typeof item.data.quiz === 'undefined' || typeof item.data.page === 'undefined') {
+                    if (typeof item.data['None'] === 'undefined') {
                         summary[i].failure ++;
                     } else {
                         // TODO: calculate the A1, B1 etc
+                        debugger;
                         if (item.data.page === true) {
                             pageAll ++;
                             if (scormData.data.value === true){
@@ -707,7 +856,7 @@ Ext.define('LearningAnalytics.view.main.MainController', {
     },
 
     onAddColumn: function() {
-        Ext.MessageBox.prompt('Add Column', 'Please enter the column name:', function(btnText, sInput){
+        Ext.MessageBox.prompt('Add Column', 'Enter the column name:', function(btnText, sInput){
             if(btnText === 'ok'){
                 var gridView = this.lookupReference('riskAnalysisGridPanel').items.items[0];
                 var column = Ext.create('Ext.grid.column.Column', {
@@ -729,12 +878,14 @@ Ext.define('LearningAnalytics.view.main.MainController', {
         var gridView = this.lookupReference('riskAnalysisGridPanel').items.items[0];
         var columns = gridView.getColumnManager().columns;
         var result = "";
-        for (var i=1; i < columns.length; i++) {
-            result = result + '<option value="' + columns[i].dataIndex + '">' + columns[i].dataIndex + '</option>';
+        for (var i=0; i < columns.length; i++) {
+            if (columns[i].dataIndex !== "None" && columns[i].dataIndex !== "title"){
+                result = result + '<option value="' + columns[i].dataIndex + '">' + columns[i].dataIndex + '</option>';
+            }
         }
         Ext.MessageBox.show({
-            title: 'Address',
-            msg: 'Please select which column to delete.<br /><br /><select id="columnToBeRemoved">' +
+            title: 'Delete Column',
+            msg: 'Select which column to delete.<br /><br /><select style="height:25px;width:200px;font-size:12px;" id="columnToBeRemoved">' +
             result +
             '</select>',
             width:300,

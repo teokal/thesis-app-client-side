@@ -57,8 +57,7 @@ Ext.define('LearningAnalytics.view.courses.RiskAnalysisStepOnePanel', {
                 listeners: {
                     click: 'onRemoveColumn'
                 }
-            }
-            ]
+            }]
         },
         {
             xtype: 'gridpanel',
@@ -81,12 +80,13 @@ Ext.define('LearningAnalytics.view.courses.RiskAnalysisStepOnePanel', {
             columns: [
                 {
                     dataIndex: 'title',
+                    id: 'Activity',
                     text: 'Activity',
                     flex: 1
                 },
                 {
-                    dataIndex: 'page',
-                    id: 'page',
+                    dataIndex: 'Slides',
+                    id: 'Slides',
                     text: 'Slides',
                     // selType: 'checkboxmodel',
                     width: 130,
@@ -95,8 +95,8 @@ Ext.define('LearningAnalytics.view.courses.RiskAnalysisStepOnePanel', {
                     }
                 },
                 {
-                    dataIndex: 'quiz',
-                    id: 'quiz',
+                    dataIndex: 'Quiz',
+                    id: 'Quiz',
                     text: 'Quiz',
                     width: 130,
                     renderer: function(value) {
@@ -104,8 +104,8 @@ Ext.define('LearningAnalytics.view.courses.RiskAnalysisStepOnePanel', {
                     }
                 },
                 {
-                    dataIndex: 'none',
-                    id: 'none',
+                    dataIndex: 'None',
+                    id: 'None',
                     text: 'None',
                     width: 130,
                     renderer: function(value) {
