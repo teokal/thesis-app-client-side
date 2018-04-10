@@ -562,14 +562,14 @@ Ext.define('LearningAnalytics.view.main.MainController', {
                 html : '<p>If you want, you can change the default parameter\'s value</p>'
             }));
 
-            algorithOne = "Y1 = "
-            algorithTwo = "Y2 = "
-            columnsPSummary = "Where: </br>"
+            algorithOne = "Y1 = ";
+            algorithTwo = "Y2 = ";
+            columnsPSummary = "Where: </br>";
             for (var y = 2; y < columns.length; y ++) { // create viewmodel data
                 var alpha = alphabet[y-2];
                 var index = eval("y-1");
                 if (y > 2) {
-                    algorithOne = algorithOne + " + "
+                    algorithOne = algorithOne + " + ";
                     algorithTwo = algorithTwo + " + "
                 }
                 algorithOne = algorithOne + alphabet[y-2] + "1*P" + index;
@@ -603,7 +603,7 @@ Ext.define('LearningAnalytics.view.main.MainController', {
                         labelAlign: 'top',
                         allowBlank: false
                     })
-                )
+                );
 
                 fieldsSecond.push(new Ext.form.NumberField({
                         xtype: 'numberfield',
@@ -632,7 +632,7 @@ Ext.define('LearningAnalytics.view.main.MainController', {
                     labelAlign: 'top',
                     allowBlank: false
                 })
-            )
+            );
 
             fieldsSecond.push(new Ext.form.NumberField({
                     xtype: 'numberfield',
@@ -646,7 +646,7 @@ Ext.define('LearningAnalytics.view.main.MainController', {
                     labelAlign: 'top',
                     allowBlank: false
                 })
-            )
+            );
 
             panelStepTwo.add(new Ext.form.Panel({
                 layout: {
@@ -656,13 +656,11 @@ Ext.define('LearningAnalytics.view.main.MainController', {
                 items: [{  }],
                 listeners: {
                     afterrender: function(){
-                        var fields = fieldsFirst;
-                        var test = 0;
                         for (var i=0; i < fieldsFirst.length; i ++) {
                             this.add(fieldsFirst[i])
                         }
                     }
-                },
+                }
 
             }));
 
@@ -674,13 +672,11 @@ Ext.define('LearningAnalytics.view.main.MainController', {
                 items: [{  }],
                 listeners: {
                     afterrender: function(){
-                        var fields = fieldsSecond;
-                        var test = 0;
                         for (var i=0; i < fieldsSecond.length; i ++) {
                             this.add(fieldsSecond[i])
                         }
                     }
-                },
+                }
 
             }));
             panelStepTwo.add(new Ext.form.Panel({
@@ -696,15 +692,9 @@ Ext.define('LearningAnalytics.view.main.MainController', {
             var columns = grid.getColumnManager().columns;
             var studentsStore = viewModel.data.riskAnalysisUsers;
             var scormsDataForStudent;
-            var item, scormData, parameterP1, parameterP2, resultY1, resultY2;
+            var item, scormData, resultY1, resultY2;
             var student, pageAll, pageSuccess, quizAll, quizSuccess;
             var result = [], summary = [], parameters = [], variableP = [];
-            var parameterA1 = viewModel.data.riskParameterA1,
-                parameterB1 = viewModel.data.riskParameterB1,
-                parameterC1 = viewModel.data.riskParameterC1,
-                parameterA2 = viewModel.data.riskParameterA2,
-                parameterB2 = viewModel.data.riskParameterB2,
-                parameterC2 = viewModel.data.riskParameterC2;
 
             for (var i = 0; i < itemsCount; i++) {
                 summary.push({
@@ -715,7 +705,7 @@ Ext.define('LearningAnalytics.view.main.MainController', {
                 })
             }
 
-            for (var y = 0; y < columns.length - 1; y ++) {
+            for (var y = 0; y < columns.length - 2; y ++) {
                 parameters.push('riskParameter' + alphabet[y] + '1');
                 parameters.push('riskParameter' + alphabet[y] + '2');
             }
@@ -725,7 +715,8 @@ Ext.define('LearningAnalytics.view.main.MainController', {
             for (var studentIndex = 0; studentIndex < studentsStore.count(); studentIndex++) {
                 student = studentsStore.getAt(studentIndex);
                 scormsDataForStudent = student.analysis();
-                pageAll = 0, pageSuccess = 0, quizAll = 0, quizSuccess = 0;
+                // pageAll = 0, pageSuccess = 0, quizAll = 0, quizSuccess = 0;
+                variableP = [];
                 for (var i = 0; i < itemsCount; i++) {
                     item = gridStore.getAt(i);
                     scormData = scormsDataForStudent.getAt(i);
@@ -733,31 +724,63 @@ Ext.define('LearningAnalytics.view.main.MainController', {
                         summary[i].failure ++;
                     } else {
                         // TODO: calculate the A1, B1 etc
-                        debugger;
-                        if (item.data.page === true) {
-                            pageAll ++;
-                            if (scormData.data.value === true){
-                                pageSuccess ++;
-                                summary[i].success ++;
-                            } else {
-                                summary[i].failure ++;
-                            }
-                        } else if(item.data.quiz === true) {
-                            quizAll ++;
-                            if (scormData.data.value === true){
-                                quizSuccess ++;
-                                summary[i].success ++;
-                            } else {
-                                summary[i].failure ++;
+                        for (var columnIndex = 1; columnIndex < columns.length; columnIndex ++){
+                            var columnDataIndex = columns[columnIndex].dataIndex;
+                            if (item.data[columnDataIndex] === true) {
+                                if (scormData.data.value === true) {
+                                    summary[i].success ++;
+                                    var found = variableP.some(function (el) {
+                                        if (el.id === columnDataIndex) {
+                                            el.success += 1;
+                                            el.all += 1;
+                                            return true
+                                        }
+                                        return false
+                                    });
+                                    if (!found){
+                                        variableP.push({
+                                            id: columnDataIndex,
+                                            success: 1,
+                                            all: 1
+                                        })
+                                    }
+                                } else {
+                                    summary[i].failure ++;
+                                    var found = variableP.some(function (el) {
+                                        if (el.id === columnDataIndex) {
+                                            el.all += 1;
+                                            return true
+                                        }
+                                        return false
+                                    });
+                                    if (!found){
+                                        variableP.push({
+                                            id: columnDataIndex,
+                                            success: 0,
+                                            all: 1
+                                        })
+                                    }
+                                }
                             }
                         }
                     }
                 }
-                parameterP1 = ( pageSuccess / pageAll );
-                parameterP2 = ( quizSuccess / quizAll );
-
-                resultY1 = parameterA1 * parameterP1 + parameterB1 * parameterP2 - parameterC1;
-                resultY2 = parameterA2 * parameterP1 + parameterB2 * parameterP2 - parameterC2;
+                resultY1 = 0;
+                resultY2 = 0;
+                for (var columnI = 0; columnI < columns.length - 2; columnI ++) {
+                    if (typeof variableP[columnI] === 'undefined') {
+                        resultY1 += 0;
+                        resultY2 += 0;
+                    } else if (typeof variableP[columnI].success === 'undefined') {
+                        resultY1 += 0;
+                        resultY2 += 0;
+                    } else {
+                        resultY1 += viewModel.data[parameters[(columnI)*2]] * (variableP[columnI].success / variableP[columnI].all);
+                        resultY2 += viewModel.data[parameters[(columnI)*2 + 1]] * (variableP[columnI].success / variableP[columnI].all)
+                    }
+                }
+                resultY1 += viewModel.data.riskParameterConstant1;
+                resultY2 += viewModel.data.riskParameterConstant2;
                 viewModel.data.riskAnalysisResultsId = student.data.id;
                 viewModel.data.riskAnalysisResultsName = student.data.name;
 
