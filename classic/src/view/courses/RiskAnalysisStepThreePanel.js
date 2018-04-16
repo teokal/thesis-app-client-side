@@ -43,7 +43,7 @@ Ext.define('LearningAnalytics.view.courses.RiskAnalysisStepThreePanel', {
             plugins: 'gridfilters',
 
             scrollable: {
-                x: false,
+                x: true,
                 y: true
             },
             viewConfig:{
@@ -61,6 +61,7 @@ Ext.define('LearningAnalytics.view.courses.RiskAnalysisStepThreePanel', {
                 {
                     dataIndex: 'name',
                     text: 'Name',
+                    width: 250,
                     flex: 1,
                     filter: {
                         type: 'string'

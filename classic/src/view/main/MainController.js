@@ -693,8 +693,8 @@ Ext.define('LearningAnalytics.view.main.MainController', {
             var studentsStore = viewModel.data.riskAnalysisUsers;
             var scormsDataForStudent;
             var item, scormData, resultY1, resultY2;
-            var student, pageAll, pageSuccess, quizAll, quizSuccess;
-            var result = [], summary = [], parameters = [], variableP = [];
+            var student;
+            var result = [], summary = [], parameters = [], variableP = [], studentCourseDetails = [];
 
             for (var i = 0; i < itemsCount; i++) {
                 summary.push({
@@ -702,7 +702,13 @@ Ext.define('LearningAnalytics.view.main.MainController', {
                     title: gridStore.getAt(i).data.title,
                     success: 0,
                     failure: 0
+                });
+                studentCourseDetails.push({
+                    index: i,
+                    title: gridStore.getAt(i).data.title,
+                    activityResult: false
                 })
+
             }
 
             for (var y = 0; y < columns.length - 2; y ++) {
@@ -715,13 +721,13 @@ Ext.define('LearningAnalytics.view.main.MainController', {
             for (var studentIndex = 0; studentIndex < studentsStore.count(); studentIndex++) {
                 student = studentsStore.getAt(studentIndex);
                 scormsDataForStudent = student.analysis();
-                // pageAll = 0, pageSuccess = 0, quizAll = 0, quizSuccess = 0;
                 variableP = [];
                 for (var i = 0; i < itemsCount; i++) {
                     item = gridStore.getAt(i);
                     scormData = scormsDataForStudent.getAt(i);
                     if (typeof item.data['None'] === 'undefined') {
                         summary[i].failure ++;
+                        studentCourseDetails[i].activityResult = false;
                     } else {
                         // TODO: calculate the A1, B1 etc
                         for (var columnIndex = 1; columnIndex < columns.length; columnIndex ++){
@@ -729,6 +735,7 @@ Ext.define('LearningAnalytics.view.main.MainController', {
                             if (item.data[columnDataIndex] === true) {
                                 if (scormData.data.value === true) {
                                     summary[i].success ++;
+                                    studentCourseDetails[i].activityResult = true;
                                     var found = variableP.some(function (el) {
                                         if (el.id === columnDataIndex) {
                                             el.success += 1;
@@ -746,6 +753,7 @@ Ext.define('LearningAnalytics.view.main.MainController', {
                                     }
                                 } else {
                                     summary[i].failure ++;
+                                    studentCourseDetails[i].activityResult = false;
                                     var found = variableP.some(function (el) {
                                         if (el.id === columnDataIndex) {
                                             el.all += 1;
@@ -791,7 +799,12 @@ Ext.define('LearningAnalytics.view.main.MainController', {
                     name: student.data.name,
                     status: viewModel.data.riskAnalysisResultsStatus
                 });
+
+                for (var itemIndex = 0; itemIndex < itemsCount; itemIndex++) {
+                    result[result.length - 1][studentCourseDetails[itemIndex].title] = studentCourseDetails[itemIndex].activityResult;
+                }
             }
+
             viewModel.data.riskAnalysisResultChart = summary;
 
             var storeSummary =  viewModel.getStore('courseRiskAnalysisSummary');
@@ -800,7 +813,31 @@ Ext.define('LearningAnalytics.view.main.MainController', {
             var mystore = viewModel.getStore('courseRiskAnalysisResults');
             mystore.addData(result)
         }
+        else if(curActiveIndex === 2) {
+
+
+        }
         this.navigate(button, panel, 'next');
+    },
+
+    onDetailsButtonClick: function(button){
+        var gridView = this.lookupReference('riskAnalysisResultsGridPanel').items.items[0];
+        var gridActivity = this.lookupReference('riskAnalysisGridPanel').items.items[0];
+        var gridStore = gridActivity.getStore();
+        var itemsCountActivity = gridStore.count();
+
+        for (var i = 0; i < itemsCountActivity; i++) {
+            var column = Ext.create('Ext.grid.column.Column', {
+                text: gridStore.getAt(i).data.title,
+                dataIndex: gridStore.getAt(i).data.title,
+                width: 150,
+                renderer: function(value) {
+                    return '<span class="x-fa '+ (value ? 'fa-check-circle' : 'fa-exclamation-circle') +'" style="color:'+ (value ? 'green' : 'red') + '"></span>';
+                }
+            });
+            gridView.headerCt.insert(gridView.getColumnManager().columns.length - 1, column);
+        }
+
     },
 
     onPreviousClick: function(button) {

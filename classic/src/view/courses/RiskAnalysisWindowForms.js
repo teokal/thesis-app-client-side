@@ -108,6 +108,17 @@ Ext.define('LearningAnalytics.view.courses.RiskAnalysisWindowForms', {
         items: [
             '->',
             {
+                text: 'Details',
+                ui: 'soft-purple',
+                formBind: true,
+                bind: {
+                    hidden: '{!atResultPage}'
+                },
+                listeners: {
+                    click: 'onDetailsButtonClick'
+                }
+            },
+            {
                 text: 'Compare',
                 ui: 'soft-purple',
                 formBind: true,
