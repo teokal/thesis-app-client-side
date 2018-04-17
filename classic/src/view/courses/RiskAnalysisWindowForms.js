@@ -4,6 +4,7 @@
 Ext.define('LearningAnalytics.view.courses.RiskAnalysisWindowForms', {
     extend: 'Ext.panel.Panel',
     xtype: 'riskAnalysisWindowForm',
+    reference: 'riskAnalysisWindowForm',
     requires: [
         'Ext.button.Button',
         'Ext.form.field.Text',

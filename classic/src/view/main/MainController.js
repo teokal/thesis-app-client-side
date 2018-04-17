@@ -387,6 +387,13 @@ Ext.define('LearningAnalytics.view.main.MainController', {
     onRiskAnalysisClick: function () {
         var viewModel = this.getViewModel();
         var store = viewModel.getStore('riskAnalysis');
+        // var myMask = new Ext.LoadMask(Ext.getBody(), {msg:"Please wait..."});
+        // myMask.el.dom.style.zIndex = '99999';
+        // myMask.show();
+        // var loadText = 'Loading... Please wait';
+        Ext.getBody().mask('Please wait', 'loading');
+        // Ext.getBody().mask('Please wait', 'loading').dom.style.zIndex = '99999';
+
         store.load({
             params: {
                 courseid: this.currentCourseId
@@ -412,7 +419,7 @@ Ext.define('LearningAnalytics.view.main.MainController', {
                             ],
                             title: 'Risk Analysis Overview'
                         });
-
+                        Ext.getBody().unmask();
                         Ext.create(cfg);
                     } else {
                         Ext.Msg.alert({
@@ -528,6 +535,8 @@ Ext.define('LearningAnalytics.view.main.MainController', {
     },
 
     initForRiskForm: function(view) {
+        var viewModel = this.getViewModel();
+
         var tb = this.lookupReference('navigation-toolbar'),
             buttons = tb.items.items,
             ui = view.colorScheme;
@@ -537,6 +546,9 @@ Ext.define('LearningAnalytics.view.main.MainController', {
             buttons[1].setUI(ui);
             buttons[2].setUI(ui);
         }
+        viewModel.set('atBeginning', true);
+        viewModel.set('atEnd', false);
+        viewModel.set('atResultPage', false);
     },
 
     onNextClick: function(button) {
@@ -826,6 +838,13 @@ Ext.define('LearningAnalytics.view.main.MainController', {
         var gridStore = gridActivity.getStore();
         var itemsCountActivity = gridStore.count();
 
+        // var myMask = new Ext.LoadMask(Ext.getBody(), {msg:"Please wait..."});
+        // myMask.el.dom.style.zIndex = '99999';
+        // myMask.show();
+        // Ext.getBody().mask('Please wait', 'loading');
+        Ext.getBody().mask('Please wait', 'loading').dom.style.zIndex = '99999';
+
+
         for (var i = 0; i < itemsCountActivity; i++) {
             var column = Ext.create('Ext.grid.column.Column', {
                 text: gridStore.getAt(i).data.title,
@@ -838,6 +857,9 @@ Ext.define('LearningAnalytics.view.main.MainController', {
             gridView.headerCt.insert(gridView.getColumnManager().columns.length - 1, column);
         }
 
+        Ext.getBody().unmask();
+        // myMask.hide();
+        // myMask.destroy();
     },
 
     onPreviousClick: function(button) {
