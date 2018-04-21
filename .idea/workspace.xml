@@ -2,37 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f8dc9324-99df-43e6-be41-1aee28966c96" name="Default" comment="add calendar">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/temp/production/LearningAnalytics/slicer-temp/theme-capture.png" afterPath="$PROJECT_DIR$/build/temp/production/LearningAnalytics/slicer-temp/theme-capture.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/store/NavigationTree.js" afterPath="$PROJECT_DIR$/app/store/NavigationTree.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/LearningAnalytics-dashboard/classic.jsonp" afterPath="$PROJECT_DIR$/build/LearningAnalytics-dashboard/classic.jsonp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/LearningAnalytics-dashboard/classic/app.js" afterPath="$PROJECT_DIR$/build/LearningAnalytics-dashboard/classic/app.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/LearningAnalytics-dashboard/classic/resources/LearningAnalytics-all_1.css" afterPath="$PROJECT_DIR$/build/LearningAnalytics-dashboard/classic/resources/LearningAnalytics-all_1.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/LearningAnalytics-dashboard/classic/resources/LearningAnalytics-all_2.css" afterPath="$PROJECT_DIR$/build/LearningAnalytics-dashboard/classic/resources/LearningAnalytics-all_2.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/LearningAnalytics-dashboard/classic/resources/LearningAnalytics-all_3.css" afterPath="$PROJECT_DIR$/build/LearningAnalytics-dashboard/classic/resources/LearningAnalytics-all_3.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/LearningAnalytics-dashboard/index.html" afterPath="$PROJECT_DIR$/build/LearningAnalytics-dashboard/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/LearningAnalytics-dashboard/modern.json" afterPath="$PROJECT_DIR$/build/LearningAnalytics-dashboard/modern.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/LearningAnalytics-dashboard/modern.jsonp" afterPath="$PROJECT_DIR$/build/LearningAnalytics-dashboard/modern.jsonp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/LearningAnalytics-dashboard/modern/app.js" afterPath="$PROJECT_DIR$/build/LearningAnalytics-dashboard/modern/app.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/LearningAnalytics-dashboard/modern/resources/LearningAnalytics-all.css" afterPath="$PROJECT_DIR$/build/LearningAnalytics-dashboard/modern/resources/LearningAnalytics-all.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/temp/development/LearningAnalytics/sass/LearningAnalytics-all.scss" afterPath="$PROJECT_DIR$/build/temp/development/LearningAnalytics/sass/LearningAnalytics-all.scss" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/temp/development/LearningAnalytics/sass/LearningAnalytics-all.scss.tmp" afterPath="$PROJECT_DIR$/build/temp/development/LearningAnalytics/sass/LearningAnalytics-all.scss.tmp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/temp/development/LearningAnalytics/slicer-temp/bootstrap.json" afterPath="$PROJECT_DIR$/build/temp/development/LearningAnalytics/slicer-temp/bootstrap.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/temp/development/LearningAnalytics/slicer-temp/bootstrap.jsonp" afterPath="$PROJECT_DIR$/build/temp/development/LearningAnalytics/slicer-temp/bootstrap.jsonp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/temp/production/LearningAnalytics/sass/LearningAnalytics-all.scss" afterPath="$PROJECT_DIR$/build/temp/production/LearningAnalytics/sass/LearningAnalytics-all.scss" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/temp/production/LearningAnalytics/sass/LearningAnalytics-all.scss.tmp" afterPath="$PROJECT_DIR$/build/temp/production/LearningAnalytics/sass/LearningAnalytics-all.scss.tmp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/temp/production/LearningAnalytics/slicer-temp/LearningAnalytics-example.scss" afterPath="$PROJECT_DIR$/build/temp/production/LearningAnalytics/slicer-temp/LearningAnalytics-example.scss" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/temp/production/LearningAnalytics/slicer-temp/LearningAnalytics-example.scss.tmp" afterPath="$PROJECT_DIR$/build/temp/production/LearningAnalytics/slicer-temp/LearningAnalytics-example.scss.tmp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/temp/production/LearningAnalytics/slicer-temp/LearningAnalytics-example_2.css" afterPath="$PROJECT_DIR$/build/temp/production/LearningAnalytics/slicer-temp/LearningAnalytics-example_2.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/temp/production/LearningAnalytics/slicer-temp/LearningAnalytics-example_3.css" afterPath="$PROJECT_DIR$/build/temp/production/LearningAnalytics/slicer-temp/LearningAnalytics-example_3.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/temp/production/LearningAnalytics/slicer-temp/bootstrap.json" afterPath="$PROJECT_DIR$/build/temp/production/LearningAnalytics/slicer-temp/bootstrap.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/temp/production/LearningAnalytics/slicer-temp/bootstrap.jsonp" afterPath="$PROJECT_DIR$/build/temp/production/LearningAnalytics/slicer-temp/bootstrap.jsonp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/classic.json" afterPath="$PROJECT_DIR$/classic.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/classic.jsonp" afterPath="$PROJECT_DIR$/classic.jsonp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/classic/src/view/fullcalendar/FullCalendar.js" afterPath="$PROJECT_DIR$/classic/src/view/fullcalendar/FullCalendar.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/classic/src/view/fullcalendar/FullCalendarView.js" afterPath="$PROJECT_DIR$/classic/src/view/fullcalendar/FullCalendarView.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/packages/fullcalendar/fullcalendar.css" afterPath="$PROJECT_DIR$/packages/fullcalendar/fullcalendar.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/packages/fullcalendar/fullcalendar.js" afterPath="$PROJECT_DIR$/packages/fullcalendar/fullcalendar.js" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/classic/src/view/main/MainController.js" beforeDir="false" afterPath="$PROJECT_DIR$/classic/src/view/main/MainController.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -44,154 +15,89 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="DockManager">
-    <window id="3">
-      <content type="file-editors">
-        <state>
-          <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-            <file leaf-file-name="Dashboard.js" pinned="false" current-in-tab="false">
-              <entry file="file://$PROJECT_DIR$/classic/src/view/dashboard/Dashboard.js">
-                <provider selected="true" editor-type-id="text-editor">
-                  <state relative-caret-position="480">
-                    <caret line="32" column="23" lean-forward="false" selection-start-line="32" selection-start-column="23" selection-end-line="32" selection-end-column="23" />
-                    <folding />
-                  </state>
-                </provider>
-              </entry>
-            </file>
-            <file leaf-file-name="Course.js" pinned="false" current-in-tab="true">
-              <entry file="file://$PROJECT_DIR$/classic/src/view/dashboard/Course.js">
-                <provider selected="true" editor-type-id="text-editor">
-                  <state relative-caret-position="300">
-                    <caret line="20" column="11" lean-forward="false" selection-start-line="20" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
-                    <folding />
-                  </state>
-                </provider>
-              </entry>
-            </file>
-            <file leaf-file-name="StudentsWidget.js" pinned="false" current-in-tab="false">
-              <entry file="file://$PROJECT_DIR$/modern/src/view/dashboard/StudentsWidget.js">
-                <provider selected="true" editor-type-id="text-editor">
-                  <state relative-caret-position="60">
-                    <caret line="4" column="34" lean-forward="false" selection-start-line="4" selection-start-column="34" selection-end-line="4" selection-end-column="34" />
-                    <folding />
-                  </state>
-                </provider>
-              </entry>
-            </file>
-            <file leaf-file-name="ViewStudentsChart.js" pinned="false" current-in-tab="false">
-              <entry file="file://$PROJECT_DIR$/app/view/chart/ViewStudentsChart.js">
-                <provider selected="true" editor-type-id="text-editor">
-                  <state relative-caret-position="75">
-                    <caret line="5" column="14" lean-forward="false" selection-start-line="5" selection-start-column="14" selection-end-line="5" selection-end-column="14" />
-                    <folding />
-                  </state>
-                </provider>
-              </entry>
-            </file>
-          </leaf>
-        </state>
-      </content>
-    </window>
-  </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="FullCalendar.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/classic/src/view/fullcalendar/FullCalendar.js">
+      <file leaf-file-name="MainController.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/classic/src/view/main/MainController.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="589">
-              <caret line="41" column="45" lean-forward="false" selection-start-line="41" selection-start-column="45" selection-end-line="41" selection-end-column="45" />
-              <folding />
+            <state relative-caret-position="459">
+              <caret line="431" column="43" selection-start-line="431" selection-start-column="43" selection-end-line="431" selection-end-column="43" />
+              <folding>
+                <element signature="n#style#0;n#span#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#select#0;n#!!top" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="fullcalendar.css" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/packages/fullcalendar/fullcalendar.css">
+      <file leaf-file-name="CourseStatistics.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/store/courses/CourseStatistics.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1576">
-              <caret line="254" column="29" lean-forward="false" selection-start-line="254" selection-start-column="29" selection-end-line="254" selection-end-column="29" />
-              <folding />
+            <state relative-caret-position="30">
+              <caret line="2" column="3" selection-start-line="2" selection-start-column="3" selection-end-line="2" selection-end-column="3" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="LearningAnalytics-all.css" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/classic/resources/LearningAnalytics-all.css">
+      <file leaf-file-name="MainModel.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/classic/src/view/main/MainModel.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
+            <state relative-caret-position="225">
+              <caret line="15" column="24" selection-start-line="15" selection-start-column="8" selection-end-line="15" selection-end-column="24" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Main.scss" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/classic/sass/src/view/main/Main.scss">
+      <file leaf-file-name="PopUpWindow.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/classic/src/view/widgets/PopUpWindow.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="90">
+              <caret line="6" column="22" selection-start-line="6" selection-start-column="22" selection-end-line="6" selection-end-column="22" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="RiskAnalysisStepOnePanel.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/classic/src/view/courses/RiskAnalysisStepOnePanel.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="945">
+              <caret line="63" column="21" selection-start-line="63" selection-start-column="12" selection-end-line="63" selection-end-column="21" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Runtime.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/config/Runtime.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="255">
+              <caret line="17" column="60" selection-start-line="17" selection-start-column="60" selection-end-line="17" selection-end-column="60" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="CourseRiskAnalysisResults.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/store/courses/CourseRiskAnalysisResults.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="255">
+              <caret line="17" column="4" selection-start-line="17" selection-start-column="4" selection-end-line="17" selection-end-column="4" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="RiskAnalysisStepThreePanel.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/classic/src/view/courses/RiskAnalysisStepThreePanel.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="75">
-              <caret line="5" column="44" lean-forward="false" selection-start-line="5" selection-start-column="44" selection-end-line="5" selection-end-column="44" />
-              <folding />
+              <caret line="5" column="38" selection-start-line="5" selection-start-column="12" selection-end-line="5" selection-end-column="38" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="all.scss" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/sass/var/all.scss">
+      <file leaf-file-name="RiskAnalysisWindowForms.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/classic/src/view/courses/RiskAnalysisWindowForms.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="540">
-              <caret line="36" column="41" lean-forward="false" selection-start-line="36" selection-start-column="35" selection-end-line="36" selection-end-column="41" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Main.scss" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/classic/sass/var/view/main/Main.scss">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="195">
-              <caret line="13" column="0" lean-forward="false" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/index.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="930">
-              <caret line="64" column="0" lean-forward="false" selection-start-line="64" selection-start-column="0" selection-end-line="64" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="NavigationTree.js" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/store/NavigationTree.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="510">
-              <caret line="34" column="38" lean-forward="true" selection-start-line="34" selection-start-column="38" selection-end-line="34" selection-end-column="38" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="LearningAnalytics-all_2.css" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/classic/resources/LearningAnalytics-all_2.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="550">
-              <caret line="7776" column="29" lean-forward="false" selection-start-line="7776" selection-start-column="23" selection-end-line="7776" selection-end-column="29" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="FullCalendarView.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/classic/src/view/fullcalendar/FullCalendarView.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="465">
-              <caret line="31" column="0" lean-forward="false" selection-start-line="31" selection-start-column="0" selection-end-line="31" selection-end-column="0" />
-              <folding />
+            <state relative-caret-position="1725">
+              <caret line="115" column="43" selection-start-line="115" selection-start-column="31" selection-end-line="115" selection-end-column="43" />
             </state>
           </provider>
         </entry>
@@ -208,12 +114,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>5FB8F1</find>
-      <find>#5FB8F1</find>
-      <find>main-container</find>
-      <find>courseEnrolledStudents</find>
-      <find>x-treelist-row</find>
-      <find>margin-left: 44</find>
       <find>element.style</find>
       <find>margin</find>
       <find>44px</find>
@@ -238,6 +138,12 @@
       <find>background</find>
       <find>.fc td</find>
       <find>fc th</find>
+      <find>summary[i]</find>
+      <find>item</find>
+      <find>columns</find>
+      <find>Ext.getBody().unmask</find>
+      <find>api/1/courses/logs</find>
+      <find>courseStatistics</find>
     </findStrings>
     <dirStrings>
       <dir>$PROJECT_DIR$/modern/src</dir>
@@ -250,8 +156,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/classic/src/view/about/AboutView.js" />
-        <option value="$PROJECT_DIR$/app/view/chart/ViewCourseStatistics.js" />
         <option value="$PROJECT_DIR$/app/model/courses/CourseStatistic.js" />
         <option value="$PROJECT_DIR$/app/view/chart/ViewCourseStatistic.js" />
         <option value="$PROJECT_DIR$/app/model/dashboard/ViewPerDate.js" />
@@ -285,11 +189,8 @@
         <option value="$PROJECT_DIR$/classic/src/view/dashboard/GradesWidget.js" />
         <option value="$PROJECT_DIR$/classic/src/view/dashboard/StudentsWidget.js" />
         <option value="$PROJECT_DIR$/classic/src/view/widgets/WidgetSmall.js" />
-        <option value="$PROJECT_DIR$/classic/src/view/courses/CourseView.js" />
         <option value="$PROJECT_DIR$/classic/src/view/dashboard/DashboardController.js" />
         <option value="$PROJECT_DIR$/classic/src/view/courses/CourseStatisticsChartWidget.js" />
-        <option value="$PROJECT_DIR$/classic/src/view/main/MainController.js" />
-        <option value="$PROJECT_DIR$/app/config/Runtime.js" />
         <option value="$PROJECT_DIR$/app.js" />
         <option value="$PROJECT_DIR$/classic/src/Application.js" />
         <option value="$PROJECT_DIR$/classic/src/view/courses/CourseController.js" />
@@ -301,6 +202,11 @@
         <option value="$PROJECT_DIR$/packages/fullcalendar/fullcalendar.css" />
         <option value="$PROJECT_DIR$/classic/src/view/fullcalendar/FullCalendar.js" />
         <option value="$PROJECT_DIR$/app/store/NavigationTree.js" />
+        <option value="$PROJECT_DIR$/classic/src/view/courses/CourseView.js" />
+        <option value="$PROJECT_DIR$/classic/src/view/courses/RiskAnalysisStepThreePanel.js" />
+        <option value="$PROJECT_DIR$/app/config/Runtime.js" />
+        <option value="$PROJECT_DIR$/classic/src/view/courses/RiskAnalysisWindowForms.js" />
+        <option value="$PROJECT_DIR$/classic/src/view/main/MainController.js" />
       </list>
     </option>
   </component>
@@ -319,22 +225,12 @@
   </component>
   <component name="ProjectFrameBounds">
     <option name="y" value="23" />
-    <option name="width" value="1583" />
-    <option name="height" value="1523" />
+    <option name="width" value="1440" />
+    <option name="height" value="817" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
-    <navigator currentView="ProjectPane" proportions="" version="1">
-      <flattenPackages />
-      <showMembers />
-      <showModules />
-      <showLibraryContents />
-      <hideEmptyPackages />
-      <abbreviatePackageNames />
-      <autoscrollToSource />
-      <autoscrollFromSource />
-      <sortByType />
-      <manualOrder />
+    <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
@@ -385,66 +281,6 @@
               <item name="thesis-app-client-side" type="b2602c69:ProjectViewProjectNode" />
               <item name="thesis-app-client-side" type="462c0819:PsiDirectoryNode" />
               <item name="classic" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="thesis-app-client-side" type="b2602c69:ProjectViewProjectNode" />
-              <item name="thesis-app-client-side" type="462c0819:PsiDirectoryNode" />
-              <item name="classic" type="462c0819:PsiDirectoryNode" />
-              <item name="sass" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="thesis-app-client-side" type="b2602c69:ProjectViewProjectNode" />
-              <item name="thesis-app-client-side" type="462c0819:PsiDirectoryNode" />
-              <item name="classic" type="462c0819:PsiDirectoryNode" />
-              <item name="sass" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="thesis-app-client-side" type="b2602c69:ProjectViewProjectNode" />
-              <item name="thesis-app-client-side" type="462c0819:PsiDirectoryNode" />
-              <item name="classic" type="462c0819:PsiDirectoryNode" />
-              <item name="sass" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="view" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="thesis-app-client-side" type="b2602c69:ProjectViewProjectNode" />
-              <item name="thesis-app-client-side" type="462c0819:PsiDirectoryNode" />
-              <item name="classic" type="462c0819:PsiDirectoryNode" />
-              <item name="sass" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="view" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="thesis-app-client-side" type="b2602c69:ProjectViewProjectNode" />
-              <item name="thesis-app-client-side" type="462c0819:PsiDirectoryNode" />
-              <item name="classic" type="462c0819:PsiDirectoryNode" />
-              <item name="sass" type="462c0819:PsiDirectoryNode" />
-              <item name="var" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="thesis-app-client-side" type="b2602c69:ProjectViewProjectNode" />
-              <item name="thesis-app-client-side" type="462c0819:PsiDirectoryNode" />
-              <item name="classic" type="462c0819:PsiDirectoryNode" />
-              <item name="sass" type="462c0819:PsiDirectoryNode" />
-              <item name="var" type="462c0819:PsiDirectoryNode" />
-              <item name="view" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="thesis-app-client-side" type="b2602c69:ProjectViewProjectNode" />
-              <item name="thesis-app-client-side" type="462c0819:PsiDirectoryNode" />
-              <item name="classic" type="462c0819:PsiDirectoryNode" />
-              <item name="sass" type="462c0819:PsiDirectoryNode" />
-              <item name="var" type="462c0819:PsiDirectoryNode" />
-              <item name="view" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="thesis-app-client-side" type="b2602c69:ProjectViewProjectNode" />
-              <item name="thesis-app-client-side" type="462c0819:PsiDirectoryNode" />
-              <item name="classic" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -486,43 +322,20 @@
               <item name="view" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="thesis-app-client-side" type="b2602c69:ProjectViewProjectNode" />
-              <item name="thesis-app-client-side" type="462c0819:PsiDirectoryNode" />
-              <item name="packages" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="thesis-app-client-side" type="b2602c69:ProjectViewProjectNode" />
-              <item name="thesis-app-client-side" type="462c0819:PsiDirectoryNode" />
-              <item name="packages" type="462c0819:PsiDirectoryNode" />
-              <item name="fullcalendar" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="thesis-app-client-side" type="b2602c69:ProjectViewProjectNode" />
-              <item name="thesis-app-client-side" type="462c0819:PsiDirectoryNode" />
-              <item name="packages" type="462c0819:PsiDirectoryNode" />
-              <item name="fullcalendar" type="462c0819:PsiDirectoryNode" />
-              <item name="fullcalendar.css" type="620a8d5e:NestingTreeNode" />
-            </path>
-            <path>
-              <item name="thesis-app-client-side" type="b2602c69:ProjectViewProjectNode" />
-              <item name="thesis-app-client-side" type="462c0819:PsiDirectoryNode" />
-              <item name="packages" type="462c0819:PsiDirectoryNode" />
-              <item name="fullcalendar" type="462c0819:PsiDirectoryNode" />
-              <item name="fullcalendar.js" type="620a8d5e:NestingTreeNode" />
-            </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="HbShouldOpenHtmlAsHb" value="" />
-    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
+    <property name="node.js.detected.package.prettier" value="true" />
+    <property name="node.js.path.for.package.prettier" value="project" />
+    <property name="node.js.selected.package.prettier" value="" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -552,14 +365,6 @@
     </option>
   </component>
   <component name="RunManager">
-    <configuration default="true" type="js.build_tools.gulp" factoryName="Gulp.js">
-      <node-interpreter>project</node-interpreter>
-      <node-options />
-      <gulpfile />
-      <tasks />
-      <arguments />
-      <envs />
-    </configuration>
     <configuration default="true" type="DartCommandLineRunConfigurationType" factoryName="Dart Command Line Application">
       <method />
     </configuration>
@@ -617,9 +422,17 @@
       <recursive>false</recursive>
       <method />
     </configuration>
+    <configuration default="true" type="js.build_tools.gulp" factoryName="Gulp.js">
+      <node-interpreter>project</node-interpreter>
+      <node-options />
+      <gulpfile />
+      <tasks />
+      <arguments />
+      <envs />
+    </configuration>
   </component>
-  <component name="ShelveChangesManager" show_recycled="false">
-    <option name="remove_strategy" value="false" />
+  <component name="SvnConfiguration">
+    <configuration />
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -691,6 +504,17 @@
       <workItem from="1512577646829" duration="296000" />
       <workItem from="1512818441170" duration="7492000" />
       <workItem from="1512840123205" duration="9805000" />
+      <workItem from="1523312641566" duration="120000" />
+      <workItem from="1523313211116" duration="62000" />
+      <workItem from="1523389196661" duration="4866000" />
+      <workItem from="1523397632905" duration="156000" />
+      <workItem from="1523467353016" duration="30000" />
+      <workItem from="1523528507110" duration="1392000" />
+      <workItem from="1523899959690" duration="816000" />
+      <workItem from="1523908365841" duration="2546000" />
+      <workItem from="1523983703128" duration="3756000" />
+      <workItem from="1524315035670" duration="413000" />
+      <workItem from="1524344142630" duration="302000" />
     </task>
     <task id="LOCAL-00001" summary="test testdata">
       <created>1498045002687</created>
@@ -958,11 +782,32 @@
       <option name="project" value="LOCAL" />
       <updated>1512840391336</updated>
     </task>
-    <option name="localTasksCounter" value="39" />
+    <task id="LOCAL-00039" summary="calculate risk analysis">
+      <created>1523395518204</created>
+      <option name="number" value="00039" />
+      <option name="presentableId" value="LOCAL-00039" />
+      <option name="project" value="LOCAL" />
+      <updated>1523395518204</updated>
+    </task>
+    <task id="LOCAL-00040" summary="add details on result grid - risk analysis">
+      <created>1523911060024</created>
+      <option name="number" value="00040" />
+      <option name="presentableId" value="LOCAL-00040" />
+      <option name="project" value="LOCAL" />
+      <updated>1523911060024</updated>
+    </task>
+    <task id="LOCAL-00041" summary="add loadmask, fix bug">
+      <created>1523989858889</created>
+      <option name="number" value="00041" />
+      <option name="presentableId" value="LOCAL-00041" />
+      <option name="project" value="LOCAL" />
+      <updated>1523989858889</updated>
+    </task>
+    <option name="localTasksCounter" value="42" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="327509000" />
+    <option name="totallyTimeSpent" value="341968000" />
   </component>
   <component name="TodoView" selected-index="4">
     <todo-panel id="selected-file">
@@ -974,27 +819,28 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="23" width="1583" height="1523" extended-state="0" />
+    <frame x="0" y="23" width="1440" height="817" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20358515" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32953736" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.29537368" sideWeight="0.5051814" order="10" side_tool="true" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32882562" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32882562" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2647687" sideWeight="0.49481866" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="PlantUML" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.17758985" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32940018" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.20347223" />
+      <window_info anchor="bottom" id="TODO" order="6" weight="0.32953736" />
+      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.5051814" side_tool="true" weight="0.29537368" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32882562" />
+      <window_info anchor="bottom" id="Run" order="2" />
+      <window_info anchor="bottom" id="Version Control" order="7" weight="0.32797858" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="9" sideWeight="0.49481866" visible="true" weight="0.218035" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="right" id="Commander" order="0" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" id="PlantUML" order="3" visible="true" weight="0.17758985" />
+      <window_info anchor="bottom" id="Messages" order="8" weight="0.32940018" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -1042,9 +888,6 @@
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
-    <MESSAGE value="Test Ajax request call" />
-    <MESSAGE value="Test Update courses View" />
-    <MESSAGE value="Test" />
     <MESSAGE value="Test search field" />
     <MESSAGE value="Test chart" />
     <MESSAGE value="modern view" />
@@ -1067,68 +910,90 @@
     <MESSAGE value="add require combo" />
     <MESSAGE value="ui widget" />
     <MESSAGE value="add calendar" />
-    <option name="LAST_COMMIT_MESSAGE" value="add calendar" />
+    <MESSAGE value="calculate risk analysis" />
+    <MESSAGE value="add details on result grid - risk analysis" />
+    <MESSAGE value="add loadmask, fix bug" />
+    <option name="LAST_COMMIT_MESSAGE" value="add loadmask, fix bug" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <option name="time" value="4" />
     </breakpoint-manager>
-    <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/classic/src/view/main/Main.js">
+    <entry file="file://$PROJECT_DIR$/classic/src/view/main/MainController.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1005">
-          <caret line="67" column="9" lean-forward="false" selection-start-line="67" selection-start-column="9" selection-end-line="67" selection-end-column="9" />
+        <state relative-caret-position="11460">
+          <caret line="764" column="25" lean-forward="true" selection-start-line="764" selection-start-column="25" selection-end-line="764" selection-end-column="25" />
+          <folding>
+            <element signature="n#style#0;n#span#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#select#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/classic/src/view/courses/CourseView.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="18" column="2" selection-start-line="18" selection-start-column="2" selection-end-line="18" selection-end-column="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/classic/src/view/main/MainController.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="10530">
+          <caret line="702" column="61" lean-forward="true" selection-start-line="702" selection-start-column="61" selection-end-line="702" selection-end-column="61" />
+          <folding>
+            <element signature="n#style#0;n#span#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#select#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/classic/src/view/main/MainController.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="555">
+          <caret line="37" selection-start-line="37" selection-end-line="37" />
+          <folding>
+            <element signature="n#style#0;n#span#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#select#0;n#!!top" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/classic/src/view/pages/BlankPage.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="15">
-          <caret line="1" column="36" lean-forward="false" selection-start-line="1" selection-start-column="13" selection-end-line="1" selection-end-column="36" />
+          <caret line="1" column="36" selection-start-line="1" selection-start-column="13" selection-end-line="1" selection-end-column="36" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/classic/src/view/authentication/AuthenticationController.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="45">
-          <caret line="3" column="74" lean-forward="false" selection-start-line="3" selection-start-column="12" selection-end-line="3" selection-end-column="74" />
+          <caret line="3" column="74" selection-start-line="3" selection-start-column="12" selection-end-line="3" selection-end-column="74" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/classic/src/view/pages/ErrorBase.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="345">
-          <caret line="23" column="22" lean-forward="false" selection-start-line="23" selection-start-column="22" selection-end-line="23" selection-end-column="22" />
+          <caret line="23" column="22" selection-start-line="23" selection-start-column="22" selection-end-line="23" selection-end-column="22" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/classic/src/view/pages/Error404Window.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="375">
-          <caret line="25" column="31" lean-forward="false" selection-start-line="25" selection-start-column="31" selection-end-line="25" selection-end-column="31" />
+          <caret line="25" column="31" selection-start-line="25" selection-start-column="31" selection-end-line="25" selection-end-column="31" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/build/LearningAnalytics-dashboard/classic/app.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="327">
-          <caret line="87515" column="82" lean-forward="false" selection-start-line="87515" selection-start-column="82" selection-end-line="87515" selection-end-column="82" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/model/dashboard/Course.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/build/LearningAnalytics-dashboard/classic/app.js" />
     <entry file="file://$PROJECT_DIR$/sass/src/view/profile/UserProfileBase.scss">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="621">
-          <caret line="138" column="9" lean-forward="false" selection-start-line="138" selection-start-column="9" selection-end-line="138" selection-end-column="9" />
+          <caret line="138" column="9" selection-start-line="138" selection-start-column="9" selection-end-line="138" selection-end-column="9" />
         </state>
       </provider>
     </entry>
@@ -1142,56 +1007,29 @@
     <entry file="file://$PROJECT_DIR$/classic/src/view/widgets/WidgetSmall.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="195">
-          <caret line="13" column="0" lean-forward="false" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
+          <caret line="13" selection-start-line="13" selection-end-line="13" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/classic/src/view/dashboard/GradesWidget.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="120">
-          <caret line="8" column="0" lean-forward="false" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
+          <caret line="8" selection-start-line="8" selection-end-line="8" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/classic/src/view/dashboard/DashboardController.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="825">
-          <caret line="55" column="55" lean-forward="false" selection-start-line="55" selection-start-column="55" selection-end-line="55" selection-end-column="55" />
+          <caret line="55" column="55" selection-start-line="55" selection-start-column="55" selection-end-line="55" selection-end-column="55" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/build/LearningAnalytics-dashboard/modern/app.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="327">
-          <caret line="58078" column="90" lean-forward="false" selection-start-line="58078" selection-start-column="90" selection-end-line="58078" selection-end-column="90" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/classic/src/view/courses/CourseView.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="18" column="31" lean-forward="false" selection-start-line="18" selection-start-column="17" selection-end-line="18" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/build/LearningAnalytics-dashboard/modern/app.js" />
     <entry file="file://$PROJECT_DIR$/classic/src/view/courses/CourseStatisticsChartWidget.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="90">
-          <caret line="6" column="39" lean-forward="false" selection-start-line="6" selection-start-column="12" selection-end-line="6" selection-end-column="39" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/classic/src/view/main/MainController.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="555">
-          <caret line="37" column="0" lean-forward="false" selection-start-line="37" selection-start-column="0" selection-end-line="37" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/bootstrap.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <caret line="6" column="39" selection-start-line="6" selection-start-column="12" selection-end-line="6" selection-end-column="39" />
         </state>
       </provider>
     </entry>
@@ -1205,274 +1043,234 @@
     <entry file="file://$PROJECT_DIR$/ext/build/ext-debug.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="461">
-          <caret line="29951" column="38" lean-forward="false" selection-start-line="29951" selection-start-column="38" selection-end-line="29951" selection-end-column="38" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <caret line="29951" column="38" selection-start-line="29951" selection-start-column="38" selection-end-line="29951" selection-end-column="38" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/classic/src/view/dashboard/StudentsWidget.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="285">
-          <caret line="19" column="27" lean-forward="false" selection-start-line="19" selection-start-column="27" selection-end-line="19" selection-end-column="27" />
+          <caret line="19" column="27" selection-start-line="19" selection-start-column="27" selection-end-line="19" selection-end-column="27" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/modern/src/view/widgets/WidgetSmall.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="75">
-          <caret line="5" column="16" lean-forward="false" selection-start-line="5" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
+          <caret line="5" column="16" selection-start-line="5" selection-end-line="6" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="120">
-          <caret line="11" column="54" lean-forward="false" selection-start-line="11" selection-start-column="54" selection-end-line="11" selection-end-column="54" />
-          <folding>
-            <element signature="n#!!doc" expanded="false" />
-          </folding>
+          <caret line="11" column="54" selection-start-line="11" selection-start-column="54" selection-end-line="11" selection-end-column="54" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/classic/src/view/about/AboutView.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="60">
-          <caret line="4" column="11" lean-forward="false" selection-start-line="4" selection-start-column="11" selection-end-line="4" selection-end-column="11" />
-          <folding />
+          <caret line="4" column="11" selection-start-line="4" selection-start-column="11" selection-end-line="4" selection-end-column="11" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/classic/src/Application.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="720">
-          <caret line="48" column="11" lean-forward="false" selection-start-line="48" selection-start-column="11" selection-end-line="48" selection-end-column="11" />
-          <folding />
+          <caret line="48" column="11" selection-start-line="48" selection-start-column="11" selection-end-line="48" selection-end-column="11" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/classic/src/view/courses/CourseController.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="270">
-          <caret line="19" column="0" lean-forward="false" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/config/Runtime.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="555">
-          <caret line="37" column="39" lean-forward="false" selection-start-line="37" selection-start-column="39" selection-end-line="37" selection-end-column="39" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/packages/fullcalendar/fullcalendar.min.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <marker date="1510594978000" expanded="true" signature="100236:100242" ph=" " />
-            <marker date="1510594978000" expanded="true" signature="158134:158140" ph=" " />
-            <marker date="1510594978000" expanded="true" signature="162486:162498" ph="..." />
-            <marker date="1510594978000" expanded="true" signature="178626:178632" ph=" " />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/packages/fullcalendar/fullcalendar.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <marker date="1510594978000" expanded="true" signature="287022:287028" ph=" " />
-            <marker date="1510594978000" expanded="true" signature="447875:447881" ph=" " />
-            <marker date="1510594978000" expanded="true" signature="465993:466005" ph="..." />
-            <marker date="1510594978000" expanded="true" signature="507399:507405" ph=" " />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/packages/fullcalendar/jquery.min.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="n#!!doc" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/packages/fullcalendar/jquery-ui.min.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="n#!!doc" expanded="false" />
-          </folding>
+          <caret line="19" selection-start-line="19" selection-end-line="19" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/classic/resources/ext/ext-watermark/style.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-202">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/classic/resources/LearningAnalytics-all_3.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
+        <state relative-caret-position="-202" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/sass/src/view/main/Main.scss">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="105">
           <caret line="7" column="1" lean-forward="true" selection-start-line="7" selection-start-column="1" selection-end-line="7" selection-end-column="1" />
-          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/view/chart/ViewStudentsChart.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="5" column="14" lean-forward="false" selection-start-line="5" selection-start-column="14" selection-end-line="5" selection-end-column="14" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/modern/src/view/dashboard/StudentsWidget.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="4" column="34" lean-forward="false" selection-start-line="4" selection-start-column="34" selection-end-line="4" selection-end-column="34" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/packages/fullcalendar/fullcalendar.min.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/packages/fullcalendar/fullcalendar_custom.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="1" column="0" lean-forward="false" selection-start-line="1" selection-start-column="0" selection-end-line="33" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/classic/src/view/dashboard/Dashboard.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="480">
-          <caret line="32" column="23" lean-forward="false" selection-start-line="32" selection-start-column="23" selection-end-line="32" selection-end-column="23" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/classic/src/view/dashboard/Course.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="20" column="11" lean-forward="false" selection-start-line="20" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/packages/fullcalendar/fullcalendar_custom.css" />
     <entry file="file://$PROJECT_DIR$/classic/src/view/fullcalendar/FullCalendarView.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="465">
-          <caret line="31" column="0" lean-forward="false" selection-start-line="31" selection-start-column="0" selection-end-line="31" selection-end-column="0" />
-          <folding />
+          <caret line="31" selection-start-line="31" selection-end-line="31" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/classic/resources/LearningAnalytics-all_2.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="550">
-          <caret line="7776" column="29" lean-forward="false" selection-start-line="7776" selection-start-column="23" selection-end-line="7776" selection-end-column="29" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/classic/resources/LearningAnalytics-all.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
+        <state relative-caret-position="116640">
+          <caret line="7776" column="29" selection-start-line="7776" selection-start-column="23" selection-end-line="7776" selection-end-column="29" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/classic/resources/LearningAnalytics-all_1.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="165">
-          <caret line="11" column="1" lean-forward="false" selection-start-line="11" selection-start-column="1" selection-end-line="11" selection-end-column="1" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/classic/sass/src/view/main/Main.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="5" column="44" lean-forward="false" selection-start-line="5" selection-start-column="44" selection-end-line="5" selection-end-column="44" />
-          <folding />
+          <caret line="11" column="1" selection-start-line="11" selection-start-column="1" selection-end-line="11" selection-end-column="1" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/sass/var/all.scss">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="540">
-          <caret line="36" column="41" lean-forward="false" selection-start-line="36" selection-start-column="35" selection-end-line="36" selection-end-column="41" />
-          <folding />
+          <caret line="36" column="41" selection-start-line="36" selection-start-column="35" selection-end-line="36" selection-end-column="41" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="960">
+          <caret line="64" selection-start-line="64" selection-end-line="64" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/classic/src/view/dashboard/Dashboard.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="480">
+          <caret line="32" column="23" selection-start-line="32" selection-start-column="23" selection-end-line="32" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/modern/src/view/dashboard/StudentsWidget.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="4" column="34" selection-start-line="4" selection-start-column="34" selection-end-line="4" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/view/chart/ViewStudentsChart.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="5" column="14" selection-start-line="5" selection-start-column="14" selection-end-line="5" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/classic/src/view/dashboard/Course.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="20" column="11" selection-start-line="20" selection-end-line="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/store/NavigationTree.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="473">
+          <caret line="34" column="38" selection-start-line="34" selection-start-column="38" selection-end-line="34" selection-end-column="38" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/classic/sass/var/view/main/Main.scss">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="195">
-          <caret line="13" column="0" lean-forward="false" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
-          <folding />
+          <caret line="13" selection-start-line="13" selection-end-line="13" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/index.html">
+    <entry file="file://$PROJECT_DIR$/classic/sass/src/view/main/Main.scss">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="930">
-          <caret line="64" column="0" lean-forward="false" selection-start-line="64" selection-start-column="0" selection-end-line="64" selection-end-column="0" />
-          <folding />
+        <state relative-caret-position="75">
+          <caret line="5" column="44" selection-start-line="5" selection-start-column="44" selection-end-line="5" selection-end-column="44" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/packages/fullcalendar/fullcalendar.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1576">
-          <caret line="254" column="29" lean-forward="false" selection-start-line="254" selection-start-column="29" selection-end-line="254" selection-end-column="29" />
-          <folding />
+        <state relative-caret-position="473">
+          <caret line="254" column="29" selection-start-line="254" selection-start-column="29" selection-end-line="254" selection-end-column="29" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/classic/src/view/fullcalendar/FullCalendar.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="589">
-          <caret line="41" column="45" lean-forward="false" selection-start-line="41" selection-start-column="45" selection-end-line="41" selection-end-column="45" />
-          <folding />
+        <state relative-caret-position="473">
+          <caret line="41" column="45" selection-start-line="41" selection-start-column="45" selection-end-line="41" selection-end-column="45" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/store/NavigationTree.js">
+    <entry file="file://$PROJECT_DIR$/classic/src/view/courses/CourseView.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="510">
-          <caret line="34" column="38" lean-forward="true" selection-start-line="34" selection-start-column="38" selection-end-line="34" selection-end-column="38" />
-          <folding />
+        <state relative-caret-position="87">
+          <caret line="25" column="40" selection-start-line="25" selection-start-column="40" selection-end-line="25" selection-end-column="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/store/courses/CourseRiskAnalysisResults.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="17" column="4" selection-start-line="17" selection-start-column="4" selection-end-line="17" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/config/Runtime.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="17" column="60" selection-start-line="17" selection-start-column="60" selection-end-line="17" selection-end-column="60" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/classic/src/view/widgets/PopUpWindow.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="6" column="22" selection-start-line="6" selection-start-column="22" selection-end-line="6" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/classic/src/view/courses/RiskAnalysisStepThreePanel.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="5" column="38" selection-start-line="5" selection-start-column="12" selection-end-line="5" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/classic/src/view/courses/RiskAnalysisWindowForms.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1725">
+          <caret line="115" column="43" selection-start-line="115" selection-start-column="31" selection-end-line="115" selection-end-column="43" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/classic/src/view/courses/RiskAnalysisStepOnePanel.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="945">
+          <caret line="63" column="21" selection-start-line="63" selection-start-column="12" selection-end-line="63" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/store/courses/CourseStatistics.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="2" column="3" selection-start-line="2" selection-start-column="3" selection-end-line="2" selection-end-column="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/classic/src/view/main/MainModel.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="15" column="24" selection-start-line="15" selection-start-column="8" selection-end-line="15" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/classic/src/view/main/MainController.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="459">
+          <caret line="431" column="43" selection-start-line="431" selection-start-column="43" selection-end-line="431" selection-end-column="43" />
+          <folding>
+            <element signature="n#style#0;n#span#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#select#0;n#!!top" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

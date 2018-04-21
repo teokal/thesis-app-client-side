@@ -359,7 +359,7 @@ Ext.define('LearningAnalytics.view.main.MainController', {
                     from_date: dateFrom.getSubmitValue(),
                     to_date: dateTo.getSubmitValue(),
                     query: actionQuery.getSubmitValue(),
-                    viewed: view.getSubmitValue(),
+                    view: view.getSubmitValue(),
                     course: this.currentCourseId
                 },
                 callback: function (records, operation, success) {
@@ -419,7 +419,6 @@ Ext.define('LearningAnalytics.view.main.MainController', {
                             ],
                             title: 'Risk Analysis Overview'
                         });
-                        Ext.getBody().unmask();
                         Ext.create(cfg);
                     } else {
                         Ext.Msg.alert({
@@ -430,6 +429,7 @@ Ext.define('LearningAnalytics.view.main.MainController', {
                             draggable: false
                         });
                     }
+                    Ext.getBody().unmask();
                 } else {
                     Ext.toast({
                         html: 'Failure.!!',
