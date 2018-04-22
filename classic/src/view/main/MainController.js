@@ -514,10 +514,27 @@ Ext.define('LearningAnalytics.view.main.MainController', {
         var viewModel = this.getViewModel();
         var message = this.lookupReference('composeMessageEditor').getValue();
         var students = viewModel.data.composeEmailStudentsData;
-        Ext.toast({
-            html: 'Coming soon!!',
-            width: 200,
-            align: 't'
+        var studentsId = [];
+        for (var i=0; i<students.length; i++){
+            studentsId.push(students[i].id);
+        }
+        Ext.Ajax.request({
+            url: '/api/1/send_message',
+            method: 'POST',
+            jsonData: {
+                'student_ids' : studentsId,
+                'message' : message
+            },
+            useDefaultXhrHeader: false,
+            cors: true,
+            headers: {
+                'Authorization': ''
+            },
+            callback:function(records, operation, success){
+                var jsonData = Ext.util.JSON.decode(success.responseText);
+                var statusMessage = jsonData.response.status;
+                Ext.Msg.alert(jsonData.response.data);
+            }
         });
     },
 

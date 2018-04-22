@@ -11,7 +11,7 @@ Ext.define('LearningAnalytics.view.authentication.Login', {
         'Ext.container.Container',
         'Ext.form.field.Text',
         'Ext.form.field.Checkbox',
-        'Ext.button.Button',
+        'Ext.button.Button'
         // 'LearningAnalytics.view.main.Main'
     ],
 

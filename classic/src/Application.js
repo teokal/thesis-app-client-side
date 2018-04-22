@@ -26,11 +26,23 @@ Ext.define('LearningAnalytics.Application', {
 
     launch: function () {
         var me = this;
+        me.setDefaultToken('dashboard');
         Ext.Ajax.request({
             url: '/api/1/test',
             method: 'GET',
+            useDefaultXhrHeader: false,
+            cors: true,
             headers: {
                 'Authorization': ''
+            },
+            writer: {
+                type: 'json',
+                allowSingle: true,
+                writeAllFields: true
+            },
+            reader: {
+                type: 'json',
+                rootProperty: 'response.data'
             },
             callback:function(records, operation, success){
                 var jsonData = Ext.util.JSON.decode(success.responseText);
