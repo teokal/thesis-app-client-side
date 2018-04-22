@@ -511,31 +511,39 @@ Ext.define('LearningAnalytics.view.main.MainController', {
     },
 
     onComposeSendClick: function(bt) {
+        var me = this;
         var viewModel = this.getViewModel();
         var message = this.lookupReference('composeMessageEditor').getValue();
         var students = viewModel.data.composeEmailStudentsData;
         var studentsId = [];
-        for (var i=0; i<students.length; i++){
-            studentsId.push(students[i].id);
-        }
-        Ext.Ajax.request({
-            url: '/api/1/send_message',
-            method: 'POST',
-            jsonData: {
-                'student_ids' : studentsId,
-                'message' : message
-            },
-            useDefaultXhrHeader: false,
-            cors: true,
-            headers: {
-                'Authorization': ''
-            },
-            callback:function(records, operation, success){
-                var jsonData = Ext.util.JSON.decode(success.responseText);
-                var statusMessage = jsonData.response.status;
-                Ext.Msg.alert(jsonData.response.data);
+        if (message === "") {
+            Ext.Msg.alert('Message is empty');
+        } else {
+            for (var i=0; i<students.length; i++){
+                studentsId.push(students[i].id);
             }
-        });
+            Ext.Ajax.request({
+                url: '/api/1/send_message',
+                method: 'POST',
+                jsonData: {
+                    'student_ids' : studentsId,
+                    'message' : message
+                },
+                useDefaultXhrHeader: false,
+                cors: true,
+                headers: {
+                    'Authorization': ''
+                },
+                callback:function(records, operation, success){
+                    var jsonData = Ext.util.JSON.decode(success.responseText);
+                    var statusMessage = jsonData.response.status;
+                    if (statusMessage === 'success') {
+                        Ext.WindowManager.getActive().close();
+                    }
+                    Ext.Msg.alert(jsonData.response.data);
+                }
+            });
+        }
     },
 
     onRiskAnalysisGridCellItemClick: function(view, td, cellIndex, record){
