@@ -11,7 +11,6 @@ Ext.define('LearningAnalytics.view.courses.RiskAnalysisStepOnePanel', {
         'Ext.form.field.HtmlEditor'
     ],
 
-
     layout: {
         type:'vbox',
         align:'stretch'
@@ -24,10 +23,6 @@ Ext.define('LearningAnalytics.view.courses.RiskAnalysisStepOnePanel', {
         labelWidth: 60,
         labelSeparator: ''
     },
-
-    // listeners: {
-    //     afterrender: 'onBeforeRenderRiskAnalysisStepOne'
-    // },
 
     items: [{
             html : '<p>Please select the type of each activity. If you don\'t select a type for an activity, the default value will be "None". </p>'
@@ -72,7 +67,7 @@ Ext.define('LearningAnalytics.view.courses.RiskAnalysisStepOnePanel', {
                 y: true
             },
             viewConfig:{
-                markDirty:false
+                markDirty: false
             },
             bind: {
                 store: '{riskAnalysisScorms}'
@@ -88,7 +83,6 @@ Ext.define('LearningAnalytics.view.courses.RiskAnalysisStepOnePanel', {
                     dataIndex: 'Slides',
                     id: 'Slides',
                     text: 'Slides',
-                    // selType: 'checkboxmodel',
                     width: 130,
                     renderer: function(value) {
                         return '<span class="x-fa fa-'+ (value ? 'check-square-o' : 'square-o') +'"></span>';
@@ -112,17 +106,30 @@ Ext.define('LearningAnalytics.view.courses.RiskAnalysisStepOnePanel', {
                         return '<span class="x-fa fa-'+ (value ? 'check-square-o' : 'square-o') +'"></span>';
                     }
                 }
-
             ],
             listeners: {
                 'cellclick': 'onRiskAnalysisGridCellItemClick'
-                // afterlayout: function() {
-                //     debugger;
-                // }
-
             }
-
         }
-    ]
+    ],
+
+    bbar: {
+        overflowHandler: 'menu',
+        reference: 'initActivitiesToolbar',
+        margin: 8,
+        items: [
+            '->',
+            {
+                text: 'Save',
+                ui: 'soft-green',
+                formBind: true,
+                padding: '8 25 8 25',
+                listeners: {
+                    click: 'onSaveInitActivitiesClick'
+                }
+            }
+        ]
+    }
+
 
 });

@@ -10,7 +10,7 @@ Ext.define('LearningAnalytics.view.dashboard.GradesWidget', {
     defaults: {
         xtype: 'container'
     },
-
+    
     items: [
         {
             xtype: 'widgetSmall',

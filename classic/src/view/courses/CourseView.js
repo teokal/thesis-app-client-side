@@ -52,7 +52,13 @@ Ext.define('LearningAnalytics.view.courses.CourseView', {
             xtype: 'riskAnalysisWidget',
             userCls: 'big-20 small-50',
             style: 'cursor: pointer;'
+        },
+        {
+            xtype: 'initActivitiesTypeWidget',
+            userCls: 'big-20 small-50',
+            style: 'cursor: pointer;'
         }
+
 
     ]
 });

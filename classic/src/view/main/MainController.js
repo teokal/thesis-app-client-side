@@ -592,7 +592,6 @@ Ext.define('LearningAnalytics.view.main.MainController', {
             // var grid = gridStore.getStore();
             var panelStepTwo = this.lookupReference('riskAnalysisStepTwoPanel');
             var algorithOne = "", algorithTwo = "", columnsPSummary = "";
-
             panelStepTwo.removeAll();
 
             panelStepTwo.add(new Ext.form.Panel({
@@ -848,7 +847,8 @@ Ext.define('LearningAnalytics.view.main.MainController', {
             storeSummary.addData(summary);
 
             var mystore = viewModel.getStore('courseRiskAnalysisResults');
-            mystore.addData(result)
+            mystore.addData(result);
+            debugger;
         }
         else if(curActiveIndex === 2) {
 
@@ -906,7 +906,7 @@ Ext.define('LearningAnalytics.view.main.MainController', {
         activeItem = layout.getActiveItem();
         activeIndex = panel.items.indexOf(activeItem);
 
-        if (activeIndex === 2) {
+        if (activeIndex === 1) {
             this.getViewModel().set('atResultPage', true);
         } else {
             this.getViewModel().set('atResultPage', false);
@@ -942,7 +942,7 @@ Ext.define('LearningAnalytics.view.main.MainController', {
         }
 
         // wizard is 4 steps. Disable next at end.
-        if (activeIndex === 2) {
+        if (activeIndex === 1) {
             model.set('atEnd', true);
         }
     },
@@ -965,17 +965,51 @@ Ext.define('LearningAnalytics.view.main.MainController', {
     onAddColumn: function() {
         Ext.MessageBox.prompt('Add Column', 'Enter the column name:', function(btnText, sInput){
             if(btnText === 'ok'){
-                var gridView = this.lookupReference('riskAnalysisGridPanel').items.items[0];
-                var column = Ext.create('Ext.grid.column.Column', {
-                    text: sInput,
-                    dataIndex: sInput,
-                    id: sInput,
-                    width: 130,
-                    renderer: function(value) {
-                        return '<span class="x-fa fa-'+ (value ? 'check-square-o' : 'square-o') +'"></span>';
+                //TODO: call add column endpoint
+                var me = this;
+                Ext.Ajax.request({
+                    url: '/api/1/courses/categories',
+                    method: 'POST',
+                    // type: 'json',
+                    jsonData: {
+                        'name' : sInput,
+                        'course_id' : this.currentCourseId
+                    },
+                    useDefaultXhrHeader: false,
+                    cors: true,
+                    headers: {
+                        'Authorization': ''
+                    },    
+                    callback:function(records, operation, success){
+                        debugger;
+                        var jsonData = Ext.util.JSON.decode(success.responseText);
+                        var statusMessage = jsonData.response.status;
+                        var columnId = jsonData.response.data.id;
+                        var columnName = jsonData.response.data.name;
+                        if(statusMessage === 'success'){
+                            var gridView = me.lookupReference('riskAnalysisGridPanel').items.items[0];
+                            var column = Ext.create('Ext.grid.column.Column', {
+                                text: columnName,
+                                dataIndex: 'column_'+columnId,
+                                id: 'column_'+columnId,
+                                width: 130,
+                                renderer: function(value) {
+                                    return '<span class="x-fa fa-'+ (value ? 'check-square-o' : 'square-o') +'"></span>';
+                                }
+                            });
+                            gridView.headerCt.insert(gridView.getColumnManager().columns.length - 1, column);            
+                        } else {
+                            Ext.Msg.alert({
+                                title: 'Something went wrong',
+                                message: 'Couldn\'t add type',
+                                buttons: Ext.Msg.OK,
+                                icon: Ext.Msg.INFO,
+                                draggable: false
+                            });    
+                        }
                     }
                 });
-                gridView.headerCt.insert(gridView.getColumnManager().columns.length - 1, column);
+        
             }
         }, this);
     },
@@ -986,8 +1020,8 @@ Ext.define('LearningAnalytics.view.main.MainController', {
         var columns = gridView.getColumnManager().columns;
         var result = "";
         for (var i=0; i < columns.length; i++) {
-            if (columns[i].dataIndex !== "None" && columns[i].dataIndex !== "title"){
-                result = result + '<option value="' + columns[i].dataIndex + '">' + columns[i].dataIndex + '</option>';
+            if (columns[i].text !== "None" && columns[i].text !== "Activity"){
+                result = result + '<option value="' + columns[i].text + '">' + columns[i].text + '</option>';
             }
         }
         Ext.MessageBox.show({
@@ -1000,11 +1034,107 @@ Ext.define('LearningAnalytics.view.main.MainController', {
             multiline: false,
             fn: function(btn) {
                 if (btn === 'ok') {
-                    gridView.headerCt.remove(Ext.get('columnToBeRemoved').getValue());
-                    grid.getView().refresh();
+                    //TODO: call remove column endpoint
+                    debugger;
+                    var itemText = Ext.get('columnToBeRemoved').getValue();
+                    var itemId = 0;
+                    for (var i=0; i < columns.length; i++) {
+                        if (columns[i].text === itemText){
+                            itemId = columns[i].id;
+                        }
+                    }
+                    Ext.Ajax.request({
+                        url: '/api/1/courses/categories',
+                        method: 'DELETE',
+                        jsonData: {
+                            'id' : itemId.replace('column_','')
+                        },
+                        useDefaultXhrHeader: false,
+                        cors: true,
+                        headers: {
+                            'Authorization': ''
+                        },    
+                        callback:function(records, operation, success){
+                            debugger;
+                            var jsonData = Ext.util.JSON.decode(success.responseText);
+                            var statusMessage = jsonData.response.status;
+                            var columnId = jsonData.response.data.id;
+                            var columnName = jsonData.response.data.name;
+                            if(statusMessage === 'success'){
+                                gridView.headerCt.remove(itemId);
+                                grid.getView().refresh();            
+                            } else {
+                                Ext.Msg.alert({
+                                    title: 'Something went wrong',
+                                    message: 'Couldn\'t remove type',
+                                    buttons: Ext.Msg.OK,
+                                    icon: Ext.Msg.INFO,
+                                    draggable: false
+                                });    
+                            }
+                        }
+                    });
+    
                 }
             }
         });
+    },
+
+    onInitActivitiesClick: function() {
+        var viewModel = this.getViewModel();
+        var store = viewModel.getStore('riskAnalysis');
+        Ext.getBody().mask('Please wait', 'loading');
+
+        store.load({
+            params: {
+                courseid: this.currentCourseId
+            },
+            callback: function (records, operation, success) {
+                if (success === true) {
+                    if (records.length > 0) {
+                        viewModel.setData({
+                            riskAnalysisScorms: store.first().scorms(),
+                            riskAnalysisUsers: store.first().users(),
+                            riskAnalysisUsersAnalysis: store.first().users().first().analysis()
+                        });
+
+                        var cfg = Ext.apply({
+                            xtype: 'popUpWindow',
+                            reference: 'riskAnalysisInitActivitiesWindow',
+                            items: [
+                                {
+                                    id: 'riskAnalysisInitActivitiesWindow',
+                                    xtype: 'riskAnalysisStepOnePanel'
+                                }
+                            ],
+                            title: 'Initialize Activities'
+                        });
+                        Ext.create(cfg);
+                    } else {
+                        Ext.Msg.alert({
+                            title: 'Initialize Activities',
+                            message: 'This course does not have any scorm data for students',
+                            buttons: Ext.Msg.OK,
+                            icon: Ext.Msg.INFO,
+                            draggable: false
+                        });
+                    }
+                    Ext.getBody().unmask();
+                } else {
+                    Ext.toast({
+                        html: 'Failure.!!',
+                        width: 200,
+                        align: 't'
+                    });
+                }
+            },
+            scope: this
+        });
+    },
+
+    onSaveInitActivitiesClick: function() {
+        var gridStore = this.lookupReference('riskAnalysisGridPanel').items.items[0];
+        debugger;
     }
 
 });

@@ -29,16 +29,6 @@ Ext.define('LearningAnalytics.view.courses.RiskAnalysisWindowForms', {
             scrollable: true,
             items:[
                 {
-                    xtype: 'riskAnalysisStepOnePanel'
-                }
-
-            ]
-        },
-        {
-            xtype: 'form',
-            scrollable: true,
-            items:[
-                {
                     xtype: 'riskAnalysisStepTwoPanel'
                 }
 
@@ -54,17 +44,7 @@ Ext.define('LearningAnalytics.view.courses.RiskAnalysisWindowForms', {
 
             ]
         }
-        // {
-        //     xtype: 'form',
-        //     items:[
-        //         {
-        //             html : '<h2>Thank You</h2><p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.</p>'
-        //         }
-        //     ]
-        // }
     ],
-
-
 
     tbar: {
         reference: 'progress',
@@ -87,18 +67,8 @@ Ext.define('LearningAnalytics.view.courses.RiskAnalysisWindowForms', {
             {
                 step: 1,
                 enableToggle: true,
-                text: 'Step 2'
-            },
-            {
-                step: 2,
-                enableToggle: true,
                 text: 'Results'
             }
-            // {
-            //     step: 3,
-            //     enableToggle: true,
-            //     text: 'Results'
-            // }
         ]
     },
 
