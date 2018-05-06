@@ -33,14 +33,14 @@ Ext.define('LearningAnalytics.view.main.MainModel', {
             autoLoad: true,
             type: 'courseRiskAnalysisSummary'
         },
-        riskAnalysisResultsStore: {
-            autoLoad: true
-            // id: '{riskAnalysisResultsId}',
-            // name: '{riskAnalysisResultsName}',
-            // status: '{riskAnalysisResultsStatus}',
-            // type: 'riskAnalysisResults'
+        courseCategories: {
+            autoLoad: true,
+            type: 'courseCategories'
+        },
+        courseActivities: {
+            autoLoad: true,
+            type: 'courseActivities'
         }
-
     },
 
     data: {
@@ -67,6 +67,7 @@ Ext.define('LearningAnalytics.view.main.MainModel', {
         riskParameterConstant1: -5.343,
         riskParameterA2: -0.233,
         riskParameterB2: 3.381,
-        riskParameterConstant2: -0.788
+        riskParameterConstant2: -0.788,
+        courseActivityColumns: null
     }
 });

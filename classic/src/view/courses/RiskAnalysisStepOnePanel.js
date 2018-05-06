@@ -34,7 +34,7 @@ Ext.define('LearningAnalytics.view.courses.RiskAnalysisStepOnePanel', {
             },
             items: [{
                 xtype: 'button',
-                text: 'Add Column',
+                text: 'Add Type',
                 maxWidth: 200,
                 ui: 'soft-green',
                 margin: '0 30 5 0',
@@ -44,7 +44,7 @@ Ext.define('LearningAnalytics.view.courses.RiskAnalysisStepOnePanel', {
                 }
             },{
                 xtype: 'button',
-                text: 'Remove Column',
+                text: 'Remove Type',
                 ui: 'soft-red',
                 maxWidth: 200,
                 margin: '0 30 5 0',
@@ -70,7 +70,7 @@ Ext.define('LearningAnalytics.view.courses.RiskAnalysisStepOnePanel', {
                 markDirty: false
             },
             bind: {
-                store: '{riskAnalysisScorms}'
+                store: '{courseActivities}'
             },
             columns: [
                 {
@@ -78,34 +78,34 @@ Ext.define('LearningAnalytics.view.courses.RiskAnalysisStepOnePanel', {
                     id: 'Activity',
                     text: 'Activity',
                     flex: 1
-                },
-                {
-                    dataIndex: 'Slides',
-                    id: 'Slides',
-                    text: 'Slides',
-                    width: 130,
-                    renderer: function(value) {
-                        return '<span class="x-fa fa-'+ (value ? 'check-square-o' : 'square-o') +'"></span>';
-                    }
-                },
-                {
-                    dataIndex: 'Quiz',
-                    id: 'Quiz',
-                    text: 'Quiz',
-                    width: 130,
-                    renderer: function(value) {
-                        return '<span class="x-fa fa-'+ (value ? 'check-square-o' : 'square-o') +'"></span>';
-                    }
-                },
-                {
-                    dataIndex: 'None',
-                    id: 'None',
-                    text: 'None',
-                    width: 130,
-                    renderer: function(value) {
-                        return '<span class="x-fa fa-'+ (value ? 'check-square-o' : 'square-o') +'"></span>';
-                    }
                 }
+                // {
+                //     dataIndex: 'Slides',
+                //     id: 'Slides',
+                //     text: 'Slides',
+                //     width: 130,
+                //     renderer: function(value) {
+                //         return '<span class="x-fa fa-'+ (value ? 'check-square-o' : 'square-o') +'"></span>';
+                //     }
+                // },
+                // {
+                //     dataIndex: 'Quiz',
+                //     id: 'Quiz',
+                //     text: 'Quiz',
+                //     width: 130,
+                //     renderer: function(value) {
+                //         return '<span class="x-fa fa-'+ (value ? 'check-square-o' : 'square-o') +'"></span>';
+                //     }
+                // },
+                // {
+                //     dataIndex: 'None',
+                //     id: 'None',
+                //     text: 'None',
+                //     width: 130,
+                //     renderer: function(value) {
+                //         return '<span class="x-fa fa-'+ (value ? 'check-square-o' : 'square-o') +'"></span>';
+                //     }
+                // }
             ],
             listeners: {
                 'cellclick': 'onRiskAnalysisGridCellItemClick'

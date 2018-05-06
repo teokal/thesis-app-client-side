@@ -10,7 +10,7 @@ Ext.define('LearningAnalytics.view.courses.InitActivitiesTypeWidget', {
     defaults: {
         xtype: 'container'
     },
-    
+
     items: [
         {
             xtype: 'widgetSmall',
@@ -18,7 +18,6 @@ Ext.define('LearningAnalytics.view.courses.InitActivitiesTypeWidget', {
             bind: {
                 html: '<div><h2>Activities</h2><span class="x-fa fa-plus-circle"></span><div class="infodiv">Initialize Activities Type</div></div>'
             },
-
             listeners : {
                 element  : 'el',
                 click    : 'onInitActivitiesClick'

@@ -387,12 +387,7 @@ Ext.define('LearningAnalytics.view.main.MainController', {
     onRiskAnalysisClick: function () {
         var viewModel = this.getViewModel();
         var store = viewModel.getStore('riskAnalysis');
-        // var myMask = new Ext.LoadMask(Ext.getBody(), {msg:"Please wait..."});
-        // myMask.el.dom.style.zIndex = '99999';
-        // myMask.show();
-        // var loadText = 'Loading... Please wait';
         Ext.getBody().mask('Please wait', 'loading');
-        // Ext.getBody().mask('Please wait', 'loading').dom.style.zIndex = '99999';
 
         store.load({
             params: {
@@ -413,7 +408,6 @@ Ext.define('LearningAnalytics.view.main.MainController', {
                             items: [
                                 {
                                     id: 'riskAnalysisGridWindow',
-                                    // reference: 'riskAnalysisGridWindow',
                                     xtype: 'riskAnalysisWindowForm'
                                 }
                             ],
@@ -551,12 +545,14 @@ Ext.define('LearningAnalytics.view.main.MainController', {
         if(columns[cellIndex].dataIndex !== 'title'){
             for (var i = 1; i < columns.length; i++) {
                 if (i === cellIndex) {
-                    record.set(columns[i].dataIndex, true);
+                    record.set(columns[i].dataIndex.toString(), true);
                 } else {
-                    record.set(columns[i].dataIndex, false);
+                    record.set(columns[i].dataIndex.toString(), false);
                 }
             }
-        }
+        }        
+        var grid = this.lookupReference('riskAnalysisGridPanel');
+        grid.getView().refresh();
     },
 
     initForRiskForm: function(view) {
@@ -576,6 +572,7 @@ Ext.define('LearningAnalytics.view.main.MainController', {
         viewModel.set('atResultPage', false);
     },
 
+    //RiskAnalysis Form
     onNextClick: function(button) {
         var panel = button.up('panel');
         var layout = panel.getLayout();
@@ -848,7 +845,6 @@ Ext.define('LearningAnalytics.view.main.MainController', {
 
             var mystore = viewModel.getStore('courseRiskAnalysisResults');
             mystore.addData(result);
-            debugger;
         }
         else if(curActiveIndex === 2) {
 
@@ -965,12 +961,10 @@ Ext.define('LearningAnalytics.view.main.MainController', {
     onAddColumn: function() {
         Ext.MessageBox.prompt('Add Column', 'Enter the column name:', function(btnText, sInput){
             if(btnText === 'ok'){
-                //TODO: call add column endpoint
                 var me = this;
                 Ext.Ajax.request({
                     url: '/api/1/courses/categories',
                     method: 'POST',
-                    // type: 'json',
                     jsonData: {
                         'name' : sInput,
                         'course_id' : this.currentCourseId
@@ -981,7 +975,6 @@ Ext.define('LearningAnalytics.view.main.MainController', {
                         'Authorization': ''
                     },    
                     callback:function(records, operation, success){
-                        debugger;
                         var jsonData = Ext.util.JSON.decode(success.responseText);
                         var statusMessage = jsonData.response.status;
                         var columnId = jsonData.response.data.id;
@@ -990,7 +983,7 @@ Ext.define('LearningAnalytics.view.main.MainController', {
                             var gridView = me.lookupReference('riskAnalysisGridPanel').items.items[0];
                             var column = Ext.create('Ext.grid.column.Column', {
                                 text: columnName,
-                                dataIndex: 'column_'+columnId,
+                                dataIndex: columnId,
                                 id: 'column_'+columnId,
                                 width: 130,
                                 renderer: function(value) {
@@ -1034,8 +1027,6 @@ Ext.define('LearningAnalytics.view.main.MainController', {
             multiline: false,
             fn: function(btn) {
                 if (btn === 'ok') {
-                    //TODO: call remove column endpoint
-                    debugger;
                     var itemText = Ext.get('columnToBeRemoved').getValue();
                     var itemId = 0;
                     for (var i=0; i < columns.length; i++) {
@@ -1055,7 +1046,6 @@ Ext.define('LearningAnalytics.view.main.MainController', {
                             'Authorization': ''
                         },    
                         callback:function(records, operation, success){
-                            debugger;
                             var jsonData = Ext.util.JSON.decode(success.responseText);
                             var statusMessage = jsonData.response.status;
                             var columnId = jsonData.response.data.id;
@@ -1081,60 +1071,137 @@ Ext.define('LearningAnalytics.view.main.MainController', {
     },
 
     onInitActivitiesClick: function() {
+        //TODO: load store for column and grid
         var viewModel = this.getViewModel();
-        var store = viewModel.getStore('riskAnalysis');
+        var storeCategories = viewModel.getStore('courseCategories');
+        var storeActivities = viewModel.getStore('courseActivities');
         Ext.getBody().mask('Please wait', 'loading');
 
-        store.load({
+        storeCategories.load({
             params: {
-                courseid: this.currentCourseId
+                course_id: this.currentCourseId
             },
-            callback: function (records, operation, success) {
+            callback: function (recordsColumns, operation, success) {
+                Ext.getBody().unmask();
                 if (success === true) {
-                    if (records.length > 0) {
-                        viewModel.setData({
-                            riskAnalysisScorms: store.first().scorms(),
-                            riskAnalysisUsers: store.first().users(),
-                            riskAnalysisUsersAnalysis: store.first().users().first().analysis()
-                        });
-
-                        var cfg = Ext.apply({
-                            xtype: 'popUpWindow',
-                            reference: 'riskAnalysisInitActivitiesWindow',
-                            items: [
-                                {
-                                    id: 'riskAnalysisInitActivitiesWindow',
-                                    xtype: 'riskAnalysisStepOnePanel'
-                                }
-                            ],
-                            title: 'Initialize Activities'
-                        });
-                        Ext.create(cfg);
-                    } else {
-                        Ext.Msg.alert({
-                            title: 'Initialize Activities',
-                            message: 'This course does not have any scorm data for students',
-                            buttons: Ext.Msg.OK,
-                            icon: Ext.Msg.INFO,
-                            draggable: false
-                        });
-                    }
-                    Ext.getBody().unmask();
-                } else {
-                    Ext.toast({
-                        html: 'Failure.!!',
-                        width: 200,
-                        align: 't'
+                    viewModel.setData({
+                        courseActivityColumns: recordsColumns
                     });
+                    storeActivities.load({
+                        params: {
+                            course_id: this.currentCourseId
+                        },
+                        callback: function (records, operation, success) {
+                            Ext.getBody().unmask();
+                            debugger;
+                            if (success === true) {
+                                var gridView = this.lookupReference('riskAnalysisGridPanel').items.items[0];
+                                var columns = viewModel.data.courseActivityColumns;
+                                for (var index = 0; index < columns.length; index ++){
+                                    var column = Ext.create('Ext.grid.column.Column', {
+                                        text: columns[index].data.name,
+                                        dataIndex: columns[index].data.id,
+                                        id: 'column_'+columns[index].data.id,
+                                        width: 130,
+                                        renderer: function(value) {
+                                            return '<span class="x-fa fa-'+ (value ? 'check-square-o' : 'square-o') +'"></span>';
+                                        }
+                                    });
+                                    gridView.headerCt.insert(index + 1, column);                
+                                }     
+                                viewModel.setData({
+                                    riskAnalysisScorms: storeActivities,
+                                });                       
+                            } else {
+                                Ext.Msg.alert({
+                                    title: '',
+                                    message: jsonData.response.message,
+                                    buttons: Ext.Msg.OK,
+                                    icon: Ext.Msg.INFO,
+                                    draggable: false
+                                });    
+                            }
+                        },
+                        scope: this
+                    });            
+                    var cfg = Ext.apply({
+                        xtype: 'popUpWindow',
+                        reference: 'riskAnalysisInitActivitiesWindow',
+                        items: [
+                            {
+                                id: 'riskAnalysisInitActivitiesWindow',
+                                xtype: 'riskAnalysisStepOnePanel'
+                            }
+                        ],
+                        title: 'Initialize Activities'
+                    });
+                    Ext.create(cfg);
+                } else {
+                    Ext.Msg.alert({
+                        title: '',
+                        message: jsonData.response.message,
+                        buttons: Ext.Msg.OK,
+                        icon: Ext.Msg.INFO,
+                        draggable: false
+                    });    
                 }
             },
             scope: this
         });
+
     },
 
     onSaveInitActivitiesClick: function() {
         var gridStore = this.lookupReference('riskAnalysisGridPanel').items.items[0];
-        debugger;
-    }
+        var items = gridStore.getStore().data.items;
+        var result = [];
+        for (var i=0; i < items.length; i++) {
+            var keys = Object.keys(items[i].data);
+            var tempResult = {};
+            tempResult['id']= items[i].data.id;
+            tempResult['title'] = items[i].data.title
+            for (var y=0; y < keys.length; y++) {
+                if (keys[y] !== 'title' && keys[y] !== 'id'){
+                    var temp = keys[y].replace('column_','');
+                    tempResult[temp]= items[i].data[keys[y]];
+                }    
+            }
+            result.push(tempResult);
+        }
+        Ext.Ajax.request({
+            url: '/api/1/courses/activities',
+            method: 'POST',
+            jsonData: {
+                'course_id': this.currentCourseId,
+                'activities' : result
+            },
+            useDefaultXhrHeader: false,
+            cors: true,
+            headers: {
+                'Authorization': ''
+            },    
+            callback:function(records, operation, success){
+                var jsonData = Ext.util.JSON.decode(success.responseText);
+                var statusMessage = jsonData.response.type;
+                if(statusMessage === 'ok'){
+                    Ext.Msg.alert({
+                        title: 'Save',
+                        message: '',
+                        buttons: Ext.Msg.OK,
+                        icon: Ext.Msg.INFO,
+                        draggable: false
+                    });
+                } else {
+                    Ext.Msg.alert({
+                        title: 'Something went wrong',
+                        message: jsonData.response.message,
+                        buttons: Ext.Msg.OK,
+                        icon: Ext.Msg.INFO,
+                        draggable: false
+                    });    
+                }
+            }
+        });
+    },
 
 });
