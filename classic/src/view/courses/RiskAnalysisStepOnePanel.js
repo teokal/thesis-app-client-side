@@ -77,35 +77,9 @@ Ext.define('LearningAnalytics.view.courses.RiskAnalysisStepOnePanel', {
                     dataIndex: 'title',
                     id: 'Activity',
                     text: 'Activity',
+                    minWidth: 200,
                     flex: 1
                 }
-                // {
-                //     dataIndex: 'Slides',
-                //     id: 'Slides',
-                //     text: 'Slides',
-                //     width: 130,
-                //     renderer: function(value) {
-                //         return '<span class="x-fa fa-'+ (value ? 'check-square-o' : 'square-o') +'"></span>';
-                //     }
-                // },
-                // {
-                //     dataIndex: 'Quiz',
-                //     id: 'Quiz',
-                //     text: 'Quiz',
-                //     width: 130,
-                //     renderer: function(value) {
-                //         return '<span class="x-fa fa-'+ (value ? 'check-square-o' : 'square-o') +'"></span>';
-                //     }
-                // },
-                // {
-                //     dataIndex: 'None',
-                //     id: 'None',
-                //     text: 'None',
-                //     width: 130,
-                //     renderer: function(value) {
-                //         return '<span class="x-fa fa-'+ (value ? 'check-square-o' : 'square-o') +'"></span>';
-                //     }
-                // }
             ],
             listeners: {
                 'cellclick': 'onRiskAnalysisGridCellItemClick'

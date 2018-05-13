@@ -13,7 +13,6 @@ Ext.define('LearningAnalytics.view.courses.RiskAnalysisStepTwoPanel', {
         'Ext.form.field.HtmlEditor'
     ],
 
-
     layout: {
         type:'vbox'
         // align:'stretch'

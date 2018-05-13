@@ -385,8 +385,36 @@ Ext.define('LearningAnalytics.view.main.MainController', {
 
     // RiskAnalysis Controller
     onRiskAnalysisClick: function () {
+        var me = this;
         var viewModel = this.getViewModel();
+
+        Ext.Ajax.request({
+            url: '/api/1/courses/initialized_course',
+            method: 'GET',
+            jsonData: {
+                'course_id': this.currentCourseId
+            },
+            useDefaultXhrHeader: false,
+            cors: true,
+            headers: {
+                'Authorization': ''
+            },
+            callback:function(records, operation, success){
+                debugger;
+                var jsonData = Ext.util.JSON.decode(success.responseText);
+                var statusMessage = jsonData.response.type;
+                if(statusMessage === 'ok'){
+                    if (viewModel.data.riskAnalysisScorms === null){
+                        me.initCourseCategoriesActivitiesStore();
+                    }
+                } else {
+                    me.initCourseCategoriesActivitiesStore();
+                }
+            }
+        });
+
         var store = viewModel.getStore('riskAnalysis');
+        var storeParameters = viewModel.getStore('courseParameters');
         Ext.getBody().mask('Please wait', 'loading');
 
         store.load({
@@ -397,23 +425,51 @@ Ext.define('LearningAnalytics.view.main.MainController', {
                 if (success === true) {
                     if (records.length > 0) {
                         viewModel.setData({
-                            riskAnalysisScorms: store.first().scorms(),
                             riskAnalysisUsers: store.first().users(),
                             riskAnalysisUsersAnalysis: store.first().users().first().analysis()
                         });
 
-                        var cfg = Ext.apply({
-                            xtype: 'popUpWindow',
-                            reference: 'riskAnalysisGridWindow',
-                            items: [
-                                {
-                                    id: 'riskAnalysisGridWindow',
-                                    xtype: 'riskAnalysisWindowForm'
+                        storeParameters.load({
+                            params: {
+                                course_id: this.currentCourseId
+                            },
+                            callback: function (records, operation, success) {
+                                if (success === true) {
+                                    if (records[0].data.constants.length === 0) {
+                                        viewModel.setData({
+                                            riskAnalysisParameters: records[0].data.parameters,
+                                            riskParameterConstant1: 0,
+                                            riskParameterConstant2: 0
+                                        });    
+                                    } else {
+                                        viewModel.setData({
+                                            riskAnalysisParameters: records[0].data.parameters,
+                                            riskParameterConstant1: records[0].data.constants[1],
+                                            riskParameterConstant2: records[0].data.constants[2]
+                                        });    
+                                    }
+            
+                                    var cfg = Ext.apply({
+                                        xtype: 'popUpWindow',
+                                        reference: 'riskAnalysisGridWindow',
+                                        items: [
+                                            {
+                                                id: 'riskAnalysisGridWindow',
+                                                xtype: 'riskAnalysisWindowForm'
+                                            }
+                                        ],
+                                        title: 'Risk Analysis Overview'
+                                    });
+                                    Ext.create(cfg);     
+                                    this.initRiskAnalysisParameters();       
+                                } else {
+
                                 }
-                            ],
-                            title: 'Risk Analysis Overview'
+                            },
+                            scope: this
                         });
-                        Ext.create(cfg);
+                
+                        Ext.getBody().unmask();
                     } else {
                         Ext.Msg.alert({
                             title: 'Risk Analysis',
@@ -574,94 +630,81 @@ Ext.define('LearningAnalytics.view.main.MainController', {
 
     //RiskAnalysis Form
     onNextClick: function(button) {
+        //TODO: - generate parameters and result
         var panel = button.up('panel');
         var layout = panel.getLayout();
         var curActiveItem = layout.getActiveItem();
         var curActiveIndex = panel.items.indexOf(curActiveItem);
-        var viewModel = this.getViewModel();
-        var alphabet = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'];
 
         this.getViewModel().set('atBeginning', false);
         if (curActiveIndex === 0) {
+            this.initRiskAnalysisResult();
+        } else if(curActiveIndex === 1) { //not used
+        }
+        else if(curActiveIndex === 2) { //not used
+        }
+        this.navigate(button, panel, 'next');
+    },
 
-            var gridStore = this.lookupReference('riskAnalysisGridPanel').items.items[0];
-            var columns = gridStore.getColumnManager().columns;
-            // var grid = gridStore.getStore();
-            var panelStepTwo = this.lookupReference('riskAnalysisStepTwoPanel');
-            var algorithOne = "", algorithTwo = "", columnsPSummary = "";
-            panelStepTwo.removeAll();
+    initRiskAnalysisParameters: function() {
+        var viewModel = this.getViewModel();
+        var alphabet = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'];
+        // var gridStore = this.lookupReference('riskAnalysisGridPanel').items.items[0];
+        // var columns = gridStore.getColumnManager().columns;
+        var parameters = viewModel.data.riskAnalysisParameters;
 
-            panelStepTwo.add(new Ext.form.Panel({
-                html : '<p>If you want, you can change the default parameter\'s value</p>'
-            }));
+        var panelStepTwo = this.lookupReference('riskAnalysisStepTwoPanel');
+        var algorithOne = "", algorithTwo = "", columnsPSummary = "";
+        panelStepTwo.removeAll();
 
-            algorithOne = "Y1 = ";
-            algorithTwo = "Y2 = ";
-            columnsPSummary = "Where: </br>";
-            for (var y = 2; y < columns.length; y ++) { // create viewmodel data
-                var alpha = alphabet[y-2];
-                var index = eval("y-1");
-                if (y > 2) {
+        panelStepTwo.add(new Ext.form.Panel({
+            html : '<p>If you want, you can change the default parameter\'s value</p>'
+        }));
+
+        algorithOne = "Y1 = ";
+        algorithTwo = "Y2 = ";
+        columnsPSummary = "Where: </br>";
+        var indexForName = 0;
+        for (var y = 0; y < parameters.length; y ++) { // create viewmodel data
+            var alpha = alphabet[y];
+            var index = eval("y");
+            var columnName = parameters[index].category_name;
+            if (columnName !== "None") {
+                if (indexForName > 0) {
                     algorithOne = algorithOne + " + ";
                     algorithTwo = algorithTwo + " + "
                 }
-                algorithOne = algorithOne + alphabet[y-2] + "1*P" + index;
-                algorithTwo = algorithTwo + alphabet[y-2] + "2*P" + index;
-                columnsPSummary = columnsPSummary + "P" + index + ": " + columns[index].dataIndex + "</br>";
+                algorithOne = algorithOne + alphabet[indexForName] + "1*P" + index;
+                algorithTwo = algorithTwo + alphabet[indexForName] + "2*P" + index;
+                columnsPSummary = columnsPSummary + "P" + index + ": " + columnName + "</br>";
 
-                if (alpha !== "A" && alpha !== "B") {
-                    var key1 = 'riskParameter' + alphabet[y-2] + '1';
-                    var key2 = 'riskParameter' + alphabet[y-2] + '2';
-                    this.getViewModel().data[key1] = 0;
-                    this.getViewModel().data[key2] = 0;
-                }
+                var key1 = 'riskParameter' + alphabet[indexForName] + '1';
+                var key2 = 'riskParameter' + alphabet[indexForName] + '2';
+                this.getViewModel().data[key1] = parameters[index][1];
+                this.getViewModel().data[key2] = parameters[index][2];
+                indexForName += 1;
             }
-            algorithOne = algorithOne + " + Constant1";
-            algorithTwo = algorithTwo + " + Constant2";
+        }
+        algorithOne = algorithOne + " + Constant1";
+        algorithTwo = algorithTwo + " + Constant2";
 
-            var fieldsFirst = [];
-            var fieldsSecond = [];
-            for (var index = 2; index < columns.length; index ++){
-                //TODO: create and add numberfields
-                var alpha = alphabet[index-2];
-                fieldsFirst.push(new Ext.form.NumberField({
-                        xtype: 'numberfield',
-                        name: 'riskAnalysisParameter' + alpha + '1',
-                        width: 180,
-                        bind: '{riskParameter' + alpha + '1}',
-                        margin: '0 30 5 0',
-                        forcePrecision: true,
-                        decimalPrecision: 10,
-                        fieldLabel: alpha+'1',
-                        labelAlign: 'top',
-                        allowBlank: false
-                    })
-                );
-
-                fieldsSecond.push(new Ext.form.NumberField({
-                        xtype: 'numberfield',
-                        name: 'riskAnalysisParameter' + alpha + '2',
-                        width: 180,
-                        bind: '{riskParameter' + alpha + '2}',
-                        margin: '0 30 5 0',
-                        forcePrecision: true,
-                        decimalPrecision: 10,
-                        fieldLabel: alpha+'2',
-                        labelAlign: 'top',
-                        allowBlank: false
-                    })
-                )
-            }
-
+        var fieldsFirst = [];
+        var fieldsSecond = [];
+        indexForName = 0;
+        for (var index = 0; index < parameters.length; index ++){
+            var columnName = parameters[index].category_name;
+            if ( columnName === "None" ){ continue; }
+            var alpha = alphabet[indexForName];
+            indexForName += 1;
             fieldsFirst.push(new Ext.form.NumberField({
                     xtype: 'numberfield',
-                    name: 'riskParameterConstant1',
+                    name: 'riskAnalysisParameter' + alpha + '1',
                     width: 180,
-                    bind: '{riskParameterConstant1}',
+                    bind: '{riskParameter' + alpha + '1}',
                     margin: '0 30 5 0',
                     forcePrecision: true,
                     decimalPrecision: 10,
-                    fieldLabel: 'Constant1',
+                    fieldLabel: alpha+'1',
                     labelAlign: 'top',
                     allowBlank: false
                 })
@@ -669,202 +712,266 @@ Ext.define('LearningAnalytics.view.main.MainController', {
 
             fieldsSecond.push(new Ext.form.NumberField({
                     xtype: 'numberfield',
-                    name: 'riskParameterConstant2',
+                    name: 'riskAnalysisParameter' + alpha + '2',
                     width: 180,
-                    bind: '{riskParameterConstant2}',
+                    bind: '{riskParameter' + alpha + '2}',
                     margin: '0 30 5 0',
                     forcePrecision: true,
                     decimalPrecision: 10,
-                    fieldLabel: 'Constant2',
+                    fieldLabel: alpha+'2',
                     labelAlign: 'top',
                     allowBlank: false
                 })
-            );
+            )
+        }
 
-            panelStepTwo.add(new Ext.form.Panel({
-                layout: {
-                    type:'hbox',
-                    align:'stretch'
-                },
-                items: [{  }],
-                listeners: {
-                    afterrender: function(){
-                        for (var i=0; i < fieldsFirst.length; i ++) {
-                            this.add(fieldsFirst[i])
-                        }
+        fieldsFirst.push(new Ext.form.NumberField({
+                xtype: 'numberfield',
+                name: 'riskParameterConstant1',
+                width: 180,
+                bind: '{riskParameterConstant1}',
+                margin: '0 30 5 0',
+                forcePrecision: true,
+                decimalPrecision: 10,
+                fieldLabel: 'Constant1',
+                labelAlign: 'top',
+                allowBlank: false
+            })
+        );
+
+        fieldsSecond.push(new Ext.form.NumberField({
+                xtype: 'numberfield',
+                name: 'riskParameterConstant2',
+                width: 180,
+                bind: '{riskParameterConstant2}',
+                margin: '0 30 5 0',
+                forcePrecision: true,
+                decimalPrecision: 10,
+                fieldLabel: 'Constant2',
+                labelAlign: 'top',
+                allowBlank: false
+            })
+        );
+
+        panelStepTwo.add(new Ext.form.Panel({
+            layout: {
+                type:'hbox',
+                align:'stretch'
+            },
+            items: [{  }],
+            listeners: {
+                afterrender: function(){
+                    for (var i=0; i < fieldsFirst.length; i ++) {
+                        this.add(fieldsFirst[i])
                     }
                 }
+            }
 
-            }));
+        }));
 
-            panelStepTwo.add(new Ext.form.Panel({
-                layout: {
-                    type:'hbox',
-                    align:'stretch'
-                },
-                items: [{  }],
-                listeners: {
-                    afterrender: function(){
-                        for (var i=0; i < fieldsSecond.length; i ++) {
-                            this.add(fieldsSecond[i])
-                        }
+        panelStepTwo.add(new Ext.form.Panel({
+            layout: {
+                type:'hbox',
+                align:'stretch'
+            },
+            items: [{  }],
+            listeners: {
+                afterrender: function(){
+                    for (var i=0; i < fieldsSecond.length; i ++) {
+                        this.add(fieldsSecond[i])
                     }
                 }
+            }
 
-            }));
-            panelStepTwo.add(new Ext.form.Panel({
-                html : '<p><b>' + algorithOne + '</b></br>' +
-                '<b>' + algorithTwo + '</b></br></br>' +
-                columnsPSummary + '</p>'
-            }));
+        }));
+        panelStepTwo.add(new Ext.form.Panel({
+            html : '<p><b>' + algorithOne + '</b></br>' +
+            '<b>' + algorithTwo + '</b></br></br>' +
+            columnsPSummary + '</p>'
+        }));
+    },
 
-        } else if(curActiveIndex === 1) {
-            var grid = this.lookupReference('riskAnalysisGridPanel').items.items[0];
-            var gridStore = grid.getStore();
-            var itemsCount = gridStore.count();
-            var columns = grid.getColumnManager().columns;
-            var studentsStore = viewModel.data.riskAnalysisUsers;
-            var scormsDataForStudent;
-            var item, scormData, resultY1, resultY2;
-            var student;
-            var result = [], summary = [], parameters = [], variableP = [], studentCourseDetails = [];
+    initRiskAnalysisResult: function() {
+        var viewModel = this.getViewModel();
+        var alphabet = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'];
+        // var grid = this.lookupReference('riskAnalysisGridPanel').items.items[0];
+        var gridStore = viewModel.data.riskAnalysisScorms;
+        var itemsCount = viewModel.data.riskAnalysisScorms.data.length;
+        var columns = viewModel.data.courseActivityColumns;
+        var columnParameters = viewModel.data.riskAnalysisParameters;
+        debugger;
+        var studentsStore = viewModel.data.riskAnalysisUsers;
+        var scormsDataForStudent;
+        var item, scormData, resultY1, resultY2;
+        var student;
+        var result = [], summary = [], parameters = [], variableP = [], studentCourseDetails = [];
+        var parametersToSave = [];
+        var constantsToSave = {};
+        constantsToSave["1"] = viewModel.data.riskParameterConstant1;
+        constantsToSave["2"] = viewModel.data.riskParameterConstant2;
 
+        var indexForName = 0;
+        for (var i=0; i < columnParameters.length; i++) {
+            var tempResult = {};
+            if (columnParameters[i].category_name !== 'None' ){
+                tempResult['category_id']= columnParameters[i].category_id;
+                tempResult['category_name'] = columnParameters[i].category_name
+                var key1 = 'riskParameter' + alphabet[indexForName] + '1';
+                var key2 = 'riskParameter' + alphabet[indexForName] + '2';
+                tempResult["1"]= this.getViewModel().data[key1];
+                tempResult["2"]= this.getViewModel().data[key2];
+                indexForName += 1;
+                parametersToSave.push(tempResult);
+            }    
+        }
+
+        Ext.Ajax.request({
+            url: '/api/1/courses/categories_parameters',
+            method: 'POST',
+            jsonData: {
+                'course_id': this.currentCourseId,
+                'parameters': parametersToSave,
+                'constants': constantsToSave
+            },
+            useDefaultXhrHeader: false,
+            cors: true,
+            headers: {
+                'Authorization': ''
+            },    
+            callback:function(records, operation, success){
+                var jsonData = Ext.util.JSON.decode(success.responseText);
+                var statusMessage = jsonData.response.type;
+                if(statusMessage === 'ok'){
+                } else {
+                }
+            }
+        });        
+
+        for (var i = 0; i < itemsCount; i++) {
+            summary.push({
+                index: i,
+                title: gridStore.getAt(i).data.title,
+                success: 0,
+                failure: 0
+            });
+            studentCourseDetails.push({
+                index: i,
+                title: gridStore.getAt(i).data.title,
+                activityResult: false
+            })
+        } 
+
+        for (var y = 0; y < columnParameters.length - 2; y ++) {
+            parameters.push('riskParameter' + alphabet[y] + '1');
+            parameters.push('riskParameter' + alphabet[y] + '2');
+        }
+        parameters.push('riskParameterConstant1');
+        parameters.push('riskParameterConstant2');
+
+        for (var studentIndex = 0; studentIndex < studentsStore.count(); studentIndex++) {
+            student = studentsStore.getAt(studentIndex);
+            scormsDataForStudent = student.analysis();
+            variableP = [];
             for (var i = 0; i < itemsCount; i++) {
-                summary.push({
-                    index: i,
-                    title: gridStore.getAt(i).data.title,
-                    success: 0,
-                    failure: 0
-                });
-                studentCourseDetails.push({
-                    index: i,
-                    title: gridStore.getAt(i).data.title,
-                    activityResult: false
-                })
-
-            }
-
-            for (var y = 0; y < columns.length - 2; y ++) {
-                parameters.push('riskParameter' + alphabet[y] + '1');
-                parameters.push('riskParameter' + alphabet[y] + '2');
-            }
-            parameters.push('riskParameterConstant1');
-            parameters.push('riskParameterConstant2');
-
-            for (var studentIndex = 0; studentIndex < studentsStore.count(); studentIndex++) {
-                student = studentsStore.getAt(studentIndex);
-                scormsDataForStudent = student.analysis();
-                variableP = [];
-                for (var i = 0; i < itemsCount; i++) {
-                    item = gridStore.getAt(i);
-                    scormData = scormsDataForStudent.getAt(i);
-                    if (typeof item.data['None'] === 'undefined') {
-                        summary[i].failure ++;
-                        studentCourseDetails[i].activityResult = false;
-                    } else {
-                        // TODO: calculate the A1, B1 etc
-                        for (var columnIndex = 1; columnIndex < columns.length; columnIndex ++){
-                            var columnDataIndex = columns[columnIndex].dataIndex;
-                            if (item.data[columnDataIndex] === true) {
-                                if (scormData.data.value === true) {
-                                    summary[i].success ++;
-                                    studentCourseDetails[i].activityResult = true;
-                                    var found = variableP.some(function (el) {
-                                        if (el.id === columnDataIndex) {
-                                            el.success += 1;
-                                            el.all += 1;
-                                            return true
-                                        }
-                                        return false
-                                    });
-                                    if (!found){
-                                        variableP.push({
-                                            id: columnDataIndex,
-                                            success: 1,
-                                            all: 1
-                                        })
+                item = gridStore.getAt(i);
+                scormData = scormsDataForStudent.getAt(i);
+                if (typeof item.data['None'] === 'undefined') {
+                    summary[i].failure ++;
+                    studentCourseDetails[i].activityResult = false;
+                } else {
+                    // TODO: calculate the A1, B1 etc
+                    for (var columnIndex = 1; columnIndex < columnParameters.length; columnIndex ++){
+                        var columnDataIndex = columnParameters[columnIndex].dataIndex;
+                        if (item.data[columnDataIndex] === true) {
+                            if (scormData.data.value === true) {
+                                summary[i].success ++;
+                                studentCourseDetails[i].activityResult = true;
+                                var found = variableP.some(function (el) {
+                                    if (el.id === columnDataIndex) {
+                                        el.success += 1;
+                                        el.all += 1;
+                                        return true
                                     }
-                                } else {
-                                    summary[i].failure ++;
-                                    studentCourseDetails[i].activityResult = false;
-                                    var found = variableP.some(function (el) {
-                                        if (el.id === columnDataIndex) {
-                                            el.all += 1;
-                                            return true
-                                        }
-                                        return false
-                                    });
-                                    if (!found){
-                                        variableP.push({
-                                            id: columnDataIndex,
-                                            success: 0,
-                                            all: 1
-                                        })
+                                    return false
+                                });
+                                if (!found){
+                                    variableP.push({
+                                        id: columnDataIndex,
+                                        success: 1,
+                                        all: 1
+                                    })
+                                }
+                            } else {
+                                summary[i].failure ++;
+                                studentCourseDetails[i].activityResult = false;
+                                var found = variableP.some(function (el) {
+                                    if (el.id === columnDataIndex) {
+                                        el.all += 1;
+                                        return true
                                     }
+                                    return false
+                                });
+                                if (!found){
+                                    variableP.push({
+                                        id: columnDataIndex,
+                                        success: 0,
+                                        all: 1
+                                    })
                                 }
                             }
                         }
                     }
                 }
-                resultY1 = 0;
-                resultY2 = 0;
-                for (var columnI = 0; columnI < columns.length - 2; columnI ++) {
-                    if (typeof variableP[columnI] === 'undefined') {
-                        resultY1 += 0;
-                        resultY2 += 0;
-                    } else if (typeof variableP[columnI].success === 'undefined') {
-                        resultY1 += 0;
-                        resultY2 += 0;
-                    } else {
-                        resultY1 += viewModel.data[parameters[(columnI)*2]] * (variableP[columnI].success / variableP[columnI].all);
-                        resultY2 += viewModel.data[parameters[(columnI)*2 + 1]] * (variableP[columnI].success / variableP[columnI].all)
-                    }
-                }
-                resultY1 += viewModel.data.riskParameterConstant1;
-                resultY2 += viewModel.data.riskParameterConstant2;
-                viewModel.data.riskAnalysisResultsId = student.data.id;
-                viewModel.data.riskAnalysisResultsName = student.data.name;
-
-                viewModel.data.riskAnalysisResultsStatus = resultY1 > resultY2;
-
-                result.push({
-                    id: student.data.id,
-                    name: student.data.name,
-                    status: viewModel.data.riskAnalysisResultsStatus
-                });
-
-                for (var itemIndex = 0; itemIndex < itemsCount; itemIndex++) {
-                    result[result.length - 1][studentCourseDetails[itemIndex].title] = studentCourseDetails[itemIndex].activityResult;
+            }
+            resultY1 = 0;
+            resultY2 = 0;
+            for (var columnI = 0; columnI < columns.length; columnI ++) {
+                if (typeof variableP[columnI] === 'undefined') {
+                    resultY1 += 0;
+                    resultY2 += 0;
+                } else if (typeof variableP[columnI].success === 'undefined') {
+                    resultY1 += 0;
+                    resultY2 += 0;
+                } else {
+                    resultY1 += viewModel.data[parameters[(columnI)*2]] * (variableP[columnI].success / variableP[columnI].all);
+                    resultY2 += viewModel.data[parameters[(columnI)*2 + 1]] * (variableP[columnI].success / variableP[columnI].all)
                 }
             }
+            resultY1 += viewModel.data.riskParameterConstant1;
+            resultY2 += viewModel.data.riskParameterConstant2;
+            viewModel.data.riskAnalysisResultsId = student.data.id;
+            viewModel.data.riskAnalysisResultsName = student.data.name;
 
-            viewModel.data.riskAnalysisResultChart = summary;
+            viewModel.data.riskAnalysisResultsStatus = resultY1 > resultY2;
 
-            var storeSummary =  viewModel.getStore('courseRiskAnalysisSummary');
-            storeSummary.addData(summary);
+            result.push({
+                id: student.data.id,
+                name: student.data.name,
+                status: viewModel.data.riskAnalysisResultsStatus
+            });
 
-            var mystore = viewModel.getStore('courseRiskAnalysisResults');
-            mystore.addData(result);
+            for (var itemIndex = 0; itemIndex < itemsCount; itemIndex++) {
+                result[result.length - 1][studentCourseDetails[itemIndex].title] = studentCourseDetails[itemIndex].activityResult;
+            }
         }
-        else if(curActiveIndex === 2) {
 
+        viewModel.data.riskAnalysisResultChart = summary;
 
-        }
-        this.navigate(button, panel, 'next');
+        var storeSummary =  viewModel.getStore('courseRiskAnalysisSummary');
+        storeSummary.addData(summary);
+
+        var mystore = viewModel.getStore('courseRiskAnalysisResults');
+        mystore.addData(result);
     },
 
     onDetailsButtonClick: function(button){
+        var viewModel = this.getViewModel();
         var gridView = this.lookupReference('riskAnalysisResultsGridPanel').items.items[0];
-        var gridActivity = this.lookupReference('riskAnalysisGridPanel').items.items[0];
-        var gridStore = gridActivity.getStore();
+        // var gridActivity = this.lookupReference('riskAnalysisGridPanel').items.items[0];
+        var gridStore = viewModel.data.riskAnalysisScorms;
         var itemsCountActivity = gridStore.count();
 
-        // var myMask = new Ext.LoadMask(Ext.getBody(), {msg:"Please wait..."});
-        // myMask.el.dom.style.zIndex = '99999';
-        // myMask.show();
-        // Ext.getBody().mask('Please wait', 'loading');
         Ext.getBody().mask('Please wait', 'loading').dom.style.zIndex = '99999';
-
 
         for (var i = 0; i < itemsCountActivity; i++) {
             var column = Ext.create('Ext.grid.column.Column', {
@@ -879,8 +986,6 @@ Ext.define('LearningAnalytics.view.main.MainController', {
         }
 
         Ext.getBody().unmask();
-        // myMask.hide();
-        // myMask.destroy();
     },
 
     onPreviousClick: function(button) {
@@ -937,7 +1042,7 @@ Ext.define('LearningAnalytics.view.main.MainController', {
             model.set('atBeginning', true);
         }
 
-        // wizard is 4 steps. Disable next at end.
+        // wizard is 2 steps. Disable next at end.
         if (activeIndex === 1) {
             model.set('atEnd', true);
         }
@@ -1070,8 +1175,59 @@ Ext.define('LearningAnalytics.view.main.MainController', {
         });
     },
 
+    initCourseCategoriesActivitiesStore: function() {
+        var viewModel = this.getViewModel();
+        var storeCategories = viewModel.getStore('courseCategories');
+        var storeActivities = viewModel.getStore('courseActivities');
+        storeCategories.load({
+            params: {
+                course_id: this.currentCourseId
+            },
+            callback: function (recordsColumns, operation, success) {
+                Ext.getBody().unmask();
+                if (success === true) {
+                    viewModel.setData({
+                        courseActivityColumns: recordsColumns
+                    });
+                    storeActivities.load({
+                        params: {
+                            course_id: this.currentCourseId
+                        },
+                        callback: function (records, operation, success) {
+                            Ext.getBody().unmask();
+                            if (success === true) {
+                                debugger;
+                                viewModel.setData({
+                                    riskAnalysisScorms: storeActivities,
+                                });
+                            } else {
+                                Ext.Msg.alert({
+                                    title: '',
+                                    message: jsonData.response.message,
+                                    buttons: Ext.Msg.OK,
+                                    icon: Ext.Msg.INFO,
+                                    draggable: false
+                                });    
+                            }
+                        },
+                        scope: this
+                    });            
+                } else {
+                    Ext.Msg.alert({
+                        title: '',
+                        message: jsonData.response.message,
+                        buttons: Ext.Msg.OK,
+                        icon: Ext.Msg.INFO,
+                        draggable: false
+                    });    
+                }
+            },
+            scope: this
+        });
+    
+    },
+
     onInitActivitiesClick: function() {
-        //TODO: load store for column and grid
         var viewModel = this.getViewModel();
         var storeCategories = viewModel.getStore('courseCategories');
         var storeActivities = viewModel.getStore('courseActivities');
@@ -1093,7 +1249,6 @@ Ext.define('LearningAnalytics.view.main.MainController', {
                         },
                         callback: function (records, operation, success) {
                             Ext.getBody().unmask();
-                            debugger;
                             if (success === true) {
                                 var gridView = this.lookupReference('riskAnalysisGridPanel').items.items[0];
                                 var columns = viewModel.data.courseActivityColumns;
@@ -1108,10 +1263,10 @@ Ext.define('LearningAnalytics.view.main.MainController', {
                                         }
                                     });
                                     gridView.headerCt.insert(index + 1, column);                
-                                }     
+                                }
                                 viewModel.setData({
                                     riskAnalysisScorms: storeActivities,
-                                });                       
+                                });
                             } else {
                                 Ext.Msg.alert({
                                     title: '',
@@ -1185,8 +1340,8 @@ Ext.define('LearningAnalytics.view.main.MainController', {
                 var statusMessage = jsonData.response.type;
                 if(statusMessage === 'ok'){
                     Ext.Msg.alert({
-                        title: 'Save',
-                        message: '',
+                        title: 'OK',
+                        message: 'Saved',
                         buttons: Ext.Msg.OK,
                         icon: Ext.Msg.INFO,
                         draggable: false
