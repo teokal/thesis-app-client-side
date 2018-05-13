@@ -45,6 +45,14 @@ Ext.define('LearningAnalytics.view.courses.CourseView', {
             userCls: 'big-33 small-100'
         },
         {
+            xtype: 'courseCategoriesGraphPieChart', //
+            reference: 'courseCategoriesGraphPieChart',
+            style: {
+                'box-shadow': '0 0 5px rgba(0, 0, 0, 0.3)'
+            },
+            userCls: 'big-33 small-100'
+        },
+        {
             xtype: 'studentsWidget',
             userCls: 'big-20 small-50'
         },

@@ -273,19 +273,34 @@ Ext.define('LearningAnalytics.view.main.MainController', {
                 },
                 callback: function (records, operation, success) {
                     if (success === true) { //courseFileTypeNoDateText
-                        var message = this.lookupReference('courseFileTypeNoDataText');
                         var layout = this.getReferences().courseFileTypePieChart.getLayout();
 
                         if (storeCourseContents.first().filetypes().count() === 0) {
-                            // message.setHidden(false);
                             layout.setActiveItem('courseFileTypeNoDataText');
                         } else {
-                            // message.setHidden(true);
                             layout.setActiveItem('courseFileTypePieChartContainer');
                             viewModel.setData({
                                 courseContentsFileTypes: storeCourseContents.first().filetypes()
                             });
 
+                        }
+                    }
+                },
+                scope: this
+            });
+
+            var storeCourseCategoriesGraph = viewModel.getStore('courseCategoriesGraph');
+            storeCourseCategoriesGraph.load({
+                params: {
+                    course_id: this.currentCourseId
+                },
+                callback: function (records, operation, success) {
+                    if (success === true) { 
+                        var layout = this.getReferences().courseCategoriesGraphPieChart.getLayout();
+                        if (storeCourseCategoriesGraph.data.items.length === 0) {
+                            layout.setActiveItem('courseCategoriesGraphNoDataText');
+                        } else {
+                            layout.setActiveItem('courseCategoriesGraphPieChartContainer');
                         }
                     }
                 },
