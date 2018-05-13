@@ -68,11 +68,7 @@ Ext.define('LearningAnalytics.view.main.MainModel', {
         atBeginning: true,
         atEnd: false,
         atResultPage: false,
-        // riskParameterA1: 11.803,
-        // riskParameterB1: 13.385,
         riskParameterConstant1: -5.343,
-        // riskParameterA2: -0.233,
-        // riskParameterB2: 3.381,
         riskParameterConstant2: -0.788,
         courseActivityColumns: null
     }

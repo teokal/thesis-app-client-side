@@ -115,7 +115,6 @@ Ext.define('LearningAnalytics.view.main.MainController', {
             new_width = collapsing ? 64 : 250;
 
         // TODO: resize chart
-        // debugger;
         // var courseChartPanel = wrapContainer.down('courseStatisticsChartWidget');
         // var viewStudentsChartPanel = wrapContainer.down('viewStudentsChart');
         if (Ext.isIE9m || !Ext.os.is.Desktop) {
@@ -352,7 +351,6 @@ Ext.define('LearningAnalytics.view.main.MainController', {
             });
         } else {
             var viewModel = this.getViewModel();
-            // var mask = Ext.getBody().mask('Loading, please stand by...');
             var store = viewModel.getStore('courseStatistics');
             store.load({
                 params: {
@@ -400,7 +398,6 @@ Ext.define('LearningAnalytics.view.main.MainController', {
                 'Authorization': ''
             },
             callback:function(records, operation, success){
-                debugger;
                 var jsonData = Ext.util.JSON.decode(success.responseText);
                 var statusMessage = jsonData.response.type;
                 if(statusMessage === 'ok'){
@@ -408,11 +405,17 @@ Ext.define('LearningAnalytics.view.main.MainController', {
                         me.initCourseCategoriesActivitiesStore();
                     }
                 } else {
-                    me.initCourseCategoriesActivitiesStore();
+                    Ext.Msg.alert({
+                        title: 'Risk Analysis',
+                        message: 'Please first initialize the activity type',
+                        buttons: Ext.Msg.OK,
+                        icon: Ext.Msg.INFO,
+                        draggable: false
+                    });
                 }
             }
         });
-
+                    
         var store = viewModel.getStore('riskAnalysis');
         var storeParameters = viewModel.getStore('courseParameters');
         Ext.getBody().mask('Please wait', 'loading');
@@ -794,12 +797,10 @@ Ext.define('LearningAnalytics.view.main.MainController', {
     initRiskAnalysisResult: function() {
         var viewModel = this.getViewModel();
         var alphabet = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'];
-        // var grid = this.lookupReference('riskAnalysisGridPanel').items.items[0];
         var gridStore = viewModel.data.riskAnalysisScorms;
         var itemsCount = viewModel.data.riskAnalysisScorms.data.length;
         var columns = viewModel.data.courseActivityColumns;
         var columnParameters = viewModel.data.riskAnalysisParameters;
-        debugger;
         var studentsStore = viewModel.data.riskAnalysisUsers;
         var scormsDataForStudent;
         var item, scormData, resultY1, resultY2;
@@ -875,13 +876,13 @@ Ext.define('LearningAnalytics.view.main.MainController', {
             for (var i = 0; i < itemsCount; i++) {
                 item = gridStore.getAt(i);
                 scormData = scormsDataForStudent.getAt(i);
-                if (typeof item.data['None'] === 'undefined') {
+                if (Object.keys(item.data).length < 2) {
                     summary[i].failure ++;
                     studentCourseDetails[i].activityResult = false;
                 } else {
                     // TODO: calculate the A1, B1 etc
                     for (var columnIndex = 1; columnIndex < columnParameters.length; columnIndex ++){
-                        var columnDataIndex = columnParameters[columnIndex].dataIndex;
+                        var columnDataIndex = columnParameters[columnIndex].category_id;
                         if (item.data[columnDataIndex] === true) {
                             if (scormData.data.value === true) {
                                 summary[i].success ++;
@@ -1196,7 +1197,6 @@ Ext.define('LearningAnalytics.view.main.MainController', {
                         callback: function (records, operation, success) {
                             Ext.getBody().unmask();
                             if (success === true) {
-                                debugger;
                                 viewModel.setData({
                                     riskAnalysisScorms: storeActivities,
                                 });
