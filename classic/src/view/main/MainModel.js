@@ -15,18 +15,18 @@ Ext.define('LearningAnalytics.view.main.MainModel', {
         },
         courseStatistics: {
             type: 'courseStatistics',
-            autoLoad: true
+            autoLoad: false
         },
         courseContents: {
             type: 'courseContents',
-            autoLoad: true
+            autoLoad: false
         },
         courseCategoriesGraph: {
             type: 'courseCategoriesGraph',
             autoLoad: true
         },
         riskAnalysis: {
-            autoLoad: true,
+            autoLoad: false,
             type: 'courseRiskAnalysis'
         },
         courseRiskAnalysisResults: {
@@ -57,7 +57,7 @@ Ext.define('LearningAnalytics.view.main.MainModel', {
         list: null,
         courseStatisticsData: null,
         courseContentsFileTypes: null,
-        courseCategoriesGraph: null,
+        courseCategoriesStore: null,
         composeEmailStudentsData: [],
         // risk analysis
         riskAnalysisScorms: null,
