@@ -289,23 +289,7 @@ Ext.define('LearningAnalytics.view.main.MainController', {
                 scope: this
             });
 
-            var storeCourseCategoriesGraph = viewModel.getStore('courseCategoriesGraph');
-            storeCourseCategoriesGraph.load({
-                params: {
-                    course_id: this.currentCourseId
-                },
-                callback: function (records, operation, success) {
-                    if (success === true) { 
-                        var layout = this.getReferences().courseCategoriesGraphPieChart.getLayout();
-                        if (storeCourseCategoriesGraph.data.items.length === 0) {
-                            layout.setActiveItem('courseCategoriesGraphNoDataText');
-                        } else {
-                            layout.setActiveItem('courseCategoriesGraphPieChartContainer');
-                        }
-                    }
-                },
-                scope: this
-            });
+            this.loadCourseCategoriesGraph();
 
         }
         if (rec.node.id === "logout") {
@@ -314,6 +298,27 @@ Ext.define('LearningAnalytics.view.main.MainController', {
             window.location.assign('');
 
         }
+    },
+
+    loadCourseCategoriesGraph: function() {
+        var viewModel = this.getViewModel();
+        var storeCourseCategoriesGraph = viewModel.getStore('courseCategoriesGraph');
+        storeCourseCategoriesGraph.load({
+            params: {
+                course_id: this.currentCourseId
+            },
+            callback: function (records, operation, success) {
+                if (success === true) { 
+                    var layout = this.getReferences().courseCategoriesGraphPieChart.getLayout();
+                    if (storeCourseCategoriesGraph.data.items.length === 0) {
+                        layout.setActiveItem('courseCategoriesGraphNoDataText');
+                    } else {
+                        layout.setActiveItem('courseCategoriesGraphPieChartContainer');
+                    }
+                }
+            },
+            scope: this
+        });
     },
 
     // Controller for Courses
@@ -1322,6 +1327,7 @@ Ext.define('LearningAnalytics.view.main.MainController', {
     },
 
     onSaveInitActivitiesClick: function() {
+        var me = this;
         var gridStore = this.lookupReference('riskAnalysisGridPanel').items.items[0];
         var items = gridStore.getStore().data.items;
         var result = [];
@@ -1354,6 +1360,10 @@ Ext.define('LearningAnalytics.view.main.MainController', {
                 var jsonData = Ext.util.JSON.decode(success.responseText);
                 var statusMessage = jsonData.response.type;
                 if(statusMessage === 'ok'){
+                    debugger;
+                    me.loadCourseCategoriesGraph();
+
+                    // courseCategoriesGraphPieChartContainer
                     Ext.Msg.alert({
                         title: 'OK',
                         message: 'Saved',
