@@ -288,15 +288,12 @@ Ext.define('LearningAnalytics.view.main.MainController', {
                 },
                 scope: this
             });
-
             this.loadCourseCategoriesGraph();
-
         }
         if (rec.node.id === "logout") {
             Ext.util.Cookies.clear('AccessToken');
             Ext.create('LearningAnalytics.view.authentication.Login');
             window.location.assign('');
-
         }
     },
 
@@ -409,8 +406,8 @@ Ext.define('LearningAnalytics.view.main.MainController', {
         Ext.Ajax.request({
             url: '/api/1/courses/initialized_course',
             method: 'GET',
-            jsonData: {
-                'course_id': this.currentCourseId
+            params: {
+                course_id: this.currentCourseId
             },
             useDefaultXhrHeader: false,
             cors: true,
@@ -421,13 +418,21 @@ Ext.define('LearningAnalytics.view.main.MainController', {
                 var jsonData = Ext.util.JSON.decode(success.responseText);
                 var statusMessage = jsonData.response.type;
                 if(statusMessage === 'ok'){
-                    if (viewModel.data.riskAnalysisScorms === null){
+                    if (jsonData.response.data.initialized_course) {
                         me.initCourseCategoriesActivitiesStore();
+                    } else {
+                        Ext.Msg.alert({
+                            title: 'Risk Analysis',
+                            message: 'Please first initialize the activity type',
+                            buttons: Ext.Msg.OK,
+                            icon: Ext.Msg.INFO,
+                            draggable: false
+                        });    
                     }
                 } else {
                     Ext.Msg.alert({
                         title: 'Risk Analysis',
-                        message: 'Please first initialize the activity type',
+                        message: 'Something went wrong',
                         buttons: Ext.Msg.OK,
                         icon: Ext.Msg.INFO,
                         draggable: false
@@ -1360,10 +1365,7 @@ Ext.define('LearningAnalytics.view.main.MainController', {
                 var jsonData = Ext.util.JSON.decode(success.responseText);
                 var statusMessage = jsonData.response.type;
                 if(statusMessage === 'ok'){
-                    debugger;
                     me.loadCourseCategoriesGraph();
-
-                    // courseCategoriesGraphPieChartContainer
                     Ext.Msg.alert({
                         title: 'OK',
                         message: 'Saved',
