@@ -140,6 +140,42 @@ Ext.define('LearningAnalytics.view.courses.CourseStatisticsChartWidget', {
                         }
                     },
                     flex: 0.5
+                },
+                {
+                    reference: 'courseModulesCombo',
+                    name: 'courseModulesCombo',
+                    xtype: 'combobox',
+                    renderTo: document.body,
+                    fieldLabel: 'Modules',
+                    labelAlign: 'top',
+                    displayField: 'title',
+                    padding: '0 0 0 30',
+                    multiSelect: true,
+                    tpl: new Ext.XTemplate('<tpl for=".">', '<div class="x-boundlist-item">', '<input type="checkbox" />', '{title}', '</div>', '</tpl>'),
+                    bind: {
+                        store: '{courseModules}'
+                    },
+                    queryMode: 'local',
+        
+                    listeners: {
+                        select: function (combo, records) {
+                            var node;
+                            var viewModel = this.getViewModel();
+
+                            Ext.each(records, function (rec) {                                
+                                node = combo.getPicker().getNode(rec);
+                                Ext.get(node).down('input').dom.checked = true;
+                                viewModel.setData({
+                                    courseModulesId: rec.data.id
+                                })
+                            });
+                        },
+                        beforedeselect: function (combo, rec) {
+                            var node = combo.getPicker().getNode(rec);
+                            Ext.get(node).down('input').dom.checked = false;
+                        }
+                    }
+        
                 }
             ]
         },

@@ -253,6 +253,7 @@ Ext.define('LearningAnalytics.view.main.MainController', {
                     to_date: 'now',
                     query: 'all',
                     view: 'month',
+                    module: 'course',
                     course: this.currentCourseId
                 },
                 callback: function (records, operation, success) {
@@ -284,6 +285,18 @@ Ext.define('LearningAnalytics.view.main.MainController', {
                             });
 
                         }
+                    }
+                },
+                scope: this
+            });
+
+            var storeCourseModule = viewModel.getStore('courseModules');
+            storeCourseModule.load({
+                params: {
+                    course_id: this.currentCourseId
+                },
+                callback: function (records, operation, success) {
+                    if (success === true) { 
                     }
                 },
                 scope: this
@@ -359,6 +372,7 @@ Ext.define('LearningAnalytics.view.main.MainController', {
         var dateTo = me.lookupReference('dateToCourseLog');
         var view = me.lookupReference('actionViewCourseLog');
         var actionQuery = me.lookupReference('actionsQueryCourseLog');
+        var modules = me.lookupReference('courseModulesCombo');
 
         if (dateFrom.getSubmitValue() === "" || dateTo.getSubmitValue() === "") {
             Ext.toast({
@@ -375,6 +389,8 @@ Ext.define('LearningAnalytics.view.main.MainController', {
                     to_date: dateTo.getSubmitValue(),
                     query: actionQuery.getSubmitValue(),
                     view: view.getSubmitValue(),
+                    module: 'course_module',
+                    module_id: viewModel.data.courseModulesId,
                     course: this.currentCourseId
                 },
                 callback: function (records, operation, success) {

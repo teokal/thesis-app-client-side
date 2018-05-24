@@ -48,6 +48,10 @@ Ext.define('LearningAnalytics.view.main.MainModel', {
         courseParameters: {
             autoLoad: true,
             type: 'courseParameters'
+        },
+        courseModules: {
+            autoLoad: false,
+            type: 'courseModules'
         }
 
     },
@@ -59,6 +63,7 @@ Ext.define('LearningAnalytics.view.main.MainModel', {
         courseContentsFileTypes: null,
         courseCategoriesStore: null,
         composeEmailStudentsData: [],
+        courseModulesId: null,
         // risk analysis
         riskAnalysisScorms: null,
         riskAnalysisUsers: null,
