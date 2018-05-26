@@ -121,26 +121,27 @@ Ext.define('LearningAnalytics.view.courses.CourseStatisticsChartWidget', {
                     },
                     flex: 0.5
                 },
-                {
-                    reference: 'actionsQueryCourseLog',
-                    xtype:'combo',
-                    labelAlign: 'top',
-                    fieldLabel:'Actions',
-                    name:'actionsQueryCourseLog',
-                    queryMode:'local',
-                    store:['viewed'],
-                    displayField:'actionsQueryCourseLog',
-                    padding: '0 0 0 30',
-                    autoSelect:true,
-                    forceSelection:true,
-                    maxWidth: 200,
-                    listeners:{
-                        afterrender:function(rec){
-                            this.setValue('all');
-                        }
-                    },
-                    flex: 0.5
-                },
+                // NOT USED
+                // { 
+                //     reference: 'actionsQueryCourseLog',
+                //     xtype:'combo',
+                //     labelAlign: 'top',
+                //     fieldLabel:'Actions',
+                //     name:'actionsQueryCourseLog',
+                //     queryMode:'local',
+                //     store:['viewed'],
+                //     displayField:'actionsQueryCourseLog',
+                //     padding: '0 0 0 30',
+                //     autoSelect:true,
+                //     forceSelection:true,
+                //     maxWidth: 200,
+                //     listeners:{
+                //         afterrender:function(rec){
+                //             this.setValue('all');
+                //         }
+                //     },
+                //     flex: 0.5
+                // },
                 {
                     reference: 'courseModulesCombo',
                     name: 'courseModulesCombo',
@@ -156,20 +157,10 @@ Ext.define('LearningAnalytics.view.courses.CourseStatisticsChartWidget', {
                         store: '{courseModules}'
                     },
                     queryMode: 'local',
-        
+                
                     listeners: {
-                        select: function (combo, records) {
-                            var node;
-                            var viewModel = this.getViewModel();
+                        select: 'onModuleComboSelect',
 
-                            Ext.each(records, function (rec) {                                
-                                node = combo.getPicker().getNode(rec);
-                                Ext.get(node).down('input').dom.checked = true;
-                                viewModel.setData({
-                                    courseModulesId: rec.data.id
-                                })
-                            });
-                        },
                         beforedeselect: function (combo, rec) {
                             var node = combo.getPicker().getNode(rec);
                             Ext.get(node).down('input').dom.checked = false;

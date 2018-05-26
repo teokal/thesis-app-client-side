@@ -251,7 +251,7 @@ Ext.define('LearningAnalytics.view.main.MainController', {
                 params: {
                     from_date: '2015',
                     to_date: 'now',
-                    query: 'all',
+                    query: 'viewed',
                     view: 'month',
                     module: 'course',
                     course: this.currentCourseId
@@ -371,7 +371,7 @@ Ext.define('LearningAnalytics.view.main.MainController', {
         var dateFrom = me.lookupReference('dateFromCourseLog');
         var dateTo = me.lookupReference('dateToCourseLog');
         var view = me.lookupReference('actionViewCourseLog');
-        var actionQuery = me.lookupReference('actionsQueryCourseLog');
+        // var actionQuery = me.lookupReference('actionsQueryCourseLog');
         var modules = me.lookupReference('courseModulesCombo');
 
         if (dateFrom.getSubmitValue() === "" || dateTo.getSubmitValue() === "") {
@@ -387,7 +387,7 @@ Ext.define('LearningAnalytics.view.main.MainController', {
                 params: {
                     from_date: dateFrom.getSubmitValue(),
                     to_date: dateTo.getSubmitValue(),
-                    query: actionQuery.getSubmitValue(),
+                    query: 'viewed', //actionQuery.getSubmitValue(),
                     view: view.getSubmitValue(),
                     module: 'course_module',
                     module_id: viewModel.data.courseModulesId,
@@ -412,6 +412,19 @@ Ext.define('LearningAnalytics.view.main.MainController', {
             });
 
         }
+    },
+
+    onModuleComboSelect: function (combo, records) {
+        var node;
+        var viewModel = this.getViewModel();
+
+        Ext.each(records, function (rec) {                                
+            node = combo.getPicker().getNode(rec);
+            Ext.get(node).down('input').dom.checked = true;
+            viewModel.setData({
+                courseModulesId: rec.data.id
+            })
+        });
     },
 
     // RiskAnalysis Controller
