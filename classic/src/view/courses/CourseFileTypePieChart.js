@@ -21,8 +21,6 @@ Ext.define('LearningAnalytics.view.courses.CourseFileTypePieChart', {
 
     bodyPadding: 15,
 
-    // controller: 'courseController',
-
     title: 'File Types',
 
     layout: {
@@ -64,7 +62,6 @@ Ext.define('LearningAnalytics.view.courses.CourseFileTypePieChart', {
                 legend: {
                     docked: 'right'
                 }
-
             },
 
             items: [

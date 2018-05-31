@@ -16,7 +16,6 @@ Ext.define('LearningAnalytics.view.authentication.AuthenticationController', {
         Ext.Ajax.request({
             url: '/api/1/sign_in',
             method: 'POST',
-            // type: 'json',
             jsonData: {
                 'username' : preparedData.userid,
                 'password' : preparedData.password
@@ -38,7 +37,6 @@ Ext.define('LearningAnalytics.view.authentication.AuthenticationController', {
                     Ext.create('LearningAnalytics.view.main.Main');
                 } else {
                     Ext.Msg.alert(jsonData.response.data);
-                    // me.redirectTo('dashboard', true);
                 }
             }
         });

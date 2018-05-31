@@ -23,8 +23,6 @@ Ext.define('LearningAnalytics.view.courses.CourseStatisticsChartWidget', {
 
     bodyPadding: 15,
 
-    // controller: 'courseController',
-
     title: 'Views',
 
     layout: {
@@ -108,7 +106,7 @@ Ext.define('LearningAnalytics.view.courses.CourseStatisticsChartWidget', {
                     fieldLabel:'View per',
                     name:'actionViewCourseLog',
                     queryMode:'local',
-                    store:['year','quarter','month', 'week', 'day'], //'hour', 'minute', 'second'],
+                    store:['year','quarter','month', 'week', 'day'],
                     displayField:'actionViewCourseLog',
                     padding: '0 0 0 30',
                     autoSelect:true,
@@ -121,27 +119,6 @@ Ext.define('LearningAnalytics.view.courses.CourseStatisticsChartWidget', {
                     },
                     flex: 0.5
                 },
-                // NOT USED
-                // { 
-                //     reference: 'actionsQueryCourseLog',
-                //     xtype:'combo',
-                //     labelAlign: 'top',
-                //     fieldLabel:'Actions',
-                //     name:'actionsQueryCourseLog',
-                //     queryMode:'local',
-                //     store:['viewed'],
-                //     displayField:'actionsQueryCourseLog',
-                //     padding: '0 0 0 30',
-                //     autoSelect:true,
-                //     forceSelection:true,
-                //     maxWidth: 200,
-                //     listeners:{
-                //         afterrender:function(rec){
-                //             this.setValue('all');
-                //         }
-                //     },
-                //     flex: 0.5
-                // },
                 {
                     reference: 'courseModulesCombo',
                     name: 'courseModulesCombo',

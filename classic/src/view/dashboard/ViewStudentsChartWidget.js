@@ -60,7 +60,6 @@ Ext.define('LearningAnalytics.view.dashboard.ViewStudentsChartWidget', {
             reference: 'filterContainer',
             id: 'filterContainer',
             hidden: true,
-            // height: 100,
             layout: {
                 type: 'hbox',
                 align: 'stretch'
@@ -104,7 +103,7 @@ Ext.define('LearningAnalytics.view.dashboard.ViewStudentsChartWidget', {
                     fieldLabel:'View per',
                     name:'actionView',
                     queryMode:'local',
-                    store:['year','quarter','month', 'week', 'day'], //'hour', 'minute', 'second'],
+                    store:['year','quarter','month', 'week', 'day'], 
                     displayField:'actionView',
                     padding: '0 0 0 30',
                     autoSelect:true,
@@ -117,26 +116,6 @@ Ext.define('LearningAnalytics.view.dashboard.ViewStudentsChartWidget', {
                     },
                     flex: 0.5
                 }
-                // {
-                //     reference: 'actionsQuery',
-                //     xtype:'combo',
-                //     labelAlign: 'top',
-                //     fieldLabel:'Actions',
-                //     name:'actionsQuery',
-                //     queryMode:'local',
-                //     store:['all','view','quiz', 'enrol','unenrol'],
-                //     displayField:'actionsQuery',
-                //     padding: '0 0 0 30',
-                //     autoSelect:true,
-                //     forceSelection:true,
-                //     maxWidth: 200,
-                //     listeners:{
-                //         afterrender:function(rec){
-                //             this.setValue('all');
-                //         }
-                //     },
-                //     flex: 0.5
-                // }
             ]
         },
         {

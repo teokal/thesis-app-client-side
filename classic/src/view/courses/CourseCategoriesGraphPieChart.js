@@ -52,13 +52,11 @@ Ext.define('LearningAnalytics.view.courses.CourseCategoriesGraphPieChart', {
                                 tooltip.setHtml(record.data.category_name + ': ' + record.data.counter.toString());
                             }
                         }
-
                     }
                 ],
                 legend: {
                     docked: 'right'
                 }
-
             },
 
             items: [

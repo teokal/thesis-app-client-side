@@ -9,17 +9,6 @@ Ext.define('Ext.ux.FullCalendar', {
         map: null
     },
 
-    // height: 680,
-
-    // controller: 'fullcalendar',
-    // viewModel: {
-    //     type: 'fullcalendar'
-    // },
-    //
-    // listeners: {
-    //     beforerender: 'onShow'
-    // },
-
     afterRender: function(t, eOpts){
         this.callParent(arguments);
 
@@ -70,11 +59,6 @@ Ext.define('Ext.ux.FullCalendar', {
                 },
                 eventClick: function(calEvent, jsEvent, view) {
                     alert('Event: ' + calEvent.title + '\nDescription: ' + calEvent.description);
-                    // alert('Coordinates: ' + jsEvent.pageX + ',' + jsEvent.pageY);
-                    // alert('View: ' + view.name);
-
-                    // change the border color just for fun
-                    // $(this).css('border-color', 'red');
                 }
             })
 

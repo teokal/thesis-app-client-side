@@ -114,9 +114,6 @@ Ext.define('LearningAnalytics.view.main.MainController', {
             collapsing = !navigationList.getMicro(),
             new_width = collapsing ? 64 : 250;
 
-        // TODO: resize chart
-        // var courseChartPanel = wrapContainer.down('courseStatisticsChartWidget');
-        // var viewStudentsChartPanel = wrapContainer.down('viewStudentsChart');
         if (Ext.isIE9m || !Ext.os.is.Desktop) {
             Ext.suspendLayouts();
 
@@ -163,17 +160,6 @@ Ext.define('LearningAnalytics.view.main.MainController', {
                 });
             }
         }
-        //
-        // if (collapsing) {
-        //     var viewWidth = LearningAnalytics.config.Runtime.getContainerViewWidth();
-        //     var viewHeight = view.getHeight();
-        //     view.animate({dynamic: true, to: {
-        //         width: viewWidth * widthValue - 40,
-        //         height: viewHeight * heightValue
-        //     }
-        //     });
-        // }
-        // LearningAnalytics.config.Runtime.setViewWidthHeight(courseChartPanel, 0.5, 2)
     },
 
     onMainViewRender: function () {
@@ -341,8 +327,6 @@ Ext.define('LearningAnalytics.view.main.MainController', {
         LearningAnalytics.config.Runtime.setViewWidthHeight(chartPanel, 1, 1.5);
 
         filterContainer.setHidden(false);
-        // viewChart.axes[0].setHidden(false);
-        // viewChart.axes[1].setHidden(false);
 
         panel.tools.expand.setHidden(true);
         panel.tools.collapse.setHidden(false);
@@ -358,8 +342,6 @@ Ext.define('LearningAnalytics.view.main.MainController', {
         LearningAnalytics.config.Runtime.setViewWidthHeight(chartPanel, 0.6, 0.666666);
 
         filterContainer.setHidden(true);
-        // viewChart.axes[0].setHidden(true);
-        // viewChart.axes[1].setHidden(true);
 
         panel.tools.expand.setHidden(false);
         panel.tools.collapse.setHidden(true);
@@ -371,7 +353,6 @@ Ext.define('LearningAnalytics.view.main.MainController', {
         var dateFrom = me.lookupReference('dateFromCourseLog');
         var dateTo = me.lookupReference('dateToCourseLog');
         var view = me.lookupReference('actionViewCourseLog');
-        // var actionQuery = me.lookupReference('actionsQueryCourseLog');
         var modules = me.lookupReference('courseModulesCombo');
 
         if (dateFrom.getSubmitValue() === "" || dateTo.getSubmitValue() === "") {
@@ -387,7 +368,7 @@ Ext.define('LearningAnalytics.view.main.MainController', {
                 params: {
                     from_date: dateFrom.getSubmitValue(),
                     to_date: dateTo.getSubmitValue(),
-                    query: 'viewed', //actionQuery.getSubmitValue(),
+                    query: 'viewed',
                     view: view.getSubmitValue(),
                     module: 'course_module',
                     module_id: viewModel.data.courseModulesId,
@@ -482,8 +463,7 @@ Ext.define('LearningAnalytics.view.main.MainController', {
                 if (success === true) {
                     if (records.length > 0) {
                         viewModel.setData({
-                            riskAnalysisUsers: store.first().users(),
-                            riskAnalysisUsersAnalysis: store.first().users().first().analysis()
+                            riskAnalysisUsers: store.first().users()
                         });
 
                         storeParameters.load({
@@ -571,10 +551,6 @@ Ext.define('LearningAnalytics.view.main.MainController', {
 
         if (selections.length > 0) {
             viewModel.data.composeEmailStudentsData = selections;
-            // var win = bt.up('window');
-            // if (win) {
-            //     win.close();
-            // }
 
             var cfg = Ext.apply({
                 xtype: 'popUpWindow',
@@ -687,7 +663,6 @@ Ext.define('LearningAnalytics.view.main.MainController', {
 
     //RiskAnalysis Form
     onNextClick: function(button) {
-        //TODO: - generate parameters and result
         var panel = button.up('panel');
         var layout = panel.getLayout();
         var curActiveItem = layout.getActiveItem();
@@ -696,18 +671,13 @@ Ext.define('LearningAnalytics.view.main.MainController', {
         this.getViewModel().set('atBeginning', false);
         if (curActiveIndex === 0) {
             this.initRiskAnalysisResult();
-        } else if(curActiveIndex === 1) { //not used
-        }
-        else if(curActiveIndex === 2) { //not used
-        }
+        } 
         this.navigate(button, panel, 'next');
     },
 
     initRiskAnalysisParameters: function() {
         var viewModel = this.getViewModel();
         var alphabet = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'];
-        // var gridStore = this.lookupReference('riskAnalysisGridPanel').items.items[0];
-        // var columns = gridStore.getColumnManager().columns;
         var parameters = viewModel.data.riskAnalysisParameters;
 
         var panelStepTwo = this.lookupReference('riskAnalysisStepTwoPanel');
@@ -715,7 +685,50 @@ Ext.define('LearningAnalytics.view.main.MainController', {
         panelStepTwo.removeAll();
 
         panelStepTwo.add(new Ext.form.Panel({
-            html : '<p>If you want, you can change the default parameter\'s value</p>'
+            html : '<p>Please select the dates to calculate the risk analysis.</p>'
+        }));
+
+        panelStepTwo.add(new Ext.form.Panel({
+            layout: {
+                type: 'hbox',
+                align: 'stretch'
+            },
+            items: [
+                {
+                    xtype: 'datefield',
+                    reference: 'dateFromRiskAnalysis',
+                    name: 'dateFromRiskAnalysis',
+                    itemId: 'dateFromRiskAnalysis',
+                    format: 'Y-m-d',
+                    labelAlign: 'top',
+                    labelSeparator: '',
+                    endDateField: 'dateToRiskAnalysis',
+                    submitFormat: 'd-m-Y',
+                    padding: '0 0 0 30',
+                    fieldLabel: 'Date From',
+                    maxWidth: 200,
+                    flex: 1
+                },
+                {
+                    reference: 'dateToRiskAnalysis',
+                    xtype: 'datefield',
+                    format: 'Y-m-d',
+                    labelAlign: 'top',
+                    labelSeparator: '',
+                    name: 'dateToRiskAnalysis',
+                    itemId: 'dateToRiskAnalysis',
+                    startDateField: 'dateFromRiskAnalysis',
+                    submitFormat: 'd-m-Y',
+                    padding: '0 0 0 30',
+                    fieldLabel: 'Date To',
+                    maxWidth: 200,
+                    flex: 1
+                }
+            ]
+        }));
+
+        panelStepTwo.add(new Ext.form.Panel({
+            html : '</br><p>If you want, you can change the default parameter\'s value</p>'
         }));
 
         algorithOne = "Y1 = ";
@@ -934,7 +947,6 @@ Ext.define('LearningAnalytics.view.main.MainController', {
                     summary[i].failure ++;
                     studentCourseDetails[i].activityResult = false;
                 } else {
-                    // TODO: calculate the A1, B1 etc
                     for (var columnIndex = 1; columnIndex < columnParameters.length; columnIndex ++){
                         var columnDataIndex = columnParameters[columnIndex].category_id;
                         if (item.data[columnDataIndex] === true) {
@@ -994,23 +1006,17 @@ Ext.define('LearningAnalytics.view.main.MainController', {
             }
             resultY1 += viewModel.data.riskParameterConstant1;
             resultY2 += viewModel.data.riskParameterConstant2;
-            viewModel.data.riskAnalysisResultsId = student.data.id;
-            viewModel.data.riskAnalysisResultsName = student.data.name;
-
-            viewModel.data.riskAnalysisResultsStatus = resultY1 > resultY2;
 
             result.push({
                 id: student.data.id,
                 name: student.data.name,
-                status: viewModel.data.riskAnalysisResultsStatus
+                status: resultY1 > resultY2
             });
 
             for (var itemIndex = 0; itemIndex < itemsCount; itemIndex++) {
                 result[result.length - 1][studentCourseDetails[itemIndex].title] = studentCourseDetails[itemIndex].activityResult;
             }
         }
-
-        viewModel.data.riskAnalysisResultChart = summary;
 
         var storeSummary =  viewModel.getStore('courseRiskAnalysisSummary');
         storeSummary.addData(summary);
@@ -1022,7 +1028,6 @@ Ext.define('LearningAnalytics.view.main.MainController', {
     onDetailsButtonClick: function(button){
         var viewModel = this.getViewModel();
         var gridView = this.lookupReference('riskAnalysisResultsGridPanel').items.items[0];
-        // var gridActivity = this.lookupReference('riskAnalysisGridPanel').items.items[0];
         var gridStore = viewModel.data.riskAnalysisScorms;
         var itemsCountActivity = gridStore.count();
 

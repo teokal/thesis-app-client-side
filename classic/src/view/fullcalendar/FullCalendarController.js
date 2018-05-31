@@ -13,7 +13,6 @@ Ext.define('LearningAnalytics.view.fullcalendar.FullCalendarController', {
         var store = viewModel.getStore('calendarEvents');
         store.load({
             callback: function (records, operation, success) {
-                debugger;
                 if (success === true) {
                     viewModel.setData({
                         events: records[0].data

@@ -12,7 +12,6 @@ Ext.define('LearningAnalytics.view.authentication.Dialog', {
     ],
 
     controller: 'authentication',
-    // controller: 'main',
 
     viewModel: {
         type: 'authentication'

@@ -50,8 +50,6 @@ Ext.define('LearningAnalytics.Application', {
                 if(statusMessage === true){
                     me.setDefaultToken('dashboard');
                     me.setMainView('LearningAnalytics.view.main.Main');
-                    // window.location.assign('#dashboard');
-                    // return true;
                 } else {
                     me.setDefaultToken('login');
                     me.setMainView('LearningAnalytics.view.authentication.Login');

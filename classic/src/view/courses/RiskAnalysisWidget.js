@@ -26,19 +26,7 @@ Ext.define('LearningAnalytics.view.courses.RiskAnalysisWidget', {
             listeners : {
                 element  : 'el',
                 click    : 'onRiskAnalysisClick'
-            },
-
-            params: {
-                openWindow: true, // Let the controller know that we want this component in the window,
-                targetCfg: {
-                    //put any extra configs for your view here
-                },
-                windowCfg: {
-                    // Any configs that you would like to apply for window popup goes here
-                    title: 'Test Title'
-                }
             }
-
 
         }
     ]

@@ -12,13 +12,6 @@ Ext.define('LearningAnalytics.view.courses.CourseView', {
 
     layout: 'responsivecolumn',
 
-    // controller: 'courseController',
-    // viewModel: 'courseViewModel',
-
-    // listeners: {
-    //     beforerender: 'onBeforeRender'
-    // },
-
     items: [
         {
             xtype: 'courseStatisticsChartWidget',
@@ -30,14 +23,14 @@ Ext.define('LearningAnalytics.view.courses.CourseView', {
             userCls: 'big-60 small-100'
         },
         {
-            xtype: 'enrolledStudents', //
+            xtype: 'enrolledStudents', 
             style: {
                 'box-shadow': '0 0 5px rgba(0, 0, 0, 0.3)'
             },
             userCls: 'big-40 small-100'
         },
         {
-            xtype: 'courseFileTypePieChart', //
+            xtype: 'courseFileTypePieChart', 
             reference: 'courseFileTypePieChart',
             style: {
                 'box-shadow': '0 0 5px rgba(0, 0, 0, 0.3)'
@@ -45,7 +38,7 @@ Ext.define('LearningAnalytics.view.courses.CourseView', {
             userCls: 'big-33 small-100'
         },
         {
-            xtype: 'courseCategoriesGraphPieChart', //
+            xtype: 'courseCategoriesGraphPieChart', 
             reference: 'courseCategoriesGraphPieChart',
             style: {
                 'box-shadow': '0 0 5px rgba(0, 0, 0, 0.3)'

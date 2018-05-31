@@ -57,23 +57,16 @@ Ext.define('LearningAnalytics.view.main.MainModel', {
     },
 
     data: {
-        currentView: null,
-        list: null,
+        // currentView: null,
+        // list: null,
         courseStatisticsData: null,
         courseContentsFileTypes: null,
-        courseCategoriesStore: null,
         composeEmailStudentsData: [],
         courseModulesId: null,
         // risk analysis
         riskAnalysisScorms: null,
         riskAnalysisUsers: null,
         riskAnalysisParameters: null,
-        riskAnalysisUsersAnalysis: null,
-        riskAnalysisResults: null,
-        riskAnalysisResultsId: null,
-        riskAnalysisResultsName: null,
-        riskAnalysisResultsStatus: null,
-        riskAnalysisResultChart: null,
         // risk form
         atBeginning: true,
         atEnd: false,

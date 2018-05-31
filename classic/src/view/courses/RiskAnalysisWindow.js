@@ -42,11 +42,6 @@ Ext.define('LearningAnalytics.view.courses.RiskAnalysisWindow', {
             viewConfig:{
                 markDirty:false
             },
-            // selModel: {
-            //     selType: 'checkboxmodel',
-            //     checkOnly: true,
-            //     showHeaderCheckbox: true
-            // },
             bind: {
                 store: '{riskAnalysisScorms}'
             },
@@ -82,47 +77,13 @@ Ext.define('LearningAnalytics.view.courses.RiskAnalysisWindow', {
                     }
                 }
 
-                // {
-                //     dataIndex: 'status',
-                //     text: 'Status',
-                //     width: 130,
-                //     align: 'center',
-                //     filter: {
-                //         type: 'boolean',
-                //         yesText: 'Danger',
-                //         noText: 'Success'
-                //     },
-                //     renderer: function(value) {
-                //         return '<span class="x-fa '+ (value ? 'fa-exclamation-circle' : 'fa-check-circle') +'" style="color:'+ (value ? 'red' : 'green') + '"></span>';
-                //     }
-                // }
             ],
             listeners: {
-                // 'cellclick': function(iView, iCellEl, iColIdx, iStore, iRowEl, iRowIdx, iEvent) {
-                //     var zRec = iView.getRecord(iRowEl);
-                //     //alert(zRec.data.name);
-                //     debugger;
-                // }
                 'cellclick': 'onRiskAnalysisGridCellItemClick'
 
             }
 
         }
     ]
-
-    // bbar: {
-    //     overflowHandler: 'menu',
-    //     items: [
-    //         '->',
-    //         {
-    //             xtype: 'button',
-    //             ui: 'soft-green',
-    //             text: 'Compose Message',
-    //             disabled: false,
-    //             handler: 'onComposeMessageClick'
-    //         }
-    //     ]
-    // }
-
 
 });

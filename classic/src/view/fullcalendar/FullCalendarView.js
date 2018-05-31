@@ -25,7 +25,6 @@ Ext.define('LearningAnalytics.view.fullcalendar.FullCalendarView', {
             },
             padding: 5,
             cls: 'big-100 small-100'
-            // flex: 1
         }
     ]
 });
