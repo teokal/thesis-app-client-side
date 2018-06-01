@@ -364,14 +364,20 @@ Ext.define('LearningAnalytics.view.main.MainController', {
         } else {
             var viewModel = this.getViewModel();
             var store = viewModel.getStore('courseStatistics');
+            var moduleType = 'course_module';
+            var moduleIds = viewModel.data.courseModulesId;
+            if (Object.values(viewModel.data.courseModulesId).indexOf('course') > -1) {
+                moduleType = 'course';
+                moduleIds = this.currentCourseId;
+            }
             store.load({
                 params: {
                     from_date: dateFrom.getSubmitValue(),
                     to_date: dateTo.getSubmitValue(),
                     query: 'viewed',
                     view: view.getSubmitValue(),
-                    module: 'course_module',
-                    module_ids: viewModel.data.courseModulesId,
+                    module: moduleType,
+                    module_ids: moduleIds,
                     course_id: this.currentCourseId
                 },
                 callback: function (records, operation, success) {
@@ -399,12 +405,14 @@ Ext.define('LearningAnalytics.view.main.MainController', {
         var node;
         var viewModel = this.getViewModel();
 
+        viewModel.data.courseModulesId = []
         Ext.each(records, function (rec) {                                
             node = combo.getPicker().getNode(rec);
             Ext.get(node).down('input').dom.checked = true;
-            viewModel.setData({
-                courseModulesId: rec.data.id
-            })
+            if (rec.data.module === 'course') {
+                viewModel.data.courseModulesId.push(rec.data.module)
+            }
+            viewModel.data.courseModulesId.push(rec.data.id)
         });
     },
 
@@ -451,6 +459,7 @@ Ext.define('LearningAnalytics.view.main.MainController', {
             }
         });
                     
+        //TODO: add date fields
         var store = viewModel.getStore('riskAnalysis');
         var storeParameters = viewModel.getStore('courseParameters');
         Ext.getBody().mask('Please wait', 'loading');
