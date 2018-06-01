@@ -219,7 +219,7 @@ Ext.define('LearningAnalytics.view.main.MainController', {
             var store = viewModel.getStore('courseEnrolledStudents');
             store.load({
                 params: {
-                    courseid: this.currentCourseId
+                    course_id: this.currentCourseId
                 },
                 callback: function (records, operation, success) {
                     if (success === true) {
@@ -240,7 +240,7 @@ Ext.define('LearningAnalytics.view.main.MainController', {
                     query: 'viewed',
                     view: 'month',
                     module: 'course',
-                    course: this.currentCourseId
+                    course_id: this.currentCourseId
                 },
                 callback: function (records, operation, success) {
                     if (success === true) {
@@ -256,7 +256,7 @@ Ext.define('LearningAnalytics.view.main.MainController', {
             var storeCourseContents = viewModel.getStore('courseContents');
             storeCourseContents.load({
                 params: {
-                    courseid: this.currentCourseId
+                    course_id: this.currentCourseId
                 },
                 callback: function (records, operation, success) {
                     if (success === true) { //courseFileTypeNoDateText
@@ -371,8 +371,8 @@ Ext.define('LearningAnalytics.view.main.MainController', {
                     query: 'viewed',
                     view: view.getSubmitValue(),
                     module: 'course_module',
-                    module_id: viewModel.data.courseModulesId,
-                    course: this.currentCourseId
+                    module_ids: viewModel.data.courseModulesId,
+                    course_id: this.currentCourseId
                 },
                 callback: function (records, operation, success) {
                     if (success === true) {
@@ -457,7 +457,7 @@ Ext.define('LearningAnalytics.view.main.MainController', {
 
         store.load({
             params: {
-                courseid: this.currentCourseId
+                course_id: this.currentCourseId
             },
             callback: function (records, operation, success) {
                 if (success === true) {

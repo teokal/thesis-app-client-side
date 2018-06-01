@@ -24,7 +24,7 @@ Ext.define('LearningAnalytics.store.dashboard.ViewAndStudents', {
             'Authorization': ''
         },
         api: {
-            read: '/api/1/dashboard?userid=51'
+            read: '/api/1/dashboard'
         },
         writer: {
             type: 'json',

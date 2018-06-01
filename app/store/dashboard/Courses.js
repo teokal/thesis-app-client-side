@@ -20,7 +20,7 @@ Ext.define('LearningAnalytics.store.dashboard.Courses', {
             'Authorization': ''
         },
         api: {
-            read: '/api/1/courses?userid=19'
+            read: '/api/1/courses'
         },
         writer: {
             type: 'json',
