@@ -191,7 +191,6 @@ Ext.define('LearningAnalytics.view.main.MainController', {
                         style: {
                             'margin-left': '10px'
                         },
-                        // margin: '0 5 3 10',
                         leaf: true
                     };
                     coursesTree.appendChild(jsonObj);
@@ -480,6 +479,7 @@ Ext.define('LearningAnalytics.view.main.MainController', {
                                 course_id: this.currentCourseId
                             },
                             callback: function (records, operation, success) {
+                                Ext.getBody().unmask();
                                 if (success === true) {
                                     if (records[0].data.constants.length === 0) {
                                         viewModel.setData({
@@ -515,8 +515,8 @@ Ext.define('LearningAnalytics.view.main.MainController', {
                             scope: this
                         });
                 
-                        Ext.getBody().unmask();
                     } else {
+                        Ext.getBody().unmask();
                         Ext.Msg.alert({
                             title: 'Risk Analysis',
                             message: 'This course does not have any scorm data for students',
@@ -715,8 +715,7 @@ Ext.define('LearningAnalytics.view.main.MainController', {
                     submitFormat: 'd-m-Y',
                     padding: '0 0 0 30',
                     fieldLabel: 'Date From',
-                    maxWidth: 200,
-                    flex: 1
+                    width: 180
                 },
                 {
                     reference: 'dateToRiskAnalysis',
@@ -730,32 +729,31 @@ Ext.define('LearningAnalytics.view.main.MainController', {
                     submitFormat: 'd-m-Y',
                     padding: '0 0 0 30',
                     fieldLabel: 'Date To',
-                    maxWidth: 200,
-                    flex: 1
+                    width: 180
                 }
             ]
         }));
 
         panelStepTwo.add(new Ext.form.Panel({
-            html : '</br><p>If you want, you can change the default parameter\'s value</p>'
+            html : '</br><p>If you want, you can change the default parameter\'s value.</p>'
         }));
 
-        algorithOne = "Y1 = ";
-        algorithTwo = "Y2 = ";
+        algorithOne = "Y" + '1'.sub() + " = ";
+        algorithTwo = "Y" + '2'.sub() + " = ";
         columnsPSummary = "Where: </br>";
         var indexForName = 0;
         for (var y = 0; y < parameters.length; y ++) { // create viewmodel data
             var alpha = alphabet[y];
             var index = eval("y");
             var columnName = parameters[index].category_name;
-            if (columnName !== "None") {
+            if (columnName !== "None") { //TODO: change none to Uncategorized
                 if (indexForName > 0) {
                     algorithOne = algorithOne + " + ";
                     algorithTwo = algorithTwo + " + "
                 }
-                algorithOne = algorithOne + alphabet[indexForName] + "1*P" + index;
-                algorithTwo = algorithTwo + alphabet[indexForName] + "2*P" + index;
-                columnsPSummary = columnsPSummary + "P" + index + ": " + columnName + "</br>";
+                algorithOne = algorithOne + 'A'+ ('1' + (index + 1)).sub() + "*X" + (index + 1).toString().sub();
+                algorithTwo = algorithTwo + 'A'+ ('2' + (index + 1)).sub() + "*X" + (index + 1).toString().sub();
+                columnsPSummary = columnsPSummary + "X" + (index + 1).toString().sub() + " = " + columnName + "</br>";
 
                 var key1 = 'riskParameter' + alphabet[indexForName] + '1';
                 var key2 = 'riskParameter' + alphabet[indexForName] + '2';
@@ -764,8 +762,8 @@ Ext.define('LearningAnalytics.view.main.MainController', {
                 indexForName += 1;
             }
         }
-        algorithOne = algorithOne + " + Constant1";
-        algorithTwo = algorithTwo + " + Constant2";
+        algorithOne = algorithOne + " + C" + '1'.sub();
+        algorithTwo = algorithTwo + " + C" + '2'.sub();
 
         var fieldsFirst = [];
         var fieldsSecond = [];
@@ -780,10 +778,10 @@ Ext.define('LearningAnalytics.view.main.MainController', {
                     name: 'riskAnalysisParameter' + alpha + '1',
                     width: 180,
                     bind: '{riskParameter' + alpha + '1}',
-                    margin: '0 30 5 0',
+                    margin: '0 0 5 30',
                     forcePrecision: true,
                     decimalPrecision: 10,
-                    fieldLabel: alpha+'1',
+                    fieldLabel: 'A' + ('1' + indexForName).sub(),
                     labelAlign: 'top',
                     allowBlank: false
                 })
@@ -794,10 +792,10 @@ Ext.define('LearningAnalytics.view.main.MainController', {
                     name: 'riskAnalysisParameter' + alpha + '2',
                     width: 180,
                     bind: '{riskParameter' + alpha + '2}',
-                    margin: '0 30 5 0',
+                    margin: '0 0 5 30',
                     forcePrecision: true,
                     decimalPrecision: 10,
-                    fieldLabel: alpha+'2',
+                    fieldLabel: 'A' + ('2' + indexForName).sub(),
                     labelAlign: 'top',
                     allowBlank: false
                 })
@@ -809,10 +807,10 @@ Ext.define('LearningAnalytics.view.main.MainController', {
                 name: 'riskParameterConstant1',
                 width: 180,
                 bind: '{riskParameterConstant1}',
-                margin: '0 30 5 0',
+                margin: '0 0 5 30',
                 forcePrecision: true,
                 decimalPrecision: 10,
-                fieldLabel: 'Constant1',
+                fieldLabel: 'C' + '1'.sub(),
                 labelAlign: 'top',
                 allowBlank: false
             })
@@ -823,10 +821,10 @@ Ext.define('LearningAnalytics.view.main.MainController', {
                 name: 'riskParameterConstant2',
                 width: 180,
                 bind: '{riskParameterConstant2}',
-                margin: '0 30 5 0',
+                margin: '0 0 5 30',
                 forcePrecision: true,
                 decimalPrecision: 10,
-                fieldLabel: 'Constant2',
+                fieldLabel: 'C' + '2'.sub(),
                 labelAlign: 'top',
                 allowBlank: false
             })
@@ -845,7 +843,6 @@ Ext.define('LearningAnalytics.view.main.MainController', {
                     }
                 }
             }
-
         }));
 
         panelStepTwo.add(new Ext.form.Panel({
@@ -861,7 +858,6 @@ Ext.define('LearningAnalytics.view.main.MainController', {
                     }
                 }
             }
-
         }));
         panelStepTwo.add(new Ext.form.Panel({
             html : '<p><b>' + algorithOne + '</b></br>' +
@@ -922,7 +918,7 @@ Ext.define('LearningAnalytics.view.main.MainController', {
                 } else {
                 }
             }
-        });        
+        });
 
         for (var i = 0; i < itemsCount; i++) {
             summary.push({
@@ -1176,7 +1172,6 @@ Ext.define('LearningAnalytics.view.main.MainController', {
                         }
                     }
                 });
-        
             }
         }, this);
     },
@@ -1238,7 +1233,6 @@ Ext.define('LearningAnalytics.view.main.MainController', {
                             }
                         }
                     });
-    
                 }
             }
         });
@@ -1292,7 +1286,6 @@ Ext.define('LearningAnalytics.view.main.MainController', {
             },
             scope: this
         });
-    
     },
 
     onInitActivitiesClick: function() {

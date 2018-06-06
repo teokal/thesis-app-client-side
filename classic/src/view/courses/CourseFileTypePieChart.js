@@ -21,7 +21,7 @@ Ext.define('LearningAnalytics.view.courses.CourseFileTypePieChart', {
 
     bodyPadding: 15,
 
-    title: 'File Types',
+    title: 'Uploaded Files',
 
     layout: {
         type: 'card'

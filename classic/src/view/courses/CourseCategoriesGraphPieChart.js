@@ -17,7 +17,7 @@ Ext.define('LearningAnalytics.view.courses.CourseCategoriesGraphPieChart', {
 
     bodyPadding: 15,
 
-    title: 'Categories',
+    title: 'Course Activities',
 
     layout: {
         type: 'card'
@@ -49,7 +49,11 @@ Ext.define('LearningAnalytics.view.courses.CourseCategoriesGraphPieChart', {
                         tooltip: {
                             trackMouse: true,
                             renderer: function (tooltip, record, item) {
-                                tooltip.setHtml(record.data.category_name + ': ' + record.data.counter.toString());
+                                var total = 0;
+                                for (var i=0; i<record.store.count(); i++) {
+                                    total += record.store.data.items[i].data.counter
+                                }
+                                tooltip.setHtml(record.data.category_name + ': ' + Math.round(record.data.counter / total * 100) + '%');
                             }
                         }
                     }
