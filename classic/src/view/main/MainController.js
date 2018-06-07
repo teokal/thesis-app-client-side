@@ -223,7 +223,7 @@ Ext.define('LearningAnalytics.view.main.MainController', {
                 callback: function (records, operation, success) {
                     if (success === true) {
                         viewModel.setData({
-                            list: store,
+                            enrolledStudentsList: store,
                             enrolledusercount: records.length
                         });
                     }
@@ -458,84 +458,48 @@ Ext.define('LearningAnalytics.view.main.MainController', {
             }
         });
                     
-        //TODO: add date fields
-        var store = viewModel.getStore('riskAnalysis');
-        var storeParameters = viewModel.getStore('courseParameters');
         Ext.getBody().mask('Please wait', 'loading');
-
-        store.load({
+        var storeParameters = viewModel.getStore('courseParameters');
+        storeParameters.load({
             params: {
                 course_id: this.currentCourseId
             },
             callback: function (records, operation, success) {
+                Ext.getBody().unmask();
                 if (success === true) {
-                    if (records.length > 0) {
+                    if (records[0].data.constants.length === 0) {
                         viewModel.setData({
-                            riskAnalysisUsers: store.first().users()
-                        });
-
-                        storeParameters.load({
-                            params: {
-                                course_id: this.currentCourseId
-                            },
-                            callback: function (records, operation, success) {
-                                Ext.getBody().unmask();
-                                if (success === true) {
-                                    if (records[0].data.constants.length === 0) {
-                                        viewModel.setData({
-                                            riskAnalysisParameters: records[0].data.parameters,
-                                            riskParameterConstant1: 0,
-                                            riskParameterConstant2: 0
-                                        });    
-                                    } else {
-                                        viewModel.setData({
-                                            riskAnalysisParameters: records[0].data.parameters,
-                                            riskParameterConstant1: records[0].data.constants[1],
-                                            riskParameterConstant2: records[0].data.constants[2]
-                                        });    
-                                    }
-            
-                                    var cfg = Ext.apply({
-                                        xtype: 'popUpWindow',
-                                        reference: 'riskAnalysisGridWindow',
-                                        items: [
-                                            {
-                                                id: 'riskAnalysisGridWindow',
-                                                xtype: 'riskAnalysisWindowForm'
-                                            }
-                                        ],
-                                        title: 'Risk Analysis Overview'
-                                    });
-                                    Ext.create(cfg);     
-                                    this.initRiskAnalysisParameters();       
-                                } else {
-
-                                }
-                            },
-                            scope: this
-                        });
-                
+                            riskAnalysisParameters: records[0].data.parameters,
+                            riskParameterConstant1: 0,
+                            riskParameterConstant2: 0
+                        });    
                     } else {
-                        Ext.getBody().unmask();
-                        Ext.Msg.alert({
-                            title: 'Risk Analysis',
-                            message: 'This course does not have any scorm data for students',
-                            buttons: Ext.Msg.OK,
-                            icon: Ext.Msg.INFO,
-                            draggable: false
-                        });
+                        viewModel.setData({
+                            riskAnalysisParameters: records[0].data.parameters,
+                            riskParameterConstant1: records[0].data.constants[1],
+                            riskParameterConstant2: records[0].data.constants[2]
+                        });    
                     }
-                    Ext.getBody().unmask();
-                } else {
-                    Ext.toast({
-                        html: 'Failure.!!',
-                        width: 200,
-                        align: 't'
+
+                    var cfg = Ext.apply({
+                        xtype: 'popUpWindow',
+                        reference: 'riskAnalysisGridWindow',
+                        items: [
+                            {
+                                id: 'riskAnalysisGridWindow',
+                                xtype: 'riskAnalysisWindowForm'
+                            }
+                        ],
+                        title: 'Risk Analysis Overview'
                     });
+                    Ext.create(cfg);     
+                    this.initRiskAnalysisParameters();       
+                } else {
                 }
             },
             scope: this
         });
+
     },
 
     onCompareButtonClick: function (bt) {
@@ -679,9 +643,62 @@ Ext.define('LearningAnalytics.view.main.MainController', {
 
         this.getViewModel().set('atBeginning', false);
         if (curActiveIndex === 0) {
-            this.initRiskAnalysisResult();
+            this.initRiskAnalysisCallForScormData();
         } 
         this.navigate(button, panel, 'next');
+    },
+
+    initRiskAnalysisCallForScormData: function() {
+        var viewModel = this.getViewModel();
+        var store = viewModel.getStore('riskAnalysis');
+
+        var dateFrom = this.lookupReference('dateFromRiskAnalysis');
+        var dateTo = this.lookupReference('dateToRiskAnalysis');
+
+        if (dateFrom.getSubmitValue() === "" || dateTo.getSubmitValue() === "") {
+            Ext.toast({
+                html: 'Please select dates',
+                width: 200,
+                align: 't'
+            });
+        } else {
+            this.lookupReference('riskAnalysisResultsGridPanel').getStore().reload();
+            store.load({
+                params: {
+                    course_id: this.currentCourseId,
+                    from_date: dateFrom.getSubmitValue(),
+                    to_date: dateTo.getSubmitValue()
+                },
+                callback: function (records, operation, success) {
+                    if (success === true) {
+                        if (records.length > 0) {
+                            viewModel.setData({
+                                riskAnalysisUsers: store.first().users()
+                            });
+                            this.initRiskAnalysisResult();
+                    
+                        } else {
+                            Ext.getBody().unmask();
+                            Ext.Msg.alert({
+                                title: 'Risk Analysis',
+                                message: 'This course does not have any scorm data for students',
+                                buttons: Ext.Msg.OK,
+                                icon: Ext.Msg.INFO,
+                                draggable: false
+                            });
+                        }
+                        Ext.getBody().unmask();
+                    } else {
+                        Ext.toast({
+                            html: 'Failure.!!',
+                            width: 200,
+                            align: 't'
+                        });
+                    }
+                },
+                scope: this
+            });
+        }
     },
 
     initRiskAnalysisParameters: function() {

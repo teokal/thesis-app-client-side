@@ -62,13 +62,14 @@ Ext.define('LearningAnalytics.view.courses.RiskAnalysisStepOnePanel', {
             hideHeaders: false,
             readOnly : false,
             disableSelection: false,
-            scrollable: {
-                x: true,
-                y: true
-            },
+            // scrollable: {
+            //     x: true,
+            //     y: true
+            // },
             viewConfig:{
                 markDirty: false
             },
+            height: Ext.Element.getViewportHeight() * 0.47,
             bind: {
                 store: '{courseActivities}'
             },

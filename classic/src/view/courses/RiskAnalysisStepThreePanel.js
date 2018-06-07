@@ -24,9 +24,7 @@ Ext.define('LearningAnalytics.view.courses.RiskAnalysisStepThreePanel', {
         labelSeparator: ''
     },
 
-    items: [{
-            html : '<p>Results </p>'
-        },
+    items: [
         {
             xtype: 'gridpanel',
             reference: 'riskAnalysisResultsGridPanel',
@@ -40,11 +38,9 @@ Ext.define('LearningAnalytics.view.courses.RiskAnalysisStepThreePanel', {
                 showHeaderCheckbox: true
             },
             plugins: 'gridfilters',
-
-            scrollable: {
-                x: true,
-                y: true
-            },
+            height: Ext.Element.getViewportHeight() * 0.49,
+        
+            flex: 1,
             viewConfig:{
                 markDirty:false
             },

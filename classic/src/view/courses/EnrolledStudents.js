@@ -29,7 +29,7 @@ Ext.define('LearningAnalytics.view.courses.EnrolledStudents', {
                 y: true
             },
             bind: {
-                store: '{list}'
+                store: '{enrolledStudentsList}'
             },
             columns: [
                 {
