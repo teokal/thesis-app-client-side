@@ -763,7 +763,7 @@ Ext.define('LearningAnalytics.view.main.MainController', {
             var alpha = alphabet[y];
             var index = eval("y");
             var columnName = parameters[index].category_name;
-            if (columnName !== "None") { //TODO: change none to Uncategorized
+            if (columnName !== "Uncategorized") { 
                 if (indexForName > 0) {
                     algorithOne = algorithOne + " + ";
                     algorithTwo = algorithTwo + " + "
@@ -787,7 +787,7 @@ Ext.define('LearningAnalytics.view.main.MainController', {
         indexForName = 0;
         for (var index = 0; index < parameters.length; index ++){
             var columnName = parameters[index].category_name;
-            if ( columnName === "None" ){ continue; }
+            if ( columnName === "Uncategorized" ){ continue; }
             var alpha = alphabet[indexForName];
             indexForName += 1;
             fieldsFirst.push(new Ext.form.NumberField({
@@ -903,7 +903,7 @@ Ext.define('LearningAnalytics.view.main.MainController', {
         var indexForName = 0;
         for (var i=0; i < columnParameters.length; i++) {
             var tempResult = {};
-            if (columnParameters[i].category_name !== 'None' ){
+            if (columnParameters[i].category_name !== 'Uncategorized' ){
                 tempResult['category_id']= columnParameters[i].category_id;
                 tempResult['category_name'] = columnParameters[i].category_name
                 var key1 = 'riskParameter' + alphabet[indexForName] + '1';
@@ -1199,7 +1199,7 @@ Ext.define('LearningAnalytics.view.main.MainController', {
         var columns = gridView.getColumnManager().columns;
         var result = "";
         for (var i=0; i < columns.length; i++) {
-            if (columns[i].text !== "None" && columns[i].text !== "Activity"){
+            if (columns[i].text !== "Uncategorized" && columns[i].text !== "Activity"){
                 result = result + '<option value="' + columns[i].text + '">' + columns[i].text + '</option>';
             }
         }
