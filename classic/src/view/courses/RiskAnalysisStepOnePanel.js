@@ -25,7 +25,7 @@ Ext.define('LearningAnalytics.view.courses.RiskAnalysisStepOnePanel', {
     },
 
     items: [{
-            html : '<p>Please select the type of each activity. If you don\'t select a type for an activity, the default value will be "None". </p>'
+            html : '<p>Please select the type of each activity. If you don\'t select a type for an activity, the default value will be "Uncategorized". </p>'
         },
         {
             layout: {

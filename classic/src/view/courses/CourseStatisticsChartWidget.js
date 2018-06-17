@@ -82,7 +82,8 @@ Ext.define('LearningAnalytics.view.courses.CourseStatisticsChartWidget', {
                     padding: '0 0 0 30',
                     fieldLabel: 'Date From',
                     maxWidth: 200,
-                    flex: 1
+                    flex: 1,
+                    value: new Date('1 Nov 2015')                    
                 },
                 {
                     reference: 'dateToCourseLog',
@@ -97,7 +98,8 @@ Ext.define('LearningAnalytics.view.courses.CourseStatisticsChartWidget', {
                     padding: '0 0 0 30',
                     fieldLabel: 'Date To',
                     maxWidth: 200,
-                    flex: 1
+                    flex: 1,
+                    value: new Date()
                 },
                 {
                     reference: 'actionViewCourseLog',
@@ -114,7 +116,7 @@ Ext.define('LearningAnalytics.view.courses.CourseStatisticsChartWidget', {
                     maxWidth: 200,
                     listeners:{
                         afterrender:function(rec){
-                            this.setValue('day');
+                            this.setValue('month');
                         }
                     },
                     flex: 0.5
@@ -141,7 +143,22 @@ Ext.define('LearningAnalytics.view.courses.CourseStatisticsChartWidget', {
                         beforedeselect: function (combo, rec) {
                             var node = combo.getPicker().getNode(rec);
                             Ext.get(node).down('input').dom.checked = false;
-                        }
+                        },
+
+                        boxready:function(combo) {
+                            var store = combo.getStore();
+                            if(store.isLoaded()) {
+                                 combo.select(store.getAt(0));
+                             } else {
+                                 store.on({
+                                     load:function() {
+                                         combo.select(store.getAt(0))
+                                     }
+                                 });
+                             }
+                         }
+                         
+                        
                     }
         
                 }

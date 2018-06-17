@@ -17,17 +17,40 @@ Ext.define('LearningAnalytics.view.courses.EnrolledStudents', {
     title: 'Enrolled Students',
     height: 380,
     bodyPadding: 15,
-    disableSelection:true,
     layout: 'fit',
+
+    tools: [
+        {
+            type: 'refresh',
+            toggleValue: false,
+            hidden: false,
+            tooltip:'refresh the chart with the selected students',
+            listeners: {
+                click: 'onRefreshToggle'
+            }
+        }
+    ],
+
     items: [
         {
             xtype: 'gridpanel',
-            header: false,
-            hideHeaders: true,
+            reference: 'enrolledStudentsPanel',
+
             scrollable: {
                 x: false,
                 y: true
             },
+            header: false,
+            hideHeaders: false,
+            readOnly : true,
+            disableSelection: false,
+            selModel: {
+                selType: 'checkboxmodel',
+                checkOnly: true,
+                showHeaderCheckbox: true
+            },
+            plugins: 'gridfilters',
+
             bind: {
                 store: '{enrolledStudentsList}'
             },
@@ -36,7 +59,10 @@ Ext.define('LearningAnalytics.view.courses.EnrolledStudents', {
                     xtype: 'gridcolumn',
                     dataIndex: 'fullname',
                     text: 'Fullname',
-                    flex: 1
+                    flex: 1,
+                    filter: {
+                        type: 'string'
+                    }
                 }
             ]
         }

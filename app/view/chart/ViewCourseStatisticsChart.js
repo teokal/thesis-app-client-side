@@ -40,10 +40,7 @@ Ext.define('LearningAnalytics.view.chart.ViewCourseStatisticsChart', {
             type: 'numeric',
             minimum: 0,
             fields: [
-                'viewed',
-                'quiz',
-                'enrol',
-                'unenrol'
+                'viewed'
             ],
 
             grid: false,
@@ -63,99 +60,6 @@ Ext.define('LearningAnalytics.view.chart.ViewCourseStatisticsChart', {
             xField: 'date',
             yField: [
                 'viewed'
-            ],
-            fill: true,
-            smooth: true,
-            marker: {
-                opacity: 0,
-                scaling: 0.01,
-                fx: {
-                    duration: 200,
-                    easing: 'easeOut'
-                }
-            },
-            highlightCfg: {
-                opacity: 1,
-                scaling: 1.5
-            },
-            tooltip: {
-                trackMouse: true,
-                renderer: function (tooltip, record, item) {
-                    tooltip.setHtml(item.field.toString() + ' (' + record.get('date').substring(0,10) + '): ' + record.get(item.field));
-                }
-            }
-        },
-        {
-            type: 'line',
-            colors: [
-                'rgba(112, 191, 115, 0.6)'
-            ],
-            useDarkerStrokeColor: false,
-            xField: 'date',
-            yField: [
-                'quiz'
-            ],
-            fill: true,
-            smooth: true,
-            marker: {
-                opacity: 0,
-                scaling: 0.01,
-                fx: {
-                    duration: 200,
-                    easing: 'easeOut'
-                }
-            },
-            highlightCfg: {
-                opacity: 1,
-                scaling: 1.5
-            },
-            tooltip: {
-                trackMouse: true,
-                renderer: function (tooltip, record, item) {
-                    tooltip.setHtml(item.field.toString() + ' (' + record.get('date').substring(0,10) + '): ' + record.get(item.field));
-                }
-            }
-        },
-        {
-            type: 'line',
-            colors: [
-                'rgba(238, 146, 156, 0.6)'
-            ],
-            useDarkerStrokeColor: false,
-            xField: 'date',
-            yField: [
-                'enrol'
-            ],
-            fill: true,
-            smooth: true,
-            marker: {
-                opacity: 0,
-                scaling: 0.01,
-                fx: {
-                    duration: 200,
-                    easing: 'easeOut'
-                }
-            },
-            highlightCfg: {
-                opacity: 1,
-                scaling: 1.5
-            },
-            tooltip: {
-                trackMouse: true,
-                renderer: function (tooltip, record, item) {
-                    tooltip.setHtml(item.field.toString() + ' (' + record.get('date').substring(0,10) + '): ' + record.get(item.field));
-                }
-            }
-        },
-        {
-            type: 'line',
-            colors: [
-                'rgba(133, 97, 197, 0.6)'
-            ],
-            useDarkerStrokeColor: false,
-            xField: 'date',
-            yField: [
-                'unenrol'
             ],
             fill: true,
             smooth: true,

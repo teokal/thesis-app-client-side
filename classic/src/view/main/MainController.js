@@ -212,9 +212,25 @@ Ext.define('LearningAnalytics.view.main.MainController', {
     },
 
     onItemClick: function (view, rec, item) {
-        if (rec.node.parentNode.id === 'courses') {
+        if (rec.node.parentNode.id === 'courses') { 
+            var me = this;
             var viewModel = this.getViewModel();
             this.currentCourseId = rec.node.id;
+
+            var dateFrom = me.lookupReference('dateFromCourseLog');
+            var dateTo = me.lookupReference('dateToCourseLog');
+            var view = me.lookupReference('actionViewCourseLog');
+            var modules = me.lookupReference('courseModulesCombo');
+            var selectedStudents = me.lookupReference('enrolledStudentsPanel'); 
+            if (dateFrom !== null) { //reset default values on course change
+                dateFrom.setValue(new Date('1 Nov 2015'));
+                dateTo.setValue(new Date());
+                view.setValue('month');
+                modules.setValue('');
+                selectedStudents.getSelectionModel().deselectAll();
+                selectedStudents.getSelectionModel().clearSelections();
+            }
+
             var store = viewModel.getStore('courseEnrolledStudents');
             store.load({
                 params: {
@@ -282,11 +298,13 @@ Ext.define('LearningAnalytics.view.main.MainController', {
                 },
                 callback: function (records, operation, success) {
                     if (success === true) { 
+                        modules.select(storeCourseModule.getAt(0)); //set default value 
                     }
                 },
                 scope: this
             });
             this.loadCourseCategoriesGraph();
+
         }
         if (rec.node.id === "logout") {
             Ext.util.Cookies.clear('AccessToken');
@@ -319,23 +337,26 @@ Ext.define('LearningAnalytics.view.main.MainController', {
     // Controller for Courses
     onExpand: function (event, toolEl, panel) {
         var me = this;
+        var viewModel = me.getViewModel();
         var chartPanel = me.lookupReference('chartCourseLog');
-        var viewChart = me.lookupReference('viewCourseStatisticsChart');
         var filterContainer = me.lookupReference('filterContainerCourseLog');
+        var storeCourseModule = viewModel.getStore('courseModules');
 
-        LearningAnalytics.config.Runtime.setViewWidthHeight(chartPanel, 1, 1.5);
+        debugger;
+        if (storeCourseModule.isLoaded()) {
+            LearningAnalytics.config.Runtime.setViewWidthHeight(chartPanel, 1, 1.5);
 
-        filterContainer.setHidden(false);
-
-        panel.tools.expand.setHidden(true);
-        panel.tools.collapse.setHidden(false);
-        panel.tools.refresh.setHidden(false);
+            filterContainer.setHidden(false);
+    
+            panel.tools.expand.setHidden(true);
+            panel.tools.collapse.setHidden(false);
+            panel.tools.refresh.setHidden(false);    
+        }
     },
 
     onCollapse: function (event, toolEl, panel) {
         var me = this;
         var chartPanel = me.lookupReference('chartCourseLog');
-        var viewChart = me.lookupReference('viewCourseStatisticsChart');
         var filterContainer = me.lookupReference('filterContainerCourseLog');
 
         LearningAnalytics.config.Runtime.setViewWidthHeight(chartPanel, 0.6, 0.666666);
@@ -352,7 +373,7 @@ Ext.define('LearningAnalytics.view.main.MainController', {
         var dateFrom = me.lookupReference('dateFromCourseLog');
         var dateTo = me.lookupReference('dateToCourseLog');
         var view = me.lookupReference('actionViewCourseLog');
-        var modules = me.lookupReference('courseModulesCombo');
+        var selectedStudents = me.lookupReference('enrolledStudentsPanel').getSelection(); //ToDo: send selected students on refresh
 
         if (dateFrom.getSubmitValue() === "" || dateTo.getSubmitValue() === "") {
             Ext.toast({
@@ -365,9 +386,10 @@ Ext.define('LearningAnalytics.view.main.MainController', {
             var store = viewModel.getStore('courseStatistics');
             var moduleType = 'course_module';
             var moduleIds = viewModel.data.courseModulesId;
-            if (Object.values(viewModel.data.courseModulesId).indexOf('course') > -1) {
+
+            if (moduleIds.length === 0 || Object.values(moduleIds).indexOf('course') > -1) {
                 moduleType = 'course';
-                moduleIds = this.currentCourseId;
+                moduleIds = [];
             }
             store.load({
                 params: {
@@ -641,11 +663,22 @@ Ext.define('LearningAnalytics.view.main.MainController', {
         var curActiveItem = layout.getActiveItem();
         var curActiveIndex = panel.items.indexOf(curActiveItem);
 
-        this.getViewModel().set('atBeginning', false);
         if (curActiveIndex === 0) {
-            this.initRiskAnalysisCallForScormData();
+            var dateFrom = this.lookupReference('dateFromRiskAnalysis');
+            var dateTo = this.lookupReference('dateToRiskAnalysis');
+            
+            if (dateFrom.getSubmitValue() === "" || dateTo.getSubmitValue() === "") {
+                Ext.toast({
+                    html: 'Please select dates',
+                    width: 200,
+                    align: 't'
+                });
+            } else {
+                this.getViewModel().set('atBeginning', false);
+                this.initRiskAnalysisCallForScormData();
+                this.navigate(button, panel, 'next');
+            }
         } 
-        this.navigate(button, panel, 'next');
     },
 
     initRiskAnalysisCallForScormData: function() {

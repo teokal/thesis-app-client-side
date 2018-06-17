@@ -17,7 +17,7 @@ Ext.define('LearningAnalytics.view.chart.ViewStudentsChart', {
     insetPadding: 0,
 
     innerPadding: {
-        top: 5
+        top: 20
     },
 
     axes: [
