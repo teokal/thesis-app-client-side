@@ -374,7 +374,11 @@ Ext.define('LearningAnalytics.view.main.MainController', {
         var dateTo = me.lookupReference('dateToCourseLog');
         var view = me.lookupReference('actionViewCourseLog');
         var selectedStudents = me.lookupReference('enrolledStudentsPanel').getSelection(); //ToDo: send selected students on refresh
-
+        var selectedStudentsIds = [];
+        for (var i = 0; i < selectedStudents.length; i++) {
+            selectedStudentsIds.push(selectedStudents[i].data.id)
+        }
+        debugger;
         if (dateFrom.getSubmitValue() === "" || dateTo.getSubmitValue() === "") {
             Ext.toast({
                 html: 'Please select dates',
@@ -399,7 +403,8 @@ Ext.define('LearningAnalytics.view.main.MainController', {
                     view: view.getSubmitValue(),
                     module: moduleType,
                     module_ids: moduleIds,
-                    course_id: this.currentCourseId
+                    course_id: this.currentCourseId,
+                    student_ids: selectedStudentsIds
                 },
                 callback: function (records, operation, success) {
                     if (success === true) {
