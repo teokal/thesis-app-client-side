@@ -16,7 +16,7 @@ Ext.define('LearningAnalytics.store.courses.CourseStatistics', {
     proxy: {
         type: 'ajax',
         actionMethods: {
-            read: 'GET'
+            read: 'POST'
         },
         useDefaultXhrHeader: false,
         cors: true,

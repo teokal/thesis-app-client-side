@@ -376,9 +376,8 @@ Ext.define('LearningAnalytics.view.main.MainController', {
         var selectedStudents = me.lookupReference('enrolledStudentsPanel').getSelection(); //ToDo: send selected students on refresh
         var selectedStudentsIds = [];
         for (var i = 0; i < selectedStudents.length; i++) {
-            selectedStudentsIds.push(selectedStudents[i].data.id)
+            selectedStudentsIds.push(selectedStudents[i].data.id);
         }
-        debugger;
         if (dateFrom.getSubmitValue() === "" || dateTo.getSubmitValue() === "") {
             Ext.toast({
                 html: 'Please select dates',
@@ -391,6 +390,7 @@ Ext.define('LearningAnalytics.view.main.MainController', {
             var moduleType = 'course_module';
             var moduleIds = viewModel.data.courseModulesId;
 
+
             if (moduleIds.length === 0 || Object.values(moduleIds).indexOf('course') > -1) {
                 moduleType = 'course';
                 moduleIds = [];
@@ -402,10 +402,11 @@ Ext.define('LearningAnalytics.view.main.MainController', {
                     query: 'viewed',
                     view: view.getSubmitValue(),
                     module: moduleType,
-                    module_ids: moduleIds,
+                    'module_ids[]': moduleIds,
                     course_id: this.currentCourseId,
-                    student_ids: selectedStudentsIds
+                    'student_ids[]': selectedStudentsIds
                 },
+    
                 callback: function (records, operation, success) {
                     if (success === true) {
                         viewModel.setData({
@@ -609,7 +610,7 @@ Ext.define('LearningAnalytics.view.main.MainController', {
                 url: '/api/1/send_message',
                 method: 'POST',
                 jsonData: {
-                    'student_ids' : studentsId,
+                    'student_ids[]' : studentsId,
                     'message' : message
                 },
                 useDefaultXhrHeader: false,
