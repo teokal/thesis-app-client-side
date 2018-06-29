@@ -342,7 +342,6 @@ Ext.define('LearningAnalytics.view.main.MainController', {
         var filterContainer = me.lookupReference('filterContainerCourseLog');
         var storeCourseModule = viewModel.getStore('courseModules');
 
-        debugger;
         if (storeCourseModule.isLoaded()) {
             LearningAnalytics.config.Runtime.setViewWidthHeight(chartPanel, 1, 1.5);
 
@@ -548,7 +547,8 @@ Ext.define('LearningAnalytics.view.main.MainController', {
         var panel = bt.up('panel');
         var layout = panel.getLayout();
         var curActiveItem = layout.getActiveItem();
-        var selections = curActiveItem.items.items[0].items.items[1].getSelection();
+        debugger;
+        var selections = curActiveItem.items.items[0].items.items[0].getSelection();
 
         if (selections.length > 0) {
             viewModel.data.composeEmailStudentsData = selections;
