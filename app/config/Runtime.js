@@ -6,7 +6,7 @@ Ext.define('LearningAnalytics.config.Runtime',{
 
     singleton : true,
     config : {
-        baseUrl: 'http:\/\/83.212.105.139:3000' //'http:\/\/10.8.0.2:2999' //  //'localhost:3000'
+        baseUrl: 'http:\/\/localhost:3000'
     },
 
     constructor : function(config){
