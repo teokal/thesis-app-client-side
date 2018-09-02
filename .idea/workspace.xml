@@ -1,0 +1,1278 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="f8dc9324-99df-43e6-be41-1aee28966c96" name="Default" comment="add calendar">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/classic/src/view/main/MainController.js" beforeDir="false" afterPath="$PROJECT_DIR$/classic/src/view/main/MainController.js" afterDir="false" />
+    </list>
+    <ignored path="$PROJECT_DIR$/.tmp/" />
+    <ignored path="$PROJECT_DIR$/temp/" />
+    <ignored path="$PROJECT_DIR$/tmp/" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="TRACKING_ENABLED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="MainController.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/classic/src/view/main/MainController.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="459">
+              <caret line="431" column="43" selection-start-line="431" selection-start-column="43" selection-end-line="431" selection-end-column="43" />
+              <folding>
+                <element signature="n#style#0;n#span#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#select#0;n#!!top" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="CourseStatistics.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/store/courses/CourseStatistics.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="30">
+              <caret line="2" column="3" selection-start-line="2" selection-start-column="3" selection-end-line="2" selection-end-column="3" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="MainModel.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/classic/src/view/main/MainModel.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="225">
+              <caret line="15" column="24" selection-start-line="15" selection-start-column="8" selection-end-line="15" selection-end-column="24" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="PopUpWindow.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/classic/src/view/widgets/PopUpWindow.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="90">
+              <caret line="6" column="22" selection-start-line="6" selection-start-column="22" selection-end-line="6" selection-end-column="22" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="RiskAnalysisStepOnePanel.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/classic/src/view/courses/RiskAnalysisStepOnePanel.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="945">
+              <caret line="63" column="21" selection-start-line="63" selection-start-column="12" selection-end-line="63" selection-end-column="21" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Runtime.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/config/Runtime.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="255">
+              <caret line="17" column="60" selection-start-line="17" selection-start-column="60" selection-end-line="17" selection-end-column="60" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="CourseRiskAnalysisResults.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/store/courses/CourseRiskAnalysisResults.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="255">
+              <caret line="17" column="4" selection-start-line="17" selection-start-column="4" selection-end-line="17" selection-end-column="4" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="RiskAnalysisStepThreePanel.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/classic/src/view/courses/RiskAnalysisStepThreePanel.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="75">
+              <caret line="5" column="38" selection-start-line="5" selection-start-column="12" selection-end-line="5" selection-end-column="38" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="RiskAnalysisWindowForms.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/classic/src/view/courses/RiskAnalysisWindowForms.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1725">
+              <caret line="115" column="43" selection-start-line="115" selection-start-column="31" selection-end-line="115" selection-end-column="43" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="JavaScript File" />
+        <option value="CSS File" />
+      </list>
+    </option>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>element.style</find>
+      <find>margin</find>
+      <find>44px</find>
+      <find>margin-left:</find>
+      <find>margin-left: 40px</find>
+      <find>'margin-left': '</find>
+      <find>x-treelist-item</find>
+      <find>x-treelist-item-wrap</find>
+      <find>after</find>
+      <find>viewCourseStatisticsChartCourseLog</find>
+      <find>Ext.window.Toast</find>
+      <find>debugger;</find>
+      <find>Ext.util.Cookies.</find>
+      <find>profile-icon</find>
+      <find>combo</find>
+      <find>big-33</find>
+      <find>Ext.Loader.setConfig</find>
+      <find>Ext.application</find>
+      <find>box-shadow</find>
+      <find>radius</find>
+      <find>35baf6</find>
+      <find>background</find>
+      <find>.fc td</find>
+      <find>fc th</find>
+      <find>summary[i]</find>
+      <find>item</find>
+      <find>columns</find>
+      <find>Ext.getBody().unmask</find>
+      <find>api/1/courses/logs</find>
+      <find>courseStatistics</find>
+    </findStrings>
+    <dirStrings>
+      <dir>$PROJECT_DIR$/modern/src</dir>
+    </dirStrings>
+  </component>
+  <component name="Git.Settings">
+    <option name="UPDATE_TYPE" value="MERGE" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/app/model/courses/CourseStatistic.js" />
+        <option value="$PROJECT_DIR$/app/view/chart/ViewCourseStatistic.js" />
+        <option value="$PROJECT_DIR$/app/model/dashboard/ViewPerDate.js" />
+        <option value="$PROJECT_DIR$/classic/src/view/authentication/AuthenticationModel.js" />
+        <option value="$PROJECT_DIR$/classic/src/view/authentication/LockingWindow.js" />
+        <option value="$PROJECT_DIR$/classic/sass/src/view/dashboard/Dashboard.scss" />
+        <option value="$PROJECT_DIR$/modern/src/view/dashboard/Dashboard.js" />
+        <option value="$PROJECT_DIR$/classic/src/view/dashboard/Course.js" />
+        <option value="$PROJECT_DIR$/sass/src/view/main/Main.scss" />
+        <option value="$PROJECT_DIR$/modern/src/view/widgets/WidgetSmall.js" />
+        <option value="$PROJECT_DIR$/classic/src/view/authentication/Login.js" />
+        <option value="$PROJECT_DIR$/app/store/courses/CourseStatistics.js" />
+        <option value="$PROJECT_DIR$/app/store/courses/CourseEnrolledStudents.js" />
+        <option value="$PROJECT_DIR$/classic/sass/var/view/main/Main.scss" />
+        <option value="$PROJECT_DIR$/ext/classic/theme-neutral/sass/var/Component.scss" />
+        <option value="$PROJECT_DIR$/sass/var/all.scss" />
+        <option value="$PROJECT_DIR$/classic/src/view/authentication/Dialog.js" />
+        <option value="$PROJECT_DIR$/classic/sass/src/view/main/Main.scss" />
+        <option value="$PROJECT_DIR$/classic/src/view/authentication/AuthenticationController.js" />
+        <option value="$PROJECT_DIR$/classic/src/view/main/Main.js" />
+        <option value="$PROJECT_DIR$/classic/src/view/profile/ProfileView.js" />
+        <option value="$PROJECT_DIR$/app/view/chart/ViewStudentsChart.js" />
+        <option value="$PROJECT_DIR$/modern/src/view/dashboard/ViewStudentsChartWidget.js" />
+        <option value="$PROJECT_DIR$/classic/src/view/main/MainModel.js" />
+        <option value="$PROJECT_DIR$/app/view/chart/ViewCourseStatisticsChart.js" />
+        <option value="$PROJECT_DIR$/app/view/dashboard/DashboardController.js" />
+        <option value="$PROJECT_DIR$/classic/src/view/dashboard/DashBoardController.js" />
+        <option value="$PROJECT_DIR$/classic/src/view/pages/ErrorBase.js" />
+        <option value="$PROJECT_DIR$/classic/src/view/pages/Error404Window.js" />
+        <option value="$PROJECT_DIR$/classic/src/view/dashboard/ViewStudentsChartWidget.js" />
+        <option value="$PROJECT_DIR$/classic/src/view/dashboard/GradesWidget.js" />
+        <option value="$PROJECT_DIR$/classic/src/view/dashboard/StudentsWidget.js" />
+        <option value="$PROJECT_DIR$/classic/src/view/widgets/WidgetSmall.js" />
+        <option value="$PROJECT_DIR$/classic/src/view/dashboard/DashboardController.js" />
+        <option value="$PROJECT_DIR$/classic/src/view/courses/CourseStatisticsChartWidget.js" />
+        <option value="$PROJECT_DIR$/app.js" />
+        <option value="$PROJECT_DIR$/classic/src/Application.js" />
+        <option value="$PROJECT_DIR$/classic/src/view/courses/CourseController.js" />
+        <option value="$PROJECT_DIR$/classic/src/view/dashboard/Dashboard.js" />
+        <option value="$PROJECT_DIR$/classic/resources/LearningAnalytics-all_1.css" />
+        <option value="$PROJECT_DIR$/packages/fullcalendar/fullcalendar_custom.css" />
+        <option value="$PROJECT_DIR$/index.html" />
+        <option value="$PROJECT_DIR$/classic/src/view/fullcalendar/FullCalendarView.js" />
+        <option value="$PROJECT_DIR$/packages/fullcalendar/fullcalendar.css" />
+        <option value="$PROJECT_DIR$/classic/src/view/fullcalendar/FullCalendar.js" />
+        <option value="$PROJECT_DIR$/app/store/NavigationTree.js" />
+        <option value="$PROJECT_DIR$/classic/src/view/courses/CourseView.js" />
+        <option value="$PROJECT_DIR$/classic/src/view/courses/RiskAnalysisStepThreePanel.js" />
+        <option value="$PROJECT_DIR$/app/config/Runtime.js" />
+        <option value="$PROJECT_DIR$/classic/src/view/courses/RiskAnalysisWindowForms.js" />
+        <option value="$PROJECT_DIR$/classic/src/view/main/MainController.js" />
+      </list>
+    </option>
+  </component>
+  <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsFlowSettings">
+    <service-enabled>false</service-enabled>
+    <exe-path />
+    <annotation-enable>false</annotation-enable>
+    <other-services-enabled>false</other-services-enabled>
+    <auto-save>true</auto-save>
+  </component>
+  <component name="JsGulpfileManager">
+    <detection-done>true</detection-done>
+    <sorting>DEFINITION_ORDER</sorting>
+  </component>
+  <component name="ProjectFrameBounds">
+    <option name="y" value="23" />
+    <option name="width" value="1440" />
+    <option name="height" value="817" />
+  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectView">
+    <navigator proportions="" version="1">
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="Scope" />
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="thesis-app-client-side" type="b2602c69:ProjectViewProjectNode" />
+              <item name="thesis-app-client-side" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="thesis-app-client-side" type="b2602c69:ProjectViewProjectNode" />
+              <item name="thesis-app-client-side" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="thesis-app-client-side" type="b2602c69:ProjectViewProjectNode" />
+              <item name="thesis-app-client-side" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="config" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="thesis-app-client-side" type="b2602c69:ProjectViewProjectNode" />
+              <item name="thesis-app-client-side" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="store" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="thesis-app-client-side" type="b2602c69:ProjectViewProjectNode" />
+              <item name="thesis-app-client-side" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="view" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="thesis-app-client-side" type="b2602c69:ProjectViewProjectNode" />
+              <item name="thesis-app-client-side" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="view" type="462c0819:PsiDirectoryNode" />
+              <item name="chart" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="thesis-app-client-side" type="b2602c69:ProjectViewProjectNode" />
+              <item name="thesis-app-client-side" type="462c0819:PsiDirectoryNode" />
+              <item name="classic" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="thesis-app-client-side" type="b2602c69:ProjectViewProjectNode" />
+              <item name="thesis-app-client-side" type="462c0819:PsiDirectoryNode" />
+              <item name="classic" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="thesis-app-client-side" type="b2602c69:ProjectViewProjectNode" />
+              <item name="thesis-app-client-side" type="462c0819:PsiDirectoryNode" />
+              <item name="classic" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="view" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="thesis-app-client-side" type="b2602c69:ProjectViewProjectNode" />
+              <item name="thesis-app-client-side" type="462c0819:PsiDirectoryNode" />
+              <item name="classic" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="view" type="462c0819:PsiDirectoryNode" />
+              <item name="courses" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="thesis-app-client-side" type="b2602c69:ProjectViewProjectNode" />
+              <item name="thesis-app-client-side" type="462c0819:PsiDirectoryNode" />
+              <item name="classic" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="view" type="462c0819:PsiDirectoryNode" />
+              <item name="dashboard" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="thesis-app-client-side" type="b2602c69:ProjectViewProjectNode" />
+              <item name="thesis-app-client-side" type="462c0819:PsiDirectoryNode" />
+              <item name="classic" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="view" type="462c0819:PsiDirectoryNode" />
+              <item name="fullcalendar" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="thesis-app-client-side" type="b2602c69:ProjectViewProjectNode" />
+              <item name="thesis-app-client-side" type="462c0819:PsiDirectoryNode" />
+              <item name="classic" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="view" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="HbShouldOpenHtmlAsHb" value="" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="list.type.of.created.stylesheet" value="CSS" />
+    <property name="node.js.detected.package.prettier" value="true" />
+    <property name="node.js.path.for.package.prettier" value="project" />
+    <property name="node.js.selected.package.prettier" value="" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/packages/fullcalendar" />
+      <recent name="$PROJECT_DIR$/classic/src/view/dashboard" />
+      <recent name="C:\Users\n.vasileiadis\Documents\nikos\Thesis\thesis-app-client-side\classic\src\view\main\courses" />
+      <recent name="C:\Users\n.vasileiadis\Documents\nikos\Thesis\thesis-app-client-side\classic\src\view\main\TestExample" />
+      <recent name="C:\Users\n.vasileiadis\Documents\nikos\Thesis\thesis-app-client-side\app\store" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/classic/src/view/pages" />
+      <recent name="$PROJECT_DIR$/modern/src/view/dashboard" />
+      <recent name="$PROJECT_DIR$/modern/src/view/pages" />
+      <recent name="$PROJECT_DIR$/modern/src/view/phone" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager">
+    <configuration default="true" type="DartCommandLineRunConfigurationType" factoryName="Dart Command Line Application">
+      <method />
+    </configuration>
+    <configuration default="true" type="DartTestRunConfigurationType" factoryName="Dart Test">
+      <method />
+    </configuration>
+    <configuration default="true" type="JavaScriptTestRunnerJest" factoryName="Jest">
+      <node-interpreter value="project" />
+      <working-dir value="" />
+      <envs />
+      <scope-kind value="ALL" />
+      <method />
+    </configuration>
+    <configuration default="true" type="JavaScriptTestRunnerKarma" factoryName="Karma">
+      <config-file value="" />
+      <node-interpreter value="project" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="JavaScriptTestRunnerProtractor" factoryName="Protractor">
+      <config-file value="" />
+      <node-interpreter value="project" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="JavascriptDebugType" factoryName="JavaScript Debug">
+      <method />
+    </configuration>
+    <configuration default="true" type="NodeJSConfigurationType" factoryName="Node.js" path-to-node="project" working-dir="">
+      <method />
+    </configuration>
+    <configuration default="true" type="cucumber.js" factoryName="Cucumber.js">
+      <option name="cucumberJsArguments" value="" />
+      <option name="executablePath" />
+      <option name="filePath" />
+      <method />
+    </configuration>
+    <configuration default="true" type="js.build_tools.npm" factoryName="npm">
+      <command value="run" />
+      <scripts />
+      <node-interpreter value="project" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="mocha-javascript-test-runner" factoryName="Mocha">
+      <node-interpreter>project</node-interpreter>
+      <node-options />
+      <working-directory />
+      <pass-parent-env>true</pass-parent-env>
+      <envs />
+      <ui />
+      <extra-mocha-options />
+      <test-kind>DIRECTORY</test-kind>
+      <test-directory />
+      <recursive>false</recursive>
+      <method />
+    </configuration>
+    <configuration default="true" type="js.build_tools.gulp" factoryName="Gulp.js">
+      <node-interpreter>project</node-interpreter>
+      <node-options />
+      <gulpfile />
+      <tasks />
+      <arguments />
+      <envs />
+    </configuration>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="f8dc9324-99df-43e6-be41-1aee28966c96" name="Default" comment="" />
+      <created>1497456546809</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1497456546809</updated>
+      <workItem from="1497456548221" duration="14000" />
+      <workItem from="1497460097380" duration="391000" />
+      <workItem from="1497620131750" duration="1146000" />
+      <workItem from="1498043344337" duration="1685000" />
+      <workItem from="1498054622499" duration="1526000" />
+      <workItem from="1498057267594" duration="808000" />
+      <workItem from="1498058807157" duration="57000" />
+      <workItem from="1498058905621" duration="722000" />
+      <workItem from="1498578837298" duration="5428000" />
+      <workItem from="1498839214240" duration="2365000" />
+      <workItem from="1499787282922" duration="37000" />
+      <workItem from="1499787516695" duration="8403000" />
+      <workItem from="1500108892505" duration="8430000" />
+      <workItem from="1500198719680" duration="9330000" />
+      <workItem from="1500713216891" duration="14553000" />
+      <workItem from="1500735420949" duration="4690000" />
+      <workItem from="1500807192906" duration="7456000" />
+      <workItem from="1500999171482" duration="4252000" />
+      <workItem from="1501087957550" duration="6636000" />
+      <workItem from="1501320661324" duration="18101000" />
+      <workItem from="1501345055875" duration="1950000" />
+      <workItem from="1501409992146" duration="11936000" />
+      <workItem from="1501517386840" duration="940000" />
+      <workItem from="1501600559323" duration="1548000" />
+      <workItem from="1506952315774" duration="45000" />
+      <workItem from="1506956467854" duration="492000" />
+      <workItem from="1507132924225" duration="820000" />
+      <workItem from="1507285160027" duration="13658000" />
+      <workItem from="1507567305113" duration="1862000" />
+      <workItem from="1507807633554" duration="2164000" />
+      <workItem from="1507889360342" duration="6143000" />
+      <workItem from="1507899592539" duration="9223000" />
+      <workItem from="1508589568145" duration="8275000" />
+      <workItem from="1509217195050" duration="7406000" />
+      <workItem from="1509447252827" duration="941000" />
+      <workItem from="1509448573709" duration="28098000" />
+      <workItem from="1509552033450" duration="250000" />
+      <workItem from="1509552309661" duration="95000" />
+      <workItem from="1509552413289" duration="72000" />
+      <workItem from="1509730580371" duration="7722000" />
+      <workItem from="1509837028630" duration="396000" />
+      <workItem from="1509837540237" duration="20000" />
+      <workItem from="1509887297171" duration="819000" />
+      <workItem from="1509889224352" duration="4290000" />
+      <workItem from="1510130080950" duration="77000" />
+      <workItem from="1510158151684" duration="2271000" />
+      <workItem from="1510244018854" duration="5866000" />
+      <workItem from="1510310251455" duration="17758000" />
+      <workItem from="1510591317488" duration="680000" />
+      <workItem from="1510678649692" duration="4447000" />
+      <workItem from="1510850194780" duration="5463000" />
+      <workItem from="1510936018172" duration="22251000" />
+      <workItem from="1511198537248" duration="2639000" />
+      <workItem from="1511457709209" duration="3482000" />
+      <workItem from="1511609298489" duration="468000" />
+      <workItem from="1511610925031" duration="12715000" />
+      <workItem from="1511775322699" duration="1859000" />
+      <workItem from="1511859189651" duration="2509000" />
+      <workItem from="1512060758783" duration="3049000" />
+      <workItem from="1512229719800" duration="8648000" />
+      <workItem from="1512577646829" duration="296000" />
+      <workItem from="1512818441170" duration="7492000" />
+      <workItem from="1512840123205" duration="9805000" />
+      <workItem from="1523312641566" duration="120000" />
+      <workItem from="1523313211116" duration="62000" />
+      <workItem from="1523389196661" duration="4866000" />
+      <workItem from="1523397632905" duration="156000" />
+      <workItem from="1523467353016" duration="30000" />
+      <workItem from="1523528507110" duration="1392000" />
+      <workItem from="1523899959690" duration="816000" />
+      <workItem from="1523908365841" duration="2546000" />
+      <workItem from="1523983703128" duration="3756000" />
+      <workItem from="1524315035670" duration="413000" />
+      <workItem from="1524344142630" duration="302000" />
+    </task>
+    <task id="LOCAL-00001" summary="test testdata">
+      <created>1498045002687</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1498045002687</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Test">
+      <created>1498054819332</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1498054819332</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Test">
+      <created>1498055303653</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1498055303653</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Test">
+      <created>1498059359175</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1498059359175</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Test">
+      <created>1498581438655</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1498581438655</updated>
+    </task>
+    <task id="LOCAL-00006" summary="Test">
+      <created>1498582002356</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1498582002356</updated>
+    </task>
+    <task id="LOCAL-00007" summary="Test">
+      <created>1498582184538</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1498582184538</updated>
+    </task>
+    <task id="LOCAL-00008" summary="Test Ajax call with parameters">
+      <created>1499361124909</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1499361124909</updated>
+    </task>
+    <task id="LOCAL-00009" summary="Test">
+      <created>1499789726237</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1499789726237</updated>
+    </task>
+    <task id="LOCAL-00010" summary="Test Ajax custom params">
+      <created>1499796380884</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1499796380884</updated>
+    </task>
+    <task id="LOCAL-00011" summary="Test Ajax call with header">
+      <created>1500119121613</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1500119121613</updated>
+    </task>
+    <task id="LOCAL-00012" summary="Test Ajax request call">
+      <created>1500217235069</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1500217235069</updated>
+    </task>
+    <task id="LOCAL-00013" summary="Test Update courses View">
+      <created>1500740061421</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1500740061421</updated>
+    </task>
+    <task id="LOCAL-00014" summary="Test">
+      <created>1500825139852</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1500825139852</updated>
+    </task>
+    <task id="LOCAL-00015" summary="Test">
+      <created>1501003857223</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1501003857223</updated>
+    </task>
+    <task id="LOCAL-00016" summary="Test search field">
+      <created>1501094603459</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1501094603459</updated>
+    </task>
+    <task id="LOCAL-00017" summary="Test chart">
+      <created>1501346830593</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1501346830593</updated>
+    </task>
+    <task id="LOCAL-00018" summary="Test chart">
+      <created>1501422741045</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1501422741045</updated>
+    </task>
+    <task id="LOCAL-00019" summary="modern view">
+      <created>1507912410365</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1507912410365</updated>
+    </task>
+    <task id="LOCAL-00020" summary="test routing">
+      <created>1509296254630</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1509296254630</updated>
+    </task>
+    <task id="LOCAL-00021" summary="course navigation">
+      <created>1509466160210</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1509466160210</updated>
+    </task>
+    <task id="LOCAL-00022" summary="update course navigation, create about page">
+      <created>1509469973179</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1509469973179</updated>
+    </task>
+    <task id="LOCAL-00023" summary="course statistics">
+      <created>1509552475703</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1509552475703</updated>
+    </task>
+    <task id="LOCAL-00024" summary="update shadows">
+      <created>1510160577017</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1510160577017</updated>
+    </task>
+    <task id="LOCAL-00025" summary="add expand on chart">
+      <created>1510488256874</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1510488256874</updated>
+    </task>
+    <task id="LOCAL-00026" summary="update login">
+      <created>1510504706326</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1510504706326</updated>
+    </task>
+    <task id="LOCAL-00027" summary="update timeout">
+      <created>1510856154665</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1510856154665</updated>
+    </task>
+    <task id="LOCAL-00028" summary="update login / timeout">
+      <created>1511025953037</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1511025953037</updated>
+    </task>
+    <task id="LOCAL-00029" summary="change style, collapse, expand">
+      <created>1511202190187</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1511202190187</updated>
+    </task>
+    <task id="LOCAL-00030" summary="update username and image">
+      <created>1511462034684</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1511462034684</updated>
+    </task>
+    <task id="LOCAL-00031" summary="update chart expand">
+      <created>1511627956297</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1511627956297</updated>
+    </task>
+    <task id="LOCAL-00032" summary="update expand chart">
+      <created>1511711106786</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1511711106786</updated>
+    </task>
+    <task id="LOCAL-00033" summary="moved dashboard controller and model">
+      <created>1511870338134</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1511870338134</updated>
+    </task>
+    <task id="LOCAL-00034" summary="add logout and error page 404">
+      <created>1512064703126</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1512064703126</updated>
+    </task>
+    <task id="LOCAL-00035" summary="fix error with datetime">
+      <created>1512233345729</created>
+      <option name="number" value="00035" />
+      <option name="presentableId" value="LOCAL-00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1512233345729</updated>
+    </task>
+    <task id="LOCAL-00036" summary="add require combo">
+      <created>1512234269787</created>
+      <option name="number" value="00036" />
+      <option name="presentableId" value="LOCAL-00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1512234269787</updated>
+    </task>
+    <task id="LOCAL-00037" summary="ui widget">
+      <created>1512320416674</created>
+      <option name="number" value="00037" />
+      <option name="presentableId" value="LOCAL-00037" />
+      <option name="project" value="LOCAL" />
+      <updated>1512320416674</updated>
+    </task>
+    <task id="LOCAL-00038" summary="add calendar">
+      <created>1512840391336</created>
+      <option name="number" value="00038" />
+      <option name="presentableId" value="LOCAL-00038" />
+      <option name="project" value="LOCAL" />
+      <updated>1512840391336</updated>
+    </task>
+    <task id="LOCAL-00039" summary="calculate risk analysis">
+      <created>1523395518204</created>
+      <option name="number" value="00039" />
+      <option name="presentableId" value="LOCAL-00039" />
+      <option name="project" value="LOCAL" />
+      <updated>1523395518204</updated>
+    </task>
+    <task id="LOCAL-00040" summary="add details on result grid - risk analysis">
+      <created>1523911060024</created>
+      <option name="number" value="00040" />
+      <option name="presentableId" value="LOCAL-00040" />
+      <option name="project" value="LOCAL" />
+      <updated>1523911060024</updated>
+    </task>
+    <task id="LOCAL-00041" summary="add loadmask, fix bug">
+      <created>1523989858889</created>
+      <option name="number" value="00041" />
+      <option name="presentableId" value="LOCAL-00041" />
+      <option name="project" value="LOCAL" />
+      <updated>1523989858889</updated>
+    </task>
+    <option name="localTasksCounter" value="42" />
+    <servers />
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="341968000" />
+  </component>
+  <component name="TodoView" selected-index="4">
+    <todo-panel id="selected-file">
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="true" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="0" y="23" width="1440" height="817" extended-state="0" />
+    <editor active="true" />
+    <layout>
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.20347223" />
+      <window_info anchor="bottom" id="TODO" order="6" weight="0.32953736" />
+      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.5051814" side_tool="true" weight="0.29537368" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32882562" />
+      <window_info anchor="bottom" id="Run" order="2" />
+      <window_info anchor="bottom" id="Version Control" order="7" weight="0.32797858" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="9" sideWeight="0.49481866" visible="true" weight="0.218035" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="right" id="Commander" order="0" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" id="PlantUML" order="3" visible="true" weight="0.17758985" />
+      <window_info anchor="bottom" id="Messages" order="8" weight="0.32940018" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+    </layout>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="Vcs.Log.History.Properties">
+    <option name="COLUMN_ORDER">
+      <list>
+        <option value="0" />
+        <option value="2" />
+        <option value="3" />
+        <option value="1" />
+      </list>
+    </option>
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="RECENTLY_FILTERED_USER_GROUPS">
+                <collection />
+              </option>
+              <option name="RECENTLY_FILTERED_BRANCH_GROUPS">
+                <collection />
+              </option>
+              <option name="COLUMN_ORDER">
+                <list>
+                  <option value="0" />
+                  <option value="1" />
+                  <option value="2" />
+                  <option value="3" />
+                </list>
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
+    <option name="CHECK_NEW_TODO" value="false" />
+    <MESSAGE value="Test search field" />
+    <MESSAGE value="Test chart" />
+    <MESSAGE value="modern view" />
+    <MESSAGE value="test routing" />
+    <MESSAGE value="course navigation" />
+    <MESSAGE value="update course navigation, create about page" />
+    <MESSAGE value="course statistics" />
+    <MESSAGE value="update shadows" />
+    <MESSAGE value="add expand on chart" />
+    <MESSAGE value="update login" />
+    <MESSAGE value="update timeout" />
+    <MESSAGE value="update login / timeout" />
+    <MESSAGE value="change style, collapse, expand" />
+    <MESSAGE value="update username and image" />
+    <MESSAGE value="update chart expand" />
+    <MESSAGE value="update expand chart" />
+    <MESSAGE value="moved dashboard controller and model" />
+    <MESSAGE value="add logout and error page 404" />
+    <MESSAGE value="fix error with datetime" />
+    <MESSAGE value="add require combo" />
+    <MESSAGE value="ui widget" />
+    <MESSAGE value="add calendar" />
+    <MESSAGE value="calculate risk analysis" />
+    <MESSAGE value="add details on result grid - risk analysis" />
+    <MESSAGE value="add loadmask, fix bug" />
+    <option name="LAST_COMMIT_MESSAGE" value="add loadmask, fix bug" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <option name="time" value="4" />
+    </breakpoint-manager>
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/classic/src/view/main/MainController.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="11460">
+          <caret line="764" column="25" lean-forward="true" selection-start-line="764" selection-start-column="25" selection-end-line="764" selection-end-column="25" />
+          <folding>
+            <element signature="n#style#0;n#span#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#select#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/classic/src/view/courses/CourseView.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="18" column="2" selection-start-line="18" selection-start-column="2" selection-end-line="18" selection-end-column="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/classic/src/view/main/MainController.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="10530">
+          <caret line="702" column="61" lean-forward="true" selection-start-line="702" selection-start-column="61" selection-end-line="702" selection-end-column="61" />
+          <folding>
+            <element signature="n#style#0;n#span#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#select#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/classic/src/view/main/MainController.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="555">
+          <caret line="37" selection-start-line="37" selection-end-line="37" />
+          <folding>
+            <element signature="n#style#0;n#span#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#select#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/classic/src/view/pages/BlankPage.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="1" column="36" selection-start-line="1" selection-start-column="13" selection-end-line="1" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/classic/src/view/authentication/AuthenticationController.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="45">
+          <caret line="3" column="74" selection-start-line="3" selection-start-column="12" selection-end-line="3" selection-end-column="74" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/classic/src/view/pages/ErrorBase.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="345">
+          <caret line="23" column="22" selection-start-line="23" selection-start-column="22" selection-end-line="23" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/classic/src/view/pages/Error404Window.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="375">
+          <caret line="25" column="31" selection-start-line="25" selection-start-column="31" selection-end-line="25" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/build/LearningAnalytics-dashboard/classic/app.js" />
+    <entry file="file://$PROJECT_DIR$/sass/src/view/profile/UserProfileBase.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="621">
+          <caret line="138" column="9" selection-start-line="138" selection-start-column="9" selection-end-line="138" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/classic/src/view/dashboard/ViewStudentsChartWidget.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="810">
+          <caret line="54" column="6" lean-forward="true" selection-start-line="54" selection-start-column="6" selection-end-line="54" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/classic/src/view/widgets/WidgetSmall.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="13" selection-start-line="13" selection-end-line="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/classic/src/view/dashboard/GradesWidget.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="8" selection-start-line="8" selection-end-line="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/classic/src/view/dashboard/DashboardController.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="825">
+          <caret line="55" column="55" selection-start-line="55" selection-start-column="55" selection-end-line="55" selection-end-column="55" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/build/LearningAnalytics-dashboard/modern/app.js" />
+    <entry file="file://$PROJECT_DIR$/classic/src/view/courses/CourseStatisticsChartWidget.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="6" column="39" selection-start-line="6" selection-start-column="12" selection-end-line="6" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/workspace.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="645">
+          <caret line="43" column="11" lean-forward="true" selection-start-line="43" selection-start-column="11" selection-end-line="43" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ext/build/ext-debug.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="461">
+          <caret line="29951" column="38" selection-start-line="29951" selection-start-column="38" selection-end-line="29951" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/classic/src/view/dashboard/StudentsWidget.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="19" column="27" selection-start-line="19" selection-start-column="27" selection-end-line="19" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/modern/src/view/widgets/WidgetSmall.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="5" column="16" selection-start-line="5" selection-end-line="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="11" column="54" selection-start-line="11" selection-start-column="54" selection-end-line="11" selection-end-column="54" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/classic/src/view/about/AboutView.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="4" column="11" selection-start-line="4" selection-start-column="11" selection-end-line="4" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/classic/src/Application.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="720">
+          <caret line="48" column="11" selection-start-line="48" selection-start-column="11" selection-end-line="48" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/classic/src/view/courses/CourseController.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="19" selection-start-line="19" selection-end-line="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/classic/resources/ext/ext-watermark/style.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-202" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sass/src/view/main/Main.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="7" column="1" lean-forward="true" selection-start-line="7" selection-start-column="1" selection-end-line="7" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/packages/fullcalendar/fullcalendar_custom.css" />
+    <entry file="file://$PROJECT_DIR$/classic/src/view/fullcalendar/FullCalendarView.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="465">
+          <caret line="31" selection-start-line="31" selection-end-line="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/classic/resources/LearningAnalytics-all_2.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="116640">
+          <caret line="7776" column="29" selection-start-line="7776" selection-start-column="23" selection-end-line="7776" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/classic/resources/LearningAnalytics-all_1.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="11" column="1" selection-start-line="11" selection-start-column="1" selection-end-line="11" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sass/var/all.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="540">
+          <caret line="36" column="41" selection-start-line="36" selection-start-column="35" selection-end-line="36" selection-end-column="41" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="960">
+          <caret line="64" selection-start-line="64" selection-end-line="64" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/classic/src/view/dashboard/Dashboard.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="480">
+          <caret line="32" column="23" selection-start-line="32" selection-start-column="23" selection-end-line="32" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/modern/src/view/dashboard/StudentsWidget.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="4" column="34" selection-start-line="4" selection-start-column="34" selection-end-line="4" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/view/chart/ViewStudentsChart.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="5" column="14" selection-start-line="5" selection-start-column="14" selection-end-line="5" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/classic/src/view/dashboard/Course.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="20" column="11" selection-start-line="20" selection-end-line="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/store/NavigationTree.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="473">
+          <caret line="34" column="38" selection-start-line="34" selection-start-column="38" selection-end-line="34" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/classic/sass/var/view/main/Main.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="13" selection-start-line="13" selection-end-line="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/classic/sass/src/view/main/Main.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="5" column="44" selection-start-line="5" selection-start-column="44" selection-end-line="5" selection-end-column="44" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/packages/fullcalendar/fullcalendar.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="473">
+          <caret line="254" column="29" selection-start-line="254" selection-start-column="29" selection-end-line="254" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/classic/src/view/fullcalendar/FullCalendar.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="473">
+          <caret line="41" column="45" selection-start-line="41" selection-start-column="45" selection-end-line="41" selection-end-column="45" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/classic/src/view/courses/CourseView.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="87">
+          <caret line="25" column="40" selection-start-line="25" selection-start-column="40" selection-end-line="25" selection-end-column="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/store/courses/CourseRiskAnalysisResults.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="17" column="4" selection-start-line="17" selection-start-column="4" selection-end-line="17" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/config/Runtime.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="17" column="60" selection-start-line="17" selection-start-column="60" selection-end-line="17" selection-end-column="60" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/classic/src/view/widgets/PopUpWindow.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="6" column="22" selection-start-line="6" selection-start-column="22" selection-end-line="6" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/classic/src/view/courses/RiskAnalysisStepThreePanel.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="5" column="38" selection-start-line="5" selection-start-column="12" selection-end-line="5" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/classic/src/view/courses/RiskAnalysisWindowForms.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1725">
+          <caret line="115" column="43" selection-start-line="115" selection-start-column="31" selection-end-line="115" selection-end-column="43" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/classic/src/view/courses/RiskAnalysisStepOnePanel.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="945">
+          <caret line="63" column="21" selection-start-line="63" selection-start-column="12" selection-end-line="63" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/store/courses/CourseStatistics.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="2" column="3" selection-start-line="2" selection-start-column="3" selection-end-line="2" selection-end-column="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/classic/src/view/main/MainModel.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="15" column="24" selection-start-line="15" selection-start-column="8" selection-end-line="15" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/classic/src/view/main/MainController.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="459">
+          <caret line="431" column="43" selection-start-line="431" selection-start-column="43" selection-end-line="431" selection-end-column="43" />
+          <folding>
+            <element signature="n#style#0;n#span#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#select#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+  </component>
+</project>
