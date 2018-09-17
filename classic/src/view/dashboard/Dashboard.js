@@ -30,19 +30,14 @@ Ext.define('LearningAnalytics.view.dashboard.Dashboard', {
             cls: 'big-60 small-100'
         },
         {
-            xtype: 'course', //
+            xtype: 'course', 
             style: {
                 'box-shadow': '0 0 5px rgba(0, 0, 0, 0.3)'
             },
             cls: 'big-40 small-100'
         },
-
         {
             xtype: 'studentsWidget',
-            userCls: 'big-20 small-50'
-        },
-        {
-            xtype: 'gradesWidget',
             userCls: 'big-20 small-50'
         }
     ]
