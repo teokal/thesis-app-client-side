@@ -76,7 +76,7 @@ Ext.define('LearningAnalytics.view.dashboard.ViewStudentsChartWidget', {
                     labelSeparator: '',
                     endDateField: 'dateTo',
                     submitFormat: 'd-m-Y',
-                    padding: '0 0 0 30',
+                    padding: '0 0 10 50',
                     fieldLabel: 'Date From',
                     maxWidth: 200,
                     flex: 1
@@ -91,7 +91,7 @@ Ext.define('LearningAnalytics.view.dashboard.ViewStudentsChartWidget', {
                     itemId: 'dateTo',
                     startDateField: 'dateFrom',
                     submitFormat: 'd-m-Y',
-                    padding: '0 0 0 30',
+                    padding: '0 0 10 30',
                     fieldLabel: 'Date To',
                     maxWidth: 200,
                     flex: 1
@@ -105,7 +105,7 @@ Ext.define('LearningAnalytics.view.dashboard.ViewStudentsChartWidget', {
                     queryMode:'local',
                     store:['year','quarter','month', 'week', 'day'], 
                     displayField:'actionView',
-                    padding: '0 0 0 30',
+                    padding: '0 0 10 30',
                     autoSelect:true,
                     forceSelection:true,
                     maxWidth: 200,

@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="f8dc9324-99df-43e6-be41-1aee28966c96" name="Default" comment="add calendar">
+    <list default="true" id="f8dc9324-99df-43e6-be41-1aee28966c96" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/config/Runtime.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/config/Runtime.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/classic/src/view/main/MainController.js" beforeDir="false" afterPath="$PROJECT_DIR$/classic/src/view/main/MainController.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -17,24 +18,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="MainController.js" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/classic/src/view/main/MainController.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="459">
-              <caret line="431" column="43" selection-start-line="431" selection-start-column="43" selection-end-line="431" selection-end-column="43" />
-              <folding>
-                <element signature="n#style#0;n#span#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#select#0;n#!!top" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="CourseStatistics.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/store/courses/CourseStatistics.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="30">
-              <caret line="2" column="3" selection-start-line="2" selection-start-column="3" selection-end-line="2" selection-end-column="3" />
+            <state relative-caret-position="375">
+              <caret line="25" selection-start-line="20" selection-end-line="25" />
             </state>
           </provider>
         </entry>
@@ -48,20 +36,33 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="PopUpWindow.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/classic/src/view/widgets/PopUpWindow.js">
+      <file leaf-file-name="Login.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/classic/src/view/authentication/Login.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="90">
-              <caret line="6" column="22" selection-start-line="6" selection-start-column="22" selection-end-line="6" selection-end-column="22" />
+            <state relative-caret-position="-326">
+              <caret line="25" column="31" lean-forward="true" selection-start-line="25" selection-start-column="31" selection-end-line="25" selection-end-column="31" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="RiskAnalysisStepOnePanel.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/classic/src/view/courses/RiskAnalysisStepOnePanel.js">
+      <file leaf-file-name="MainController.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/classic/src/view/main/MainController.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="945">
-              <caret line="63" column="21" selection-start-line="63" selection-start-column="12" selection-end-line="63" selection-end-column="21" />
+            <state relative-caret-position="241">
+              <caret line="769" column="45" selection-start-line="769" selection-start-column="45" selection-end-line="769" selection-end-column="45" />
+              <folding>
+                <element signature="n#style#0;n#span#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#select#0;n#!!top" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Dialog.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/classic/src/view/authentication/Dialog.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="75">
+              <caret line="5" column="4" selection-start-line="5" selection-start-column="4" selection-end-line="5" selection-end-column="4" />
             </state>
           </provider>
         </entry>
@@ -69,35 +70,26 @@
       <file leaf-file-name="Runtime.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/config/Runtime.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="17" column="60" selection-start-line="17" selection-start-column="60" selection-end-line="17" selection-end-column="60" />
+            <state relative-caret-position="90">
+              <caret line="6" column="21" selection-start-line="6" selection-start-column="21" selection-end-line="6" selection-end-column="21" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="CourseRiskAnalysisResults.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/store/courses/CourseRiskAnalysisResults.js">
+      <file leaf-file-name="CourseContents.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/store/courses/CourseContents.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="17" column="4" selection-start-line="17" selection-start-column="4" selection-end-line="17" selection-end-column="4" />
+            <state relative-caret-position="525">
+              <caret line="35" selection-start-line="26" selection-end-line="35" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="RiskAnalysisStepThreePanel.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/classic/src/view/courses/RiskAnalysisStepThreePanel.js">
+      <file leaf-file-name="Application.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/classic/src/Application.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="75">
-              <caret line="5" column="38" selection-start-line="5" selection-start-column="12" selection-end-line="5" selection-end-column="38" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="RiskAnalysisWindowForms.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/classic/src/view/courses/RiskAnalysisWindowForms.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1725">
-              <caret line="115" column="43" selection-start-line="115" selection-start-column="31" selection-end-line="115" selection-end-column="43" />
+            <state relative-caret-position="540">
+              <caret line="36" column="14" selection-start-line="36" selection-start-column="14" selection-end-line="36" selection-end-column="14" />
             </state>
           </provider>
         </entry>
@@ -114,7 +106,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>element.style</find>
       <find>margin</find>
       <find>44px</find>
       <find>margin-left:</find>
@@ -144,6 +135,7 @@
       <find>Ext.getBody().unmask</find>
       <find>api/1/courses/logs</find>
       <find>courseStatistics</find>
+      <find>api/1/test</find>
     </findStrings>
     <dirStrings>
       <dir>$PROJECT_DIR$/modern/src</dir>
@@ -156,8 +148,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/app/model/courses/CourseStatistic.js" />
-        <option value="$PROJECT_DIR$/app/view/chart/ViewCourseStatistic.js" />
         <option value="$PROJECT_DIR$/app/model/dashboard/ViewPerDate.js" />
         <option value="$PROJECT_DIR$/classic/src/view/authentication/AuthenticationModel.js" />
         <option value="$PROJECT_DIR$/classic/src/view/authentication/LockingWindow.js" />
@@ -166,7 +156,6 @@
         <option value="$PROJECT_DIR$/classic/src/view/dashboard/Course.js" />
         <option value="$PROJECT_DIR$/sass/src/view/main/Main.scss" />
         <option value="$PROJECT_DIR$/modern/src/view/widgets/WidgetSmall.js" />
-        <option value="$PROJECT_DIR$/classic/src/view/authentication/Login.js" />
         <option value="$PROJECT_DIR$/app/store/courses/CourseStatistics.js" />
         <option value="$PROJECT_DIR$/app/store/courses/CourseEnrolledStudents.js" />
         <option value="$PROJECT_DIR$/classic/sass/var/view/main/Main.scss" />
@@ -192,7 +181,6 @@
         <option value="$PROJECT_DIR$/classic/src/view/dashboard/DashboardController.js" />
         <option value="$PROJECT_DIR$/classic/src/view/courses/CourseStatisticsChartWidget.js" />
         <option value="$PROJECT_DIR$/app.js" />
-        <option value="$PROJECT_DIR$/classic/src/Application.js" />
         <option value="$PROJECT_DIR$/classic/src/view/courses/CourseController.js" />
         <option value="$PROJECT_DIR$/classic/src/view/dashboard/Dashboard.js" />
         <option value="$PROJECT_DIR$/classic/resources/LearningAnalytics-all_1.css" />
@@ -204,8 +192,12 @@
         <option value="$PROJECT_DIR$/app/store/NavigationTree.js" />
         <option value="$PROJECT_DIR$/classic/src/view/courses/CourseView.js" />
         <option value="$PROJECT_DIR$/classic/src/view/courses/RiskAnalysisStepThreePanel.js" />
-        <option value="$PROJECT_DIR$/app/config/Runtime.js" />
         <option value="$PROJECT_DIR$/classic/src/view/courses/RiskAnalysisWindowForms.js" />
+        <option value="$PROJECT_DIR$/app/store/courses/CourseContents.js" />
+        <option value="$PROJECT_DIR$/classic/src/view/widgets/PopUpWindow.js" />
+        <option value="$PROJECT_DIR$/classic/src/Application.js" />
+        <option value="$PROJECT_DIR$/app/config/Runtime.js" />
+        <option value="$PROJECT_DIR$/classic/src/view/authentication/Login.js" />
         <option value="$PROJECT_DIR$/classic/src/view/main/MainController.js" />
       </list>
     </option>
@@ -234,7 +226,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -258,6 +249,13 @@
               <item name="thesis-app-client-side" type="462c0819:PsiDirectoryNode" />
               <item name="app" type="462c0819:PsiDirectoryNode" />
               <item name="store" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="thesis-app-client-side" type="b2602c69:ProjectViewProjectNode" />
+              <item name="thesis-app-client-side" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="store" type="462c0819:PsiDirectoryNode" />
+              <item name="courses" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="thesis-app-client-side" type="b2602c69:ProjectViewProjectNode" />
@@ -296,6 +294,14 @@
               <item name="classic" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="view" type="462c0819:PsiDirectoryNode" />
+              <item name="authentication" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="thesis-app-client-side" type="b2602c69:ProjectViewProjectNode" />
+              <item name="thesis-app-client-side" type="462c0819:PsiDirectoryNode" />
+              <item name="classic" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="view" type="462c0819:PsiDirectoryNode" />
               <item name="courses" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -326,6 +332,7 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -514,7 +521,15 @@
       <workItem from="1523908365841" duration="2546000" />
       <workItem from="1523983703128" duration="3756000" />
       <workItem from="1524315035670" duration="413000" />
-      <workItem from="1524344142630" duration="302000" />
+      <workItem from="1524344142630" duration="449000" />
+      <workItem from="1524344824795" duration="558000" />
+      <workItem from="1524349125293" duration="725000" />
+      <workItem from="1524387902732" duration="483000" />
+      <workItem from="1524390128697" duration="25000" />
+      <workItem from="1524393750346" duration="1826000" />
+      <workItem from="1524397603221" duration="2340000" />
+      <workItem from="1524516338020" duration="1176000" />
+      <workItem from="1524949357291" duration="1083000" />
     </task>
     <task id="LOCAL-00001" summary="test testdata">
       <created>1498045002687</created>
@@ -803,11 +818,32 @@
       <option name="project" value="LOCAL" />
       <updated>1523989858889</updated>
     </task>
-    <option name="localTasksCounter" value="42" />
+    <task id="LOCAL-00042" summary="fix bugs">
+      <created>1524344548264</created>
+      <option name="number" value="00042" />
+      <option name="presentableId" value="LOCAL-00042" />
+      <option name="project" value="LOCAL" />
+      <updated>1524344548264</updated>
+    </task>
+    <task id="LOCAL-00043" summary="add messages sent">
+      <created>1524410038561</created>
+      <option name="number" value="00043" />
+      <option name="presentableId" value="LOCAL-00043" />
+      <option name="project" value="LOCAL" />
+      <updated>1524410038561</updated>
+    </task>
+    <task id="LOCAL-00044" summary="update messages sent">
+      <created>1524411460288</created>
+      <option name="number" value="00044" />
+      <option name="presentableId" value="LOCAL-00044" />
+      <option name="project" value="LOCAL" />
+      <updated>1524411460288</updated>
+    </task>
+    <option name="localTasksCounter" value="45" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="341968000" />
+    <option name="totallyTimeSpent" value="350331000" />
   </component>
   <component name="TodoView" selected-index="4">
     <todo-panel id="selected-file">
@@ -820,13 +856,11 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1440" height="817" extended-state="0" />
-    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.20347223" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32953736" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.5051814" side_tool="true" weight="0.29537368" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.32882562" />
       <window_info anchor="bottom" id="Run" order="2" />
       <window_info anchor="bottom" id="Version Control" order="7" weight="0.32797858" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -841,6 +875,7 @@
       <window_info anchor="bottom" id="Messages" order="8" weight="0.32940018" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32882562" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -888,9 +923,6 @@
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
-    <MESSAGE value="Test search field" />
-    <MESSAGE value="Test chart" />
-    <MESSAGE value="modern view" />
     <MESSAGE value="test routing" />
     <MESSAGE value="course navigation" />
     <MESSAGE value="update course navigation, create about page" />
@@ -913,51 +945,21 @@
     <MESSAGE value="calculate risk analysis" />
     <MESSAGE value="add details on result grid - risk analysis" />
     <MESSAGE value="add loadmask, fix bug" />
-    <option name="LAST_COMMIT_MESSAGE" value="add loadmask, fix bug" />
+    <MESSAGE value="fix bugs" />
+    <MESSAGE value="add messages sent" />
+    <MESSAGE value="update messages sent" />
+    <option name="LAST_COMMIT_MESSAGE" value="update messages sent" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="4" />
+      <option name="time" value="5" />
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/classic/src/view/main/MainController.js">
+    <entry file="file://$PROJECT_DIR$/app/config/Runtime.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="11460">
-          <caret line="764" column="25" lean-forward="true" selection-start-line="764" selection-start-column="25" selection-end-line="764" selection-end-column="25" />
-          <folding>
-            <element signature="n#style#0;n#span#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#select#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/classic/src/view/courses/CourseView.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="18" column="2" selection-start-line="18" selection-start-column="2" selection-end-line="18" selection-end-column="2" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/classic/src/view/main/MainController.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="10530">
-          <caret line="702" column="61" lean-forward="true" selection-start-line="702" selection-start-column="61" selection-end-line="702" selection-end-column="61" />
-          <folding>
-            <element signature="n#style#0;n#span#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#select#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/classic/src/view/main/MainController.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="555">
-          <caret line="37" selection-start-line="37" selection-end-line="37" />
-          <folding>
-            <element signature="n#style#0;n#span#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#select#0;n#!!top" expanded="true" />
-          </folding>
+        <state relative-caret-position="30">
+          <caret line="2" column="3" lean-forward="true" selection-start-line="2" selection-start-column="3" selection-end-line="2" selection-end-column="3" />
         </state>
       </provider>
     </entry>
@@ -965,13 +967,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="15">
           <caret line="1" column="36" selection-start-line="1" selection-start-column="13" selection-end-line="1" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/classic/src/view/authentication/AuthenticationController.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="3" column="74" selection-start-line="3" selection-start-column="12" selection-end-line="3" selection-end-column="74" />
         </state>
       </provider>
     </entry>
@@ -1072,13 +1067,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="60">
           <caret line="4" column="11" selection-start-line="4" selection-start-column="11" selection-end-line="4" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/classic/src/Application.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="720">
-          <caret line="48" column="11" selection-start-line="48" selection-start-column="11" selection-end-line="48" selection-end-column="11" />
         </state>
       </provider>
     </entry>
@@ -1214,20 +1202,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/config/Runtime.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="17" column="60" selection-start-line="17" selection-start-column="60" selection-end-line="17" selection-end-column="60" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/classic/src/view/widgets/PopUpWindow.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="6" column="22" selection-start-line="6" selection-start-column="22" selection-end-line="6" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/classic/src/view/courses/RiskAnalysisStepThreePanel.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="75">
@@ -1249,10 +1223,17 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/store/courses/CourseStatistics.js">
+    <entry file="file://$PROJECT_DIR$/app/store/courses/CourseContents.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" column="3" selection-start-line="2" selection-start-column="3" selection-end-line="2" selection-end-column="3" />
+        <state relative-caret-position="525">
+          <caret line="35" selection-start-line="26" selection-end-line="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/classic/src/view/widgets/PopUpWindow.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="9" selection-start-line="9" selection-end-line="9" />
         </state>
       </provider>
     </entry>
@@ -1263,10 +1244,52 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/classic/src/view/authentication/Dialog.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="5" column="4" selection-start-line="5" selection-start-column="4" selection-end-line="5" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/classic/src/view/authentication/AuthenticationController.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="660">
+          <caret line="44" selection-start-line="15" selection-end-line="44" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/classic/src/Application.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="540">
+          <caret line="36" column="14" selection-start-line="36" selection-start-column="14" selection-end-line="36" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/store/courses/CourseStatistics.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="375">
+          <caret line="25" selection-start-line="20" selection-end-line="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/config/Runtime.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="6" column="21" selection-start-line="6" selection-start-column="21" selection-end-line="6" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/classic/src/view/authentication/Login.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-326">
+          <caret line="25" column="31" lean-forward="true" selection-start-line="25" selection-start-column="31" selection-end-line="25" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/classic/src/view/main/MainController.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="459">
-          <caret line="431" column="43" selection-start-line="431" selection-start-column="43" selection-end-line="431" selection-end-column="43" />
+        <state relative-caret-position="241">
+          <caret line="769" column="45" selection-start-line="769" selection-start-column="45" selection-end-line="769" selection-end-column="45" />
           <folding>
             <element signature="n#style#0;n#span#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#select#0;n#!!top" expanded="true" />

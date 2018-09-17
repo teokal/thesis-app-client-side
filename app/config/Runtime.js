@@ -46,26 +46,30 @@ Ext.define('LearningAnalytics.config.Runtime',{
         }
     },
 
-    checkIfLogin: function () {
+    checkIfLogin: function (callback) {
         Ext.Ajax.request({
             url: '/api/1/test',
             method: 'GET',
+            useDefaultXhrHeader: false,
+            cors: true,
             headers: {
                 'Authorization': ''
             },
+            writer: {
+                type: 'json',
+                allowSingle: true,
+                writeAllFields: true
+            },
+            reader: {
+                type: 'json',
+                rootProperty: 'response.data'
+            },
             callback:function(records, operation, success){
                 var jsonData = Ext.util.JSON.decode(success.responseText);
-                var statusMessage = jsonData.response.status;
-
-                if(statusMessage === 'success'){
-                    window.location.assign('#dashboard');
-                    return true;
-                } else {
-                    window.location.assign('#login');
-                }
+                var statusMessage = jsonData.response.data.authorized;
+                callback(statusMessage);
             }
         });
-        return false;
     },
 
     getContainerViewWidth: function() {
@@ -79,7 +83,6 @@ Ext.define('LearningAnalytics.config.Runtime',{
         view.animate({dynamic: true, to: {
             width: viewWidth * widthValue - 40,
             height: viewHeight * heightValue
-        }
-        });
+        }});
     }
 });
